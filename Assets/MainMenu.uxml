@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Style.uss?fileID=7433441132597879392&amp;guid=6cb330cf0eb3510418b660f3320c96f9&amp;type=3#Style" />
+    <ui:VisualElement style="height: 1070px; flex-grow: 1; background-color: rgba(126, 198, 207, 0); justify-content: center; align-items: flex-start; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+        <ui:VisualElement style="background-color: rgb(255, 255, 255); height: 526px; width: 376px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); align-items: center; justify-content: flex-end; flex-direction: column; transition-property: all; margin-left: 25px; margin-right: 25px; margin-top: 25px; margin-bottom: 25px;">
+            <ui:Label tabindex="-1" text="Main Menu" display-tooltip-when-elided="true" style="align-items: stretch; top: 25px; font-size: 40px; -unity-font-style: bold; -unity-text-outline-width: 0; -unity-text-outline-color: rgb(0, 0, 0); color: rgb(0, 0, 0); position: absolute;" />
+            <ui:Button tabindex="-1" text="Play" display-tooltip-when-elided="true" name="play" class="button-style" />
+            <ui:Button tabindex="-1" text="Settings" display-tooltip-when-elided="true" name="settings" class="button-style" />
+            <ui:Button tabindex="-1" text="Credits" display-tooltip-when-elided="true" name="credits" class="button-style" />
+            <ui:Button tabindex="-1" text="Exit To Desktop" display-tooltip-when-elided="true" name="exit-to-desktop" class="button-style" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
