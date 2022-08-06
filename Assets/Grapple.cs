@@ -5,20 +5,19 @@ using UnityEngine.InputSystem;
 
 public class Grapple : MonoBehaviour
 {
+    public DistanceJoint2D PlayerDistanceJoint;
     private LineRenderer lineRenderer;
 
     public LayerMask GroundLayerMask;
 
     public GameObject TwoPointRope;
-
-    private GameObject hook;
+    public GameObject Hook;
     private GameObject grappleInstance;
 
 
     void Start()
     {
-        hook = new GameObject();
-        hook.name = "Hook";
+        PlayerDistanceJoint.enabled = false;
 
         lineRenderer = GetComponent<LineRenderer>();
 
@@ -44,13 +43,16 @@ public class Grapple : MonoBehaviour
 
             Vector2 point = hit.point;
 
-            hook.transform.position = point;
+            FindObjectOfType<PlayerMovement>().IsGrappling = true;
+            Hook.transform.position = point;
 
-            grappleInstance = Instantiate(TwoPointRope);
+            grappleInstance = Instantiate(TwoPointRope, transform.parent.parent);
+
+            grappleInstance.GetComponent<TwoPointRope>().LineLength = (transform.position - Hook.transform.position).magnitude;
             grappleInstance.GetComponent<TwoPointRope>().StartPoint = transform;
-            grappleInstance.GetComponent<TwoPointRope>().EndPoint = hook.transform;
+            grappleInstance.GetComponent<TwoPointRope>().EndPoint = Hook.transform;
 
-
+            PlayerDistanceJoint.distance = (transform.position - Hook.transform.position).magnitude;
         }
 
     }
@@ -71,9 +73,5 @@ public class Grapple : MonoBehaviour
         GetComponent<EdgeCollider2D>().points = list;
         */
 
-        if (Physics2D.Linecast(lineRenderer.GetPosition(0), lineRenderer.GetPosition(lineRenderer.positionCount-1), GroundLayerMask))
-        {
-            Debug.Log("HIT HIT HIT");
-        }
     }
 }

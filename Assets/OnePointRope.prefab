@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55c32278be7dce4ebe4d3c3a1952133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LengthBetweenSegments: 0.25
-  NumberOfSegments: 35
+  SegmentFrequency: 3
+  LineLength: 10
   LineWidth: 0.06
   ConstraintAppliedPerFrame: 100
   GravityScale: 1.5

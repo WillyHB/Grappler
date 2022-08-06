@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public bool IsGrappling;
+    public float GrapplePower = 50;
+
     void Start()
     {
 
@@ -101,6 +104,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        rb.velocity = new Vector2(accelerant, rb.velocity.y);
+        if (!IsGrappling)
+        {
+            rb.velocity = new Vector2(accelerant == 0 ? rb.velocity.x : accelerant, rb.velocity.y);
+        }
+
+        else
+        {
+            rb.AddForce(new Vector2(val * (GrapplePower * Time.deltaTime), 0));
+        }
+
     }
 }

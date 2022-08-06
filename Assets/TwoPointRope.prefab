@@ -80,8 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPoint: {fileID: 6750984759920552087}
   EndPoint: {fileID: 6750984758678311653}
-  LengthBetweenSegments: 0.25
-  NumberOfSegments: 35
+  SegmentFrequency: 4
+  LineLength: 10
   LineWidth: 0.1
   ConstraintAppliedPerFrame: 100
   GravityScale: 1

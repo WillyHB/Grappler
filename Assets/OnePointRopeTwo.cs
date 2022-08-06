@@ -1,61 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class TwoPointRope : MonoBehaviour
+public class OnePointRopeTwo : MonoBehaviour
 {
-    public Transform StartPoint;
-    public Transform EndPoint;
-
     private LineRenderer lineRenderer;
     private readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
 
-    private float lengthBetweenSegments;
     private int numberOfSegments;
 
-    public int SegmentFrequency = 3;
-    private int segmentFrequency;
-    public float LineLength = 10;
-    private float lineLength;
-
-    public float LineWidth = 0.1f;
+    [HideInInspector]public float LengthBetweenSegments = 0.25f;
+    [HideInInspector] public int NumberOfSegments = 35;
+    [HideInInspector] public int SegmentFrequency = 10;
+    [HideInInspector] public int LineLength = 10;
+    [HideInInspector] public float LineWidth = 0.1f;
+    [HideInInspector] public bool AdvancedOptions = false;
 
     public int ConstraintAppliedPerFrame = 100;
 
     public float GravityScale = 1;
 
+    public bool FollowMousePosition;
+
     // Use this for initialization
     void Start()
     {
+        if (!AdvancedOptions)
+        {
+            NumberOfSegments = SegmentFrequency * LineLength;
+            LengthBetweenSegments = (float)LineLength / NumberOfSegments;
+        }
+
         lineRenderer = GetComponent<LineRenderer>();
 
         ResetRope();
     }
-   
 
     private void ResetRope()
     {
-        lineLength = LineLength;
-        segmentFrequency = SegmentFrequency;
-
         ropeSegments.Clear();
+        numberOfSegments = NumberOfSegments;
 
-        numberOfSegments = (int)(SegmentFrequency * LineLength);
-        lengthBetweenSegments = (float)LineLength / numberOfSegments;
-
-        Vector3 ropeStartPoint = StartPoint.position;
+        Vector3 ropeStartPoint = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
 
         for (int i = 0; i < numberOfSegments; i++)
         {
             ropeSegments.Add(new RopeSegment(ropeStartPoint));
-            ropeStartPoint.y -= lengthBetweenSegments;
+            ropeStartPoint.y -= LengthBetweenSegments;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SegmentFrequency != segmentFrequency || LineLength != lineLength)
+        if (NumberOfSegments != numberOfSegments)
         {
             ResetRope();
         }
@@ -71,6 +70,7 @@ public class TwoPointRope : MonoBehaviour
     private void Simulate()
     {
         // SIMULATION
+
         for (int i = 1; i < numberOfSegments; i++)
         {
             RopeSegment firstSegment = ropeSegments[i];
@@ -90,15 +90,10 @@ public class TwoPointRope : MonoBehaviour
 
     private void ApplyConstraint()
     {
-        //Constrant to First Point 
+        //Constrant to Mouse
         RopeSegment firstSegment = ropeSegments[0];
-        firstSegment.posNow = StartPoint.position;
+        firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
         ropeSegments[0] = firstSegment;
-
-        //Constrant to Second Point 
-        RopeSegment endSegment = ropeSegments[ropeSegments.Count - 1];
-        endSegment.posNow = EndPoint.position;
-        ropeSegments[^1] = endSegment;
 
         for (int i = 0; i < numberOfSegments - 1; i++)
         {
@@ -106,8 +101,7 @@ public class TwoPointRope : MonoBehaviour
             RopeSegment secondSeg = ropeSegments[i + 1];
 
             float dist = (firstSeg.posNow - secondSeg.posNow).magnitude;
-            float error = dist - lengthBetweenSegments;
-
+            float error = dist - LengthBetweenSegments;
             Vector2 changeDir = (firstSeg.posNow - secondSeg.posNow).normalized;
 
             Vector2 changeAmount = changeDir * error;
@@ -132,8 +126,8 @@ public class TwoPointRope : MonoBehaviour
         lineRenderer.startWidth = LineWidth;
         lineRenderer.endWidth = LineWidth;
 
-        Vector3[] ropePositions = new Vector3[numberOfSegments];
-        for (int i = 0; i < numberOfSegments; i++)
+        Vector3[] ropePositions = new Vector3[NumberOfSegments];
+        for (int i = 0; i < NumberOfSegments; i++)
         {
             ropePositions[i] = ropeSegments[i].posNow;
         }
