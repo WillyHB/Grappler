@@ -1140,6 +1140,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   GroundedCheckRadius: 0.15
+  IsGrappling: 0
+  GrapplePower: 50
 --- !u!232 &676480561
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -1150,7 +1152,7 @@ DistanceJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 607830386}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
@@ -1724,7 +1726,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   TwoPointRope: {fileID: 6750984759069912465, guid: d32589177ad155847bad8006bec8dadd, type: 3}
-  Hook: {fileID: 0}
+  Hook: {fileID: 607830384}
 --- !u!1001 &6750984759999715358
 PrefabInstance:
   m_ObjectHideFlags: 0
