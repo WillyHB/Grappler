@@ -9,10 +9,17 @@ public class Grapple : MonoBehaviour
 
     public LayerMask GroundLayerMask;
 
+    public GameObject TwoPointRope;
+
+    private GameObject hook;
+    private GameObject grappleInstance;
 
 
     void Start()
     {
+        hook = new GameObject();
+        hook.name = "Hook";
+
         lineRenderer = GetComponent<LineRenderer>();
 
         lineRenderer.useWorldSpace = true;
@@ -30,8 +37,20 @@ public class Grapple : MonoBehaviour
 
         if (hit)
         {
+            if (grappleInstance != null)
+            {
+                Destroy(grappleInstance);
+            }
+
             Vector2 point = hit.point;
-            lineRenderer.SetPosition(1, new Vector3(point.x, point.y, 0));
+
+            hook.transform.position = point;
+
+            grappleInstance = Instantiate(TwoPointRope);
+            grappleInstance.GetComponent<TwoPointRope>().StartPoint = transform;
+            grappleInstance.GetComponent<TwoPointRope>().EndPoint = hook.transform;
+
+
         }
 
     }
@@ -39,7 +58,7 @@ public class Grapple : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        lineRenderer.SetPosition(0, transform.position);
+        //lineRenderer.SetPosition(0, transform.position);
 
         /*
         Vector2[] list = new Vector2[lineRenderer.positionCount];

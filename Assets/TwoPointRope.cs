@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class OnePointRope : MonoBehaviour
+public class TwoPointRope : MonoBehaviour
 {
+    public Transform StartPoint;
+    public Transform EndPoint;
+
     private LineRenderer lineRenderer;
     private readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
 
@@ -17,8 +19,6 @@ public class OnePointRope : MonoBehaviour
     public int ConstraintAppliedPerFrame = 100;
 
     public float GravityScale = 1;
-
-    public bool FollowMousePosition;
 
     // Use this for initialization
     void Start()
@@ -33,7 +33,7 @@ public class OnePointRope : MonoBehaviour
         ropeSegments.Clear();
         numberOfSegments = NumberOfSegments;
 
-        Vector3 ropeStartPoint = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
+        Vector3 ropeStartPoint = StartPoint.position;
 
         for (int i = 0; i < numberOfSegments; i++)
         {
@@ -61,7 +61,6 @@ public class OnePointRope : MonoBehaviour
     private void Simulate()
     {
         // SIMULATION
-
         for (int i = 1; i < numberOfSegments; i++)
         {
             RopeSegment firstSegment = ropeSegments[i];
@@ -81,10 +80,16 @@ public class OnePointRope : MonoBehaviour
 
     private void ApplyConstraint()
     {
-        //Constrant to Mouse
+        //Constrant to First Point 
         RopeSegment firstSegment = ropeSegments[0];
-        firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
+        firstSegment.posNow = StartPoint.position;
         ropeSegments[0] = firstSegment;
+
+
+        //Constrant to Second Point 
+        RopeSegment endSegment = ropeSegments[ropeSegments.Count - 1];
+        endSegment.posNow = EndPoint.position;
+        ropeSegments[^1] = endSegment;
 
         for (int i = 0; i < numberOfSegments - 1; i++)
         {
@@ -117,8 +122,8 @@ public class OnePointRope : MonoBehaviour
         lineRenderer.startWidth = LineWidth;
         lineRenderer.endWidth = LineWidth;
 
-        Vector3[] ropePositions = new Vector3[NumberOfSegments];
-        for (int i = 0; i < NumberOfSegments; i++)
+        Vector3[] ropePositions = new Vector3[numberOfSegments];
+        for (int i = 0; i < numberOfSegments; i++)
         {
             ropePositions[i] = ropeSegments[i].posNow;
         }
