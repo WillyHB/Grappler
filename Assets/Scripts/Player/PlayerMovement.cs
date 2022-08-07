@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         float val = GetComponent<PlayerInput>().actions["Move"].ReadValue<float>();
 
+
         if (val == 0)
         {
             if (accelerant < 0)
@@ -104,6 +105,20 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if (IsGrappling)
+        {
+            float val2 = GetComponent<PlayerInput>().actions["GrappleLength"].ReadValue<float>();
+
+            if (val2 != 0)
+            {
+                GetComponent<DistanceJoint2D>().distance -= val2 * Time.deltaTime;
+                transform.parent.GetComponentInChildren<TwoPointRope>().LineLength -= val2 * Time.deltaTime;
+            }
+        }
+
+
+
+        
         if (!IsGrappling)
         {
             rb.velocity = new Vector2(accelerant == 0 ? rb.velocity.x : accelerant, rb.velocity.y);
@@ -113,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(val * (GrapplePower * Time.deltaTime), 0));
         }
+        
 
     }
 }

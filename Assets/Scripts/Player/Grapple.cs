@@ -53,6 +53,7 @@ public class Grapple : MonoBehaviour
             grappleInstance.GetComponent<TwoPointRope>().EndPoint = Hook.transform;
 
             PlayerDistanceJoint.distance = (transform.position - Hook.transform.position).magnitude;
+            PlayerDistanceJoint.enabled = true;
         }
 
     }

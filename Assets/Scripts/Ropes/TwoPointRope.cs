@@ -1,63 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoPointRope : MonoBehaviour
+public class TwoPointRope : Rope
 {
     public Transform StartPoint;
     public Transform EndPoint;
 
-    private LineRenderer lineRenderer;
-    private readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
 
-    private float lengthBetweenSegments;
-    private int numberOfSegments;
-
-    public int SegmentFrequency = 3;
-    private int segmentFrequency;
-    public float LineLength = 10;
-    private float lineLength;
-
-    public float LineWidth = 0.1f;
-
-    public int ConstraintAppliedPerFrame = 100;
-
-    public float GravityScale = 1;
-
-    // Use this for initialization
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
 
-        ResetRope();
+        ResetRope(StartPoint.position);
     }
    
-
-    private void ResetRope()
-    {
-        lineLength = LineLength;
-        segmentFrequency = SegmentFrequency;
-
-        ropeSegments.Clear();
-
-        numberOfSegments = (int)(SegmentFrequency * LineLength);
-        lengthBetweenSegments = (float)LineLength / numberOfSegments;
-
-        Vector3 ropeStartPoint = StartPoint.position;
-
-        for (int i = 0; i < numberOfSegments; i++)
-        {
-            ropeSegments.Add(new RopeSegment(ropeStartPoint));
-            ropeStartPoint.y -= lengthBetweenSegments;
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (SegmentFrequency != segmentFrequency || LineLength != lineLength)
         {
-            ResetRope();
+            ResetRope(StartPoint.position);
         }
 
         DrawRope();
@@ -68,27 +30,9 @@ public class TwoPointRope : MonoBehaviour
         Simulate();
     }
 
-    private void Simulate()
-    {
-        // SIMULATION
-        for (int i = 1; i < numberOfSegments; i++)
-        {
-            RopeSegment firstSegment = ropeSegments[i];
-            Vector2 velocity = firstSegment.posNow - firstSegment.posOld;
-            firstSegment.posOld = firstSegment.posNow;
-            firstSegment.posNow += velocity;
-            firstSegment.posNow.y -= GravityScale * Time.fixedDeltaTime;
-            ropeSegments[i] = firstSegment;
-        }
 
-        //CONSTRAINTS
-        for (int i = 0; i < ConstraintAppliedPerFrame; i++)
-        {
-            ApplyConstraint();
-        }
-    }
 
-    private void ApplyConstraint()
+    protected override void ApplyConstraint()
     {
         //Constrant to First Point 
         RopeSegment firstSegment = ropeSegments[0];
@@ -140,17 +84,5 @@ public class TwoPointRope : MonoBehaviour
 
         lineRenderer.positionCount = ropePositions.Length;
         lineRenderer.SetPositions(ropePositions);
-    }
-
-    public struct RopeSegment
-    {
-        public Vector2 posNow;
-        public Vector2 posOld;
-
-        public RopeSegment(Vector2 pos)
-        {
-            posNow = pos;
-            posOld = pos;
-        }
     }
 }

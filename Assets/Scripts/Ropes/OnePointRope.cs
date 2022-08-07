@@ -3,52 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class OnePointRope : MonoBehaviour
+public class OnePointRope : Rope
 {
-    private LineRenderer lineRenderer;
-    private readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
-
-    private float lengthBetweenSegments;
-    private int numberOfSegments;
-
-    public int SegmentFrequency = 3;
-    private int segmentFrequency;
-    public int LineLength = 10;
-    private int lineLength;
-
-    public float LineWidth = 0.1f;
-
-    public int ConstraintAppliedPerFrame = 100;
-
-    public float GravityScale = 1;
 
     public bool FollowMousePosition;
+
+    private RaycastHit2D[] RaycastHitBuffer = new RaycastHit2D[10];
 
     // Use this for initialization
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
 
-        ResetRope();
-    }
-
-    private void ResetRope()
-    {
-        lineLength = LineLength;
-        segmentFrequency = SegmentFrequency;
-
-        ropeSegments.Clear();
-
-        numberOfSegments = SegmentFrequency * LineLength;
-        lengthBetweenSegments = (float)LineLength / numberOfSegments;
-
-        Vector3 ropeStartPoint = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
-
-        for (int i = 0; i < numberOfSegments; i++)
-        {
-            ropeSegments.Add(new RopeSegment(ropeStartPoint));
-            ropeStartPoint.y -= lengthBetweenSegments;
-        }
+        ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position);
     }
 
     // Update is called once per frame
@@ -56,7 +23,7 @@ public class OnePointRope : MonoBehaviour
     {
         if (lineLength != LineLength || segmentFrequency != SegmentFrequency)
         {
-            ResetRope();
+            ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position);
         }
 
         DrawRope();
@@ -67,28 +34,7 @@ public class OnePointRope : MonoBehaviour
         Simulate();
     }
 
-    private void Simulate()
-    {
-        // SIMULATION
-
-        for (int i = 1; i < numberOfSegments; i++)
-        {
-            RopeSegment firstSegment = ropeSegments[i];
-            Vector2 velocity = firstSegment.posNow - firstSegment.posOld;
-            firstSegment.posOld = firstSegment.posNow;
-            firstSegment.posNow += velocity;
-            firstSegment.posNow.y -= GravityScale * Time.fixedDeltaTime;
-            ropeSegments[i] = firstSegment;
-        }
-
-        //CONSTRAINTS
-        for (int i = 0; i < ConstraintAppliedPerFrame; i++)
-        {
-            ApplyConstraint();
-        }
-    }
-
-    private void ApplyConstraint()
+    protected override void ApplyConstraint()
     {
         //Constrant to Mouse
         RopeSegment firstSegment = ropeSegments[0];
@@ -96,7 +42,7 @@ public class OnePointRope : MonoBehaviour
         ropeSegments[0] = firstSegment;
 
         for (int i = 0; i < numberOfSegments - 1; i++)
-        {
+        {   
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
 
@@ -105,6 +51,27 @@ public class OnePointRope : MonoBehaviour
             Vector2 changeDir = (firstSeg.posNow - secondSeg.posNow).normalized;
 
             Vector2 changeAmount = changeDir * error;
+
+
+            
+            int result = Physics2D.CircleCast(ropeSegments[i].posNow, 0.1f, changeAmount.normalized, contactFilter, RaycastHitBuffer, changeAmount.magnitude);
+
+            if (result > 0)
+            {
+                for (int j = 0; j < result; j++)
+                {
+                    if (RaycastHitBuffer[j].collider.gameObject.layer == 3)
+                    {
+                        /*
+                         * 
+                         * WE NEED TO RETHINK OUR MATH
+                         * THE CONSTRAINTS ARE PULLING THE ROPE INTO THE COLLIDER
+                         * IF THERE IS SLACK (WHICH THERE IS ON ONE POINT ROPES) THIS SHOULD NOT OCCUR
+                         * 
+                         * WE SHOULD MOVE POINTS BELOW TO AVOID THIS I DON'T KNOW MAN
+                    }
+                }
+            }
 
             if (i != 0)
             {
@@ -134,17 +101,5 @@ public class OnePointRope : MonoBehaviour
 
         lineRenderer.positionCount = ropePositions.Length;
         lineRenderer.SetPositions(ropePositions);
-    }
-
-    public struct RopeSegment
-    {
-        public Vector2 posNow;
-        public Vector2 posOld;
-
-        public RopeSegment(Vector2 pos)
-        {
-            posNow = pos;
-            posOld = pos;
-        }
     }
 }
