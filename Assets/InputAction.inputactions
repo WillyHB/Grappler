@@ -156,7 +156,7 @@
                 {
                     "name": "positive",
                     "id": "823d2e43-9578-4435-a4df-4b1c65a90b06",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -167,7 +167,7 @@
                 {
                     "name": "negative",
                     "id": "7f161e7c-c7af-4160-80cf-9126e7786a1b",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",

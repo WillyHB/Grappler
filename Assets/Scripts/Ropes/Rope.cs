@@ -22,12 +22,6 @@ public abstract class Rope : MonoBehaviour
 
     public float GravityScale = 1;
 
-    public LayerMask CollisionLayerMask;
-    public ContactFilter2D contactFilter = new() { useTriggers = false };
-
-    RaycastHit2D[] RaycastHitBuffer = new RaycastHit2D[10];
-    Collider2D[] ColliderHitBuffer = new Collider2D[10];
-
     protected void Simulate()
     {
         // SIMULATION
@@ -39,24 +33,6 @@ public abstract class Rope : MonoBehaviour
             firstSegment.posNow += velocity;
             firstSegment.posNow.y -= GravityScale * Time.fixedDeltaTime;
 
-            Vector3 direction = (ropeSegments[i].posNow - firstSegment.posNow);
-
-            int result = Physics2D.CircleCast(ropeSegments[i].posNow, 0.1f, direction.normalized, contactFilter, RaycastHitBuffer, direction.magnitude);
-            
-            if (result > 0)
-            {
-                for (int j = 0; j < result; j++)
-                {
-                    if (RaycastHitBuffer[j].collider.gameObject.layer == 3)
-                    {
-                        Vector2 hitPoint2 = RaycastHitBuffer[j].collider.bounds.ClosestPoint(RaycastHitBuffer[j].point);
-                        Vector2 collidercenter = new Vector2(RaycastHitBuffer[j].collider.transform.position.x, RaycastHitBuffer[j].collider.transform.position.y);
-                        Vector2 collisionDirection = RaycastHitBuffer[j].point - collidercenter;
-                        Vector2 hitPos = collidercenter + collisionDirection;
-                        firstSegment.posNow = hitPoint2;
-                    }
-                }
-            }
             ropeSegments[i] = firstSegment;
         }
 
@@ -65,13 +41,7 @@ public abstract class Rope : MonoBehaviour
         {
             ApplyConstraint();
 
-            AdjustCollision();
         }
-    }
-
-    protected void AdjustCollision()
-    {
-        
     }
 
     protected abstract void ApplyConstraint();

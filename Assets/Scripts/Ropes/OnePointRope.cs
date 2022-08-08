@@ -46,32 +46,18 @@ public class OnePointRope : Rope
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
 
+            // The distance between the two rope segments
             float dist = (firstSeg.posNow - secondSeg.posNow).magnitude;
+
+            // The amount that the rope is stretched out of it's normal operating range
             float error = dist - lengthBetweenSegments;
+
+            // Normalized vector between the two segments
             Vector2 changeDir = (firstSeg.posNow - secondSeg.posNow).normalized;
 
+            // the vector that the rope segment has to move to pull itself back to normal operating range
             Vector2 changeAmount = changeDir * error;
 
-
-            
-            int result = Physics2D.CircleCast(ropeSegments[i].posNow, 0.1f, changeAmount.normalized, contactFilter, RaycastHitBuffer, changeAmount.magnitude);
-
-            if (result > 0)
-            {
-                for (int j = 0; j < result; j++)
-                {
-                    if (RaycastHitBuffer[j].collider.gameObject.layer == 3)
-                    {
-                        /*
-                         * 
-                         * WE NEED TO RETHINK OUR MATH
-                         * THE CONSTRAINTS ARE PULLING THE ROPE INTO THE COLLIDER
-                         * IF THERE IS SLACK (WHICH THERE IS ON ONE POINT ROPES) THIS SHOULD NOT OCCUR
-                         * 
-                         * WE SHOULD MOVE POINTS BELOW TO AVOID THIS I DON'T KNOW MAN
-                    }
-                }
-            }
 
             if (i != 0)
             {
