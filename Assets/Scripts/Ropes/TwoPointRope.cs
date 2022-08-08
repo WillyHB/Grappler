@@ -19,7 +19,8 @@ public class TwoPointRope : Rope
     {
         if (SegmentFrequency != segmentFrequency || LineLength != lineLength)
         {
-            ResetRope(StartPoint.position);
+            ModifyLength(EndPoint.position);
+            //ResetRope(StartPoint.position);
         }
 
         DrawRope();
@@ -30,8 +31,6 @@ public class TwoPointRope : Rope
         Simulate();
     }
 
-
-
     protected override void ApplyConstraint()
     {
         //Constrant to First Point 
@@ -40,7 +39,7 @@ public class TwoPointRope : Rope
         ropeSegments[0] = firstSegment;
 
         //Constrant to Second Point 
-        RopeSegment endSegment = ropeSegments[ropeSegments.Count - 1];
+        RopeSegment endSegment = ropeSegments[^1];
         endSegment.posNow = EndPoint.position;
         ropeSegments[^1] = endSegment;
 

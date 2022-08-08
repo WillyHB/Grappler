@@ -975,7 +975,6 @@ GameObject:
   - component: {fileID: 676480557}
   - component: {fileID: 676480556}
   - component: {fileID: 676480558}
-  - component: {fileID: 676480560}
   - component: {fileID: 676480559}
   - component: {fileID: 676480561}
   - component: {fileID: 676480562}
@@ -1121,28 +1120,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &676480560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676480554}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adaeaba5a3449a54cace54e37b40e0b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 200
-  JumpForce: 200
-  StopAccelerant: 25
-  StartAccelerant: 25
-  GroundLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  GroundedCheckRadius: 0.15
-  IsGrappling: 0
-  GrapplePower: 50
 --- !u!232 &676480561
 DistanceJoint2D:
   m_ObjectHideFlags: 0

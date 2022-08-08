@@ -20,6 +20,16 @@ public class PlayerStateMachine : StateMachine
     public PlayerInput PlayerInput { get; private set; }
 
 
+    public bool IsGrounded { get; set; }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        IsGrounded = Physics2D.OverlapCircle(
+        new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
+        GroundedCheckRadius, GroundLayerMask);
+    }
     protected void Awake()
     {
   

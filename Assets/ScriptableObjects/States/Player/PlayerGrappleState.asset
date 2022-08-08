@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433ba75fd06214247a8b3092b084c63c, type: 3}
   m_Name: PlayerGrappleState
   m_EditorClassIdentifier: 
-  GrapplePower: 50
+  GrapplePower: 100
+  GrappleExtensionSpeed: 2

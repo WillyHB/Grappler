@@ -46,7 +46,6 @@ public class Grapple : MonoBehaviour
             var sm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
             sm.Transition(sm.GrappleState);
 
-            FindObjectOfType<PlayerMovement>().IsGrappling = true;
             Hook.transform.position = point;
 
             grappleInstance = Instantiate(TwoPointRope, transform.parent.parent);

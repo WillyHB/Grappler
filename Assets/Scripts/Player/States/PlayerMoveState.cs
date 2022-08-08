@@ -16,11 +16,7 @@ public class PlayerMoveState : State
 
     private float accelerant;
 
-
-    private bool isGrounded = false;
-
     private PlayerStateMachine sm;
-
 
     public override void OnEnter(StateMachine fsm)
     {
@@ -48,11 +44,7 @@ public class PlayerMoveState : State
     {
         base.Update();
 
-        isGrounded = Physics2D.OverlapCircle(
-        new Vector2(sm.transform.position.x, sm.transform.position.y - sm.GetComponent<CapsuleCollider2D>().size.y / 2),
-        sm.GroundedCheckRadius, sm.GroundLayerMask);
-
-        if (!isGrounded)
+        if (!sm.IsGrounded)
         {
             sm.Transition(sm.FallState);
         }
@@ -114,7 +106,9 @@ public class PlayerMoveState : State
             }
         }
 
-        sm.Rigidbody.velocity = new Vector2(accelerant == 0 ? sm.Rigidbody.velocity.x : accelerant, sm.Rigidbody.velocity.y);
+        
+
+        sm.Rigidbody.velocity = new Vector2(val * (Speed * Time.deltaTime), sm.Rigidbody.velocity.y);
 
     }
 }

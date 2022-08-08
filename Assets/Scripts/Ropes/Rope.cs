@@ -22,6 +22,11 @@ public abstract class Rope : MonoBehaviour
 
     public float GravityScale = 1;
 
+    private void Update()
+    {
+        
+    }
+
     protected void Simulate()
     {
         // SIMULATION
@@ -46,6 +51,22 @@ public abstract class Rope : MonoBehaviour
 
     protected abstract void ApplyConstraint();
 
+
+    protected void ModifyLength(Vector2 pos)
+    {
+        numberOfSegments = (int)(SegmentFrequency * LineLength);
+        lengthBetweenSegments = (float)LineLength / numberOfSegments;
+
+        while (numberOfSegments > ropeSegments.Count)
+        {
+            ropeSegments.Add(new RopeSegment(pos));
+        }
+
+        while (numberOfSegments < ropeSegments.Count)
+        {
+            ropeSegments.RemoveAt(ropeSegments.Count - 1);
+        }
+    }
     protected void ResetRope(Vector3 startPosition)
     {
         lineLength = LineLength;

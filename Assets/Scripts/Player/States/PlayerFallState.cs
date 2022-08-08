@@ -7,7 +7,7 @@ public class PlayerFallState : State
 {
     PlayerStateMachine sm;
 
-    private bool isGrounded;
+    public float MoveForce = 10; 
 
     public override void OnEnter(StateMachine fsm)
     {
@@ -20,13 +20,18 @@ public class PlayerFallState : State
     {
         base.Update();
 
-        isGrounded = Physics2D.OverlapCircle(
-new Vector2(sm.transform.position.x, sm.transform.position.y - sm.GetComponent<CapsuleCollider2D>().size.y / 2),
-sm.GroundedCheckRadius, sm.GroundLayerMask);
-
-        if (isGrounded)
+        if (sm.IsGrounded)
         {
             sm.Transition(sm.IdleState);
         }
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        float val = sm.PlayerInput.actions["Move"].ReadValue<float>();
+
+        //sm.Rigidbody.AddForce(new Vector2(val * MoveForce, 0));
     }
 }

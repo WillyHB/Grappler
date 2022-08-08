@@ -8,8 +8,6 @@ public class OnePointRope : Rope
 
     public bool FollowMousePosition;
 
-    private RaycastHit2D[] RaycastHitBuffer = new RaycastHit2D[10];
-
     // Use this for initialization
     void Start()
     {
@@ -23,7 +21,8 @@ public class OnePointRope : Rope
     {
         if (lineLength != LineLength || segmentFrequency != SegmentFrequency)
         {
-            ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position);
+            ModifyLength(new Vector2(ropeSegments[^1].posNow.x, ropeSegments[^1].posNow.y - lengthBetweenSegments));
+            //ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position);
         }
 
         DrawRope();

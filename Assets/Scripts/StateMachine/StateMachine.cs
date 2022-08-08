@@ -25,12 +25,12 @@ public abstract class StateMachine : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    protected virtual void Update()
     {
         CurrentState.Update();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         CurrentState.FixedUpdate();
     }
