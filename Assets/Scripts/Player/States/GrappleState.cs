@@ -36,6 +36,13 @@ public class GrappleState : State
         {
             FindObjectOfType<Grapple>().ReleaseGrapple();
 
+            sm.Transition(sm.JumpState);
+        }
+
+        if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            FindObjectOfType<Grapple>().ReleaseGrapple();
+
             sm.Transition(sm.FallState);
         }
     }
