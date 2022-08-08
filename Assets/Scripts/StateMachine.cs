@@ -1,28 +1,37 @@
-using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.UIElements;
-using UnityEditor.UIElements;
+using System;
 
-public class StateMachine : MonoBehaviour
+public abstract class StateMachine : MonoBehaviour
 {
-    public List<State> States = new List<State>();
-
-    public State DefaultState;
-
     private State CurrentState;
 
     // Start is called before the first frame update
-    void Awake()
+    protected virtual void Start()
     {
-        CurrentState = CurrentState != null ? CurrentState : DefaultState;
+        Transition(GetInitialState());
+    }
+
+    protected abstract State GetInitialState();
+
+    public State Transition(State state)
+    {
+        if (CurrentState != null) CurrentState.OnExit();
+        CurrentState = state;
+        CurrentState.OnEnter(this);
+
+        return CurrentState;
+
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        CurrentState.Update();
+    }
+
+    private void FixedUpdate()
+    {
+        CurrentState.FixedUpdate();
     }
 }

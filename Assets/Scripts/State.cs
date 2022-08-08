@@ -4,12 +4,13 @@ using System.Collections.Generic;
 
 public abstract class State : ScriptableObject
 {
-    public List<Transition> Transitions = new();
-    public StateMachine FSM { get; set; }
+    //public List<Transition> Transitions = new();
+    //public virtual StateMachine FSM { get; set; }
 
-    public abstract void Update();
-    public abstract void OnEnter();
-    public abstract void OnExit();
+    public virtual void Update() { }
+    public virtual void FixedUpdate() { }
+    public virtual void OnEnter(StateMachine fsm) { }
+    public virtual void OnExit() { }
 
 }
 

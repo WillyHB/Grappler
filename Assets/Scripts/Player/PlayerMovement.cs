@@ -119,12 +119,12 @@ public class PlayerMovement : MonoBehaviour
 
 
         
-        if (!IsGrappling)
+        if (!IsGrappling || (IsGrappling && isGrounded))
         {
             rb.velocity = new Vector2(accelerant == 0 ? rb.velocity.x : accelerant, rb.velocity.y);
         }
 
-        else
+        else if (IsGrappling)
         {
             rb.AddForce(new Vector2(val * (GrapplePower * Time.deltaTime), 0));
         }

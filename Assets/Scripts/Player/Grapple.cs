@@ -43,6 +43,9 @@ public class Grapple : MonoBehaviour
 
             Vector2 point = hit.point;
 
+            var sm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
+            sm.Transition(sm.GrappleState);
+
             FindObjectOfType<PlayerMovement>().IsGrappling = true;
             Hook.transform.position = point;
 
@@ -58,21 +61,9 @@ public class Grapple : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    private void Update()
+    public void ReleaseGrapple()
     {
-        //lineRenderer.SetPosition(0, transform.position);
-
-        /*
-        Vector2[] list = new Vector2[lineRenderer.positionCount];
-
-        for (int i = 0; i < lineRenderer.positionCount; i++)
-        {
-            list[i] = transform.InverseTransformPoint(lineRenderer.GetPosition(i));
-        }
-
-        GetComponent<EdgeCollider2D>().points = list;
-        */
-
+        Destroy(grappleInstance);
+        PlayerDistanceJoint.enabled = false;
     }
 }
