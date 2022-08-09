@@ -4,7 +4,7 @@ using System;
 
 public abstract class StateMachine : MonoBehaviour
 {
-    private State CurrentState;
+    protected State CurrentState;
 
     // Start is called before the first frame update
     protected virtual void Start()

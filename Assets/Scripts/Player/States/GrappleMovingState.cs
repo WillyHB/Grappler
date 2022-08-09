@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName ="States/Player/MoveState")]
-public class PlayerMoveState : GroundedState
+[CreateAssetMenu(menuName = "States/Player/GrappleMoving")]
+public class GrappleMovingState : GrappleGroundedState
 {
     public float Speed = 100;
 
@@ -23,6 +22,11 @@ public class PlayerMoveState : GroundedState
     public override void Update()
     {
         base.Update();
+
+        if (!sm.IsGrounded)
+        {
+            sm.Transition(sm.GrappleState);
+        }
     }
     // Update is called once per frame
     public override void FixedUpdate()
@@ -63,6 +67,7 @@ public class PlayerMoveState : GroundedState
         else
         {
             sm.Transition(sm.IdleState);
+
         }
 
     }

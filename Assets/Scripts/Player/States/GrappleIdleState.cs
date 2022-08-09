@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "States/Player/IdleState")]
-public class PlayerIdleState : GroundedState
+[CreateAssetMenu(menuName ="States/Player/GrappleIdle")]
+public class GrappleIdleState : GrappleGroundedState
 {
     public float GroundFriction = 25;
 
@@ -12,10 +12,14 @@ public class PlayerIdleState : GroundedState
         base.OnEnter(fsm);
     }
 
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
     public override void Update()
     {
         base.Update();
-
 
         if (moveValue == 0)
         {
@@ -33,7 +37,7 @@ public class PlayerIdleState : GroundedState
 
         else
         {
-            sm.Transition(sm.MoveState);
+            sm.Transition(sm.GrappleMovingState);
         }
     }
 }

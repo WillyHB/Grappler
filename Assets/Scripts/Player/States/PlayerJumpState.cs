@@ -18,6 +18,7 @@ public class PlayerJumpState : State
         sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, sm.Rigidbody.velocity.y < 0 ? 0 : sm.Rigidbody.velocity.y);
         sm.Rigidbody.AddForce(Vector2.up * JumpForce);
 
+        
         sm.Transition(sm.FallState);
     }
 }

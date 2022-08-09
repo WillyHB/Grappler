@@ -26,6 +26,8 @@ public class TwoPointRope : Rope
         DrawRope();
     }
 
+    public float GetDistanceBetweenPoints() => (StartPoint.position - EndPoint.position).magnitude;
+
     private void FixedUpdate()
     {
         Simulate();

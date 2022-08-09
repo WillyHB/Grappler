@@ -5,11 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerStateMachine : StateMachine
 {
-    public GrappleState GrappleState;
     public PlayerMoveState MoveState;
     public PlayerIdleState IdleState;
     public PlayerJumpState JumpState;
     public PlayerFallState FallState;
+
+    public GrappleState GrappleState;
+    public GrappleIdleState GrappleIdleState;
+    public GrappleMovingState GrappleMovingState;
 
     [Space(25)]
     public LayerMask GroundLayerMask;
@@ -18,12 +21,14 @@ public class PlayerStateMachine : StateMachine
 
     public Rigidbody2D Rigidbody { get; private set; }
     public PlayerInput PlayerInput { get; private set; }
+    public Grapple Grapple { get; private set; }
 
 
     public bool IsGrounded { get; set; }
 
     protected override void Update()
     {
+        Debug.Log(CurrentState.GetType().ToString());
         base.Update();
 
         IsGrounded = Physics2D.OverlapCircle(
@@ -32,7 +37,7 @@ public class PlayerStateMachine : StateMachine
     }
     protected void Awake()
     {
-  
+        Grapple = FindObjectOfType<Grapple>();  
         PlayerInput = GetComponent<PlayerInput>();
         Rigidbody = GetComponent<Rigidbody2D>();
 

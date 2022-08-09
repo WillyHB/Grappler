@@ -1151,15 +1151,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd159b215d58b8948bb9e76ffe34f449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrappleState: {fileID: 11400000, guid: 6ea15e989b5dc8c4b8ba91b5b5406544, type: 2}
   MoveState: {fileID: 11400000, guid: a1fb6fd59811de44a991083693a55f3b, type: 2}
   IdleState: {fileID: 11400000, guid: fbbb8d1e8e03c5844846781febed6a3b, type: 2}
   JumpState: {fileID: 11400000, guid: b808fdea3ffc5c64cb46cca80c954803, type: 2}
   FallState: {fileID: 11400000, guid: 8c13fe23d52b1d74a886c1f5cc6c2c04, type: 2}
+  GrappleState: {fileID: 11400000, guid: 6ea15e989b5dc8c4b8ba91b5b5406544, type: 2}
+  GrappleIdleState: {fileID: 11400000, guid: ca624250feb6aa342afdf572a7ee163e, type: 2}
+  GrappleMovingState: {fileID: 11400000, guid: 1ba0df60d16de4c48bf55612a4f5f8c6, type: 2}
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  GroundedCheckRadius: 0.25
+  GroundedCheckRadius: 0.04
 --- !u!1 &1047285335
 GameObject:
   m_ObjectHideFlags: 0

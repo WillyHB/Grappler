@@ -2,22 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ElRaccoone.Tweens;
 
 public class Grapple : MonoBehaviour
 {
-    public DistanceJoint2D PlayerDistanceJoint;
+
     private LineRenderer lineRenderer;
+    private DistanceJoint2D playerDistanceJoint;
+    private GameObject player;
+
+    public float GrappleExtensionSpeed = 2;
 
     public LayerMask GroundLayerMask;
 
     public GameObject TwoPointRope;
     public GameObject Hook;
-    private GameObject grappleInstance;
+    [HideInInspector]public GameObject grappleInstance;
+
+    public bool IsGrappling => grappleInstance != null;
 
 
     void Start()
     {
-        PlayerDistanceJoint.enabled = false;
+        player = GameObject.FindWithTag("Player");
+        playerDistanceJoint = player.GetComponent<DistanceJoint2D>();
+        playerDistanceJoint.enabled = false;
 
         lineRenderer = GetComponent<LineRenderer>();
 
@@ -26,6 +35,39 @@ public class Grapple : MonoBehaviour
 
         GetComponentInParent<PlayerInput>().actions["Grapple"].started += MousePressed;
 
+    }
+
+    private void Update()
+    {
+        if (IsGrappling)
+        {
+            if (Mouse.current.rightButton.wasPressedThisFrame)
+            {
+                FindObjectOfType<Grapple>().ReleaseGrapple();
+                player.transform.TweenRotation(Vector3.zero, 0.1f);
+            }
+
+            TwoPointRope tpr = grappleInstance.GetComponent<TwoPointRope>();
+            if (tpr.LineLength <= tpr.GetDistanceBetweenPoints())
+            {
+                Vector3 dir = player.transform.position - GameObject.Find("Hook").transform.position;
+
+                Quaternion rot = Quaternion.LookRotation(Vector3.forward, -dir);
+
+                player.transform.rotation = rot;
+            }
+
+            float grappleVal = player.GetComponent<PlayerInput>().actions["GrappleLength"].ReadValue<float>();
+
+            if (grappleVal != 0)
+            {
+                if (tpr.LineLength - grappleVal * GrappleExtensionSpeed * Time.deltaTime > 0.25)
+                {
+                    playerDistanceJoint.distance -= grappleVal * GrappleExtensionSpeed * Time.deltaTime;
+                    tpr.LineLength -= grappleVal * GrappleExtensionSpeed * Time.deltaTime;
+                }
+            }
+        }
     }
 
     private void MousePressed(InputAction.CallbackContext cc)
@@ -43,8 +85,9 @@ public class Grapple : MonoBehaviour
 
             Vector2 point = hit.point;
 
-            var sm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
-            sm.Transition(sm.GrappleState);
+            
+            //var sm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
+            //sm.Transition(sm.GrappleState);
 
             Hook.transform.position = point;
 
@@ -54,8 +97,8 @@ public class Grapple : MonoBehaviour
             grappleInstance.GetComponent<TwoPointRope>().StartPoint = transform;
             grappleInstance.GetComponent<TwoPointRope>().EndPoint = Hook.transform;
 
-            PlayerDistanceJoint.distance = (transform.position - Hook.transform.position).magnitude;
-            PlayerDistanceJoint.enabled = true;
+            playerDistanceJoint.distance = (transform.position - Hook.transform.position).magnitude;
+            playerDistanceJoint.enabled = true;
         }
 
     }
@@ -63,6 +106,6 @@ public class Grapple : MonoBehaviour
     public void ReleaseGrapple()
     {
         Destroy(grappleInstance);
-        PlayerDistanceJoint.enabled = false;
+        playerDistanceJoint.enabled = false;
     }
 }

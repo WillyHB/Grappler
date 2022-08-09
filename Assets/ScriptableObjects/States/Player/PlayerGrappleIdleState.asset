@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d6c285d337ce9498e44cc4b7b7eebd, type: 3}
-  m_Name: PlayerMoveState
+  m_Script: {fileID: 11500000, guid: 8fe744daafda6df4db4b1d663ca886b0, type: 3}
+  m_Name: PlayerGrappleIdleState
   m_EditorClassIdentifier: 
-  Speed: 200
-  StartAccelerant: 25
+  GroundFriction: 25
