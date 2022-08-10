@@ -42,7 +42,6 @@ public class PlayerFallState : State
         {
             if (coyoteTimer < CoyoteTime)
             {
-                Debug.Log(sm.PreviousState);
                 sm.Transition(sm.JumpState);
                 return;
             }
@@ -63,7 +62,7 @@ public class PlayerFallState : State
 
         if (sm.IsGrounded)
         {
-            if (sm.Rigidbody.velocity.y <= 0)
+            if (sm.Rigidbody.velocity.y < 0)
             {
                 if (jumpBuffered)
                 {
