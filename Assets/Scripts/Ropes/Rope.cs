@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public abstract class Rope : MonoBehaviour
 {
     protected LineRenderer lineRenderer;
