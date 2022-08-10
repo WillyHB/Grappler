@@ -55,8 +55,6 @@ public class ConnectionRope : Rope
 
         float radians = rotation * Mathf.PI / 180;
 
-        Vector2 unrotatedPos = (Vector2)connectedBody.transform.position + endOffset;
-
         float xRotate = endOffset.x * Mathf.Cos(radians) - endOffset.y * Mathf.Sin(radians);
         float yRotate = endOffset.x * Mathf.Sin(radians) + endOffset.y * Mathf.Cos(radians);
 
