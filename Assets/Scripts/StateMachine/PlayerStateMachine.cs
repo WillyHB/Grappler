@@ -11,8 +11,6 @@ public class PlayerStateMachine : StateMachine
     public PlayerFallState FallState;
 
     public GrappleState GrappleState;
-    public GrappleIdleState GrappleIdleState;
-    public GrappleMovingState GrappleMovingState;
 
     [Space(25)]
     public LayerMask GroundLayerMask;

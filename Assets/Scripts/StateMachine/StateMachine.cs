@@ -4,8 +4,9 @@ using System;
 
 public abstract class StateMachine : MonoBehaviour
 {
-    protected State CurrentState;
+    public State CurrentState { get; private set; }
 
+    public Type PreviousState { get; private set; }
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -16,9 +17,15 @@ public abstract class StateMachine : MonoBehaviour
 
     public State Transition(State state)
     {
-        if (CurrentState != null) CurrentState.OnExit();
+        if (CurrentState != null)
+        {
+            CurrentState.OnExit();
+            PreviousState = CurrentState.GetType();
+        }
+
         CurrentState = state;
-        CurrentState.OnEnter(this);
+
+        state.OnEnter(this);
 
         return CurrentState;
 

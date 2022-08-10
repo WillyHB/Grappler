@@ -11,11 +11,10 @@ public class GroundedState : State
     protected float accelerant;
 
     protected float moveValue;
-
-
-
     public override void OnEnter(StateMachine fsm)
     {
+        base.OnEnter(fsm);
+
         sm = (PlayerStateMachine)fsm;
         accelerant = sm.Rigidbody.velocity.x;
     }

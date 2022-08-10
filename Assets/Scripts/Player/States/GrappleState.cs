@@ -23,7 +23,7 @@ public class GrappleState : State
 
         // CHECK GRAPPLE SCRIPT FOR GRAPPLE LENGTH MODIFICATIONS
 
-        if (!FindObjectOfType<Grapple>().IsGrappling)
+        if (!sm.Grapple.IsGrappling)
         {
             sm.Transition(sm.IdleState);
 
@@ -47,7 +47,7 @@ public class GrappleState : State
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            FindObjectOfType<Grapple>().ReleaseGrapple();
+            sm.Grapple.ReleaseGrapple();
             sm.Transition(sm.JumpState);
 
         }

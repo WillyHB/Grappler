@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerFallState
   m_EditorClassIdentifier: 
   JumpBufferTime: 0.1
+  CoyoteTime: 0.15

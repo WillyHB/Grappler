@@ -1604,7 +1604,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 676480554}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c45c992646830c44c9e92a2ef5904e43, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1658,8 +1658,6 @@ MonoBehaviour:
   JumpState: {fileID: 11400000, guid: b808fdea3ffc5c64cb46cca80c954803, type: 2}
   FallState: {fileID: 11400000, guid: 8c13fe23d52b1d74a886c1f5cc6c2c04, type: 2}
   GrappleState: {fileID: 11400000, guid: 6ea15e989b5dc8c4b8ba91b5b5406544, type: 2}
-  GrappleIdleState: {fileID: 11400000, guid: ca624250feb6aa342afdf572a7ee163e, type: 2}
-  GrappleMovingState: {fileID: 11400000, guid: 1ba0df60d16de4c48bf55612a4f5f8c6, type: 2}
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 64

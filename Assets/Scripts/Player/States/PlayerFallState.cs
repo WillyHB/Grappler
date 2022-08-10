@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using ElRaccoone.Tweens;
 using UnityEngine.InputSystem;
@@ -12,7 +11,11 @@ public class PlayerFallState : State
     private bool jumpBuffered;
 
     public float JumpBufferTime = 1;
-    private float timer;
+    private float jumpTimer;
+
+    private bool coyoteTimeEnabled = false;
+    public float CoyoteTime = 0.1f;
+    private float coyoteTimer;
 
     public override void OnEnter(StateMachine fsm)
     {
@@ -20,34 +23,47 @@ public class PlayerFallState : State
 
         sm = fsm as PlayerStateMachine;
 
-        sm.PlayerInput.actions["Jump"].started += Jump;
+        sm.PlayerInput.actions["Jump"].performed += Jump;
+
+        coyoteTimeEnabled = sm.PreviousState.IsSubclassOf(typeof(GroundedState));
+        coyoteTimer = 0;
     }
 
     public override void OnExit()
     {
         base.OnExit();
 
-        sm.PlayerInput.actions["Jump"].started -= Jump;
+        sm.PlayerInput.actions["Jump"].performed -= Jump;
     }
 
     private void Jump(InputAction.CallbackContext cc)
     {
+        if (coyoteTimeEnabled)
+        {
+            if (coyoteTimer < CoyoteTime)
+            {
+                Debug.Log(sm.PreviousState);
+                sm.Transition(sm.JumpState);
+                return;
+            }
+        }
+
         jumpBuffered = true;
-        timer = 0;
+        jumpTimer = 0;
     }
 
     public override void Update()
     {
         base.Update();
 
-        if (timer > JumpBufferTime)
+        if (jumpTimer > JumpBufferTime)
         {
             jumpBuffered = false;
         }
 
         if (sm.IsGrounded)
         {
-            if (sm.Rigidbody.velocity.y < 0)
+            if (sm.Rigidbody.velocity.y <= 0)
             {
                 if (jumpBuffered)
                 {
@@ -55,20 +71,16 @@ public class PlayerFallState : State
                     jumpBuffered = false;
                     return;
                 }
+
                 sm.Transition(sm.IdleState);
                 return;
             }      
         }
 
-        if (FindObjectOfType<Grapple>().IsGrappling)
+        if (sm.Grapple.IsGrappling)
         {
             sm.Transition(sm.GrappleState);
         }
-
-        /*
-        float value = sm.PlayerInput.actions["Move"].ReadValue<float>();
-
-        sm.Rigidbody.AddForce(200 * Time.deltaTime * value * Vector2.right);*/
     }
 
 
@@ -78,8 +90,12 @@ public class PlayerFallState : State
 
         if (jumpBuffered)
         {
-            timer += 1 * Time.deltaTime;
+            jumpTimer += 1 * Time.deltaTime;
         }
 
+        if (coyoteTimeEnabled)
+        {
+            coyoteTimer += 1 * Time.deltaTime;
+        }
     }
 }
