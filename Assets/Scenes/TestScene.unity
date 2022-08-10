@@ -1007,6 +1007,7 @@ GameObject:
   - component: {fileID: 290769951}
   - component: {fileID: 290769950}
   - component: {fileID: 290769949}
+  - component: {fileID: 290769953}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -1128,6 +1129,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290769953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290769948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3805072d87bb2d4da455554e7b50b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToFace: {fileID: 302939528}
 --- !u!1 &302939525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1154,7 @@ GameObject:
   - component: {fileID: 302939527}
   - component: {fileID: 302939530}
   - component: {fileID: 302939529}
+  - component: {fileID: 302939531}
   m_Layer: 0
   m_Name: Vines
   m_TagString: Untagged
@@ -1196,11 +1211,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SegmentFrequency: 3
-  LineLength: 3
+  LineLength: 2.5
   LineWidth: 0.08
   ConstraintAppliedPerFrame: 100
   GravityScale: 1
+  StartRigidbody: {fileID: 302939527}
   ConnectedBody: {fileID: 290769949}
+  StartOffset: {x: 0, y: 0}
+  EndOffset: {x: 0, y: 0}
 --- !u!120 &302939530
 LineRenderer:
   serializedVersion: 2
@@ -1304,59 +1322,25 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!1 &607830384
-GameObject:
+--- !u!232 &302939531
+DistanceJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 607830385}
-  - component: {fileID: 607830386}
-  m_Layer: 0
-  m_Name: Hook
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &607830385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607830384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1047285336}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &607830386
-Rigidbody2D:
+  m_GameObject: {fileID: 302939525}
+  m_Enabled: 1
   serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607830384}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 11.001022
+  m_MaxDistanceOnly: 0
 --- !u!1 &627688667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,8 +1378,8 @@ Camera:
   m_GameObject: {fileID: 627688667}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.32845318, g: 0.42451593, b: 0.5754717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1404,9 +1388,9 @@ Camera:
   m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0013689254
+    x: 0.0013953489
     y: 0.002301496
-    width: 0.99657774
+    width: 0.9972093
     height: 0.99424624
   near clip plane: 0.3
   far clip plane: 1000
@@ -1513,8 +1497,8 @@ GameObject:
   - component: {fileID: 676480556}
   - component: {fileID: 676480558}
   - component: {fileID: 676480559}
-  - component: {fileID: 676480561}
   - component: {fileID: 676480562}
+  - component: {fileID: 676480563}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1657,25 +1641,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!232 &676480561
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676480554}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 607830386}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 0
-  m_Distance: 0.005
-  m_MaxDistanceOnly: 1
 --- !u!114 &676480562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,8 +1662,27 @@ MonoBehaviour:
   GrappleMovingState: {fileID: 11400000, guid: 1ba0df60d16de4c48bf55612a4f5f8c6, type: 2}
   GroundLayerMask:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 64
   GroundedCheckRadius: 0.04
+--- !u!232 &676480563
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676480554}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.005
+  m_MaxDistanceOnly: 1
 --- !u!1 &1047285335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1712,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676480555}
-  - {fileID: 607830385}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2038,6 +2021,7 @@ GameObject:
   - component: {fileID: 2092169907}
   - component: {fileID: 2092169909}
   - component: {fileID: 2092169908}
+  - component: {fileID: 2092169910}
   m_Layer: 0
   m_Name: Grapple
   m_TagString: Untagged
@@ -2180,8 +2164,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   TwoPointRope: {fileID: 6750984759069912465, guid: d32589177ad155847bad8006bec8dadd, type: 3}
-  Hook: {fileID: 607830384}
-  grappleInstance: {fileID: 0}
+--- !u!114 &2092169910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092169906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd59c838eb5fd549b49c79237f429ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SegmentFrequency: 3
+  LineLength: 10
+  LineWidth: 0.1
+  ConstraintAppliedPerFrame: 100
+  GravityScale: 1
+  StartRigidbody: {fileID: 676480556}
+  ConnectedBody: {fileID: 0}
+  StartOffset: {x: 0, y: 0}
+  EndOffset: {x: 0, y: 0}
 --- !u!1001 &6750984759999715358
 PrefabInstance:
   m_ObjectHideFlags: 0
