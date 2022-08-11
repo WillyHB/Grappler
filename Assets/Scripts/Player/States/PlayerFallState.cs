@@ -17,11 +17,16 @@ public class PlayerFallState : State
     public float CoyoteTime = 0.1f;
     private float coyoteTimer;
 
+    public float Speed = 75;
+    public float Accelerant = 25;
+    private float accelerant;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
 
         sm = fsm as PlayerStateMachine;
+        accelerant = sm.Rigidbody.velocity.x;
 
         sm.PlayerInput.actions["Jump"].performed += Jump;
 
@@ -87,6 +92,26 @@ public class PlayerFallState : State
     {
         base.FixedUpdate();
 
+        float moveValue = sm.PlayerInput.actions["Move"].ReadValue<float>();
+        float speed = moveValue * (Speed * Time.deltaTime);
+        if (moveValue > 0)
+        {
+            if (accelerant < speed)
+            {
+                accelerant += Accelerant * Time.deltaTime;
+            }
+        }
+
+        else if (moveValue < 0)
+        {
+            if (accelerant > speed)
+            {
+                accelerant -= Accelerant * Time.deltaTime;
+            }
+        }
+
+
+        sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
         if (jumpBuffered)
         {
             jumpTimer += 1 * Time.deltaTime;
