@@ -21,6 +21,8 @@ public class PlayerFallState : State
     public float Accelerant = 25;
     private float accelerant;
 
+    public float MaxFallSpeed = 100;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
@@ -36,6 +38,7 @@ public class PlayerFallState : State
 
     public override void OnExit()
     {
+
         base.OnExit();
 
         sm.PlayerInput.actions["Jump"].performed -= Jump;
@@ -60,6 +63,7 @@ public class PlayerFallState : State
     {
         base.Update();
 
+
         if (jumpTimer > JumpBufferTime)
         {
             jumpBuffered = false;
@@ -67,18 +71,15 @@ public class PlayerFallState : State
 
         if (sm.IsGrounded)
         {
-            if (sm.Rigidbody.velocity.y < 0)
+            if (jumpBuffered)
             {
-                if (jumpBuffered)
-                {
-                    sm.Transition(sm.JumpState);
-                    jumpBuffered = false;
-                    return;
-                }
-
-                sm.Transition(sm.IdleState);
+                sm.Transition(sm.JumpState);
+                jumpBuffered = false;
                 return;
-            }      
+            }
+
+            sm.Transition(sm.IdleState);
+            return;
         }
 
         if (sm.Grapple.IsGrappling)
@@ -91,6 +92,12 @@ public class PlayerFallState : State
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+
+
+        if (sm.Rigidbody.velocity.y < -MaxFallSpeed)
+        {
+            sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, -MaxFallSpeed);
+        }
 
         float moveValue = sm.PlayerInput.actions["Move"].ReadValue<float>();
         float speed = moveValue * (Speed * Time.deltaTime);
@@ -110,8 +117,17 @@ public class PlayerFallState : State
             }
         }
 
+        else
+        {
+            if (accelerant != sm.Rigidbody.velocity.x)
+            {
+                accelerant = sm.Rigidbody.velocity.x;
+            }
+        }
+
 
         sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
+
         if (jumpBuffered)
         {
             jumpTimer += 1 * Time.deltaTime;

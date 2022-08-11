@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d6c285d337ce9498e44cc4b7b7eebd, type: 3}
   m_Name: PlayerMoveState
   m_EditorClassIdentifier: 
-  Speed: 200
-  StartAccelerant: 25
+  Speed: 275
+  StartAccelerant: 40

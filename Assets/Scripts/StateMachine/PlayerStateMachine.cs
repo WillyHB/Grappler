@@ -26,12 +26,18 @@ public class PlayerStateMachine : StateMachine
 
     protected override void Update()
     {
-        Debug.Log(CurrentState.GetType().ToString());
         base.Update();
+
+        Debug.Log(CurrentState.GetType().ToString());
 
         IsGrounded = Physics2D.OverlapCircle(
         new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
         GroundedCheckRadius, GroundLayerMask);
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
     }
     protected void Awake()
     {

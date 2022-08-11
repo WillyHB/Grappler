@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ed2233bc67c874eac8b1010aa79838, type: 3}
   m_Name: PlayerIdleState
   m_EditorClassIdentifier: 
-  GroundFriction: 20
+  GroundFriction: 40

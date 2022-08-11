@@ -23,6 +23,9 @@ public abstract class Rope : MonoBehaviour
 
     public float GravityScale = 1;
 
+    public Vector2 WindDirection;
+    public float GustPower = 1;
+
     private void Update()
     {
         
@@ -35,6 +38,12 @@ public abstract class Rope : MonoBehaviour
         {
             RopeSegment firstSegment = ropeSegments[i];
             Vector2 velocity = firstSegment.posNow - firstSegment.posOld;
+
+            if (i != ropeSegments.Count - 1 && i != 0)
+            {
+                velocity -= Random.Range(0, 5) * Time.deltaTime * WindDirection;
+            }
+
             firstSegment.posOld = firstSegment.posNow;
             firstSegment.posNow += velocity;
             firstSegment.posNow.y -= GravityScale * Time.fixedDeltaTime;

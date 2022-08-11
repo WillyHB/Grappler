@@ -53,7 +53,7 @@ public class ConnectionRope : Rope
     {
         float rotation = connectedBody.rotation;
 
-        float radians = rotation * Mathf.PI / 180;
+        float radians = rotation * Mathf.Deg2Rad;
 
         float xRotate = endOffset.x * Mathf.Cos(radians) - endOffset.y * Mathf.Sin(radians);
         float yRotate = endOffset.x * Mathf.Sin(radians) + endOffset.y * Mathf.Cos(radians);

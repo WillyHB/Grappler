@@ -16,3 +16,4 @@ MonoBehaviour:
   CoyoteTime: 0.2
   Speed: 100
   Accelerant: 75
+  MaxFallSpeed: 50
