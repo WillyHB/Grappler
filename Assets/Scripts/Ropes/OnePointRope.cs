@@ -19,10 +19,14 @@ public class OnePointRope : Rope
     // Update is called once per frame
     void Update()
     {
-        if (lineLength != LineLength || segmentFrequency != SegmentFrequency)
+        RopeSegment firstSegment = ropeSegments[0];
+        firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
+        ropeSegments[0] = firstSegment;
+
+        if (NumberOfSegments != numberOfSegments)
         {
-            ModifyLength(new Vector2(ropeSegments[^1].posNow.x, ropeSegments[^1].posNow.y - lengthBetweenSegments));
-            //ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position);
+            ModifyLength();
+
         }
 
         DrawRope();
@@ -35,12 +39,9 @@ public class OnePointRope : Rope
 
     protected override void ApplyConstraint()
     {
-        //Constrant to Mouse
-        RopeSegment firstSegment = ropeSegments[0];
-        firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
-        ropeSegments[0] = firstSegment;
+        //Constraint to Mouse
 
-        for (int i = 0; i < numberOfSegments - 1; i++)
+        for (int i = 0; i < NumberOfSegments - 1; i++)
         {   
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
@@ -49,14 +50,13 @@ public class OnePointRope : Rope
             float dist = (firstSeg.posNow - secondSeg.posNow).magnitude;
 
             // The amount that the rope is stretched out of it's normal operating range
-            float error = dist - lengthBetweenSegments;
+            float error = dist - LengthBetweenSegments;
 
             // Normalized vector between the two segments
             Vector2 changeDir = (firstSeg.posNow - secondSeg.posNow).normalized;
 
             // the vector that the rope segment has to move to pull itself back to normal operating range
             Vector2 changeAmount = changeDir * error;
-
 
             if (i != 0)
             {
@@ -78,8 +78,8 @@ public class OnePointRope : Rope
         lineRenderer.startWidth = LineWidth;
         lineRenderer.endWidth = LineWidth;
 
-        Vector3[] ropePositions = new Vector3[numberOfSegments];
-        for (int i = 0; i < numberOfSegments; i++)
+        Vector3[] ropePositions = new Vector3[NumberOfSegments];
+        for (int i = 0; i < NumberOfSegments; i++)
         {
             ropePositions[i] = ropeSegments[i].posNow;
         }

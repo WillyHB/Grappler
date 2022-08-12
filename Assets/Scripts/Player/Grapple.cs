@@ -48,7 +48,8 @@ public class Grapple : MonoBehaviour
 
             if (grappleVal != 0)
             {
-                connectionRope.LineLength -= grappleVal * GrappleExtensionSpeed * Time.deltaTime;
+                connectionRope.SetLength(connectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
+               // connectionRope.LineLength -= grappleVal * GrappleExtensionSpeed * Time.deltaTime;
             }
         }
     }
@@ -70,8 +71,8 @@ public class Grapple : MonoBehaviour
 
                 Vector3 offset = (Vector3)hit.point - hit.transform.position;
                 connectionRope.endOffset = offset;
-
-                connectionRope.LineLength = (transform.position - (hit.transform.position + offset)).magnitude;
+                connectionRope.SetLength((transform.position - (hit.transform.position + offset)).magnitude);
+               // connectionRope.LineLength = (transform.position - (hit.transform.position + offset)).magnitude;
             }
 
             else
@@ -82,7 +83,8 @@ public class Grapple : MonoBehaviour
                 hookInstance.transform.position = hit.point;
                 connectionRope.endOffset = Vector2.zero;
                 connectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
-                connectionRope.LineLength = (transform.position - hookInstance.transform.position).magnitude;
+                connectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
+                //connectionRope.LineLength = (transform.position - hookInstance.transform.position).magnitude;
             }
 
             connectionRope.enabled = true;

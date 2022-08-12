@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +8,12 @@ public abstract class Rope : MonoBehaviour
 
     protected readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
 
-    protected float lengthBetweenSegments;
+
+    public int NumberOfSegments = 35;
+
     protected int numberOfSegments;
 
-    public int SegmentFrequency = 3;
-    protected int segmentFrequency;
-    public float LineLength = 10;
-    protected float lineLength;
+    public float LengthBetweenSegments = 0.25f;
 
     public float LineWidth = 0.1f;
 
@@ -23,25 +21,25 @@ public abstract class Rope : MonoBehaviour
 
     public float GravityScale = 1;
 
-    public Vector2 WindDirection;
-    public float GustPower = 1;
-
-    private void Update()
-    {
-        
-    }
+    [Min(0f)]
+    public float GustPowerFrom;
+    [Min(0f)]
+    public float GustPowerTo;
+    
+    
+    public Vector2 NormalizedWindDirection;
 
     protected void Simulate()
     {
         // SIMULATION
-        for (int i = 1; i < numberOfSegments; i++)
+        for (int i = 1; i < NumberOfSegments; i++)
         {
             RopeSegment firstSegment = ropeSegments[i];
             Vector2 velocity = firstSegment.posNow - firstSegment.posOld;
 
             if (i != ropeSegments.Count - 1 && i != 0)
             {
-                velocity -= Random.Range(0, 5) * Time.deltaTime * WindDirection;
+                velocity += Random.Range(GustPowerFrom, GustPowerTo) * Time.deltaTime * NormalizedWindDirection.normalized;
             }
 
             firstSegment.posOld = firstSegment.posNow;
@@ -62,40 +60,41 @@ public abstract class Rope : MonoBehaviour
     protected abstract void ApplyConstraint();
 
 
-    protected void ModifyLength(Vector2 pos)
+    protected void ModifyLength(Vector2? pos = null)
     {
-        numberOfSegments = (int)(SegmentFrequency * LineLength);
-        lengthBetweenSegments = (float)LineLength / numberOfSegments;
+        numberOfSegments = NumberOfSegments;
 
-        while (numberOfSegments > ropeSegments.Count)
+        if (NumberOfSegments > 0 && LengthBetweenSegments > 0)
         {
-            ropeSegments.Add(new RopeSegment(pos));
-        }
+            while (NumberOfSegments > ropeSegments.Count)
+            {
+                ropeSegments.Add(new RopeSegment(pos ?? new Vector2(ropeSegments[^1].posNow.x, ropeSegments[^1].posNow.y - LengthBetweenSegments)));
+            }
 
-        while (numberOfSegments < ropeSegments.Count)
-        {
-            ropeSegments.RemoveAt(ropeSegments.Count - 1);
+            while (NumberOfSegments < ropeSegments.Count)
+            {
+                ropeSegments.RemoveAt(ropeSegments.Count - 1);
+            }
         }
     }
     protected void ResetRope(Vector3 startPosition)
     {
-        lineLength = LineLength;
-        segmentFrequency = SegmentFrequency;
-
         ropeSegments.Clear();
 
-        numberOfSegments = (int)(SegmentFrequency * LineLength);
-        lengthBetweenSegments = (float)LineLength / numberOfSegments;
-
-        Vector3 ropeStartPoint = startPosition;
-
-        for (int i = 0; i < numberOfSegments; i++)
+        if (NumberOfSegments > 0 && LengthBetweenSegments > 0)
         {
-            ropeSegments.Add(new RopeSegment(ropeStartPoint));
-            ropeStartPoint.y -= lengthBetweenSegments;
+            Vector3 ropeStartPoint = startPosition;
+
+            for (int i = 0; i < NumberOfSegments; i++)
+            {
+                ropeSegments.Add(new RopeSegment(ropeStartPoint));
+                ropeStartPoint.y -= LengthBetweenSegments;
+            }
+
         }
     }
 
+    /*
     public float GetLength()
     {
         Vector3[] points = new Vector3[lineRenderer.positionCount];
@@ -110,6 +109,16 @@ public abstract class Rope : MonoBehaviour
         }
 
         return length;
+    }*/
+
+    public float GetLength()
+    {
+        return NumberOfSegments * LengthBetweenSegments;
+    }
+
+    public void SetLength(float Length)
+    {
+        LengthBetweenSegments = Length / NumberOfSegments;
     }
 
     public struct RopeSegment
@@ -124,3 +133,4 @@ public abstract class Rope : MonoBehaviour
         }
     }
 }
+

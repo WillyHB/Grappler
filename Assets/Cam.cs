@@ -8,7 +8,7 @@ public class Cam : MonoBehaviour
 
     void Start()
     {
-
+        //Time.fixedDeltaTime = 0.02f;
     }
 
     // Update is called once per frame

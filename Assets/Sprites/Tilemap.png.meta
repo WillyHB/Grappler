@@ -109,8 +109,8 @@ TextureImporter:
       name: Dirt00
       rect:
         serializedVersion: 2
-        x: 16
-        y: 224
+        x: 0
+        y: 240
         width: 16
         height: 16
       alignment: 0
@@ -130,8 +130,8 @@ TextureImporter:
       name: Dirt10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 224
+        x: 16
+        y: 240
         width: 16
         height: 16
       alignment: 0
@@ -151,8 +151,8 @@ TextureImporter:
       name: Dirt20
       rect:
         serializedVersion: 2
-        x: 48
-        y: 224
+        x: 32
+        y: 240
         width: 16
         height: 16
       alignment: 0
@@ -172,8 +172,8 @@ TextureImporter:
       name: Dirt01
       rect:
         serializedVersion: 2
-        x: 16
-        y: 208
+        x: 0
+        y: 224
         width: 16
         height: 16
       alignment: 0
@@ -193,8 +193,8 @@ TextureImporter:
       name: Dirt11
       rect:
         serializedVersion: 2
-        x: 32
-        y: 208
+        x: 16
+        y: 224
         width: 16
         height: 16
       alignment: 0
@@ -214,8 +214,8 @@ TextureImporter:
       name: Dirt21
       rect:
         serializedVersion: 2
-        x: 48
-        y: 208
+        x: 32
+        y: 224
         width: 16
         height: 16
       alignment: 0
@@ -235,8 +235,8 @@ TextureImporter:
       name: Dirt02
       rect:
         serializedVersion: 2
-        x: 16
-        y: 192
+        x: 0
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -256,8 +256,8 @@ TextureImporter:
       name: Dirt12
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
+        x: 16
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -277,8 +277,8 @@ TextureImporter:
       name: Dirt22
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
+        x: 32
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -298,8 +298,8 @@ TextureImporter:
       name: Rock
       rect:
         serializedVersion: 2
-        x: 80
-        y: 192
+        x: 48
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -319,8 +319,8 @@ TextureImporter:
       name: Tilemap_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 160
+        x: 0
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -340,8 +340,8 @@ TextureImporter:
       name: Tilemap_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 160
+        x: 16
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -361,8 +361,8 @@ TextureImporter:
       name: Tilemap_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 144
+        x: 0
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -382,8 +382,8 @@ TextureImporter:
       name: Tilemap_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 144
+        x: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -395,48 +395,6 @@ TextureImporter:
       bones: []
       spriteID: 5188ddc3b186d3d4ba6e6a04225e243b
       internalID: 535032631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilemap_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b868c9fa63a51046b7c40cb01efdefe
-      internalID: 1038202652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tilemap_5
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 160
-        width: 2
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 357cd7bbe4ae1b048a02fcf5b4ce65c7
-      internalID: -192478750
       vertices: []
       indices: 
       edges: []

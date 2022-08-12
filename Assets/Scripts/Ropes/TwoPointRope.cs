@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class TwoPointRope : Rope
 {
@@ -17,11 +18,20 @@ public class TwoPointRope : Rope
     // Update is called once per frame
     void Update()
     {
-        if (SegmentFrequency != segmentFrequency || LineLength != lineLength)
+        RopeSegment firstSegment = ropeSegments[0];
+        firstSegment.posNow = StartPoint.position;
+        ropeSegments[0] = firstSegment;
+
+        RopeSegment endSegment = ropeSegments[^1];
+        endSegment.posNow = EndPoint.position;
+        ropeSegments[^1] = endSegment;
+
+        if (NumberOfSegments != numberOfSegments)
         {
             ModifyLength(EndPoint.position);
-            //ResetRope(StartPoint.position);
+
         }
+
 
         DrawRope();
     }
@@ -35,23 +45,15 @@ public class TwoPointRope : Rope
 
     protected override void ApplyConstraint()
     {
-        //Constrant to First Point 
-        RopeSegment firstSegment = ropeSegments[0];
-        firstSegment.posNow = StartPoint.position;
-        ropeSegments[0] = firstSegment;
 
-        //Constrant to Second Point 
-        RopeSegment endSegment = ropeSegments[^1];
-        endSegment.posNow = EndPoint.position;
-        ropeSegments[^1] = endSegment;
 
-        for (int i = 0; i < numberOfSegments - 1; i++)
+        for (int i = 0; i < NumberOfSegments - 1; i++)
         {
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
 
             float dist = (firstSeg.posNow - secondSeg.posNow).magnitude;
-            float error = dist - lengthBetweenSegments;
+            float error = dist - LengthBetweenSegments;
 
             Vector2 changeDir = (firstSeg.posNow - secondSeg.posNow).normalized;
 
@@ -77,8 +79,8 @@ public class TwoPointRope : Rope
         lineRenderer.startWidth = LineWidth;
         lineRenderer.endWidth = LineWidth;
 
-        Vector3[] ropePositions = new Vector3[numberOfSegments];
-        for (int i = 0; i < numberOfSegments; i++)
+        Vector3[] ropePositions = new Vector3[NumberOfSegments];
+        for (int i = 0; i < NumberOfSegments; i++)
         {
             ropePositions[i] = ropeSegments[i].posNow;
         }

@@ -11,7 +11,8 @@ public class PlayerStateMachine : StateMachine
     public PlayerFallState FallState;
 
     public GrappleState GrappleState;
-
+    /*
+     * Next-Gen Pixel Art - Astortion Devlog #20 - YouTube
     [Space(25)]
     public LayerMask GroundLayerMask;
 
@@ -21,8 +22,8 @@ public class PlayerStateMachine : StateMachine
     public PlayerInput PlayerInput { get; private set; }
     public Grapple Grapple { get; private set; }
 
-
     public bool IsGrounded { get; set; }
+
 
     protected override void Update()
     {

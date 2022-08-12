@@ -93,11 +93,11 @@ public class ConnectionRope : Rope
 
     // Update is called once per frame
     void Update()
-    {
-        if (SegmentFrequency != segmentFrequency || LineLength != lineLength)
+    {     
+        if (NumberOfSegments != numberOfSegments)
         {
             ModifyLength(GetCalculatedEndPoint());
-            //ResetRope(StartPoint.position);
+
         }
 
         DrawRope();
@@ -105,11 +105,12 @@ public class ConnectionRope : Rope
     public float GetDistanceBetweenBodies() 
         => (((Vector2)StartRigidbody.transform.position + startOffset) - GetCalculatedEndPoint()).magnitude;
 
+
     private void FixedUpdate()
     {
         Simulate();
 
-        distanceJoint.distance = LineLength;
+        distanceJoint.distance = GetLength();
     }
 
     protected override void ApplyConstraint()
@@ -124,13 +125,13 @@ public class ConnectionRope : Rope
         endSegment.posNow = GetCalculatedEndPoint();
         ropeSegments[^1] = endSegment;
 
-        for (int i = 0; i < numberOfSegments - 1; i++)
+        for (int i = 0; i < NumberOfSegments - 1; i++)
         {
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
 
             float dist = (firstSeg.posNow - secondSeg.posNow).magnitude;
-            float error = dist - lengthBetweenSegments;
+            float error = dist - LengthBetweenSegments;
 
             Vector2 changeDir = (firstSeg.posNow - secondSeg.posNow).normalized;
 
@@ -156,8 +157,8 @@ public class ConnectionRope : Rope
         lineRenderer.startWidth = LineWidth;
         lineRenderer.endWidth = LineWidth;
 
-        Vector3[] ropePositions = new Vector3[numberOfSegments];
-        for (int i = 0; i < numberOfSegments; i++)
+        Vector3[] ropePositions = new Vector3[NumberOfSegments];
+        for (int i = 0; i < NumberOfSegments; i++)
         {
             ropePositions[i] = ropeSegments[i].posNow;
         }

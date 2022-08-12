@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55c32278be7dce4ebe4d3c3a1952133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SegmentFrequency: 3
-  LineLength: 10
-  LineWidth: 0.06
+  ShowAdvancedOptions: 0
+  LineWidth: 0.1
   ConstraintAppliedPerFrame: 100
-  GravityScale: 1.5
+  GravityScale: 1
+  WindDirection: {x: 0, y: 0}
+  GustPower: 1
   FollowMousePosition: 0
 --- !u!120 &4967889191475284232
 LineRenderer:

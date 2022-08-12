@@ -32,7 +32,7 @@ public class GrappleState : State
 
         ConnectionRope cr = sm.GetComponentInChildren<ConnectionRope>();
 
-        if (cr.LineLength <= cr.GetDistanceBetweenBodies())
+        if (cr.GetLength() <= cr.GetDistanceBetweenBodies())
         {
             Vector3 dir = (Vector2)sm.transform.position - cr.GetCalculatedEndPoint();
 
