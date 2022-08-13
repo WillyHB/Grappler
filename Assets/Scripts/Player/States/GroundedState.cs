@@ -16,15 +16,14 @@ public class GroundedState : State
         base.OnEnter(fsm);
 
         sm = (PlayerStateMachine)fsm;
-        //accelerant = sm.Rigidbody.velocity.x;
-        accelerant = sm.Velocity.x;
+        accelerant = sm.Rigidbody.velocity.x;
     }
 
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        sm.Velocity = new Vector2(accelerant, sm.Velocity.y);
-        //sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
+
+        sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
 
     }
 
