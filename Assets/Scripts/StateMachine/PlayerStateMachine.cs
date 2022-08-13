@@ -12,9 +12,6 @@ public class PlayerStateMachine : StateMachine
 
     public GrappleState GrappleState;
 
-
-    public Vector2 Velocity;
-
     [Space(25)]
     public LayerMask GroundLayerMask;
 
@@ -42,14 +39,24 @@ public class PlayerStateMachine : StateMachine
     {
         base.FixedUpdate();
 
-        Rigidbody.MovePosition(Velocity);
+        //transform.position = PixelClamp(transform.position, 16);
     }
+
     protected void Awake()
     {
         Grapple = FindObjectOfType<Grapple>();  
         PlayerInput = GetComponent<PlayerInput>();
         Rigidbody = GetComponent<Rigidbody2D>();
 
+    }
+
+    private Vector2 PixelClamp(Vector2 vector, float ppu)
+    {
+        Vector2 vectorInPixels = new Vector2(
+            Mathf.RoundToInt(vector.x * ppu),
+            Mathf.RoundToInt(vector.y * ppu));
+
+        return vectorInPixels / ppu;
     }
 
     protected override State GetInitialState() => IdleState;

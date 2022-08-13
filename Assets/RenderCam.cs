@@ -23,7 +23,9 @@ public class RenderCam : MonoBehaviour
             renderSurface.localPosition = new Vector3(-dif.x, -dif.y, 10);
         }
 
+        transform.Find("Test2").transform.position = Vector3.back * 10 + (Vector3)GameObject.Find("Player").transform.position;
+        //transform.Find("Test2").transform.position = Camera.main.GetComponent<Cam>().FloatPosition;
 
-        Vector3 mainCamPos = Camera.main.transform.position;
+
     }
 }

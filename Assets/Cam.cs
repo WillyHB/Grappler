@@ -20,7 +20,7 @@ public class Cam : MonoBehaviour
 
         FloatPosition = Vector3.Lerp(FloatPosition, new Vector3(Player.position.x, Player.position.y, -10), SmoothSpeed);
 
-        transform.position = FloatPosition;
+
         
         transform.position = new Vector3(
             FloatPosition.x - (FloatPosition.x % (1.0f / 16)),
