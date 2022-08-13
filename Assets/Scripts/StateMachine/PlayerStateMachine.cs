@@ -11,8 +11,10 @@ public class PlayerStateMachine : StateMachine
     public PlayerFallState FallState;
 
     public GrappleState GrappleState;
-    /*
-     * Next-Gen Pixel Art - Astortion Devlog #20 - YouTube
+
+
+    public Vector2 Velocity;
+
     [Space(25)]
     public LayerMask GroundLayerMask;
 
@@ -39,6 +41,8 @@ public class PlayerStateMachine : StateMachine
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+
+        Rigidbody.MovePosition(Velocity);
     }
     protected void Awake()
     {

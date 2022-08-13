@@ -19,11 +19,18 @@ public class GroundedState : State
         accelerant = sm.Rigidbody.velocity.x;
     }
 
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
+
+    }
+
     public override void Update()
     {
         base.Update();
 
-        sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
 
         moveValue = sm.PlayerInput.actions["Move"].ReadValue<float>();
 
