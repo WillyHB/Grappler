@@ -28,7 +28,7 @@ public class PlayerFallState : State
         base.OnEnter(fsm);
 
         sm = fsm as PlayerStateMachine;
-        accelerant = sm.Rigidbody.velocity.x;
+        accelerant = sm.Velocity.x;
 
         sm.PlayerInput.actions["Jump"].performed += Jump;
 
@@ -94,9 +94,9 @@ public class PlayerFallState : State
         base.FixedUpdate();
 
 
-        if (sm.Rigidbody.velocity.y < -MaxFallSpeed)
+        if (sm.Velocity.y < -MaxFallSpeed)
         {
-            sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, -MaxFallSpeed);
+            sm.Velocity = new Vector2(sm.Velocity.x, -MaxFallSpeed);
         }
 
         float moveValue = sm.PlayerInput.actions["Move"].ReadValue<float>();
@@ -119,14 +119,14 @@ public class PlayerFallState : State
 
         else
         {
-            if (accelerant != sm.Rigidbody.velocity.x)
+            if (accelerant != sm.Velocity.x)
             {
-                accelerant = sm.Rigidbody.velocity.x;
+                accelerant = sm.Velocity.x;
             }
         }
 
 
-        sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
+        sm.Velocity = new Vector2(accelerant, sm.Velocity.y);
 
         if (jumpBuffered)
         {
