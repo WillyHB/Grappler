@@ -23,7 +23,6 @@ public class PlayerStateMachine : StateMachine
 
     public bool IsGrounded { get; set; }
 
-
     protected override void Update()
     {
         base.Update();
@@ -38,6 +37,7 @@ public class PlayerStateMachine : StateMachine
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+
 
         //transform.position = PixelClamp(transform.position, 16);
     }

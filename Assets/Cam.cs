@@ -15,13 +15,13 @@ public class Cam : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         FloatPosition = Vector3.Lerp(FloatPosition, new Vector3(Player.position.x, Player.position.y, -10), SmoothSpeed);
 
+        //transform.position = new Vector3(Player.position.x, Player.position.y, -10);
 
-        
         transform.position = new Vector3(
             FloatPosition.x - (FloatPosition.x % (1.0f / 16)),
              FloatPosition.y - (FloatPosition.y % (1.0f / 16)),
