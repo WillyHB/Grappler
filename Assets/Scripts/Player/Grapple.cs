@@ -49,7 +49,6 @@ public class Grapple : MonoBehaviour
             if (grappleVal != 0)
             {
                 connectionRope.SetLength(connectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
-               // connectionRope.LineLength -= grappleVal * GrappleExtensionSpeed * Time.deltaTime;
             }
         }
     }
