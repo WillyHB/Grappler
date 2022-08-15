@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc6fde673d15b1489f24c9e17d1f940, type: 3}
   m_Name: InputSystemHandler
   m_EditorClassIdentifier: 
+  Actions: {fileID: -944628639613478452, guid: 854b49f71b260ac40b95b1b6b0fc1164, type: 3}

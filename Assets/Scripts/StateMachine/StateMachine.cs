@@ -7,7 +7,7 @@ public abstract class StateMachine : MonoBehaviour
     public State CurrentState { get; private set; }
 
     public Type PreviousState { get; private set; }
-    // Start is called before the first frame update
+
     protected virtual void Start()
     {
         Transition(GetInitialState());

@@ -31,8 +31,14 @@ public class Grapple : MonoBehaviour
         connectionRope = GetComponent<ConnectionRope>();
         connectionRope.enabled = false;
 
-        GetComponentInParent<PlayerInput>().actions["Grapple"].started += MousePressed;
 
+        GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled += OnGrapple;
+
+    }
+
+    private void OnDestroy()
+    {
+        GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled -= OnGrapple;
     }
 
     private void Update()
@@ -53,9 +59,9 @@ public class Grapple : MonoBehaviour
         }
     }
 
-    private void MousePressed(InputAction.CallbackContext cc)
+    private void OnGrapple()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / 6);
 
         RaycastHit2D hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
 

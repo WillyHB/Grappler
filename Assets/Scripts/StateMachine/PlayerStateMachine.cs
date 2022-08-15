@@ -18,7 +18,7 @@ public class PlayerStateMachine : StateMachine
     public float GroundedCheckRadius = 0.25f;
 
     public Rigidbody2D Rigidbody { get; private set; }
-    public PlayerInput PlayerInput { get; private set; }
+    public InputProvider InputProvider;
     public Grapple Grapple { get; private set; }
 
     public bool IsGrounded { get; set; }
@@ -27,7 +27,9 @@ public class PlayerStateMachine : StateMachine
     {
         base.Update();
 
-        Debug.Log(CurrentState.GetType().ToString());
+        //Debug.Log(CurrentState.GetType().ToString());
+
+        Debug.Log(InputProvider.GetState().IsCrouching);
 
         IsGrounded = Physics2D.OverlapCircle(
         new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
@@ -45,20 +47,9 @@ public class PlayerStateMachine : StateMachine
     protected void Awake()
     {
         Grapple = FindObjectOfType<Grapple>();  
-        PlayerInput = GetComponent<PlayerInput>();
         Rigidbody = GetComponent<Rigidbody2D>();
 
     }
-
-    private Vector2 PixelClamp(Vector2 vector, float ppu)
-    {
-        Vector2 vectorInPixels = new Vector2(
-            Mathf.RoundToInt(vector.x * ppu),
-            Mathf.RoundToInt(vector.y * ppu));
-
-        return vectorInPixels / ppu;
-    }
-
     protected override State GetInitialState() => IdleState;
 
 

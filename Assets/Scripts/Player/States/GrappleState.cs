@@ -42,7 +42,7 @@ public class GrappleState : State
         }
 
 
-        float movementVal = sm.PlayerInput.actions["Move"].ReadValue<float>();
+        float movementVal = sm.InputProvider.GetState().MoveDirection;
         sm.Rigidbody.AddForce(new Vector2(movementVal * (GrapplePower * Time.deltaTime), 0));
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)

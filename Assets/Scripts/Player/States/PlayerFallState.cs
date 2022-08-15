@@ -30,7 +30,7 @@ public class PlayerFallState : State
         sm = fsm as PlayerStateMachine;
         accelerant = sm.Rigidbody.velocity.x;
 
-        sm.PlayerInput.actions["Jump"].performed += Jump;
+        sm.InputProvider.Jumped += Jump;
 
         coyoteTimeEnabled = sm.PreviousState.IsSubclassOf(typeof(GroundedState));
         coyoteTimer = 0;
@@ -41,10 +41,10 @@ public class PlayerFallState : State
 
         base.OnExit();
 
-        sm.PlayerInput.actions["Jump"].performed -= Jump;
+        sm.InputProvider.Jumped -= Jump;
     }
 
-    private void Jump(InputAction.CallbackContext cc)
+    private void Jump()
     {
         if (coyoteTimeEnabled)
         {
@@ -99,7 +99,8 @@ public class PlayerFallState : State
             sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, -MaxFallSpeed);
         }
 
-        float moveValue = sm.PlayerInput.actions["Move"].ReadValue<float>();
+        float moveValue = sm.InputProvider.GetState().MoveDirection;
+
         float speed = moveValue * (Speed * Time.deltaTime);
         if (moveValue > 0)
         {
