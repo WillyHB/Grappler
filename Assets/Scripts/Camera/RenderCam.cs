@@ -8,10 +8,20 @@ public class RenderCam : MonoBehaviour
 
     public Camera PlayerCam;
 
+    private Camera renderCam;
     private Cam cam;
+
+    /*
+     
+    Aspect Ratio Settings changes the render textures size
+    Render texture will try to fit, else it will letterbox
+    We will try to automatically set the aspect ratio on start
+    */
     // Start is called before the first frame update
     void Start()
     {
+        renderCam = GetComponent<Camera>();
+
         cam = Camera.main.GetComponent<Cam>();
         renderSurface = transform.GetChild(0);
     }

@@ -27,9 +27,7 @@ public class PlayerStateMachine : StateMachine
     {
         base.Update();
 
-        //Debug.Log(CurrentState.GetType().ToString());
-
-        Debug.Log(InputProvider.GetState().IsCrouching);
+        Debug.Log(CurrentState.GetType().ToString());
 
         IsGrounded = Physics2D.OverlapCircle(
         new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),

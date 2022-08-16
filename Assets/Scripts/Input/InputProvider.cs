@@ -51,10 +51,8 @@ public class InputProvider : ScriptableObject
     public InputState GetState()
     {
         InputState state = new();
-        foreach (var handler in handlers)
-        {
-            state = handler.HandleInputState(state);
-        }
+
+        handlers.ForEach(handler => handler.HandleInputState(state));
 
         return state;
     }

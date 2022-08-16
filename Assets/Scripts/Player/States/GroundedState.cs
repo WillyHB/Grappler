@@ -39,7 +39,7 @@ public class GroundedState : State
     {
         base.Update();
 
-
+        Debug.Log("test");
         moveValue = sm.InputProvider.GetState().MoveDirection;
 
         if (!sm.IsGrounded)
