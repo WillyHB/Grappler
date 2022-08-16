@@ -24,7 +24,8 @@ public class InputSystemStateHandler : InputStateHandler
     {
         state.MoveDirection = Actions.FindActionMap("Player").FindAction("Move").ReadValue<float>();
         state.CanJump = true;
-        state.CanGrapple = false;
+        state.CanGrapple = true;
+        state.IsJumping = Actions.FindActionMap("Player").FindAction("Jump").IsPressed();
         state.CanShoot = false;
         state.IsCrouching = Actions.FindActionMap("Player").FindAction("Crouch").IsPressed();
         return state;

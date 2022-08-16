@@ -17,14 +17,20 @@ public class GroundedState : State
 
         sm = (PlayerStateMachine)fsm;
         accelerant = sm.Rigidbody.velocity.x;
+        sm.InputProvider.Jumped += Jump;
+    }
 
-        sm.InputProvider.Jumped += () => sm.Transition(sm.JumpState);
+    private void Jump()
+    {
+        sm.Transition(sm.JumpState);
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        sm.InputProvider.Jumped -= () => sm.Transition(sm.JumpState);
+
+
+        sm.InputProvider.Jumped -= Jump;
     }
 
     public override void FixedUpdate()
@@ -39,7 +45,6 @@ public class GroundedState : State
     {
         base.Update();
 
-        Debug.Log("test");
         moveValue = sm.InputProvider.GetState().MoveDirection;
 
         if (!sm.IsGrounded)

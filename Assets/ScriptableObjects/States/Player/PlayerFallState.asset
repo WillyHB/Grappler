@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpBufferTime: 0.15
   CoyoteTime: 0.2
-  Speed: 100
-  Accelerant: 75
+  Speed: 150
+  Accelerant: 100
   MaxFallSpeed: 50

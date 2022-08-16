@@ -61,7 +61,7 @@ public class Grapple : MonoBehaviour
 
     private void OnGrapple()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / 6);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
         RaycastHit2D hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
 

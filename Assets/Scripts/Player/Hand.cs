@@ -13,7 +13,7 @@ public class Hand : MonoBehaviour
     void Update()
     {
 
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / 6);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
         var dir = transform.parent.position - transform.position;
 

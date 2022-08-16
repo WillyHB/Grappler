@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerMoveState
   m_EditorClassIdentifier: 
   Speed: 275
-  StartAccelerant: 40
+  StartAccelerant: 50

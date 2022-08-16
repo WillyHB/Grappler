@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class ResolutionManager : MonoBehaviour
 {
     public Camera MainCamera;
     public Camera RenderCamera;
-    public Camera PlayerCamera;
 
     public GameObject Quad;
 
-    public RenderTexture RenderTexture { get; set; }
+    public static RenderTexture RenderTexture { get; set; }
 
     public bool AutomaticallyConfigureAspectRatio;
     private bool acar;
@@ -21,11 +21,11 @@ public class ResolutionManager : MonoBehaviour
     public int VirtualHeight = 180;
     private int virtualHeight;
 
-    public Vector2Int VirtualDimensions { get; private set; } = new();
+    public static Vector2Int VirtualDimensions { get; private set; } = new();
 
-    public Vector2Int ClientDimensions { get; private set; } = new();
+    public static Vector2Int ClientDimensions { get; private set; } = new();
 
-    public float ScaleValue { get; private set; }
+    public static float ScaleValue { get; private set; }
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class ResolutionManager : MonoBehaviour
         Quad.GetComponent<MeshRenderer>().material = renderMaterial;
 
         Quad.transform.localScale =
-            new Vector3((RenderCamera.orthographicSize * 2) * AspectRatio, (RenderCamera.orthographicSize * 2), 1);
+            new Vector3((RenderCamera.orthographicSize * 2) * AspectRatio + 0.2f, (RenderCamera.orthographicSize * 2) + 0.2f, 1);
 
         aspectRatio = AspectRatio;
         virtualHeight = VirtualHeight;

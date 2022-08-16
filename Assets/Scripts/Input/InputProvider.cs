@@ -52,7 +52,7 @@ public class InputProvider : ScriptableObject
     {
         InputState state = new();
 
-        handlers.ForEach(handler => handler.HandleInputState(state));
+        handlers.ForEach(handler => state = handler.HandleInputState(state));
 
         return state;
     }
@@ -61,6 +61,7 @@ public class InputProvider : ScriptableObject
 
 public struct InputState
 {
+    public bool IsJumping { get; set; }
     public float MoveDirection { get; set; }
     public bool IsCrouching { get; set; }
     public bool CanJump { get; set; }
