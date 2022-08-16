@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class ResolutionManager : MonoBehaviour
 {
-    public RenderTexture RenderTexture;
+    public Camera MainCamera;
+    public Camera RenderCamera;
+    public Camera PlayerCamera;
 
-    public Vector2 AspectRatio = new(16, 9);
-    private Vector2 aspectRatio;
+    public GameObject Quad;
+
+    public RenderTexture RenderTexture { get; set; }
+
+    public bool AutomaticallyConfigureAspectRatio;
+    private bool acar;
+
+    public float AspectRatio;
+    private float aspectRatio;
 
     public int VirtualHeight = 180;
     private int virtualHeight;
 
-    public Vector2Int VirtualDimensions { get; private set; }
+    public Vector2Int VirtualDimensions { get; private set; } = new();
 
-    public Vector2Int ClientDimensions { get; private set; }
-    private Vector2Int clientDimensions;
+    public Vector2Int ClientDimensions { get; private set; } = new();
 
     public float ScaleValue { get; private set; }
 
@@ -23,25 +31,56 @@ public class ResolutionManager : MonoBehaviour
     {
         ClientDimensions = new Vector2Int(Screen.width, Screen.height);
 
-        int virtualWidth = (int)(VirtualHeight * (AspectRatio.x / AspectRatio.y));
+        if (AutomaticallyConfigureAspectRatio)
+        {
+            AspectRatio = (float)ClientDimensions.x / ClientDimensions.y;
+        }
+
+        int virtualWidth = (int)(VirtualHeight * AspectRatio);
 
         ScaleValue = ClientDimensions.y / VirtualHeight;
 
         VirtualDimensions = new Vector2Int(virtualWidth, VirtualHeight);
 
-        RenderTexture.width = VirtualDimensions.x;
-        RenderTexture.height = VirtualDimensions.y;
+        CreateRenderTexture();
+
+        MainCamera.targetTexture = RenderTexture;
+
+        Material renderMaterial = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
+        renderMaterial.mainTexture = RenderTexture;
+
+        Quad.GetComponent<MeshRenderer>().material = renderMaterial;
+
+        Quad.transform.localScale =
+            new Vector3((RenderCamera.orthographicSize * 2) * AspectRatio, (RenderCamera.orthographicSize * 2), 1);
 
         aspectRatio = AspectRatio;
         virtualHeight = VirtualHeight;
-        clientDimensions = ClientDimensions;
+        acar = AutomaticallyConfigureAspectRatio;
+    }
+
+    private void CreateRenderTexture()
+    {
+        if (RenderTexture != null)
+        {
+            RenderTexture.Release();
+            RenderTexture = null;
+        }
+
+        RenderTexture = new RenderTexture(VirtualDimensions.x, VirtualDimensions.y, 24)
+        {
+            filterMode = FilterMode.Point
+        };
+
+        RenderTexture.Create();
     }
 
     private void Update()
     {
         if (aspectRatio != AspectRatio
             || virtualHeight != VirtualHeight
-            || clientDimensions != ClientDimensions)
+            || new Vector2Int(Screen.width, Screen.height) != ClientDimensions
+            || acar != AutomaticallyConfigureAspectRatio)
         {
             Start();
         }
