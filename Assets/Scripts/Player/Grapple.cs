@@ -36,7 +36,7 @@ public class Grapple : MonoBehaviour
 
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled -= OnGrapple;
     }

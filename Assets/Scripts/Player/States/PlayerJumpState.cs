@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="States/Player/JumpState")]
-public class PlayerJumpState : State
+public class PlayerJumpState : PlayerAirborneState
 {
-    PlayerStateMachine sm;
-
     public float JumpForce = 200;
     public float JumpGravityModifier = 0.5f;
     private float startY;
@@ -17,8 +15,6 @@ public class PlayerJumpState : State
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-
-        sm = fsm as PlayerStateMachine;
 
         startY = sm.transform.position.y;
         defaultGravity = sm.Rigidbody.gravityScale;

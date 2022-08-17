@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04972676fb940646a8d55ed59bf0b9d, type: 3}
   m_Name: PlayerJumpState
   m_EditorClassIdentifier: 
+  MovementSpeed: 150
+  Accelerant: 100
   JumpForce: 250
-  MaxJumpTime: 0.5
-  JumpTimeAccelerator: 1
   JumpGravityModifier: 1
   MaxJumpHeight: 1

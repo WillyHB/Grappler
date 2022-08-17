@@ -2585,6 +2585,8 @@ MonoBehaviour:
   GustPowerFrom: 0
   GustPowerTo: 0
   NormalizedWindDirection: {x: 0, y: 0}
+  PushedByRigidbodies: 0
+  PushMultiplier: 0.1
   StartRigidbody: {fileID: 302939527}
   ConnectedBody: {fileID: 290769949}
   StartOffset: {x: 0, y: 0}
@@ -3185,17 +3187,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4967889191475284234, guid: d2183b7699ed3c94daedca8313879c77, type: 3}
+      propertyPath: PushedByRigidbodies
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4967889191475284235, guid: d2183b7699ed3c94daedca8313879c77, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4967889191475284235, guid: d2183b7699ed3c94daedca8313879c77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -5.77
       objectReference: {fileID: 0}
     - target: {fileID: 4967889191475284235, guid: d2183b7699ed3c94daedca8313879c77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 4967889191475284235, guid: d2183b7699ed3c94daedca8313879c77, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4147,6 +4153,8 @@ MonoBehaviour:
   GustPowerFrom: 0
   GustPowerTo: 0
   NormalizedWindDirection: {x: 0, y: 0}
+  PushedByRigidbodies: 0
+  PushMultiplier: 0.1
   StartRigidbody: {fileID: 676480556}
   ConnectedBody: {fileID: 0}
   StartOffset: {x: 0, y: 0}

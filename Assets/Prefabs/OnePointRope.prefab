@@ -45,12 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55c32278be7dce4ebe4d3c3a1952133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowAdvancedOptions: 0
+  NumberOfSegments: 35
+  LengthBetweenSegments: 0.25
   LineWidth: 0.1
   ConstraintAppliedPerFrame: 100
   GravityScale: 1
-  WindDirection: {x: 0, y: 0}
-  GustPower: 1
+  GustPowerFrom: 0
+  GustPowerTo: 0
+  NormalizedWindDirection: {x: 0, y: 0}
   FollowMousePosition: 0
 --- !u!120 &4967889191475284232
 LineRenderer:
@@ -152,6 +154,6 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1

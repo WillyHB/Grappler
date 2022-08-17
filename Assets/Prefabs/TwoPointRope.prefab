@@ -78,13 +78,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12915ff49d838e543a81168aee24d6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPoint: {fileID: 6750984759920552087}
-  EndPoint: {fileID: 6750984758678311653}
-  SegmentFrequency: 4
-  LineLength: 10
+  NumberOfSegments: 35
+  LengthBetweenSegments: 0.25
   LineWidth: 0.1
   ConstraintAppliedPerFrame: 100
   GravityScale: 1
+  GustPowerFrom: 0
+  GustPowerTo: 0
+  NormalizedWindDirection: {x: 0, y: 0}
+  StartPoint: {fileID: 6750984759920552087}
+  EndPoint: {fileID: 6750984758678311653}
 --- !u!120 &6750984759069912460
 LineRenderer:
   serializedVersion: 2
@@ -185,7 +188,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &6750984759920552086

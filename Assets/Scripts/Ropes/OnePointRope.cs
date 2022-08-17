@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class OnePointRope : Rope
 {
-
     public bool FollowMousePosition;
 
     // Use this for initialization

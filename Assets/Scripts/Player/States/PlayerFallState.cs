@@ -4,10 +4,8 @@ using ElRaccoone.Tweens;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName ="States/Player/FallState")]
-public class PlayerFallState : State
+public class PlayerFallState : PlayerAirborneState
 {
-    PlayerStateMachine sm;
-
     private bool jumpBuffered;
 
     public float JumpBufferTime = 1;
@@ -17,18 +15,11 @@ public class PlayerFallState : State
     public float CoyoteTime = 0.1f;
     private float coyoteTimer;
 
-    public float Speed = 75;
-    public float Accelerant = 25;
-    private float accelerant;
-
     public float MaxFallSpeed = 100;
 
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-
-        sm = fsm as PlayerStateMachine;
-        accelerant = sm.Rigidbody.velocity.x;
 
         sm.InputProvider.Jumped += Jump;
 
@@ -98,36 +89,6 @@ public class PlayerFallState : State
         {
             sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, -MaxFallSpeed);
         }
-
-        float moveValue = sm.InputProvider.GetState().MoveDirection;
-
-        float speed = moveValue * (Speed * Time.deltaTime);
-        if (moveValue > 0)
-        {
-            if (accelerant < speed)
-            {
-                accelerant += Accelerant * Time.deltaTime;
-            }
-        }
-
-        else if (moveValue < 0)
-        {
-            if (accelerant > speed)
-            {
-                accelerant -= Accelerant * Time.deltaTime;
-            }
-        }
-
-        else
-        {
-            if (accelerant != sm.Rigidbody.velocity.x)
-            {
-                accelerant = sm.Rigidbody.velocity.x;
-            }
-        }
-
-
-        sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
 
         if (jumpBuffered)
         {

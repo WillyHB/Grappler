@@ -8,6 +8,7 @@ public abstract class Rope : MonoBehaviour
 
     protected readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
 
+    [Header("Rope Settings")]
 
     public int NumberOfSegments = 35;
 
@@ -21,13 +22,22 @@ public abstract class Rope : MonoBehaviour
 
     public float GravityScale = 1;
 
+    [Space(10)]
+    [Header("Wind")]
+
     [Min(0f)]
     public float GustPowerFrom;
     [Min(0f)]
-    public float GustPowerTo;
-    
+    public float GustPowerTo; 
     
     public Vector2 NormalizedWindDirection;
+
+    [Space(10)]
+    [Header("World Interaction")]
+
+    public bool PushedByRigidbodies = false;
+
+    public float PushMultiplier = 0.1f;
 
     protected void Simulate()
     {
@@ -53,11 +63,55 @@ public abstract class Rope : MonoBehaviour
         for (int i = 0; i < ConstraintAppliedPerFrame; i++)
         {
             ApplyConstraint();
+        }
 
+
+        // SET COLLIDER
+        if (PushedByRigidbodies)
+        {
+
+            if (GetComponent<EdgeCollider2D>() == null)
+            {
+                gameObject.AddComponent<EdgeCollider2D>().isTrigger = true;
+            }
+
+            List<Vector2> points = new();
+            ropeSegments.ForEach(seg => points.Add(seg.posNow));
+            GetComponent<EdgeCollider2D>().SetPoints(points);
+        }
+
+        else
+        {
+            if (GetComponent<EdgeCollider2D>() != null)
+            {
+                Destroy(gameObject.GetComponent<EdgeCollider2D>());
+            }
+
+           
         }
     }
 
     protected abstract void ApplyConstraint();
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!PushedByRigidbodies)
+        {
+            return;
+        }
+
+        for (int i = 0; i < ropeSegments.Count; i++)
+        {
+            if (collision.bounds.Contains(transform.TransformPoint(GetComponent<EdgeCollider2D>().points[i])))
+            {
+                RopeSegment seg = ropeSegments[i];
+
+                seg.posNow += collision.GetComponent<Rigidbody2D>().velocity.normalized * PushMultiplier;
+
+                ropeSegments[i] = seg;
+            }
+        }
+    }
 
 
     protected void ModifyLength(Vector2? pos = null)
@@ -94,22 +148,6 @@ public abstract class Rope : MonoBehaviour
         }
     }
 
-    /*
-    public float GetLength()
-    {
-        Vector3[] points = new Vector3[lineRenderer.positionCount];
-
-        lineRenderer.GetPositions(points);
-
-        float length = 0;
-
-        for (int i = 1; i < points.Length; i++)
-        {
-            length += (points[i] - points[i - 1]).magnitude;
-        }
-
-        return length;
-    }*/
 
     public float GetLength()
     {
