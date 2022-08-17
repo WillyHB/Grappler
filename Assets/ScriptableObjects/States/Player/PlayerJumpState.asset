@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: PlayerJumpState
   m_EditorClassIdentifier: 
   JumpForce: 250
-  MaxJumpTime: 0.6
+  MaxJumpTime: 0.5
   JumpTimeAccelerator: 1
+  JumpGravityModifier: 1
+  MaxJumpHeight: 1

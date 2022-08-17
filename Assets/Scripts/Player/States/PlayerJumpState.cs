@@ -8,10 +8,10 @@ public class PlayerJumpState : State
     PlayerStateMachine sm;
 
     public float JumpForce = 200;
-    public float MaxJumpTime;
-    public float JumpTimeAccelerator = 1;
+    public float JumpGravityModifier = 0.5f;
+    private float startY;
+    public float MaxJumpHeight;
 
-        private float jumpTime;
     private float defaultGravity;
 
     public override void OnEnter(StateMachine fsm)
@@ -20,8 +20,7 @@ public class PlayerJumpState : State
 
         sm = fsm as PlayerStateMachine;
 
-        jumpTime = 0;
-
+        startY = sm.transform.position.y;
         defaultGravity = sm.Rigidbody.gravityScale;
 
         sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, sm.Rigidbody.velocity.y < 0 ? 0 : sm.Rigidbody.velocity.y);
@@ -30,20 +29,17 @@ public class PlayerJumpState : State
 
     public override void Update()
     {
-        
-        jumpTime += JumpTimeAccelerator * Time.deltaTime;
-
-
-        if (sm.InputProvider.GetState().IsJumping && jumpTime < MaxJumpTime)
+        if (!sm.InputProvider.GetState().IsJumping 
+            || sm.transform.position.y - startY >= MaxJumpHeight 
+            || sm.Rigidbody.velocity.y < 0)
         {
-            sm.Rigidbody.gravityScale = defaultGravity / 2;
-
+            sm.Rigidbody.gravityScale = defaultGravity;
+            sm.Transition(sm.FallState);
         }
 
         else
         {
-            sm.Rigidbody.gravityScale = defaultGravity;
-            sm.Transition(sm.FallState);
+            sm.Rigidbody.gravityScale = JumpGravityModifier;
         }
     }
 }
