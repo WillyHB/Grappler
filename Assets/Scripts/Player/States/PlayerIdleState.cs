@@ -10,6 +10,8 @@ public class PlayerIdleState : GroundedState
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
+
+        sm.GetComponent<Animator>().Play("Idle");
     }
 
     public override void Update()

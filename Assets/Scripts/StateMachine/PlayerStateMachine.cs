@@ -32,6 +32,16 @@ public class PlayerStateMachine : StateMachine
         IsGrounded = Physics2D.OverlapCircle(
         new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
         GroundedCheckRadius, GroundLayerMask);
+
+        if (InputProvider.GetState().MoveDirection > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        else if (InputProvider.GetState().MoveDirection < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     protected override void FixedUpdate()

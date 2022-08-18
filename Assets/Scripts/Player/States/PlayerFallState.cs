@@ -20,6 +20,11 @@ public class PlayerFallState : PlayerAirborneState
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
+        if (sm.PreviousState != typeof(PlayerJumpState))
+        {
+            sm.GetComponent<Animator>().CrossFade("Fall", 0);
+        }
+
 
         sm.InputProvider.Jumped += Jump;
 
@@ -69,6 +74,7 @@ public class PlayerFallState : PlayerAirborneState
                 return;
             }
 
+            sm.GetComponent<Animator>().Play("Land");
             sm.Transition(sm.IdleState);
             return;
         }

@@ -2944,6 +2944,7 @@ GameObject:
   - component: {fileID: 676480559}
   - component: {fileID: 676480562}
   - component: {fileID: 676480563}
+  - component: {fileID: 676480564}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -3129,6 +3130,26 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_MaxDistanceOnly: 1
+--- !u!95 &676480564
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676480554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73a3cb6ba1930ef4bbdc084ca66d2853, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &899401824
 GameObject:
   m_ObjectHideFlags: 0

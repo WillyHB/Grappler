@@ -9,6 +9,8 @@ public class GrappleState : State
 {
     public float GrapplePower = 50;
 
+    public float RotationDistanceLimit = 0.05f;
+
     protected PlayerStateMachine sm;
 
     public override void OnEnter(StateMachine fsm)
@@ -32,7 +34,7 @@ public class GrappleState : State
 
         ConnectionRope cr = sm.GetComponentInChildren<ConnectionRope>();
 
-        if (cr.GetLength() <= cr.GetDistanceBetweenBodies())
+        if (Mathf.Abs(cr.GetLength() - cr.GetDistanceBetweenBodies()) < RotationDistanceLimit)
         {
             Vector3 dir = (Vector2)sm.transform.position - cr.GetCalculatedEndPoint();
 
