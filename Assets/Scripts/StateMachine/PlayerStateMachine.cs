@@ -19,6 +19,8 @@ public class PlayerStateMachine : StateMachine
 
     public Rigidbody2D Rigidbody { get; private set; }
     public InputProvider InputProvider;
+
+    public PlayerInput PlayerInput { get; private set; }
     public Animator Animator { get; private set; }
 
     public Grapple Grapple { get; private set; }
@@ -29,7 +31,7 @@ public class PlayerStateMachine : StateMachine
     {
         base.Update();
 
-        Debug.Log(CurrentState.GetType().ToString());
+        //Debug.Log(CurrentState.GetType().ToString());
 
         IsGrounded = Physics2D.OverlapCircle(
         new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
@@ -63,8 +65,7 @@ public class PlayerStateMachine : StateMachine
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-        Animator = GetComponent<Animator>();
-
+        PlayerInput = GetComponent<PlayerInput>();
     }
     protected override State GetInitialState() => IdleState;
 

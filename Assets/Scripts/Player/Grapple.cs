@@ -60,9 +60,21 @@ public class Grapple : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
-        //RaycastHit2D hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
+        RaycastHit2D hit = default;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Gamepad.current.rightStick.ReadValue(), 20, GroundLayerMask);
+        if (GetComponentInParent<PlayerInput>().currentControlScheme == "Keyboard&Mouse")
+        {
+            hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
+        }
+
+        else if (GetComponentInParent<PlayerInput>().currentControlScheme == "Gamepad")
+        {
+            hit = Physics2D.Raycast(transform.position, Gamepad.current.rightStick.ReadValue(), 20, GroundLayerMask);
+        }
+
+        //
+
+       
 
         if (hit)
         {
@@ -76,7 +88,6 @@ public class Grapple : MonoBehaviour
                 Vector3 offset = (Vector3)hit.point - hit.transform.position;
                 connectionRope.endOffset = offset;
                 connectionRope.SetLength((transform.position - (hit.transform.position + offset)).magnitude);
-               // connectionRope.LineLength = (transform.position - (hit.transform.position + offset)).magnitude;
             }
 
             else
@@ -88,7 +99,6 @@ public class Grapple : MonoBehaviour
                 connectionRope.endOffset = Vector2.zero;
                 connectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
                 connectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
-                //connectionRope.LineLength = (transform.position - hookInstance.transform.position).magnitude;
             }
 
             connectionRope.enabled = true;
