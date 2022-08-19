@@ -8,9 +8,11 @@ public abstract class InputStateHandler : ScriptableObject
     public event Action Jumped;
     public event Action Shot;
     public event Action Grappled;
+    public event Action GrappleCanceled;
 
     public void PerformJump() => Jumped?.Invoke();
 
     public void PerformShoot() => Shot?.Invoke();
     public void PerformGrapple() => Grappled?.Invoke();
+    public void CancelGrapple() => GrappleCanceled?.Invoke();
 }

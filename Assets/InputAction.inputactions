@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CancelGrapple",
+                    "type": "Button",
+                    "id": "170504ea-8d4d-4199-a9ad-01e3f563aa2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -108,7 +117,7 @@
                 {
                     "name": "negative",
                     "id": "955748d5-aa37-4596-b4d9-c5b16a8ad046",
-                    "path": "<Gamepad>/leftStick/right",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -161,6 +170,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "5ae14aa7-b971-433a-b8a8-f00e1bcf6633",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grapple",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Keyboard",
                     "id": "64644d96-a4dd-44d7-932a-1d087db075cc",
                     "path": "1DAxis",
@@ -194,6 +214,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "GamePad",
+                    "id": "543d6c2d-df0e-4a41-85ca-e1f9f685cc5f",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrappleLength",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "22fbcff5-40b8-42c3-b922-7337cac08201",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "GrappleLength",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "45728397-4005-499c-b2b2-75a31ea1e36b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrappleLength",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "dd97af5f-46cc-44bf-a3f8-9f8e6ef4ce81",
                     "path": "<Keyboard>/s",
@@ -206,12 +259,56 @@
                 },
                 {
                     "name": "",
+                    "id": "37199eab-c1e1-4315-a461-3dc37384ea36",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "12e1a99a-aef9-438a-b40b-54d70931626c",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1053e47f-aaa9-41b7-afdb-983e3fbda351",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a8ba182-3214-4989-8ac1-5e44173c028a",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CancelGrapple",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd43eed7-89e9-4ac0-bccb-df582305d98b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "CancelGrapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

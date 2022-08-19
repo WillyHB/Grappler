@@ -13,6 +13,7 @@ public class InputSystemStateHandler : InputStateHandler
         Actions.FindActionMap("Player").FindAction("Jump").started += (cc) => PerformJump();
         Actions.FindActionMap("Player").FindAction("Shoot").started += (cc) => PerformShoot();
         Actions.FindActionMap("Player").FindAction("Grapple").started += (cc) => PerformGrapple();
+        Actions.FindActionMap("Player").FindAction("CancelGrapple").started += (cc) => CancelGrapple();
     }
 
     public void OnDisable()

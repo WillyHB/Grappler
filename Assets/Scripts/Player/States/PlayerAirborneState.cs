@@ -10,13 +10,24 @@ public class PlayerAirborneState : State
     public float Accelerant = 25;
     private float accelerant;
 
+    public float CrouchGravityAmount = 2;
+    private float prevGravity;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
 
         sm = fsm as PlayerStateMachine;
 
+        prevGravity = sm.Rigidbody.gravityScale;
         accelerant = sm.Rigidbody.velocity.x;
+    }
+
+    public override void OnExit()
+    {
+        base.OnExit();
+
+        sm.Rigidbody.gravityScale = prevGravity;
     }
 
     public override void FixedUpdate()
@@ -26,6 +37,10 @@ public class PlayerAirborneState : State
 
         float moveValue = sm.InputProvider.GetState().MoveDirection;
 
+        if (sm.InputProvider.GetState().IsCrouching)
+        {
+            sm.Rigidbody.gravityScale = CrouchGravityAmount;
+        }
 
         float speed = moveValue * (MovementSpeed * Time.deltaTime);
 

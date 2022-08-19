@@ -17,6 +17,16 @@ public class GrappleState : State
     {
         base.OnEnter(fsm);
         sm = fsm as PlayerStateMachine;
+
+        sm.InputProvider.Jumped += Jump;
+    }
+
+    private void Jump()
+    {
+        sm.InputProvider.Jumped -= Jump;
+
+        sm.Grapple.ReleaseGrapple();
+        sm.Transition(sm.JumpState);
     }
 
     public override void Update()
@@ -46,13 +56,6 @@ public class GrappleState : State
 
         float movementVal = sm.InputProvider.GetState().MoveDirection;
         sm.Rigidbody.AddForce(new Vector2(movementVal * (GrapplePower * Time.deltaTime), 0));
-
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            sm.Grapple.ReleaseGrapple();
-            sm.Transition(sm.JumpState);
-
-        }
 
         if (sm.IsGrounded)
         {

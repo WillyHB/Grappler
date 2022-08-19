@@ -12,7 +12,7 @@ public class Hand : MonoBehaviour
 
     void Update()
     {
-
+       
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
         var dir = transform.parent.position - transform.position;
@@ -23,10 +23,12 @@ public class Hand : MonoBehaviour
 
         transform.rotation *= new Quaternion(0, 0, -1, 0);
 
-        Vector3 shoulderToMouseDir = mousePos - shoulder.position;
-        shoulderToMouseDir.z = 0;
+        //Vector3 shoulderToDir = mousePos - shoulder.position;
 
-        transform.position = shoulder.position + (armLength * shoulderToMouseDir.normalized);
+        Vector3 shoulderToDir = (Vector3)Gamepad.current.rightStick.ReadValue();
+        shoulderToDir.z = 0;
+
+        transform.position = shoulder.position + (armLength * shoulderToDir.normalized);
 
 
         if (transform.rotation.z > 0.7 || transform.rotation.z < -0.7)

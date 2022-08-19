@@ -33,23 +33,20 @@ public class Grapple : MonoBehaviour
 
 
         GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled += OnGrapple;
+        GetComponentInParent<PlayerStateMachine>().InputProvider.GrappleCanceled += ReleaseGrapple;
 
     }
 
     private void OnDisable()
     {
         GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled -= OnGrapple;
+        GetComponentInParent<PlayerStateMachine>().InputProvider.GrappleCanceled -= ReleaseGrapple;
     }
 
     private void Update()
     {
         if (IsGrappling)
         {
-            if (Mouse.current.rightButton.wasPressedThisFrame)
-            {
-                FindObjectOfType<Grapple>().ReleaseGrapple();
-            }
-
             float grappleVal = player.GetComponent<PlayerInput>().actions["GrappleLength"].ReadValue<float>();
 
             if (grappleVal != 0)
@@ -63,7 +60,9 @@ public class Grapple : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
+        //RaycastHit2D hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Gamepad.current.rightStick.ReadValue(), 20, GroundLayerMask);
 
         if (hit)
         {
