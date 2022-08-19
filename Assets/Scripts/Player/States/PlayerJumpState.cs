@@ -15,7 +15,6 @@ public class PlayerJumpState : PlayerAirborneState
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-        sm.GetComponent<Animator>().Play("Jump");
         startY = sm.transform.position.y;
         defaultGravity = sm.Rigidbody.gravityScale;
 
@@ -30,7 +29,8 @@ public class PlayerJumpState : PlayerAirborneState
             || sm.Rigidbody.velocity.y < 0)
         {
             sm.Rigidbody.gravityScale = defaultGravity;
-            sm.GetComponent<Animator>().CrossFade("JumpToFall", 0);
+
+            sm.Animator.SetBool("isJumping", false);
             sm.Transition(sm.FallState);
         }
 

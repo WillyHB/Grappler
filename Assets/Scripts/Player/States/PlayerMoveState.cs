@@ -13,8 +13,6 @@ public class PlayerMoveState : GroundedState
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-
-        sm.GetComponent<Animator>().Play("Run");
     }
 
     public override void OnExit()

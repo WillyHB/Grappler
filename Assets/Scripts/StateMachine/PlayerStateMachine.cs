@@ -19,6 +19,8 @@ public class PlayerStateMachine : StateMachine
 
     public Rigidbody2D Rigidbody { get; private set; }
     public InputProvider InputProvider;
+    public Animator Animator { get; private set; }
+
     public Grapple Grapple { get; private set; }
 
     public bool IsGrounded { get; set; }
@@ -42,6 +44,10 @@ public class PlayerStateMachine : StateMachine
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        Animator.SetBool("isGrounded", IsGrounded);
+        Animator.SetBool("isMoving", InputProvider.GetState().MoveDirection != 0);
+        Animator.SetFloat("yVelocity", Rigidbody.velocity.y);
     }
 
     protected override void FixedUpdate()
@@ -56,6 +62,8 @@ public class PlayerStateMachine : StateMachine
     {
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
 
     }
     protected override State GetInitialState() => IdleState;

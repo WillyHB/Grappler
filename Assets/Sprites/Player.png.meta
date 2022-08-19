@@ -110,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 140
         width: 16
         height: 20
       alignment: 0
@@ -131,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 23
-        y: 90
+        y: 150
         width: 6
         height: 4
       alignment: 0
@@ -152,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
+        y: 120
         width: 16
         height: 20
       alignment: 0
@@ -173,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 60
+        y: 120
         width: 16
         height: 20
       alignment: 0
@@ -194,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 60
+        y: 120
         width: 16
         height: 20
       alignment: 0
@@ -215,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 60
+        y: 120
         width: 16
         height: 20
       alignment: 0
@@ -236,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
+        y: 100
         width: 16
         height: 20
       alignment: 0
@@ -257,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 40
+        y: 100
         width: 16
         height: 20
       alignment: 0
@@ -278,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
+        y: 80
         width: 16
         height: 20
       alignment: 0
@@ -299,7 +299,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 20
+        y: 80
         width: 16
         height: 20
       alignment: 0
@@ -320,7 +320,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 20
+        y: 80
         width: 16
         height: 20
       alignment: 0
@@ -341,7 +341,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 20
+        y: 80
         width: 16
         height: 20
       alignment: 0
@@ -362,7 +362,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 20
+        y: 80
         width: 16
         height: 20
       alignment: 0
@@ -383,7 +383,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 20
+        y: 80
         width: 16
         height: 20
       alignment: 0
@@ -404,7 +404,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 40
+        y: 100
         width: 16
         height: 20
       alignment: 0
@@ -425,7 +425,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 40
+        y: 100
         width: 16
         height: 20
       alignment: 0
@@ -446,7 +446,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 40
+        y: 100
         width: 16
         height: 20
       alignment: 0
@@ -467,7 +467,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 40
+        y: 100
         width: 16
         height: 20
       alignment: 0
@@ -488,7 +488,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -509,7 +509,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -530,7 +530,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -551,7 +551,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -572,7 +572,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -593,7 +593,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -614,7 +614,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -635,7 +635,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 0
+        y: 60
         width: 16
         height: 20
       alignment: 0
@@ -651,6 +651,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FallDown1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b7d62e867b5a74cae068778e3ff5e2
+      internalID: 1904917662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallDown2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e03ac8b274d4648be857f840708203
+      internalID: -357969022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallDown3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fa44710a40e644b9366be2188cc8b1
+      internalID: -217655920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallUp1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062db32027dc26945b546c1384f9bdd7
+      internalID: -1639335269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallUp2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad193d539e55b9044b382fae555cb225
+      internalID: -623329574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallUp3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2252c0d61930a1439bb73918069ba3d
+      internalID: 266447733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -662,10 +788,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      FallUp2: -623329574
+      FallDown1: 1904917662
       Run7: 891213739
       Jump2: -889395046
+      FallUp3: 266447733
       Jump4: 580864854
       Land5: 1549593719
+      FallDown3: -217655920
       Run1: 714852578
       Run2: 661897010
       Player_0: -205308670
@@ -676,6 +806,7 @@ TextureImporter:
       Idle3: -582828682
       Jump3: 947154949
       Jump1: -1930377851
+      FallUp1: -1639335269
       Land2: 169385046
       Jump6: 1514062040
       Land1: -370638125
@@ -688,6 +819,7 @@ TextureImporter:
       Land6: 675238711
       Idle2: -2129158148
       Run8: 639294488
+      FallDown2: -357969022
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
