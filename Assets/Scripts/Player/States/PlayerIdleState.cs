@@ -16,7 +16,7 @@ public class PlayerIdleState : GroundedState
     {
         base.Update();
 
-        if (moveValue == 0)
+        if (sm.MoveValue == 0)
         {
             if (accelerant < 0)
             {

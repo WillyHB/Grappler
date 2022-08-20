@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "3e859577-06c3-436d-b66b-1a3a9e60f0bd",
                     "expectedControlType": "Axis",
-                    "processors": "",
+                    "processors": "AxisDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -63,6 +63,15 @@
                     "name": "CancelGrapple",
                     "type": "Button",
                     "id": "170504ea-8d4d-4199-a9ad-01e3f563aa2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Walk",
+                    "type": "Button",
+                    "id": "3db75018-05dc-47da-9acf-0e1b689fc50c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -161,7 +170,7 @@
                 {
                     "name": "",
                     "id": "16f96fa0-4a40-47e8-a070-cb4b3f8a0734",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -309,6 +318,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "CancelGrapple",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d78c1e84-7561-4041-b7f4-6db5db404eac",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

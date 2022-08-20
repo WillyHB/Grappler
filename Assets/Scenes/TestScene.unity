@@ -2941,10 +2941,10 @@ GameObject:
   - component: {fileID: 676480557}
   - component: {fileID: 676480556}
   - component: {fileID: 676480558}
-  - component: {fileID: 676480559}
   - component: {fileID: 676480562}
   - component: {fileID: 676480563}
   - component: {fileID: 676480564}
+  - component: {fileID: 676480565}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -3059,36 +3059,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.035019994}
   m_Size: {x: 1, y: 1.1900401}
   m_Direction: 0
---- !u!114 &676480559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676480554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 854b49f71b260ac40b95b1b6b0fc1164, type: 3}
-  m_NotificationBehavior: 3
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &676480562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3150,6 +3120,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &676480565
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676480554}
+  m_Enabled: 1
+  m_SortingLayerID: -1857744211
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &899401824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,7 +3472,7 @@ MonoBehaviour:
   m_Intensity: 7.73
   m_LightVolumeIntensity: 0.11
   m_LightVolumeIntensityEnabled: 1
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000ad124591
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3636,6 +3618,81 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+--- !u!1 &1317877424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317877427}
+  - component: {fileID: 1317877426}
+  - component: {fileID: 1317877425}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1317877425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317877424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b3f73430d41e64d9543eaedca892e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1317877426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317877424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 854b49f71b260ac40b95b1b6b0fc1164, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &1317877427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317877424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.87336546, y: -8.071596, z: 0.5239063}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1468813040
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,6 +3704,7 @@ GameObject:
   - component: {fileID: 1468813041}
   - component: {fileID: 1468813043}
   - component: {fileID: 1468813042}
+  - component: {fileID: 1468813044}
   m_Layer: 7
   m_Name: Hand
   m_TagString: Untagged
@@ -3735,6 +3793,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoulder: {fileID: 1005722286}
   armLength: 0.55
+--- !u!210 &1468813044
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468813040}
+  m_Enabled: 1
+  m_SortingLayerID: -1857744211
+  m_SortingLayer: 1
+  m_SortingOrder: -1
+  m_SortAtRoot: 1
 --- !u!1 &1629485461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,7 +3996,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000ad124591
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4012,6 +4082,7 @@ GameObject:
   - component: {fileID: 2092169909}
   - component: {fileID: 2092169908}
   - component: {fileID: 2092169910}
+  - component: {fileID: 2092169911}
   m_Layer: 0
   m_Name: Grapple
   m_TagString: Untagged
@@ -4154,6 +4225,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   TwoPointRope: {fileID: 6750984759069912465, guid: d32589177ad155847bad8006bec8dadd, type: 3}
+  InputProvider: {fileID: 11400000, guid: c7935b704ec6f63498d906363b01c97b, type: 2}
 --- !u!114 &2092169910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4180,6 +4252,18 @@ MonoBehaviour:
   ConnectedBody: {fileID: 0}
   StartOffset: {x: 0, y: 0}
   EndOffset: {x: 0, y: 0}
+--- !u!210 &2092169911
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092169906}
+  m_Enabled: 1
+  m_SortingLayerID: -1857744211
+  m_SortingLayer: 1
+  m_SortingOrder: -2
+  m_SortAtRoot: 1
 --- !u!1001 &6750984759999715358
 PrefabInstance:
   m_ObjectHideFlags: 0

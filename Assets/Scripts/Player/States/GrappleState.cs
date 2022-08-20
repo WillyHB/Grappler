@@ -23,8 +23,6 @@ public class GrappleState : State
 
     private void Jump()
     {
-        sm.InputProvider.Jumped -= Jump;
-
         sm.Grapple.ReleaseGrapple();
         sm.Transition(sm.JumpState);
     }
@@ -67,6 +65,7 @@ public class GrappleState : State
     {
         base.OnExit();
 
+        sm.InputProvider.Jumped -= Jump;
         sm.transform.rotation = Quaternion.identity;
     }
 

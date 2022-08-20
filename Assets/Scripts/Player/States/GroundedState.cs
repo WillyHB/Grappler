@@ -10,7 +10,7 @@ public class GroundedState : State
 
     protected float accelerant;
 
-    protected float moveValue;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
@@ -45,8 +45,6 @@ public class GroundedState : State
     public override void Update()
     {
         base.Update();
-
-        moveValue = sm.InputProvider.GetState().MoveDirection;
 
         if (!sm.IsGrounded)
         {

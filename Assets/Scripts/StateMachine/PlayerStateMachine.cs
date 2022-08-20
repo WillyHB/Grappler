@@ -17,25 +17,27 @@ public class PlayerStateMachine : StateMachine
 
     public float GroundedCheckRadius = 0.25f;
 
+
     public Rigidbody2D Rigidbody { get; private set; }
     public InputProvider InputProvider;
-
-    public PlayerInput PlayerInput { get; private set; }
     public Animator Animator { get; private set; }
 
     public Grapple Grapple { get; private set; }
 
     public bool IsGrounded { get; set; }
 
+    public float MoveValue {get; set;}
+
     protected override void Update()
     {
         base.Update();
 
         //Debug.Log(CurrentState.GetType().ToString());
+        MoveValue = InputProvider.GetState().MoveDirection;
 
         IsGrounded = Physics2D.OverlapCircle(
-        new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
-        GroundedCheckRadius, GroundLayerMask);
+            new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
+            GroundedCheckRadius, GroundLayerMask);
 
         if (InputProvider.GetState().MoveDirection > 0)
         {
@@ -48,7 +50,10 @@ public class PlayerStateMachine : StateMachine
         }
 
         Animator.SetBool("isGrounded", IsGrounded);
-        Animator.SetBool("isMoving", InputProvider.GetState().MoveDirection != 0);
+        Animator.SetFloat("moveValue", MoveValue *
+            (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && InputProvider.GetState().IsWalking ? 0.49f : 1));
+
+
         Animator.SetFloat("yVelocity", Rigidbody.velocity.y);
     }
 
@@ -65,8 +70,8 @@ public class PlayerStateMachine : StateMachine
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-        PlayerInput = GetComponent<PlayerInput>();
     }
+
     protected override State GetInitialState() => IdleState;
 
 

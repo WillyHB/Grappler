@@ -8,8 +8,6 @@ public class Grapple : MonoBehaviour
 {
     private ConnectionRope connectionRope;
 
-    private GameObject player;
-
     public float GrappleExtensionSpeed = 2;
 
     public LayerMask GroundLayerMask;
@@ -18,36 +16,38 @@ public class Grapple : MonoBehaviour
     private GameObject hook;
     private GameObject hookInstance;
 
+    public InputProvider InputProvider;
+
     public bool IsGrappling => connectionRope.enabled;
 
+    private bool grappledThisFrame;
 
     void Start()
     {
         hook = new GameObject();
         hook.AddComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
-        player = GameObject.FindWithTag("Player");
-
         connectionRope = GetComponent<ConnectionRope>();
         connectionRope.enabled = false;
 
-
-        GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled += OnGrapple;
-        GetComponentInParent<PlayerStateMachine>().InputProvider.GrappleCanceled += ReleaseGrapple;
+        InputProvider.GrappleCanceled += ReleaseGrapple;
+        InputProvider.Grappled += OnGrapple;
 
     }
 
     private void OnDisable()
     {
-        GetComponentInParent<PlayerStateMachine>().InputProvider.Grappled -= OnGrapple;
-        GetComponentInParent<PlayerStateMachine>().InputProvider.GrappleCanceled -= ReleaseGrapple;
+        InputProvider.GrappleCanceled -= ReleaseGrapple;
+        InputProvider.Grappled -= OnGrapple;
     }
 
     private void Update()
     {
         if (IsGrappling)
         {
-            float grappleVal = player.GetComponent<PlayerInput>().actions["GrappleLength"].ReadValue<float>();
+            grappledThisFrame = false;
+
+            float grappleVal = InputProvider.GetState().GrappleLength;
 
             if (grappleVal != 0)
             {
@@ -58,26 +58,23 @@ public class Grapple : MonoBehaviour
 
     private void OnGrapple()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
-
         RaycastHit2D hit = default;
 
-        if (GetComponentInParent<PlayerInput>().currentControlScheme == "Keyboard&Mouse")
+        if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
         {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
             hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
         }
 
-        else if (GetComponentInParent<PlayerInput>().currentControlScheme == "Gamepad")
+        else if (InputDeviceManager.CurrentDeviceType == InputDevices.Controller)
         {
-            hit = Physics2D.Raycast(transform.position, Gamepad.current.rightStick.ReadValue(), 20, GroundLayerMask);
+            hit = Physics2D.Raycast(transform.position, Gamepad.current.rightStick.ReadValue(), 1000, GroundLayerMask);
         }
-
-        //
-
-       
 
         if (hit)
         {
+            grappledThisFrame = true;
+
             if (hookInstance != null) Destroy(hookInstance);
 
             if (hit.collider.GetComponent<Rigidbody2D>() != null)
@@ -108,6 +105,9 @@ public class Grapple : MonoBehaviour
 
     public void ReleaseGrapple()
     {
-        connectionRope.enabled = false;
+        if (!grappledThisFrame)
+        {
+            connectionRope.enabled = false;
+        }
     }
 }

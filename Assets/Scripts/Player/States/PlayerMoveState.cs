@@ -10,6 +10,8 @@ public class PlayerMoveState : GroundedState
 
     public float StartAccelerant;
 
+    public float WalkSpeedMultiplier = 0.4f;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
@@ -29,9 +31,13 @@ public class PlayerMoveState : GroundedState
     {
         base.FixedUpdate();
 
-        float speed = moveValue * (Speed * Time.deltaTime);
+        float speed = (sm.MoveValue * 
+            (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && sm.InputProvider.GetState().IsWalking 
+            ? WalkSpeedMultiplier 
+            : 1)) 
+            * (Speed * Time.deltaTime);
 
-        if (moveValue > 0)
+        if (sm.MoveValue > 0)
         {
             if (accelerant < speed)
             {
@@ -46,7 +52,7 @@ public class PlayerMoveState : GroundedState
 
         }
 
-        else if (moveValue < 0)
+        else if (sm.MoveValue < 0)
         {
             if (accelerant > speed)
             {

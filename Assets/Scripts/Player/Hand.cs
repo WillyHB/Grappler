@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Hand : MonoBehaviour
 {
-    // Point you want to have sword rotate around
     public Transform shoulder;
-    // how far you want the sword to be from point
+
     public float armLength = 1f;
 
     void Update()
@@ -25,12 +24,12 @@ public class Hand : MonoBehaviour
 
         Vector3 shoulderToDir = Vector3.zero;
 
-        if (FindObjectOfType<PlayerInput>().currentControlScheme == "Keyboard&Mouse")
+        if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
         {
             shoulderToDir = mousePos - shoulder.position;
         }
 
-        else if (FindObjectOfType<PlayerInput>().currentControlScheme == "Gamepad")
+        else if (InputDeviceManager.CurrentDeviceType == InputDevices.Controller)
         {
             shoulderToDir = (Vector3)Gamepad.current.rightStick.ReadValue();
         }

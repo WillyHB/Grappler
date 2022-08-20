@@ -2,27 +2,34 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public static class InputDeviceManager
+public enum InputDevices
 {
-    public enum InputDevices
+    MnK,
+    Controller,
+    Unknown
+}
+
+public class InputDeviceManager : MonoBehaviour
+{
+    private void Start()
     {
-        Keyboard,
-        Controller
-    }
-    // Start is called before the first frame update
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void Start()
-    {
-        InputSystem.onDeviceChange += OnDeviceChange;
+        GetComponent<PlayerInput>().onControlsChanged += ControlsChanged;
     }
 
-    private static void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    private void ControlsChanged(PlayerInput playerInput)
     {
-        
+
+        CurrentDeviceType = playerInput.currentControlScheme switch
+        {
+            "Keyboard&Mouse" => InputDevices.MnK,
+            "Gamepad" => InputDevices.Controller,
+            _ => InputDevices.Unknown
+        };
+
+        DeviceChanged?.Invoke(CurrentDeviceType);
     }
 
     public static event Action<InputDevices> DeviceChanged;
 
     public static InputDevices CurrentDeviceType;
-    public static InputDevice CurrentDevice;
 }

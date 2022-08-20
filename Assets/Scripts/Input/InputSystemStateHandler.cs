@@ -10,10 +10,10 @@ public class InputSystemStateHandler : InputStateHandler
 
     public void OnEnable()
     {
-        Actions.FindActionMap("Player").FindAction("Jump").started += (cc) => PerformJump();
-        Actions.FindActionMap("Player").FindAction("Shoot").started += (cc) => PerformShoot();
-        Actions.FindActionMap("Player").FindAction("Grapple").started += (cc) => PerformGrapple();
-        Actions.FindActionMap("Player").FindAction("CancelGrapple").started += (cc) => CancelGrapple();
+        Actions.FindActionMap("Player").FindAction("Jump").performed += (cc) => PerformJump();
+        Actions.FindActionMap("Player").FindAction("Shoot").performed += (cc) => PerformShoot();
+        Actions.FindActionMap("Player").FindAction("Grapple").performed += (cc) => PerformGrapple();
+        Actions.FindActionMap("Player").FindAction("CancelGrapple").performed += (cc) => CancelGrapple();
     }
 
     public void OnDisable()
@@ -24,11 +24,16 @@ public class InputSystemStateHandler : InputStateHandler
     public override InputState HandleInputState(InputState state)
     {
         state.MoveDirection = Actions.FindActionMap("Player").FindAction("Move").ReadValue<float>();
+
+        state.GrappleLength = Actions.FindActionMap("Player").FindAction("GrappleLength").ReadValue<float>();
+
         state.CanJump = true;
         state.CanGrapple = true;
-        state.IsJumping = Actions.FindActionMap("Player").FindAction("Jump").IsPressed();
         state.CanShoot = false;
+
+        state.IsJumping = Actions.FindActionMap("Player").FindAction("Jump").IsPressed();
         state.IsCrouching = Actions.FindActionMap("Player").FindAction("Crouch").IsPressed();
+        state.IsWalking = Actions.FindActionMap("Player").FindAction("Walk").IsPressed();
         return state;
     }
 }
