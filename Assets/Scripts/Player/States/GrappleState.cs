@@ -24,6 +24,7 @@ public class GrappleState : State
     private void Jump()
     {
         sm.Grapple.ReleaseGrapple();
+        sm.Animator.Play("Jump");
         sm.Transition(sm.JumpState);
     }
 
@@ -35,7 +36,8 @@ public class GrappleState : State
 
         if (!sm.Grapple.IsGrappling)
         {
-            sm.Transition(sm.IdleState);
+            sm.Animator.Play("FallDown");
+            sm.Transition(sm.FallState);
 
             return;
         }
@@ -57,6 +59,7 @@ public class GrappleState : State
 
         if (sm.IsGrounded)
         {
+            sm.Animator.Play("Idle");
             sm.Transition(sm.IdleState);
         }
     }
