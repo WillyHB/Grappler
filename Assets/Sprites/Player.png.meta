@@ -133,7 +133,7 @@ TextureImporter:
         x: 23
         y: 150
         width: 6
-        height: 4
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -956,7 +956,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk4: -717370663
       FallDown1: 1904917662
       Run7: 891213739
       Jump2: -889395046
@@ -974,9 +973,10 @@ TextureImporter:
       Run6: -235617297
       Run5: -802913842
       Run3: 479359299
+      Walk4: -717370663
       FallUp2: -623329574
-      Idle3: -582828682
       Jump3: 947154949
+      Idle3: -582828682
       Jump1: -1930377851
       FallUp1: -1639335269
       Land2: 169385046

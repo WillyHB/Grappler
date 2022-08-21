@@ -18,6 +18,10 @@ public class Grapple : MonoBehaviour
 
     public InputProvider InputProvider;
 
+    public Transform GrapplePos;
+
+    public GameObject Hand;
+
     public bool IsGrappling => connectionRope.enabled;
 
     private bool grappledThisFrame;
@@ -45,6 +49,7 @@ public class Grapple : MonoBehaviour
     {
         if (IsGrappling)
         {
+            connectionRope.startOffset = GrapplePos.position - transform.position;
             grappledThisFrame = false;
 
             float grappleVal = InputProvider.GetState().GrappleLength;
@@ -53,6 +58,8 @@ public class Grapple : MonoBehaviour
             {
                 connectionRope.SetLength(connectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
             }
+
+            Hand.GetComponent<Hand>().followPosition = (Vector2)connectionRope.connectedBody.transform.position + connectionRope.endOffset;
         }
     }
 
@@ -83,8 +90,9 @@ public class Grapple : MonoBehaviour
                 connectionRope.connectedBody = hit.transform.gameObject.GetComponent<Rigidbody2D>();
 
                 Vector3 offset = (Vector3)hit.point - hit.transform.position;
+
                 connectionRope.endOffset = offset;
-                connectionRope.SetLength((transform.position - (hit.transform.position + offset)).magnitude);
+                connectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
             }
 
             else
@@ -107,7 +115,10 @@ public class Grapple : MonoBehaviour
     {
         if (!grappledThisFrame)
         {
+            Destroy(hookInstance);
             connectionRope.enabled = false;
+
+            Hand.GetComponent<Hand>().followPosition = null;
         }
     }
 }

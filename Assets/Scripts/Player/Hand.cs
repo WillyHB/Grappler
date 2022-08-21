@@ -6,17 +6,18 @@ using UnityEngine.InputSystem;
 public class Hand : MonoBehaviour
 {
     public Transform shoulder;
-
+    public Vector2? followPosition;
     public float armLength = 1f;
+
+    public Vector2 Direction { get; set; }
 
     void Update()
     {
-       
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
-        var dir = transform.parent.position - transform.position;
+        Direction = transform.parent.position - transform.position;
 
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        var angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
@@ -24,7 +25,12 @@ public class Hand : MonoBehaviour
 
         Vector3 shoulderToDir = Vector3.zero;
 
-        if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
+        if (followPosition != null)
+        {
+            shoulderToDir = (Vector3)followPosition - shoulder.position;
+        }
+
+        else if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
         {
             shoulderToDir = mousePos - shoulder.position;
         }

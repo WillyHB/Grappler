@@ -28,8 +28,9 @@ public class ConnectionRope : Rope
 
         set
         {
-            distanceJoint.anchor = value;
             StartOffset = value;
+
+            distanceJoint.anchor = transform.InverseTransformPoint(transform.position + (Vector3)startOffset);
         }
     }
 
@@ -49,16 +50,21 @@ public class ConnectionRope : Rope
 
     private DistanceJoint2D distanceJoint;
         
+    public Vector2 GetRotatedPoint(Vector2 point, float eulerRotation)
+    {
+        float radians = eulerRotation * Mathf.Deg2Rad;
+
+        float xRotate = point.x * Mathf.Cos(radians) - point.y * Mathf.Sin(radians);
+        float yRotate = point.x * Mathf.Sin(radians) + point.y * Mathf.Cos(radians);
+
+        return new Vector2(xRotate, yRotate);
+    }
     public Vector2 GetCalculatedEndPoint()
     {
-        float rotation = connectedBody.rotation;
 
-        float radians = rotation * Mathf.Deg2Rad;
+        Vector2 rotate = GetRotatedPoint(endOffset, connectedBody.rotation);
 
-        float xRotate = endOffset.x * Mathf.Cos(radians) - endOffset.y * Mathf.Sin(radians);
-        float yRotate = endOffset.x * Mathf.Sin(radians) + endOffset.y * Mathf.Cos(radians);
-
-        return new Vector2(xRotate + connectedBody.transform.position.x, yRotate + connectedBody.transform.position.y);
+        return new Vector2(rotate.x + connectedBody.transform.position.x, rotate.y + connectedBody.transform.position.y);
     }
 
     void Awake()
@@ -108,6 +114,7 @@ public class ConnectionRope : Rope
 
     private void FixedUpdate()
     {
+
         Simulate();
 
         distanceJoint.distance = GetLength();
