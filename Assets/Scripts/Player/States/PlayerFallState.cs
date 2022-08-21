@@ -42,7 +42,6 @@ public class PlayerFallState : PlayerAirborneState
             if (coyoteTimer < CoyoteTime)
             {
                 sm.Animator.SetBool("isJumping", true);
-                sm.Animator.Play("Jump");
                 sm.Transition(sm.JumpState);
                 return;
             }
@@ -56,15 +55,6 @@ public class PlayerFallState : PlayerAirborneState
     {
         base.Update();
 
-        if (sm.Rigidbody.velocity.y > 0)
-        {
-            sm.Animator.Play("FallUp");
-        }
-
-        else
-        {
-            sm.Animator.Play("FallDown");
-        }
 
         if (jumpTimer > JumpBufferTime)
         {
@@ -76,20 +66,17 @@ public class PlayerFallState : PlayerAirborneState
             if (jumpBuffered)
             {
                 sm.Animator.SetBool("isJumping", true);
-                sm.Animator.Play("Jump");
                 sm.Transition(sm.JumpState);
                 jumpBuffered = false;
                 return;
             }
 
-            sm.Animator.Play("Land");
             sm.Transition(sm.IdleState);
             return;
         }
 
         if (sm.Grapple.IsGrappling)
         {
-            sm.Animator.Play("Grapple");
             sm.Transition(sm.GrappleState);
         }
     }
