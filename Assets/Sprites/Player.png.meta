@@ -110,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 140
+        y: 480
         width: 16
         height: 20
       alignment: 0
@@ -131,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 23
-        y: 150
+        y: 490
         width: 6
         height: 6
       alignment: 0
@@ -152,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
+        y: 460
         width: 16
         height: 20
       alignment: 0
@@ -173,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 120
+        y: 460
         width: 16
         height: 20
       alignment: 0
@@ -194,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 120
+        y: 460
         width: 16
         height: 20
       alignment: 0
@@ -215,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 120
+        y: 460
         width: 16
         height: 20
       alignment: 0
@@ -236,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
+        y: 440
         width: 16
         height: 20
       alignment: 0
@@ -257,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 100
+        y: 440
         width: 16
         height: 20
       alignment: 0
@@ -278,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 420
         width: 16
         height: 20
       alignment: 0
@@ -299,7 +299,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 80
+        y: 420
         width: 16
         height: 20
       alignment: 0
@@ -320,7 +320,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 80
+        y: 420
         width: 16
         height: 20
       alignment: 0
@@ -341,7 +341,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 80
+        y: 420
         width: 16
         height: 20
       alignment: 0
@@ -362,7 +362,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 80
+        y: 420
         width: 16
         height: 20
       alignment: 0
@@ -379,32 +379,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Land6
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37201bde3fad6bc46a5443e9d7f23e2c
-      internalID: 675238711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Jump3
       rect:
         serializedVersion: 2
         x: 32
-        y: 100
+        y: 440
         width: 16
         height: 20
       alignment: 0
@@ -425,7 +404,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 100
+        y: 440
         width: 16
         height: 20
       alignment: 0
@@ -446,7 +425,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 100
+        y: 440
         width: 16
         height: 20
       alignment: 0
@@ -467,7 +446,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 100
+        y: 440
         width: 16
         height: 20
       alignment: 0
@@ -488,7 +467,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -509,7 +488,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -530,7 +509,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -551,7 +530,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -572,7 +551,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -593,7 +572,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -614,7 +593,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -635,7 +614,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 60
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -656,7 +635,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
+        y: 360
         width: 16
         height: 20
       alignment: 0
@@ -677,7 +656,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 20
+        y: 360
         width: 16
         height: 20
       alignment: 0
@@ -698,7 +677,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 20
+        y: 360
         width: 16
         height: 20
       alignment: 0
@@ -719,7 +698,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 340
         width: 16
         height: 20
       alignment: 0
@@ -740,7 +719,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 340
         width: 16
         height: 20
       alignment: 0
@@ -761,7 +740,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 340
         width: 16
         height: 20
       alignment: 0
@@ -782,7 +761,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -803,7 +782,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -824,7 +803,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -845,7 +824,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -866,7 +845,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -887,7 +866,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -908,7 +887,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -929,7 +908,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 40
+        y: 380
         width: 16
         height: 20
       alignment: 0
@@ -941,6 +920,153 @@ TextureImporter:
       bones: []
       spriteID: 7743dc3b4c2887c469eb55facbb5a500
       internalID: 228908333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunLand1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5526139f1165d44586a1fb7796b96aa
+      internalID: 1129583229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunLand2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d964f1f4c11844aadcf803c73475d9
+      internalID: -300902084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunLand3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25fce72796d72f4badef7166fbf836b
+      internalID: -1824072872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunLand4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d82d8b8fee1c34caf47bb017ec6c35
+      internalID: 677299120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunLand5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67bc972720fc3ab4f94bde0b90f1f9b0
+      internalID: 56251326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunLand6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348e1a7f89f84754998e04690b46d5a6
+      internalID: 1797858514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdbc074700d90c44be2ba4bf427b691
+      internalID: 675238711
       vertices: []
       indices: 
       edges: []
@@ -957,45 +1083,51 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       FallDown1: 1904917662
-      Run7: 891213739
       Jump2: -889395046
       FallUp3: 266447733
-      Jump4: 580864854
-      Walk3: 2058452194
       Walk7: 262825427
       Land5: 1549593719
+      RunLand1: 1129583229
       FallDown3: -217655920
       Run1: 714852578
       Run2: 661897010
       Walk6: 1787655019
-      Player_0: -205308670
-      Land4: -1428735518
+      RunLand5: 56251326
       Run6: -235617297
-      Run5: -802913842
-      Run3: 479359299
+      FallUp1: -1639335269
       Walk4: -717370663
       FallUp2: -623329574
       Jump3: 947154949
-      Idle3: -582828682
       Jump1: -1930377851
-      FallUp1: -1639335269
-      Land2: 169385046
+      RunLand6: 1797858514
       Walk2: 2053448171
-      Jump6: 1514062040
       Land1: -370638125
-      Jump5: -1236504202
-      Hand: 1026481696
-      Idle1: 912300089
+      FallDown2: -357969022
       Idle4: -1384108245
       Walk8: 228908333
-      Land3: -1852222810
       Run4: -177503077
-      Land6: 675238711
       Idle2: -2129158148
       Run8: 639294488
-      FallDown2: -357969022
+      Run7: 891213739
+      RunLand3: -1824072872
+      Jump4: 580864854
+      Walk3: 2058452194
+      Player_0: -205308670
+      Land4: -1428735518
+      RunLand2: -300902084
+      Run5: -802913842
+      Run3: 479359299
+      Idle3: -582828682
+      Jump6: 1514062040
+      Land2: 169385046
+      Jump5: -1236504202
+      Hand: 1026481696
+      Land3: -1852222810
+      Idle1: 912300089
+      Land6: 675238711
       Walk1: -1041322399
       Walk5: -1537998552
+      RunLand4: 677299120
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

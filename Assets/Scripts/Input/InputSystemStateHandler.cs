@@ -24,7 +24,6 @@ public class InputSystemStateHandler : InputStateHandler
     public override InputState HandleInputState(InputState state)
     {
         state.MoveDirection = Actions.FindActionMap("Player").FindAction("Move").ReadValue<float>();
-
         state.GrappleLength = Actions.FindActionMap("Player").FindAction("GrappleLength").ReadValue<float>();
 
         state.CanJump = true;

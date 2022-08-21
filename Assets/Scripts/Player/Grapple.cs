@@ -61,6 +61,7 @@ public class Grapple : MonoBehaviour
 
             Hand.GetComponent<Hand>().followPosition = (Vector2)connectionRope.connectedBody.transform.position + connectionRope.endOffset;
         }
+
     }
 
     private void OnGrapple()
