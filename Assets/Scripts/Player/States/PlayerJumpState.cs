@@ -20,18 +20,22 @@ public class PlayerJumpState : PlayerAirborneState
 
         sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, sm.Rigidbody.velocity.y < 0 ? 0 : sm.Rigidbody.velocity.y);
         sm.Rigidbody.AddForce(Vector2.up * JumpForce);
+
+        sm.Animator.Play(sm.Animations.Jump);
     }
 
     public override void Update()
     {
-        if (!sm.InputProvider.GetState().IsJumping 
-            || sm.transform.position.y - startY >= MaxJumpHeight 
-            || sm.Rigidbody.velocity.y < 0)
+        if (sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >=1
+            && (!sm.InputProvider.GetState().IsJumping
+            || sm.transform.position.y - startY >= MaxJumpHeight
+            || sm.Rigidbody.velocity.y < 0))
         {
             sm.Rigidbody.gravityScale = defaultGravity;
 
             sm.Animator.SetBool("isJumping", false);
             sm.Transition(sm.FallState);
+            return;
         }
 
         else

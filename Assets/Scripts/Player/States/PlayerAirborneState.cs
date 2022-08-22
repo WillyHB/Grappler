@@ -34,7 +34,6 @@ public class PlayerAirborneState : State
     {
         base.FixedUpdate();
 
-        sm.Animator.Play("Test", 0, sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         float moveValue = sm.InputProvider.GetState().MoveDirection;
 
         if (sm.InputProvider.GetState().IsCrouching)

@@ -2375,6 +2375,7 @@ GameObject:
   - component: {fileID: 290769950}
   - component: {fileID: 290769949}
   - component: {fileID: 290769953}
+  - component: {fileID: 290769954}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -2509,6 +2510,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToFace: {fileID: 302939528}
+--- !u!114 &290769954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290769948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f79a9098d7b9f46afc4c5058acfcce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animations:
+  - {fileID: 11400000, guid: 0d7d7eb40bff2584f9c7e6be53e6841f, type: 2}
+  <CurrentAnimation>k__BackingField: {fileID: 0}
 --- !u!1 &302939525
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,16 +3239,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd159b215d58b8948bb9e76ffe34f449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveState: {fileID: 11400000, guid: a1fb6fd59811de44a991083693a55f3b, type: 2}
+  WalkState: {fileID: 11400000, guid: 0614c86c3c7d49544a80ccfc84670326, type: 2}
+  RunState: {fileID: 11400000, guid: 4721d4e65404c414c9e956c983d8b00b, type: 2}
   IdleState: {fileID: 11400000, guid: fbbb8d1e8e03c5844846781febed6a3b, type: 2}
   JumpState: {fileID: 11400000, guid: b808fdea3ffc5c64cb46cca80c954803, type: 2}
   FallState: {fileID: 11400000, guid: 8c13fe23d52b1d74a886c1f5cc6c2c04, type: 2}
+  LandState: {fileID: 11400000, guid: 6b5b8395ac7738c45bf642455ab48894, type: 2}
   GrappleState: {fileID: 11400000, guid: 6ea15e989b5dc8c4b8ba91b5b5406544, type: 2}
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 64
   GroundedCheckRadius: 0.07
   InputProvider: {fileID: 11400000, guid: c7935b704ec6f63498d906363b01c97b, type: 2}
+  KickRock: {fileID: 3636330628185461093, guid: 1cd5a46ec961f954ca9ee5def7163d89, type: 3}
 --- !u!232 &676480563
 DistanceJoint2D:
   m_ObjectHideFlags: 0

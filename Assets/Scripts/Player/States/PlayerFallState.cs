@@ -25,6 +25,8 @@ public class PlayerFallState : PlayerAirborneState
 
         coyoteTimeEnabled = sm.PreviousState.IsSubclassOf(typeof(GroundedState));
         coyoteTimer = 0;
+
+        sm.Animator.Play(sm.Animations.FallDown);
     }
 
     public override void OnExit()
@@ -55,6 +57,8 @@ public class PlayerFallState : PlayerAirborneState
     {
         base.Update();
 
+        if (sm.Rigidbody.velocity.y > 0) sm.Animator.Play(sm.Animations.FallUp);
+        else sm.Animator.Play(sm.Animations.FallDown);
 
         if (jumpTimer > JumpBufferTime)
         {
@@ -71,13 +75,15 @@ public class PlayerFallState : PlayerAirborneState
                 return;
             }
 
-            sm.Transition(sm.IdleState);
+
+            sm.Transition(sm.LandState);
             return;
         }
 
         if (sm.Grapple.IsGrappling)
         {
             sm.Transition(sm.GrappleState);
+            return;
         }
     }
 

@@ -7,32 +7,55 @@ public class PlayerIdleState : GroundedState
 {
     public float GroundFriction = 25;
 
+    public float TimeBetweenAnimations = 10;
+
+    private float animationTimer;
+
+    private int prevAnim;
+
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
+
+        animationTimer = 0;
+        sm.Animator.Play(sm.Animations.Idle);
     }
 
     public override void Update()
     {
         base.Update();
 
-        if (sm.MoveValue == 0)
+        if (sm.MoveValue != 0)
         {
-            if (accelerant < 0)
+            if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && sm.InputProvider.GetState().IsWalking)
             {
-                accelerant += Mathf.Min(GroundFriction * Time.deltaTime, -accelerant);
+                sm.Transition(sm.WalkState);
+                return;
             }
 
-            else if (accelerant > 0)
-            {
-                accelerant -= Mathf.Min(GroundFriction * Time.deltaTime, accelerant);
-            }
-
+            sm.Transition(sm.RunState);
+            return;
         }
 
-        else
+        animationTimer += Time.deltaTime;
+
+        if (animationTimer >= TimeBetweenAnimations)
         {
-            sm.Transition(sm.MoveState);
+            if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Idle)
+            {
+                int anim = prevAnim;
+
+                while (anim == prevAnim)
+                {
+                    anim = Random.Range(1, 5);
+                }
+
+                sm.Animator.Play($"IdleAnimation4");
+                animationTimer = 0;
+
+                prevAnim = anim;
+            }
         }
     }
 }

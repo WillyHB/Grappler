@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName ="States/Player/MoveState")]
-public class PlayerMoveState : GroundedState
+public abstract class PlayerMoveState : GroundedState
 {
     public float Speed = 100;
 
     public float StartAccelerant;
-
-    public float WalkSpeedMultiplier = 0.4f;
 
     public override void OnEnter(StateMachine fsm)
     {
@@ -31,11 +28,7 @@ public class PlayerMoveState : GroundedState
     {
         base.FixedUpdate();
 
-        float speed = (sm.MoveValue * 
-            (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && sm.InputProvider.GetState().IsWalking 
-            ? WalkSpeedMultiplier 
-            : 1)) 
-            * (Speed * Time.deltaTime);
+        float speed = sm.MoveValue * (Speed * Time.deltaTime);
 
         if (sm.MoveValue > 0)
         {
@@ -65,11 +58,5 @@ public class PlayerMoveState : GroundedState
             }
 
         }
-
-        else
-        {
-            sm.Transition(sm.IdleState);
-        }
-
     }
 }

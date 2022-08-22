@@ -5,13 +5,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerStateMachine : StateMachine
 {
-    public PlayerMoveState MoveState;
+    public PlayerWalkState WalkState;
+    public PlayerRunState RunState;
     public PlayerIdleState IdleState;
     public PlayerJumpState JumpState;
     public PlayerFallState FallState;
-
+    public PlayerLandState LandState;
     public GrappleState GrappleState;
 
+    public class Anims
+    {
+        public int Land { get; private set; } = Animator.StringToHash("Land");
+        public int RunLand { get; private set; } = Animator.StringToHash("RunLand");
+        public int Idle { get; private set; } = Animator.StringToHash("Idle");
+        public int Run { get; private set; } = Animator.StringToHash("Run");
+        public int Walk { get; private set; } = Animator.StringToHash("Walk");
+        public int Jump { get; private set; } = Animator.StringToHash("Jump");
+        public int FallDown { get; private set; } = Animator.StringToHash("FallDown");
+        public int FallUp { get; private set; } = Animator.StringToHash("FallUp");
+
+    }
+
+    public Anims Animations { get; } = new();
     [Space(25)]
     public LayerMask GroundLayerMask;
 
@@ -27,6 +42,8 @@ public class PlayerStateMachine : StateMachine
     public bool IsGrounded { get; set; }
 
     public float MoveValue {get; set;}
+
+        public GameObject KickRock;
 
     protected override void Update()
     {
@@ -74,5 +91,25 @@ public class PlayerStateMachine : StateMachine
 
     protected override State GetInitialState() => IdleState;
 
+    public void ParticleKick()
+    {
+        Vector2 pos = transform.TransformPoint(new Vector3(GetComponent<SpriteRenderer>().flipX ? -0.28f : 0.28f, -0.59f, 0));
 
+        GameObject kickRock = Instantiate(KickRock);
+
+        kickRock.GetComponent<Rigidbody2D>().AddForce(new Vector2(GetComponent<SpriteRenderer>().flipX ? -300 : 300, 300));
+
+        kickRock.transform.position = pos;
+
+        IEnumerator wait(GameObject kr)
+        {
+            yield return new WaitForSeconds(3);
+
+            Destroy(kr);
+        }
+
+        StartCoroutine(wait(kickRock));
+
+
+    }
 }

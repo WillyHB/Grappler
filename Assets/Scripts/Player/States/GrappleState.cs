@@ -19,6 +19,8 @@ public class GrappleState : State
         sm = fsm as PlayerStateMachine;
 
         sm.InputProvider.Jumped += Jump;
+
+        sm.Animator.Play(sm.Animations.FallDown);
     }
 
     private void Jump()
@@ -58,6 +60,7 @@ public class GrappleState : State
         if (sm.IsGrounded)
         {
             sm.Transition(sm.IdleState);
+            return;
         }
     }
 

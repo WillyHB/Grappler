@@ -38,6 +38,19 @@ public class GroundedState : State
     {
         base.FixedUpdate();
 
+        if (sm.MoveValue == 0)
+        {
+            if (accelerant < 0)
+            {
+                accelerant += Mathf.Min(40 * Time.deltaTime, -accelerant);
+            }
+
+            else if (accelerant > 0)
+            {
+                accelerant -= Mathf.Min(40 * Time.deltaTime, accelerant);
+            }
+        }
+
         sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
 
     }
