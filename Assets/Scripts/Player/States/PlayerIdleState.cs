@@ -9,7 +9,7 @@ public class PlayerIdleState : GroundedState
 
     [Header("Idle Animations")]
     public float TimeBetweenAnimations = 10;
-
+    [Space(10)]
     public GameObject KickRock;
     public Vector2 RockKickPower = new Vector2(200, 200);
 
@@ -29,6 +29,12 @@ public class PlayerIdleState : GroundedState
     public override void Update()
     {
         base.Update();
+
+        if (sm.InputProvider.GetState().IsCrouching)
+        {
+            sm.Transition(sm.CrouchIdle);
+            return;
+        }
 
         if (sm.MoveValue != 0)
         {
@@ -52,10 +58,12 @@ public class PlayerIdleState : GroundedState
 
                 while (anim == prevAnim)
                 {
-                    anim = Random.Range(1, 5);
+                    anim = Random.Range(1, 7);
                 }
 
+
                 sm.Animator.Play($"IdleAnimation{anim}");
+
                 animationTimer = 0;
 
                 prevAnim = anim;

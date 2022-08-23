@@ -16,6 +16,12 @@ public class PlayerRunState : PlayerMoveState
     {
         base.Update();
 
+        if (sm.InputProvider.GetState().IsCrouching)
+        {
+            sm.Transition(sm.CrouchMove);
+            return;
+        }
+
         if (sm.MoveValue == 0)
         {
             sm.Transition(sm.IdleState);

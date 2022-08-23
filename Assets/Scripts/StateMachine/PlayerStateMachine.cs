@@ -8,11 +8,14 @@ public class PlayerStateMachine : StateMachine
     public PlayerWalkState WalkState;
     public PlayerRunState RunState;
     public PlayerIdleState IdleState;
+
     public PlayerJumpState JumpState;
     public PlayerFallState FallState;
     public PlayerLandState LandState;
     public GrappleState GrappleState;
 
+    public PlayerCrouchIdle CrouchIdle;
+    public PlayerCrouchMoveState CrouchMove;
     public class Anims
     {
         public int Land { get; private set; } = Animator.StringToHash("Land");
@@ -23,7 +26,6 @@ public class PlayerStateMachine : StateMachine
         public int Jump { get; private set; } = Animator.StringToHash("Jump");
         public int FallDown { get; private set; } = Animator.StringToHash("FallDown");
         public int FallUp { get; private set; } = Animator.StringToHash("FallUp");
-
     }
 
     public Anims Animations { get; } = new();
@@ -49,7 +51,7 @@ public class PlayerStateMachine : StateMachine
     {
         base.Update();
 
-        //Debug.Log(CurrentState.GetType().ToString());
+        Debug.Log(CurrentState.GetType().ToString());
         MoveValue = InputProvider.GetState().MoveDirection;
 
         IsGrounded = Physics2D.OverlapCircle(

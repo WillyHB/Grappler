@@ -23,7 +23,7 @@ public class PlayerLandState : PlayerMoveState
 
         else
         {
-            if (sm.MoveValue > 0 || sm.MoveValue < 0)
+            if (sm.MoveValue != 0)
             {
                 if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != sm.Animations.RunLand)
                     sm.Animator.Play(sm.Animations.RunLand, 0, sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime);

@@ -2,35 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "States/Player/WalkState")]
-public class PlayerWalkState : PlayerMoveState
+[CreateAssetMenu(menuName = "States/Player/CrouchIdle")]
+public class PlayerCrouchIdle : GroundedState
 {
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
 
-        sm.Animator.Play(sm.Animations.Walk);
+        sm.Animator.Play("CrouchIdle");
     }
 
     public override void Update()
     {
         base.Update();
-
-        if (sm.InputProvider.GetState().IsCrouching)
-        {
-            sm.Transition(sm.CrouchMove);
-            return;
-        }
-
-        if (sm.MoveValue == 0)
+        
+        if (!sm.InputProvider.GetState().IsCrouching)
         {
             sm.Transition(sm.IdleState);
             return;
         }
 
-        else if (!sm.InputProvider.GetState().IsWalking)
+        if (sm.MoveValue != 0)
         {
-            sm.Transition(sm.RunState);
+            sm.Transition(sm.CrouchMove);
             return;
         }
     }

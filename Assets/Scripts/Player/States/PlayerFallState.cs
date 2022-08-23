@@ -43,7 +43,6 @@ public class PlayerFallState : PlayerAirborneState
         {
             if (coyoteTimer < CoyoteTime)
             {
-                sm.Animator.SetBool("isJumping", true);
                 sm.Transition(sm.JumpState);
                 return;
             }
@@ -69,7 +68,6 @@ public class PlayerFallState : PlayerAirborneState
         {
             if (jumpBuffered)
             {
-                sm.Animator.SetBool("isJumping", true);
                 sm.Transition(sm.JumpState);
                 jumpBuffered = false;
                 return;

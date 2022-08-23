@@ -3171,6 +3171,531 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IdleToCrouch1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6842232e8be9d2446865f27ce1a1ae7e
+      internalID: -1726323450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleToCrouch2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 120
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b82e715ff60a984689c96d9ddea8beb
+      internalID: -1982604452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleToCrouch3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 120
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1ba433f61f7754d9b1b7dcc419cfa9
+      internalID: -2062956259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371e61161ac92464aaf42720b0e5264e
+      internalID: 789473743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4bfb00d5fade344bd79ae324962820
+      internalID: -30985629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7920865eb48dd49b68dd2969af9517
+      internalID: -1482473290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aba8352db09c0d43a092af1b2bf7449
+      internalID: -140621692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657b69fd0296e654b98bc7987d8b5bb9
+      internalID: 1241014414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f168462510d28478b9544893274558
+      internalID: 644297186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93873ab4faad70147bd2fc68d30f92d3
+      internalID: 644483532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchToIdle8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 100
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb49139c66d7e594ba07b0032f68410d
+      internalID: -1128936512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchIdle1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbff557814385e24286fa6637c4bd1c8
+      internalID: 114542888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchIdle2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5da76694e8cbdf4381752db2dfbc580
+      internalID: 2126956299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchIdle3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab56529f7ab5bc74a961c29f183ec514
+      internalID: 1080385358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchIdle4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5144b1b991be7a4eb1f8076b2ace463
+      internalID: 1779137581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleToCrouch4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 120
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c65075124cb05458e12db73950ddbe
+      internalID: 1487651710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleToCrouch5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 120
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e731d360ae96218428f43b33d91060af
+      internalID: -1166947941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880f10dc9f0614a409311d40be817228
+      internalID: 902103042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0519925a5ef127143a1e03919f379981
+      internalID: 1313551571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3a45f2756e7fb4f8d4ef2339a9edbf
+      internalID: -674195431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b146fa9a6fc58fc45a3ab49946623ecf
+      internalID: -879121644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2d6693576dd114287ddaec3c2b53b3
+      internalID: 1614172104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6623c374ea2bc174fb59ba2393b65ae7
+      internalID: 1264050570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6489e89be1faf5d40a2da6de08bd8f90
+      internalID: -1791173712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrouchMove8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 60
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6241a09aed5ebbb4b8353e14d173c0a9
+      internalID: 212058146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3185,35 +3710,107 @@ TextureImporter:
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
-      IdleAnimation2_12: 1226429865
-      IdleAnimation5_16: -1429589492
       IdleAnimation1_15: 701219836
-      IdleAnimation5_8: -458041391
       Walk7: 262825427
-      IdleAnimation4_7: -40234528
-      Land5: 1549593719
       IdleAnimation2_9: -1337931963
       IdleAnimation3_2_4: 1509294314
-      IdleAnimation6_14: 420363046
       IdleAnimation3_12: 1232399295
       Run1: 714852578
-      IdleAnimation5_6: 801206500
-      IdleAnimation6_4: 1573799587
-      Walk6: 1787655019
       RunLand5: 56251326
       IdleAnimation6_2: 525753452
       Run6: -235617297
       Jump3: 947154949
-      IdleAnimation1_14: -1913911974
+      CrouchToIdle5: 1241014414
       Jump1: -1930377851
+      Land1: -370638125
+      IdleAnimation6_12: 389977770
+      Walk8: 228908333
+      CrouchIdle3: 1080385358
+      IdleAnimation4_6: 1809246072
+      Jump4: 580864854
+      Walk3: 2058452194
+      IdleAnimation3_5: -1683964253
+      IdleAnimation4_2: 1153047506
+      IdleAnimation6_3: -592407775
+      IdleAnimation1_10: 2003987032
+      IdleAnimation6_11: 1240544054
+      Player_0: -205308670
+      IdleAnimation3_2: 321241199
+      Land4: -1428735518
+      IdleAnimation3_8: 510144468
+      IdleAnimation4_8: -596760569
+      CrouchToIdle2: -30985629
+      IdleAnimation2_4: -1504739677
+      CrouchMove2: 1313551571
+      IdleAnimation3_10: -1848476239
+      Land3: -1852222810
+      IdleAnimation1_3: 1143752939
+      Walk5: -1537998552
+      IdleAnimation5_7: 205717580
+      FallDown1: 1904917662
+      IdleAnimation3_13: -701427122
+      CrouchMove8: 212058146
+      IdleToCrouch1: -1726323450
+      IdleAnimation6_5: 1927807041
+      Jump2: -889395046
+      IdleAnimation2_2: 484992433
+      IdleAnimation4_13: 1624606214
+      IdleAnimation4_5: 1867262842
+      IdleAnimation2_3: 455182933
+      IdleAnimation1_12: -515760547
+      IdleAnimation4_9: 1993296839
+      Run2: 661897010
+      FallUp1: -1639335269
+      IdleAnimation5_11: 271833366
+      FallUp2: -623329574
+      RunLand6: 1797858514
+      CrouchToIdle1: 789473743
+      IdleAnimation1_6: 1554090901
+      CrouchIdle2: 2126956299
+      IdleAnimation3_16: -1821077686
+      Idle2: -2129158148
+      Run8: 639294488
+      CrouchMove4: -879121644
+      IdleAnimation4_12: -1405390554
+      IdleAnimation5_5: -1963581632
+      Run7: 891213739
+      IdleAnimation1_7: -888520995
+      IdleAnimation6_8: 1646270115
+      IdleAnimation2_5: -68598466
+      IdleAnimation4_1: -1339107401
+      IdleAnimation4_15: 451958213
+      IdleAnimation5_3: 93428952
+      IdleAnimation2_14: -666565507
+      IdleAnimation1_16: -761519852
+      IdleToCrouch4: 1487651710
+      RunLand2: -300902084
+      Run5: -802913842
+      Run3: 479359299
+      Jump6: 1514062040
+      IdleAnimation1_1: 1911868729
+      IdleAnimation3_3: -59072642
+      IdleAnimation3_4: -967969996
+      IdleAnimation3_15: -1572300371
+      Hand: 1026481696
+      IdleToCrouch2: -1982604452
+      Walk1: -1041322399
+      IdleAnimation2_12: 1226429865
+      IdleAnimation5_16: -1429589492
+      IdleAnimation5_8: -458041391
+      IdleAnimation4_7: -40234528
+      Land5: 1549593719
+      IdleAnimation6_14: 420363046
+      IdleAnimation5_6: 801206500
+      CrouchToIdle4: -140621692
+      IdleAnimation6_4: 1573799587
+      Walk6: 1787655019
+      IdleAnimation4_16: -735847317
+      IdleAnimation1_14: -1913911974
+      CrouchIdle4: 1779137581
       IdleAnimation1_13: 100124353
       Walk2: 2053448171
       IdleAnimation5_1: 1330476595
-      IdleAnimation4_16: -735847317
-      Land1: -370638125
-      IdleAnimation6_12: 389977770
       IdleAnimation3_7: -1822553759
-      Walk8: 228908333
       Run4: -177503077
       IdleAnimation3_9: 1654809289
       IdleAnimation3_2_3: 2013470214
@@ -3221,111 +3818,64 @@ TextureImporter:
       IdleAnimation1_8: 401381628
       IdleAnimation3_2_2: 1149095073
       IdleAnimation4_11: 1746836410
-      IdleAnimation4_6: 1809246072
       RunLand3: -1824072872
-      Jump4: 580864854
       IdleAnimation1_2: -455165870
-      Walk3: 2058452194
-      IdleAnimation4_2: 1153047506
       IdleAnimation4_4: 1892453347
       IdleAnimation5_4: -1150247595
-      IdleAnimation6_3: -592407775
-      IdleAnimation3_5: -1683964253
-      IdleAnimation1_10: 2003987032
-      IdleAnimation6_11: 1240544054
       IdleAnimation5_13: -910542130
-      Player_0: -205308670
-      IdleAnimation3_2: 321241199
-      Land4: -1428735518
       IdleAnimation2_15: 1186205921
-      IdleAnimation3_8: 510144468
-      IdleAnimation4_8: -596760569
       IdleAnimation5_12: 1172422447
       IdleAnimation6_7: 821869472
-      IdleAnimation2_4: -1504739677
       IdleAnimation4_3: 141186354
       IdleAnimation6_10: -373267078
-      IdleAnimation3_10: -1848476239
+      CrouchIdle1: 114542888
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
-      Land3: -1852222810
-      IdleAnimation1_3: 1143752939
+      IdleToCrouch3: -2062956259
       IdleAnimation2_7: -1980418090
-      Walk5: -1537998552
-      IdleAnimation5_7: 205717580
-      RunLand4: 677299120
       IdleAnimation6_15: -1577836067
-      FallDown1: 1904917662
-      IdleAnimation3_13: -701427122
+      RunLand4: 677299120
+      IdleToCrouch5: -1166947941
       IdleAnimation3_1: 1519249165
-      IdleAnimation6_5: 1927807041
-      Jump2: -889395046
       FallUp3: 266447733
-      IdleAnimation2_2: 484992433
       IdleAnimation1_5: 372288239
-      IdleAnimation4_5: 1867262842
       RunLand1: 1129583229
       FallDown3: -217655920
       IdleAnimation4_14: 972096725
-      IdleAnimation2_3: 455182933
-      IdleAnimation1_12: -515760547
       IdleAnimation2_10: -1098940462
-      IdleAnimation5_15: 537903817
-      IdleAnimation4_13: 1624606214
-      IdleAnimation4_9: 1993296839
-      IdleAnimation1_4: -1284626785
-      FallUp1: -1639335269
-      IdleAnimation5_11: 271833366
       IdleAnimation6_6: -411499884
+      CrouchMove1: 902103042
+      IdleAnimation5_15: 537903817
+      CrouchToIdle6: 644297186
+      IdleAnimation1_4: -1284626785
       Walk4: -717370663
-      FallUp2: -623329574
-      RunLand6: 1797858514
-      Run2: 661897010
       FallDown2: -357969022
-      IdleAnimation1_6: 1554090901
       Idle4: -1384108245
       IdleAnimation3_11: 11387822
-      IdleAnimation3_16: -1821077686
-      Idle2: -2129158148
-      Run8: 639294488
       IdleAnimation1_11: -486842872
-      IdleAnimation4_12: -1405390554
+      CrouchMove3: -674195431
+      CrouchMove5: 1614172104
       IdleAnimation6_16: -1334437742
       IdleAnimation2_11: 624417265
-      Run7: 891213739
-      IdleAnimation1_7: -888520995
-      IdleAnimation5_5: -1963581632
       IdleAnimation2_16: -952894969
-      IdleAnimation6_8: 1646270115
-      IdleAnimation2_5: -68598466
       IdleAnimation6_1: 204713442
-      IdleAnimation4_1: -1339107401
+      CrouchToIdle8: -1128936512
       IdleAnimation2_8: -542813681
-      IdleAnimation4_15: 451958213
-      IdleAnimation5_3: 93428952
-      IdleAnimation2_14: -666565507
-      IdleAnimation2_13: -1047535884
-      IdleAnimation1_16: -761519852
+      CrouchToIdle3: -1482473290
       IdleAnimation5_10: -280108904
+      IdleAnimation2_13: -1047535884
       IdleAnimation3_2_1: 686762662
-      RunLand2: -300902084
-      Run5: -802913842
-      Run3: 479359299
       Idle3: -582828682
-      Jump6: 1514062040
-      IdleAnimation1_1: 1911868729
+      CrouchToIdle7: 644483532
       Land2: 169385046
-      IdleAnimation3_3: -59072642
-      IdleAnimation3_4: -967969996
+      CrouchMove6: 1264050570
       IdleAnimation2_1: 77415944
-      IdleAnimation3_15: -1572300371
+      CrouchMove7: -1791173712
       IdleAnimation4_10: 1216400280
-      Hand: 1026481696
       Idle1: 912300089
       IdleAnimation3_14: 991644159
       Land6: 675238711
       IdleAnimation3_6: -666985588
-      Walk1: -1041322399
       IdleAnimation5_14: -1590202609
       IdleAnimation2_6: -439164633
   spritePackingTag: 

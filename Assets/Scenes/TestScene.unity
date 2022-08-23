@@ -3230,6 +3230,9 @@ MonoBehaviour:
   FallState: {fileID: 11400000, guid: 8c13fe23d52b1d74a886c1f5cc6c2c04, type: 2}
   LandState: {fileID: 11400000, guid: 6b5b8395ac7738c45bf642455ab48894, type: 2}
   GrappleState: {fileID: 11400000, guid: 6ea15e989b5dc8c4b8ba91b5b5406544, type: 2}
+  CrouchIdle: {fileID: 11400000, guid: 42d02d3d1e309b542acf0ebd32fdfa0f, type: 2}
+  CrouchMove: {fileID: 11400000, guid: 497387e81ba3e204cabafc66bbcb2d05, type: 2}
+  CrouchTransition: {fileID: 11400000, guid: 307261eb81f21084aaed0e0b66b24e83, type: 2}
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 64

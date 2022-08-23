@@ -33,7 +33,6 @@ public class PlayerJumpState : PlayerAirborneState
         {
             sm.Rigidbody.gravityScale = defaultGravity;
 
-            sm.Animator.SetBool("isJumping", false);
             sm.Transition(sm.FallState);
             return;
         }
