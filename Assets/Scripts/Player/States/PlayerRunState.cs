@@ -22,7 +22,7 @@ public class PlayerRunState : PlayerMoveState
             return;
         }
 
-        else if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && sm.InputProvider.GetState().IsWalking)
+        else if (sm.InputProvider.GetState().IsWalking)
         {
             sm.Transition(sm.WalkState);
             return;

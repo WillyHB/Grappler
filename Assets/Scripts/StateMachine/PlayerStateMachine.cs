@@ -65,13 +65,6 @@ public class PlayerStateMachine : StateMachine
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
-
-        Animator.SetBool("isGrounded", IsGrounded);
-        Animator.SetFloat("moveValue", MoveValue *
-            (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && InputProvider.GetState().IsWalking ? 0.49f : 1));
-
-
-        Animator.SetFloat("yVelocity", Rigidbody.velocity.y);
     }
 
     protected override void FixedUpdate()
@@ -91,25 +84,5 @@ public class PlayerStateMachine : StateMachine
 
     protected override State GetInitialState() => IdleState;
 
-    public void ParticleKick()
-    {
-        Vector2 pos = transform.TransformPoint(new Vector3(GetComponent<SpriteRenderer>().flipX ? -0.28f : 0.28f, -0.59f, 0));
-
-        GameObject kickRock = Instantiate(KickRock);
-
-        kickRock.GetComponent<Rigidbody2D>().AddForce(new Vector2(GetComponent<SpriteRenderer>().flipX ? -300 : 300, 300));
-
-        kickRock.transform.position = pos;
-
-        IEnumerator wait(GameObject kr)
-        {
-            yield return new WaitForSeconds(3);
-
-            Destroy(kr);
-        }
-
-        StartCoroutine(wait(kickRock));
-
-
-    }
+    public void ParticleKick() => IdleState.ParticleKick();
 }

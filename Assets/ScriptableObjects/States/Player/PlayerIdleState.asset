@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: PlayerIdleState
   m_EditorClassIdentifier: 
   GroundFriction: 40
+  TimeBetweenAnimations: 15
+  KickRock: {fileID: 3636330628185461093, guid: 1cd5a46ec961f954ca9ee5def7163d89, type: 3}
+  RockKickPower: {x: 200, y: 200}

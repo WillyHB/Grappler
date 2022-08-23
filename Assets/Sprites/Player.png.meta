@@ -2499,6 +2499,678 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac703f02d5392834186f366a95dc6bf2
+      internalID: 1330476595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b27f2875a5c726468f72bf1cd478e6b
+      internalID: 1631144890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4434e0021efc64aa5a1654f256d9b3
+      internalID: 93428952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d26f7410c633d4799fec2d89cfd9d0
+      internalID: -1150247595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fcd41747ef9c5747994e3b2928408ce
+      internalID: -1963581632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f746f7514617950489bb0b3b379f671d
+      internalID: 801206500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f5d042d9a4c0540a78af3a741ce4ff
+      internalID: 205717580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88395c7dc10bd1844aa7820911d14430
+      internalID: -458041391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a37fe5482558b4792d9ea953984fb2
+      internalID: 1138030341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6506bcf7bdf964fa794dd3db79bfe7
+      internalID: -280108904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16aea1f6115a5d74b8a992cbd82eca45
+      internalID: 271833366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c037a3869974507409073a0d2b9f0dc8
+      internalID: 1172422447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e63dbec53ab37447b2069140ec7aeba
+      internalID: -910542130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_14
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e67693b6d97f324082859b230ddc0fe
+      internalID: -1590202609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dafa2d1803742d4a81718d2719ce43b
+      internalID: 537903817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation5_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584a2546b4a7e2f43a4fe878128b1f39
+      internalID: -1429589492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3562e85f6eafe498330c0540c46bd4
+      internalID: 204713442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764e7c3af7f6ab04e9f8a4b7e04b4b77
+      internalID: 525753452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08f1da7626bb5f47a6d49e76f2b54a4
+      internalID: -592407775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141d1f3e9311db049bb8ba6da156fcc7
+      internalID: 1573799587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7168f70bf120f21459a4c0b2c366d5e8
+      internalID: 1927807041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069fd973d1c6cb4428da4d1fb0536c00
+      internalID: -411499884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92a069df8a09414dbdeeff87c40de6b
+      internalID: 821869472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8313b6e63c671834cb2c502f42756699
+      internalID: 1646270115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb00cf01aa39e744b3800b94edae69a
+      internalID: -1006772707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f619057f37b273419399b9ac468a8b0
+      internalID: -373267078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9b30a2629598648b9c6d73888deb01
+      internalID: 1240544054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ac8199fa8ccdd4e989b131861ed072
+      internalID: 389977770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48d41a95074d8c45ad332dba26299c0
+      internalID: 472166624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_14
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e004a70b4d88e6c41a0e68119364fea0
+      internalID: 420363046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fe4851ed086bd408882e797b79dfbe
+      internalID: -1577836067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleAnimation6_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 140
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1956825c21a46994fb86c950e1328c0a
+      internalID: -1334437742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2511,60 +3183,82 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       IdleAnimation1_9: 476256835
+      IdleAnimation5_9: 1138030341
+      IdleAnimation6_13: 472166624
       IdleAnimation2_12: 1226429865
+      IdleAnimation5_16: -1429589492
       IdleAnimation1_15: 701219836
+      IdleAnimation5_8: -458041391
       Walk7: 262825427
       IdleAnimation4_7: -40234528
       Land5: 1549593719
       IdleAnimation2_9: -1337931963
       IdleAnimation3_2_4: 1509294314
+      IdleAnimation6_14: 420363046
       IdleAnimation3_12: 1232399295
       Run1: 714852578
+      IdleAnimation5_6: 801206500
+      IdleAnimation6_4: 1573799587
       Walk6: 1787655019
       RunLand5: 56251326
+      IdleAnimation6_2: 525753452
       Run6: -235617297
       Jump3: 947154949
       IdleAnimation1_14: -1913911974
       Jump1: -1930377851
       IdleAnimation1_13: 100124353
       Walk2: 2053448171
+      IdleAnimation5_1: 1330476595
       IdleAnimation4_16: -735847317
       Land1: -370638125
+      IdleAnimation6_12: 389977770
       IdleAnimation3_7: -1822553759
       Walk8: 228908333
       Run4: -177503077
       IdleAnimation3_9: 1654809289
       IdleAnimation3_2_3: 2013470214
+      IdleAnimation5_2: 1631144890
       IdleAnimation1_8: 401381628
       IdleAnimation3_2_2: 1149095073
       IdleAnimation4_11: 1746836410
       IdleAnimation4_6: 1809246072
       RunLand3: -1824072872
       Jump4: 580864854
-      Walk3: 2058452194
-      IdleAnimation3_5: -1683964253
       IdleAnimation1_2: -455165870
+      Walk3: 2058452194
       IdleAnimation4_2: 1153047506
       IdleAnimation4_4: 1892453347
+      IdleAnimation5_4: -1150247595
+      IdleAnimation6_3: -592407775
+      IdleAnimation3_5: -1683964253
       IdleAnimation1_10: 2003987032
+      IdleAnimation6_11: 1240544054
+      IdleAnimation5_13: -910542130
       Player_0: -205308670
       IdleAnimation3_2: 321241199
       Land4: -1428735518
       IdleAnimation2_15: 1186205921
       IdleAnimation3_8: 510144468
       IdleAnimation4_8: -596760569
+      IdleAnimation5_12: 1172422447
+      IdleAnimation6_7: 821869472
       IdleAnimation2_4: -1504739677
       IdleAnimation4_3: 141186354
+      IdleAnimation6_10: -373267078
       IdleAnimation3_10: -1848476239
+      IdleAnimation6_9: -1006772707
       Jump5: -1236504202
       Land3: -1852222810
       IdleAnimation1_3: 1143752939
       IdleAnimation2_7: -1980418090
       Walk5: -1537998552
+      IdleAnimation5_7: 205717580
       RunLand4: 677299120
+      IdleAnimation6_15: -1577836067
       FallDown1: 1904917662
       IdleAnimation3_13: -701427122
       IdleAnimation3_1: 1519249165
+      IdleAnimation6_5: 1927807041
       Jump2: -889395046
       FallUp3: 266447733
       IdleAnimation2_2: 484992433
@@ -2576,14 +3270,17 @@ TextureImporter:
       IdleAnimation2_3: 455182933
       IdleAnimation1_12: -515760547
       IdleAnimation2_10: -1098940462
-      Run2: 661897010
+      IdleAnimation5_15: 537903817
+      IdleAnimation4_13: 1624606214
       IdleAnimation4_9: 1993296839
       IdleAnimation1_4: -1284626785
       FallUp1: -1639335269
+      IdleAnimation5_11: 271833366
+      IdleAnimation6_6: -411499884
       Walk4: -717370663
-      RunLand6: 1797858514
       FallUp2: -623329574
-      IdleAnimation4_13: 1624606214
+      RunLand6: 1797858514
+      Run2: 661897010
       FallDown2: -357969022
       IdleAnimation1_6: 1554090901
       Idle4: -1384108245
@@ -2593,17 +3290,23 @@ TextureImporter:
       Run8: 639294488
       IdleAnimation1_11: -486842872
       IdleAnimation4_12: -1405390554
+      IdleAnimation6_16: -1334437742
       IdleAnimation2_11: 624417265
       Run7: 891213739
       IdleAnimation1_7: -888520995
+      IdleAnimation5_5: -1963581632
       IdleAnimation2_16: -952894969
+      IdleAnimation6_8: 1646270115
       IdleAnimation2_5: -68598466
+      IdleAnimation6_1: 204713442
       IdleAnimation4_1: -1339107401
       IdleAnimation2_8: -542813681
       IdleAnimation4_15: 451958213
+      IdleAnimation5_3: 93428952
       IdleAnimation2_14: -666565507
       IdleAnimation2_13: -1047535884
       IdleAnimation1_16: -761519852
+      IdleAnimation5_10: -280108904
       IdleAnimation3_2_1: 686762662
       RunLand2: -300902084
       Run5: -802913842
@@ -2623,6 +3326,7 @@ TextureImporter:
       Land6: 675238711
       IdleAnimation3_6: -666985588
       Walk1: -1041322399
+      IdleAnimation5_14: -1590202609
       IdleAnimation2_6: -439164633
   spritePackingTag: 
   pSDRemoveMatte: 0

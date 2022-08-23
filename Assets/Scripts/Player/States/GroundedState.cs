@@ -22,7 +22,6 @@ public class GroundedState : State
 
     private void Jump()
     {
-        sm.Animator.SetBool("isJumping", true);
         sm.Transition(sm.JumpState);
     }
 

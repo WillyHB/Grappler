@@ -7,7 +7,11 @@ public class PlayerIdleState : GroundedState
 {
     public float GroundFriction = 25;
 
+    [Header("Idle Animations")]
     public float TimeBetweenAnimations = 10;
+
+    public GameObject KickRock;
+    public Vector2 RockKickPower = new Vector2(200, 200);
 
     private float animationTimer;
 
@@ -28,7 +32,7 @@ public class PlayerIdleState : GroundedState
 
         if (sm.MoveValue != 0)
         {
-            if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK && sm.InputProvider.GetState().IsWalking)
+            if (sm.InputProvider.GetState().IsWalking)
             {
                 sm.Transition(sm.WalkState);
                 return;
@@ -38,11 +42,11 @@ public class PlayerIdleState : GroundedState
             return;
         }
 
-        animationTimer += Time.deltaTime;
-
-        if (animationTimer >= TimeBetweenAnimations)
+        if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Idle)
         {
-            if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Idle)
+            animationTimer += Time.deltaTime;
+
+            if (animationTimer >= TimeBetweenAnimations)
             {
                 int anim = prevAnim;
 
@@ -51,11 +55,34 @@ public class PlayerIdleState : GroundedState
                     anim = Random.Range(1, 5);
                 }
 
-                sm.Animator.Play($"IdleAnimation4");
+                sm.Animator.Play($"IdleAnimation{anim}");
                 animationTimer = 0;
 
                 prevAnim = anim;
             }
+        }   
+    }
+
+    public void ParticleKick()
+    {
+        Vector2 pos = sm.transform.TransformPoint(new Vector3(sm.GetComponent<SpriteRenderer>().flipX ? -0.28f : 0.28f, -0.59f, 0));
+
+        GameObject kickRock = Instantiate(KickRock);
+
+        kickRock.GetComponent<Rigidbody2D>().AddForce(
+            new Vector2(sm.GetComponent<SpriteRenderer>().flipX ? -RockKickPower.x : RockKickPower.x, RockKickPower.y));
+
+        kickRock.transform.position = pos;
+
+        IEnumerator wait(GameObject kr)
+        {
+            yield return new WaitForSeconds(3);
+
+            Destroy(kr);
         }
+
+        sm.StartCoroutine(wait(kickRock));
+
+
     }
 }

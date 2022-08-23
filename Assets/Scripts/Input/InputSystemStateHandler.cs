@@ -32,7 +32,8 @@ public class InputSystemStateHandler : InputStateHandler
 
         state.IsJumping = Actions.FindActionMap("Player").FindAction("Jump").IsPressed();
         state.IsCrouching = Actions.FindActionMap("Player").FindAction("Crouch").IsPressed();
-        state.IsWalking = Actions.FindActionMap("Player").FindAction("Walk").IsPressed();
+        state.IsWalking = Actions.FindActionMap("Player").FindAction("Walk").IsPressed() 
+            || ((state.MoveDirection > 0 && state.MoveDirection < 0.5f) || (state.MoveDirection < 0 && state.MoveDirection > -0.5f));
         return state;
     }
 }
