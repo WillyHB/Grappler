@@ -23,6 +23,12 @@ public class PlayerLandState : PlayerMoveState
 
         else
         {
+            if (sm.InputProvider.GetState().IsCrouching)
+            {
+                sm.Transition(sm.Duck);
+                return;
+            }
+
             if (sm.MoveValue != 0)
             {
                 if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != sm.Animations.RunLand)

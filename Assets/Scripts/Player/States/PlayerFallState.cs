@@ -56,8 +56,45 @@ public class PlayerFallState : PlayerAirborneState
     {
         base.Update();
 
-        if (sm.Rigidbody.velocity.y > 0) sm.Animator.Play(sm.Animations.FallUp);
-        else sm.Animator.Play(sm.Animations.FallDown);
+        if (sm.Rigidbody.velocity.y > 0)
+        {
+            if (!sm.InputProvider.GetState().IsCrouching)
+            {
+                sm.Animator.Play(sm.Animations.FallUp);
+            }
+
+            else
+            {
+                float normalizedTime = 0;
+
+                if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.FallUp)
+                {
+                    normalizedTime = sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                }
+
+                sm.Animator.Play(sm.Animations.DuckFallUp, 0, normalizedTime);
+            }
+        }
+        else
+        {
+            if (!sm.InputProvider.GetState().IsCrouching)
+            {
+                sm.Animator.Play(sm.Animations.FallDown);
+            }
+
+            else
+            {
+                float normalizedTime = 0;
+
+                if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.FallDown)
+                {
+                    normalizedTime = sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                }
+
+                sm.Animator.Play(sm.Animations.DuckFallDown, 0, normalizedTime);
+            }
+        }
+
 
         if (jumpTimer > JumpBufferTime)
         {

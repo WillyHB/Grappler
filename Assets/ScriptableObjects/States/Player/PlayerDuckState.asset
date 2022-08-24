@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d1f3f6803f048458f686eaa8365035, type: 3}
-  m_Name: PlayerCrouchIdle
+  m_Script: {fileID: 11500000, guid: 0bd2a5b83de54e840bcc44ae4a3ec432, type: 3}
+  m_Name: PlayerDuckState
   m_EditorClassIdentifier: 

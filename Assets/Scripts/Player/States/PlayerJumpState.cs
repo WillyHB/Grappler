@@ -26,6 +26,7 @@ public class PlayerJumpState : PlayerAirborneState
 
     public override void Update()
     {
+
         if (sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >=1
             && (!sm.InputProvider.GetState().IsJumping
             || sm.transform.position.y - startY >= MaxJumpHeight
@@ -35,6 +36,11 @@ public class PlayerJumpState : PlayerAirborneState
 
             sm.Transition(sm.FallState);
             return;
+        }
+
+        else if (!sm.InputProvider.GetState().IsJumping)
+        {
+            sm.Rigidbody.gravityScale = defaultGravity;
         }
 
         else

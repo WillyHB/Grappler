@@ -13,6 +13,7 @@ public class Hand : MonoBehaviour
 
     void Update()
     {
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
 
         Direction = transform.parent.position - transform.position;
@@ -44,8 +45,8 @@ public class Hand : MonoBehaviour
 
         transform.position = shoulder.position + (armLength * shoulderToDir.normalized);
 
-
         if (transform.rotation.z > 0.7 || transform.rotation.z < -0.7)
+
         {
             GetComponent<SpriteRenderer>().flipY = true;
         }

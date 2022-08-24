@@ -38,7 +38,7 @@ public class ResolutionManager : MonoBehaviour
 
         int virtualWidth = (int)(VirtualHeight * AspectRatio);
 
-        ScaleValue = ClientDimensions.y / VirtualHeight;
+        ScaleValue = (float)ClientDimensions.y / VirtualHeight;
 
         VirtualDimensions = new Vector2Int(virtualWidth, VirtualHeight);
 

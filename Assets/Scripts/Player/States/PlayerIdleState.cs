@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "States/Player/IdleState")]
 public class PlayerIdleState : GroundedState
 {
-    public float GroundFriction = 25;
-
     [Header("Idle Animations")]
     public float TimeBetweenAnimations = 10;
     [Space(10)]
@@ -23,7 +21,15 @@ public class PlayerIdleState : GroundedState
         base.OnEnter(fsm);
 
         animationTimer = 0;
-        sm.Animator.Play(sm.Animations.Idle);
+        if (sm.PreviousState == typeof(PlayerDuckState))
+        {
+            sm.Animator.Play(sm.Animations.DuckToIdle);
+        }
+
+        else
+        {
+            sm.Animator.Play(sm.Animations.Idle);
+        }
     }
 
     public override void Update()
@@ -32,7 +38,7 @@ public class PlayerIdleState : GroundedState
 
         if (sm.InputProvider.GetState().IsCrouching)
         {
-            sm.Transition(sm.CrouchIdle);
+            sm.Transition(sm.Duck);
             return;
         }
 

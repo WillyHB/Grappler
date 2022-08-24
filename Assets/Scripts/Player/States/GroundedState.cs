@@ -37,7 +37,7 @@ public class GroundedState : State
     {
         base.FixedUpdate();
 
-        if (sm.MoveValue == 0)
+        if (sm.MoveValue == 0 || sm.CurrentState is PlayerDuckState)
         {
             if (accelerant < 0)
             {

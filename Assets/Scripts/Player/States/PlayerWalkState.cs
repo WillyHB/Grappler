@@ -18,7 +18,7 @@ public class PlayerWalkState : PlayerMoveState
 
         if (sm.InputProvider.GetState().IsCrouching)
         {
-            sm.Transition(sm.CrouchMove);
+            sm.Transition(sm.Duck);
             return;
         }
 

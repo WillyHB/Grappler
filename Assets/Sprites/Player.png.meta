@@ -3529,11 +3529,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrouchMove1
+      name: DuckFallDown1
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
+        y: 320
         width: 16
         height: 20
       alignment: 0
@@ -3543,18 +3543,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 880f10dc9f0614a409311d40be817228
-      internalID: 902103042
+      spriteID: 60e25ddcc39c9da4bb2f6c8b0364c295
+      internalID: -503808755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrouchMove2
+      name: DuckFallDown2
       rect:
         serializedVersion: 2
         x: 16
-        y: 60
+        y: 320
         width: 16
         height: 20
       alignment: 0
@@ -3564,18 +3564,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0519925a5ef127143a1e03919f379981
-      internalID: 1313551571
+      spriteID: b8c8ee4a15bc0b145aab26775a84df8f
+      internalID: 1349593762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrouchMove3
+      name: DuckFallDown3
       rect:
         serializedVersion: 2
         x: 32
-        y: 60
+        y: 320
         width: 16
         height: 20
       alignment: 0
@@ -3585,18 +3585,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb3a45f2756e7fb4f8d4ef2339a9edbf
-      internalID: -674195431
+      spriteID: a32889c93c2f9d045bda48043c2c3713
+      internalID: -1199758741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrouchMove4
+      name: DuckFallUp1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 60
+        x: 0
+        y: 300
         width: 16
         height: 20
       alignment: 0
@@ -3606,18 +3606,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b146fa9a6fc58fc45a3ab49946623ecf
-      internalID: -879121644
+      spriteID: b58572cd63611e54587e930c61d15a4d
+      internalID: -1963087674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrouchMove5
+      name: DuckFallUp2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 60
+        x: 16
+        y: 300
         width: 16
         height: 20
       alignment: 0
@@ -3627,18 +3627,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2d6693576dd114287ddaec3c2b53b3
-      internalID: 1614172104
+      spriteID: a353b915e9cb2f54599cc4cd270cecdb
+      internalID: 676980007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrouchMove6
+      name: DuckFallUp3
       rect:
         serializedVersion: 2
-        x: 80
-        y: 60
+        x: 32
+        y: 300
         width: 16
         height: 20
       alignment: 0
@@ -3648,50 +3648,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6623c374ea2bc174fb59ba2393b65ae7
-      internalID: 1264050570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrouchMove7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 60
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6489e89be1faf5d40a2da6de08bd8f90
-      internalID: -1791173712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CrouchMove8
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 60
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6241a09aed5ebbb4b8353e14d173c0a9
-      internalID: 212058146
+      spriteID: 637f548802312a847b6c8efb065f1917
+      internalID: -1452327139
       vertices: []
       indices: 
       edges: []
@@ -3727,6 +3685,7 @@ TextureImporter:
       Walk8: 228908333
       CrouchIdle3: 1080385358
       IdleAnimation4_6: 1809246072
+      DuckFallUp1: -1963087674
       Jump4: 580864854
       Walk3: 2058452194
       IdleAnimation3_5: -1683964253
@@ -3757,8 +3716,8 @@ TextureImporter:
       IdleAnimation4_13: 1624606214
       IdleAnimation4_5: 1867262842
       IdleAnimation2_3: 455182933
-      IdleAnimation1_12: -515760547
       IdleAnimation4_9: 1993296839
+      IdleAnimation1_12: -515760547
       Run2: 661897010
       FallUp1: -1639335269
       IdleAnimation5_11: 271833366
@@ -3788,6 +3747,7 @@ TextureImporter:
       Run3: 479359299
       Jump6: 1514062040
       IdleAnimation1_1: 1911868729
+      DuckFallUp2: 676980007
       IdleAnimation3_3: -59072642
       IdleAnimation3_4: -967969996
       IdleAnimation3_15: -1572300371
@@ -3804,6 +3764,7 @@ TextureImporter:
       CrouchToIdle4: -140621692
       IdleAnimation6_4: 1573799587
       Walk6: 1787655019
+      DuckFallUp3: -1452327139
       IdleAnimation4_16: -735847317
       IdleAnimation1_14: -1913911974
       CrouchIdle4: 1779137581
@@ -3832,22 +3793,24 @@ TextureImporter:
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
       IdleToCrouch3: -2062956259
+      DuckFallDown1: -503808755
       IdleAnimation2_7: -1980418090
       IdleAnimation6_15: -1577836067
       RunLand4: 677299120
       IdleToCrouch5: -1166947941
       IdleAnimation3_1: 1519249165
+      DuckFallDown2: 1349593762
       FallUp3: 266447733
       IdleAnimation1_5: 372288239
       RunLand1: 1129583229
       FallDown3: -217655920
-      IdleAnimation4_14: 972096725
-      IdleAnimation2_10: -1098940462
       IdleAnimation6_6: -411499884
+      IdleAnimation2_10: -1098940462
       CrouchMove1: 902103042
       IdleAnimation5_15: 537903817
       CrouchToIdle6: 644297186
       IdleAnimation1_4: -1284626785
+      IdleAnimation4_14: 972096725
       Walk4: -717370663
       FallDown2: -357969022
       Idle4: -1384108245
@@ -3878,6 +3841,7 @@ TextureImporter:
       IdleAnimation3_6: -666985588
       IdleAnimation5_14: -1590202609
       IdleAnimation2_6: -439164633
+      DuckFallDown3: -1199758741
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,18 +14,25 @@ public class PlayerStateMachine : StateMachine
     public PlayerLandState LandState;
     public GrappleState GrappleState;
 
-    public PlayerCrouchIdle CrouchIdle;
-    public PlayerCrouchMoveState CrouchMove;
+    public PlayerDuckState Duck;
+
     public class Anims
     {
         public int Land { get; private set; } = Animator.StringToHash("Land");
         public int RunLand { get; private set; } = Animator.StringToHash("RunLand");
+
         public int Idle { get; private set; } = Animator.StringToHash("Idle");
         public int Run { get; private set; } = Animator.StringToHash("Run");
         public int Walk { get; private set; } = Animator.StringToHash("Walk");
         public int Jump { get; private set; } = Animator.StringToHash("Jump");
+
         public int FallDown { get; private set; } = Animator.StringToHash("FallDown");
         public int FallUp { get; private set; } = Animator.StringToHash("FallUp");
+
+        public int Duck { get; private set; } = Animator.StringToHash("Duck");
+        public int DuckToIdle { get; private set; } = Animator.StringToHash("DuckToIdle");
+        public int DuckFallDown { get; private set; } = Animator.StringToHash("DuckFallDown");
+        public int DuckFallUp { get; private set; } = Animator.StringToHash("DuckFallUp");
     }
 
     public Anims Animations { get; } = new();
