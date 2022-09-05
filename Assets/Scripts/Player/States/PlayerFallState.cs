@@ -65,14 +65,18 @@ public class PlayerFallState : PlayerAirborneState
 
             else
             {
-                float normalizedTime = 0;
-
-                if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.FallUp)
+                if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != sm.Animations.DuckFallUp)
                 {
-                    normalizedTime = sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                    float normalizedTime = 0;
+
+                    if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.FallUp)
+                    {
+                        normalizedTime = sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                    }
+
+                    sm.Animator.Play(sm.Animations.DuckFallUp, 0, normalizedTime);
                 }
 
-                sm.Animator.Play(sm.Animations.DuckFallUp, 0, normalizedTime);
             }
         }
         else
@@ -84,14 +88,19 @@ public class PlayerFallState : PlayerAirborneState
 
             else
             {
-                float normalizedTime = 0;
-
-                if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.FallDown)
+                if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != sm.Animations.DuckFallDown)
                 {
-                    normalizedTime = sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                    float normalizedTime = 0;
+
+                    if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.FallDown)
+                    {
+                        normalizedTime = sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                    }
+
+                    sm.Animator.Play(sm.Animations.DuckFallDown, 0, normalizedTime);
                 }
 
-                sm.Animator.Play(sm.Animations.DuckFallDown, 0, normalizedTime);
+
             }
         }
 

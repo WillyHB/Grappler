@@ -20,13 +20,13 @@ public class GrappleState : State
 
         sm.InputProvider.Jumped += Jump;
 
-        sm.Animator.Play(sm.Animations.FallDown);
+        sm.Animator.Play(sm.Animations.Grapple);
     }
 
     private void Jump()
     {
         sm.Grapple.ReleaseGrapple();
-        sm.Transition(sm.JumpState);
+        sm.Transition(sm.GrappleExitState);
     }
 
     public override void Update()
@@ -37,6 +37,7 @@ public class GrappleState : State
 
         if (!sm.Grapple.IsGrappling)
         {
+            sm.transform.rotation = Quaternion.identity;
             sm.Transition(sm.IdleState);
 
             return;
@@ -59,7 +60,8 @@ public class GrappleState : State
 
         if (sm.IsGrounded)
         {
-            sm.Transition(sm.IdleState);
+            sm.transform.rotation = Quaternion.identity;
+            sm.Transition(sm.LandState);
             return;
         }
     }
@@ -69,7 +71,6 @@ public class GrappleState : State
         base.OnExit();
 
         sm.InputProvider.Jumped -= Jump;
-        sm.transform.rotation = Quaternion.identity;
     }
 
 }

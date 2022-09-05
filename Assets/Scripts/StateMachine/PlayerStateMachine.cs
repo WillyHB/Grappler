@@ -13,6 +13,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerFallState FallState;
     public PlayerLandState LandState;
     public GrappleState GrappleState;
+    public GrappleExitState GrappleExitState;
 
     public PlayerDuckState Duck;
 
@@ -33,6 +34,8 @@ public class PlayerStateMachine : StateMachine
         public int DuckToIdle { get; private set; } = Animator.StringToHash("DuckToIdle");
         public int DuckFallDown { get; private set; } = Animator.StringToHash("DuckFallDown");
         public int DuckFallUp { get; private set; } = Animator.StringToHash("DuckFallUp");
+
+        public int Grapple { get; private set; } = Animator.StringToHash("Grapple");
     }
 
     public Anims Animations { get; } = new();
@@ -79,9 +82,6 @@ public class PlayerStateMachine : StateMachine
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-
-
-        //transform.position = PixelClamp(transform.position, 16);
     }
 
     protected void Awake()
