@@ -36,6 +36,13 @@ public class PlayerStateMachine : StateMachine
         public int DuckFallUp { get; private set; } = Animator.StringToHash("DuckFallUp");
 
         public int Grapple { get; private set; } = Animator.StringToHash("Grapple");
+
+        public int GrappleSpinExit { get; private set; } = Animator.StringToHash("GrappleSpinExit");
+        public int GrappleTuckedSpinExit { get; private set; } = Animator.StringToHash("GrappleTuckedSpinExit");
+        public int GrappleFrontFlipExit { get; private set; } = Animator.StringToHash("GrappleFrontflipExit");
+        public int GrappleBackFlipExit { get; private set; } = Animator.StringToHash("GrappleBackflipExit");
+        public int GrappleUDBackFlipExit { get; private set; } = Animator.StringToHash("GrappleUpsideDownBackflipExit");
+        public int GrappleJumpExit { get; private set; } = Animator.StringToHash("GrappleJumpExit");
     }
 
     public Anims Animations { get; } = new();
