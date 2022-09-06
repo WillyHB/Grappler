@@ -3802,111 +3802,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple90_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 40
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fa7d0b290ee95147adb7e7d75e879c6
-      internalID: 455350862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grapple90_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 40
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 697f751ef0d99bc44b0cc48b108c35fb
-      internalID: -1381816108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grapple90_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 40
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9564525c77a5b654f959bc6c72eab249
-      internalID: -382355210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grapple90_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 40
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2523f8de74a1acf40993c88a3a813d15
-      internalID: 1928833766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grapple90_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 40
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 098a566e78bbf1345b6184856335a0bc
-      internalID: -2012338064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Grapple45_10
       rect:
         serializedVersion: 2
@@ -4015,7 +3910,7 @@ TextureImporter:
       name: Grapple
       rect:
         serializedVersion: 2
-        x: 272
+        x: 256
         y: 480
         width: 16
         height: 20
@@ -4036,7 +3931,7 @@ TextureImporter:
       name: Grapple180_1
       rect:
         serializedVersion: 2
-        x: 272
+        x: 256
         y: 460
         width: 16
         height: 20
@@ -4057,7 +3952,7 @@ TextureImporter:
       name: Grapple180_2
       rect:
         serializedVersion: 2
-        x: 288
+        x: 272
         y: 460
         width: 16
         height: 20
@@ -4078,7 +3973,7 @@ TextureImporter:
       name: Grapple180_3
       rect:
         serializedVersion: 2
-        x: 304
+        x: 288
         y: 460
         width: 16
         height: 20
@@ -4099,7 +3994,7 @@ TextureImporter:
       name: Grapple180_4
       rect:
         serializedVersion: 2
-        x: 320
+        x: 304
         y: 460
         width: 16
         height: 20
@@ -4120,7 +4015,7 @@ TextureImporter:
       name: Grapple180_5
       rect:
         serializedVersion: 2
-        x: 336
+        x: 320
         y: 460
         width: 16
         height: 20
@@ -4141,7 +4036,7 @@ TextureImporter:
       name: Grapple180_6
       rect:
         serializedVersion: 2
-        x: 352
+        x: 336
         y: 460
         width: 16
         height: 20
@@ -4162,7 +4057,7 @@ TextureImporter:
       name: Grapple180_7v
       rect:
         serializedVersion: 2
-        x: 368
+        x: 352
         y: 460
         width: 16
         height: 20
@@ -4183,7 +4078,7 @@ TextureImporter:
       name: Grapple180_8
       rect:
         serializedVersion: 2
-        x: 384
+        x: 368
         y: 460
         width: 16
         height: 20
@@ -4204,7 +4099,7 @@ TextureImporter:
       name: Grapple180_9
       rect:
         serializedVersion: 2
-        x: 400
+        x: 384
         y: 460
         width: 16
         height: 20
@@ -4225,7 +4120,7 @@ TextureImporter:
       name: Grapple180_10
       rect:
         serializedVersion: 2
-        x: 416
+        x: 400
         y: 460
         width: 16
         height: 20
@@ -4243,32 +4138,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 440
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 322d6174722c3e5478ca46a87c9e04e9
-      internalID: 373092476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Grapple0_2
       rect:
         serializedVersion: 2
-        x: 288
-        y: 440
+        x: 16
+        y: 20
         width: 16
         height: 20
       alignment: 0
@@ -4288,8 +4162,8 @@ TextureImporter:
       name: Grapple0_3
       rect:
         serializedVersion: 2
-        x: 304
-        y: 440
+        x: 32
+        y: 20
         width: 16
         height: 20
       alignment: 0
@@ -4309,8 +4183,8 @@ TextureImporter:
       name: Grapple0_4
       rect:
         serializedVersion: 2
-        x: 320
-        y: 440
+        x: 48
+        y: 20
         width: 16
         height: 20
       alignment: 0
@@ -4327,11 +4201,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_5
+      name: Grapple0_1
       rect:
         serializedVersion: 2
-        x: 336
-        y: 440
+        x: 0
+        y: 20
         width: 16
         height: 20
       alignment: 0
@@ -4341,8 +4215,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5367f3bf2df56ff48b802bdfa37879ee
+      spriteID: bcec453299c888948b5172b89a5ee2aa
+      internalID: -918881017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple0_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae533de0757d5541827c8b404483d81
       internalID: -488648695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple25_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5aaf6a9235716b4f9b6a70647ea766d
+      internalID: 923320106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple25_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c09a8fd9e967b4c8655cff2200f825
+      internalID: -5727486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple25_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac1029f9998be9419f90168716d31f3
+      internalID: 714515964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple25_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd28483c7be562145b1389ded63e2a1b
+      internalID: 2102483572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple25_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 40
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8909ce2d7aa041d48afd1ff4bc969198
+      internalID: -23068108
       vertices: []
       indices: 
       edges: []
@@ -4351,8 +4351,8 @@ TextureImporter:
       name: Grapple0_6
       rect:
         serializedVersion: 2
-        x: 352
-        y: 440
+        x: 80
+        y: 20
         width: 16
         height: 20
       alignment: 0
@@ -4362,17 +4362,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99ff1771deba6a543812471d927d0370
+      spriteID: 376c6814e6825194184f352ff1a08641
       internalID: -1146516442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_7
+      name: Grapple280_1
       rect:
         serializedVersion: 2
-        x: 368
+        x: 256
         y: 440
         width: 16
         height: 20
@@ -4383,35 +4383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e695c32c688d84791170c1cfaaf2c8
-      internalID: 484378025
+      spriteID: 454a98fc66462684f874a1a6678539bf
+      internalID: 455350862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_8
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 440
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a959f5cc77076df49bc4ac943bcce077
-      internalID: -1767738677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grapple0_1
+      name: Grapple280_2
       rect:
         serializedVersion: 2
         x: 272
@@ -4425,8 +4404,470 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcec453299c888948b5172b89a5ee2aa
-      internalID: -918881017
+      spriteID: 99545359a0fc5c54598e6a481c8c0b83
+      internalID: -1381816108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b1c1e6f957d7e44b3d7c0438f390bd
+      internalID: -382355210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057895c9596952a4890a787c0b3a43d8
+      internalID: 1928833766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713bc3377ca644949a5654460f3bf0f1
+      internalID: -2012338064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99447cfe8dcc0eb478635f2af9f9403c
+      internalID: -1145793415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f822fea39c798aa47a8e37c51d65953c
+      internalID: 1100227248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_8
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea4746d28459cf448e3bc2871162571
+      internalID: -2113553996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple280_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3178d4d10ce9124ca2ac533bcf5adb4
+      internalID: 1530248399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple0_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54bfb7b446f445448e5eb2771c19dcf
+      internalID: 484378025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple0_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac4d6e0a0aadb64784c4322bba4b737
+      internalID: -1767738677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e1b59796b7a494793f0449c3693c28
+      internalID: -317169499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cd875c4f16fc145bb1fbbb1cc0f57a
+      internalID: 412739037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d257d2ac505402b46ba45ca2f6a96e6f
+      internalID: -1473579635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c654e748a76da4cb0a89a9c3bae3a5
+      internalID: -457800802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f649e031f3d64d4c8fa3b12ceb83ec2
+      internalID: 830205345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6902cc840e9863e40a7d16d50dfec5cb
+      internalID: -45246963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f95e811a524274ba14dcd267ea97a7
+      internalID: 767583624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_8
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ddff2e53240774fa1c34ebeffbce31
+      internalID: 298918360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a314b81eebd154abff98b326fd4997
+      internalID: -65749614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5276bb55eaa9be4087a794d5df9aed4
+      internalID: -1435755676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7d4e1eb1571e549886d13bb977fefb
+      internalID: -1489902095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_12
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bae4ad6a20b4d4a978576d8a39a192
+      internalID: 967897272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapple240_13
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7edd55ee8c3dda45a39d79e79ce455e
+      internalID: -1388031781
       vertices: []
       indices: 
       edges: []
@@ -4445,6 +4886,8 @@ TextureImporter:
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
+      Grapple280_8: -2113553996
+      Grapple90_15: 1936200411
       IdleAnimation1_15: 701219836
       Walk7: 262825427
       IdleAnimation2_9: -1337931963
@@ -4453,6 +4896,7 @@ TextureImporter:
       IdleAnimation3_12: 1232399295
       Run1: 714852578
       Grapple0_5: -488648695
+      Grapple240_10: -1435755676
       RunLand5: 56251326
       Grapple45_1: 143883605
       IdleAnimation6_2: 525753452
@@ -4462,18 +4906,25 @@ TextureImporter:
       Jump1: -1930377851
       Land1: -370638125
       IdleAnimation6_12: 389977770
+      Grapple90_14: -291193394
+      Grapple25_2: -5727486
       Walk8: 228908333
+      Grapple25_5: -23068108
       CrouchIdle3: 1080385358
-      Grapple180_6: -1190249538
+      Grapple280_3: -382355210
       Grapple180_3: 376200176
+      Grapple180_6: -1190249538
+      Grapple25_4: 2102483572
       Grapple180_11: 1997691233
       IdleAnimation4_6: 1809246072
       DuckFallUp1: -1963087674
+      Grapple90_17: 459033479
       Jump4: 580864854
       Walk3: 2058452194
       IdleAnimation3_5: -1683964253
       IdleAnimation4_2: 1153047506
       IdleAnimation6_3: -592407775
+      Grapple240_5: 830205345
       Grapple180_9: 1558281505
       IdleAnimation1_10: 2003987032
       IdleAnimation6_11: 1240544054
@@ -4488,7 +4939,6 @@ TextureImporter:
       IdleAnimation3_10: -1848476239
       Land3: -1852222810
       Grapple180_8: -2114529771
-      Grapple90_1: 455350862
       IdleAnimation1_3: 1143752939
       Walk5: -1537998552
       IdleAnimation5_7: 205717580
@@ -4496,6 +4946,7 @@ TextureImporter:
       IdleAnimation3_13: -701427122
       CrouchMove8: 212058146
       IdleToCrouch1: -1726323450
+      Player_2: 344051348
       IdleAnimation6_5: 1927807041
       Jump2: -889395046
       IdleAnimation2_2: 484992433
@@ -4503,10 +4954,10 @@ TextureImporter:
       IdleAnimation4_5: 1867262842
       Grapple180_10: 1259683043
       IdleAnimation2_3: 455182933
-      IdleAnimation4_9: 1993296839
       IdleAnimation1_12: -515760547
+      IdleAnimation4_9: 1993296839
+      Grapple240_1: -317169499
       Run2: 661897010
-      Grapple0_: 373092476
       FallUp1: -1639335269
       IdleAnimation5_11: 271833366
       Grapple45_9: -710601245
@@ -4514,7 +4965,6 @@ TextureImporter:
       RunLand6: 1797858514
       CrouchToIdle1: 789473743
       Grapple0_7: 484378025
-      Grapple90_5: -2012338064
       IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
       IdleAnimation3_16: -1821077686
@@ -4522,6 +4972,7 @@ TextureImporter:
       Run8: 639294488
       CrouchMove4: -879121644
       IdleAnimation4_12: -1405390554
+      Grapple280_2: -1381816108
       IdleAnimation5_5: -1963581632
       Run7: 891213739
       IdleAnimation1_7: -888520995
@@ -4541,6 +4992,7 @@ TextureImporter:
       Grapple45_11: -1955663139
       IdleAnimation1_1: 1911868729
       DuckFallUp2: 676980007
+      Grapple240_12: 967897272
       IdleAnimation3_3: -59072642
       IdleAnimation3_4: -967969996
       IdleAnimation3_15: -1572300371
@@ -4548,6 +5000,7 @@ TextureImporter:
       IdleToCrouch2: -1982604452
       Walk1: -1041322399
       Grapple45_3: 512399136
+      Grapple280_5: -2012338064
       IdleAnimation2_12: 1226429865
       IdleAnimation5_16: -1429589492
       Grapple0_8: -1767738677
@@ -4555,12 +5008,14 @@ TextureImporter:
       Grapple45_7: 991325206
       IdleAnimation4_7: -40234528
       Land5: 1549593719
+      Grapple25_6: 663668167
       Grapple180_5: -864176640
       IdleAnimation6_14: 420363046
       IdleAnimation5_6: 801206500
       CrouchToIdle4: -140621692
       Grapple180_4: 1517064791
       IdleAnimation6_4: 1573799587
+      Grapple240_4: -457800802
       Grapple45_12: 1598997819
       Walk6: 1787655019
       DuckFallUp3: -1452327139
@@ -4569,31 +5024,39 @@ TextureImporter:
       IdleAnimation1_14: -1913911974
       CrouchIdle4: 1779137581
       IdleAnimation1_13: 100124353
-      Walk2: 2053448171
+      Grapple240_2: 412739037
       IdleAnimation5_1: 1330476595
+      Grapple280_4: 1928833766
+      Walk2: 2053448171
+      Grapple280_9: 1530248399
+      Grapple90_16: 730261817
       IdleAnimation3_7: -1822553759
       Run4: -177503077
       IdleAnimation3_9: 1654809289
       IdleAnimation3_2_3: 2013470214
+      Grapple90_11: -789003794
       IdleAnimation5_2: 1631144890
       IdleAnimation1_8: 401381628
       IdleAnimation3_2_2: 1149095073
       IdleAnimation4_11: 1746836410
       RunLand3: -1824072872
       IdleAnimation1_2: -455165870
-      Grapple90_3: -382355210
       IdleAnimation4_4: 1892453347
       IdleAnimation5_4: -1150247595
       Grapple180_2: 1862591225
+      Grapple280_1: 455350862
       Grapple45_8: 697041811
       IdleAnimation5_13: -910542130
       Grapple180_7v: 1192723399
       IdleAnimation2_15: 1186205921
+      Grapple240_11: -1489902095
       IdleAnimation5_12: 1172422447
       IdleAnimation6_7: 821869472
+      Grapple25_1: 923320106
       IdleAnimation4_3: 141186354
       IdleAnimation6_10: -373267078
       CrouchIdle1: 114542888
+      Grapple25_3: 714515964
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
       IdleToCrouch3: -2062956259
@@ -4608,12 +5071,15 @@ TextureImporter:
       DuckFallDown2: 1349593762
       Grapple0_4: -1878558320
       FallUp3: 266447733
+      Grapple90_10: -405534994
+      Grapple240_13: -1388031781
       IdleAnimation1_5: 372288239
       Grapple0_1: -918881017
       RunLand1: 1129583229
       FallDown3: -217655920
       IdleAnimation6_6: -411499884
       IdleAnimation2_10: -1098940462
+      Grapple90_12: -572736711
       IdleAnimation4_14: 972096725
       Grapple45_5: -2021032421
       IdleAnimation5_15: 537903817
@@ -4621,36 +5087,42 @@ TextureImporter:
       CrouchToIdle6: 644297186
       Grapple45_14: -680871094
       IdleAnimation1_4: -1284626785
+      Grapple240_9: -65749614
       Grapple45_10: 256462962
       Walk4: -717370663
-      Grapple90_4: 1928833766
+      Grapple280_6: -1145793415
       FallDown2: -357969022
       Idle4: -1384108245
       IdleAnimation3_11: 11387822
       IdleAnimation1_11: -486842872
       CrouchMove3: -674195431
+      Grapple240_7: 767583624
       CrouchMove5: 1614172104
       IdleAnimation6_16: -1334437742
+      Grapple280_7: 1100227248
       Grapple45_13: -477044822
       IdleAnimation2_11: 624417265
+      Grapple240_8: 298918360
       IdleAnimation2_16: -952894969
       IdleAnimation6_1: 204713442
       CrouchToIdle8: -1128936512
       IdleAnimation2_8: -542813681
+      Grapple90_13: 367468263
       CrouchToIdle3: -1482473290
       IdleAnimation5_10: -280108904
       Grapple45_2: -333356188
       IdleAnimation2_13: -1047535884
       IdleAnimation3_2_1: 686762662
       Grapple: 633395182
-      Grapple90_2: -1381816108
       Idle3: -582828682
       CrouchToIdle7: 644483532
       Land2: 169385046
       CrouchMove6: 1264050570
+      Grapple240_3: -1473579635
       IdleAnimation2_1: 77415944
       CrouchMove7: -1791173712
       IdleAnimation4_10: 1216400280
+      Grapple240_6: -45246963
       Grapple45_4: -1351265971
       Idle1: 912300089
       IdleAnimation3_14: 991644159

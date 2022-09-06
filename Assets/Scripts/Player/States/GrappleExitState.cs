@@ -20,10 +20,15 @@ public class GrappleExitState : PlayerAirborneState
 
         sm.Animator.Play(rot switch
         {
+            >= 340 => "GrappleJumpExit0",
+            >= 320 => "GrappleJumpExit280",
+            >= 240 => "GrappleJumpExit240",
             >= 225 => "GrappleJumpExit225",
-            >= 180 => "GrappleJumpExit180",
-            >= 90 => "GrappleJumpExit90",
-            >= 45 => "GrappleJumpExit45",
+            >= 135 => "GrappleJumpExit180",
+            //>= 70 => "GrappleJumpExit90",
+            >= 35 => "GrappleJumpExit45",
+            >= 33 => "GrappleJumpExit280",
+            >= 15 => "GrappleJumpExit25",
             >= 0 => "GrappleJumpExit0",
             _ => throw new System.Exception($"Angle {rot} does not exist wtf"),
 
@@ -38,12 +43,22 @@ public class GrappleExitState : PlayerAirborneState
     {
         base.Update();
 
-        if ((sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1
-            || sm.IsGrounded) && !sm.Animator.GetCurrentAnimatorStateInfo(0).IsName("Grapple"))
-
+        if (sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1
+                && !sm.Animator.GetCurrentAnimatorStateInfo(0).IsName("Grapple"))
         {
             sm.Transition(sm.FallState);
             return;
+        }
+
+        if (sm.IsGrounded)
+        {
+            sm.Transition(sm.LandState);
+            return;
+        }
+
+        if (sm.Grapple.IsGrappling)
+        {
+            sm.Transition(sm.GrappleState);
         }
     }
 
