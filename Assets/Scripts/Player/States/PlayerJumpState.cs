@@ -15,6 +15,8 @@ public class PlayerJumpState : PlayerAirborneState
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
+        Instantiate(sm.JumpDust, sm.transform.position, Quaternion.identity);
+
         startY = sm.transform.position.y;
         defaultGravity = sm.Rigidbody.gravityScale;
 

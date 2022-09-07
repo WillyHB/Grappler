@@ -31,7 +31,7 @@ public class GrappleExitState : PlayerAirborneState
             _ => throw new System.Exception($"Angle {rot} does not exist wtf"),
 
         });
-        //sm.Animator.Play($"GrappleJumpExit{rot - (rot % 45)}");
+
         sm.transform.rotation = Quaternion.identity;
 
         sm.Rigidbody.AddForce(Vector2.up * JumpForce);

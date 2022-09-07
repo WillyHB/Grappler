@@ -4872,6 +4872,258 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: JumpDust1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740c61755e60d714e9d45f7694cf2648
+      internalID: 1576278609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpDust2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d9c7b614e8ba34987a7de8369f1c65
+      internalID: -742184115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpDust3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a63c388b468b74e979bf22ae34f925
+      internalID: -760749299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpDust4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484a358fcabb5744d848e4b1ca15d90d
+      internalID: -1386526435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpDust5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5914c84cb2c521e45ad2bee6a7fca8f0
+      internalID: 515763601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpDust6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7dadf5bc51bd7249980a74611dfcfea
+      internalID: 462777879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpDust7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a5d3370047fd64b9854bc270a4e812
+      internalID: 827480225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LandDust1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743d3a4548483a94a8e0f453337d5df9
+      internalID: 1008351478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LandDust2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a5ef83034b5244492f4d3919637b23
+      internalID: 1795680736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LandDust3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031165ac3e8913540a9f2de1c39e969c
+      internalID: 902054103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LandDust4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06718082fd605a04ab6c7405f0daa5e1
+      internalID: 553165050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LandDust5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 420
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69faed4d598586a4d833e54caf19289a
+      internalID: 1486444896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -4946,7 +5198,6 @@ TextureImporter:
       IdleAnimation3_13: -701427122
       CrouchMove8: 212058146
       IdleToCrouch1: -1726323450
-      Player_2: 344051348
       IdleAnimation6_5: 1927807041
       Jump2: -889395046
       IdleAnimation2_2: 484992433
@@ -4967,6 +5218,7 @@ TextureImporter:
       Grapple0_7: 484378025
       IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
+      LandDust3: 902054103
       IdleAnimation3_16: -1821077686
       Idle2: -2129158148
       Run8: 639294488
@@ -4978,6 +5230,7 @@ TextureImporter:
       IdleAnimation1_7: -888520995
       IdleAnimation6_8: 1646270115
       IdleAnimation2_5: -68598466
+      JumpDust6: 462777879
       IdleAnimation4_1: -1339107401
       IdleAnimation4_15: 451958213
       IdleAnimation5_3: 93428952
@@ -4990,6 +5243,7 @@ TextureImporter:
       Jump6: 1514062040
       Grapple45_6: 742414792
       Grapple45_11: -1955663139
+      LandDust2: 344051348
       IdleAnimation1_1: 1911868729
       DuckFallUp2: 676980007
       Grapple240_12: 967897272
@@ -5014,11 +5268,13 @@ TextureImporter:
       IdleAnimation5_6: 801206500
       CrouchToIdle4: -140621692
       Grapple180_4: 1517064791
+      LandDust5: 1486444896
       IdleAnimation6_4: 1573799587
       Grapple240_4: -457800802
       Grapple45_12: 1598997819
       Walk6: 1787655019
       DuckFallUp3: -1452327139
+      JumpDust2: -742184115
       Grapple0_2: 1640947786
       IdleAnimation4_16: -735847317
       IdleAnimation1_14: -1913911974
@@ -5031,6 +5287,7 @@ TextureImporter:
       Grapple280_9: 1530248399
       Grapple90_16: 730261817
       IdleAnimation3_7: -1822553759
+      LandDust1: 1008351478
       Run4: -177503077
       IdleAnimation3_9: 1654809289
       IdleAnimation3_2_3: 2013470214
@@ -5039,13 +5296,16 @@ TextureImporter:
       IdleAnimation1_8: 401381628
       IdleAnimation3_2_2: 1149095073
       IdleAnimation4_11: 1746836410
+      JumpDust1: 1576278609
       RunLand3: -1824072872
       IdleAnimation1_2: -455165870
       IdleAnimation4_4: 1892453347
       IdleAnimation5_4: -1150247595
       Grapple180_2: 1862591225
       Grapple280_1: 455350862
+      LandDust4: 553165050
       Grapple45_8: 697041811
+      JumpDust3: -760749299
       IdleAnimation5_13: -910542130
       Grapple180_7v: 1192723399
       IdleAnimation2_15: 1186205921
@@ -5096,6 +5356,7 @@ TextureImporter:
       IdleAnimation3_11: 11387822
       IdleAnimation1_11: -486842872
       CrouchMove3: -674195431
+      JumpDust4: -1386526435
       Grapple240_7: 767583624
       CrouchMove5: 1614172104
       IdleAnimation6_16: -1334437742
@@ -5108,6 +5369,7 @@ TextureImporter:
       CrouchToIdle8: -1128936512
       IdleAnimation2_8: -542813681
       Grapple90_13: 367468263
+      JumpDust7: 827480225
       CrouchToIdle3: -1482473290
       IdleAnimation5_10: -280108904
       Grapple45_2: -333356188
@@ -5130,6 +5392,7 @@ TextureImporter:
       IdleAnimation2_6: -439164633
       IdleAnimation3_6: -666985588
       IdleAnimation5_14: -1590202609
+      JumpDust5: 515763601
       DuckFallDown3: -1199758741
   spritePackingTag: 
   pSDRemoveMatte: 0

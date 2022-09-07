@@ -62,7 +62,9 @@ public class PlayerStateMachine : StateMachine
 
     public float MoveValue {get; set;}
 
-        public GameObject KickRock;
+    public GameObject KickRock;
+    public GameObject JumpDust;
+    public GameObject LandDust;
 
     protected override void Update()
     {
