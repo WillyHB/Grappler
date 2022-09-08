@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class RenderCam : MonoBehaviour
 {
@@ -11,6 +12,31 @@ public class RenderCam : MonoBehaviour
     private Camera renderCam;
     private Cam cam;
 
+    private float xShakeOffset;
+
+    private float coroutineTime;
+
+    public void Shake(float frequency, float amplitude, float time)
+    {
+        coroutineTime = 0;
+        xShakeOffset = 0;
+
+        StartCoroutine(ShakeCoroutine(frequency, amplitude, time));
+    }
+
+    private IEnumerator ShakeCoroutine(float frequency, float amplitude, float time)
+    {
+        do
+        {
+            Debug.Log(coroutineTime);
+
+            xShakeOffset = amplitude * Mathf.Sin(frequency * coroutineTime);
+
+            yield return null;
+
+        } while ((coroutineTime += Time.deltaTime) < time);
+    }
+
     /*
      
     Aspect Ratio Settings changes the render textures size
@@ -20,10 +46,17 @@ public class RenderCam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CameraEffects.Shaked += Shake;
+
         renderCam = GetComponent<Camera>();
 
         cam = Camera.main.GetComponent<Cam>();
         renderSurface = transform.GetChild(0);
+    }
+
+    private void OnDisable()
+    {
+        CameraEffects.Shaked -= Shake;
     }
 
     public bool Smooth = true;
@@ -35,11 +68,12 @@ public class RenderCam : MonoBehaviour
         {
             Vector2 dif = cam.FloatPosition - cam.transform.position;
 
-            renderSurface.localPosition = new Vector3(-dif.x, -dif.y, 10);
+            renderSurface.localPosition = new Vector3(-dif.x - xShakeOffset, -dif.y, 10);
         }
 
-        PlayerCam.transform.position = cam.FloatPosition;
+        PlayerCam.transform.position = new Vector3(cam.FloatPosition.x + xShakeOffset, cam.FloatPosition.y, cam.FloatPosition.y);
 
 
     }
 }
+

@@ -56,6 +56,7 @@ public class PlayerAirborneState : State
             }
         }
 
+
         sm.Rigidbody.velocity = new Vector2(accelerant, sm.Rigidbody.velocity.y);
     }
 }

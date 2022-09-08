@@ -4138,7 +4138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_2
+      name: SpinMove2
       rect:
         serializedVersion: 2
         x: 16
@@ -4159,7 +4159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_3
+      name: SpinMove3
       rect:
         serializedVersion: 2
         x: 32
@@ -4180,7 +4180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_4
+      name: SpinMove4
       rect:
         serializedVersion: 2
         x: 48
@@ -4201,7 +4201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_1
+      name: SpinMove1
       rect:
         serializedVersion: 2
         x: 0
@@ -4222,7 +4222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_5
+      name: SpinMove5
       rect:
         serializedVersion: 2
         x: 64
@@ -4348,7 +4348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_6
+      name: SpinMove6
       rect:
         serializedVersion: 2
         x: 80
@@ -4369,7 +4369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_1
+      name: TuckedSpinMove1
       rect:
         serializedVersion: 2
         x: 256
@@ -4390,7 +4390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_2
+      name: TuckedSpinMove2
       rect:
         serializedVersion: 2
         x: 272
@@ -4411,7 +4411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_3
+      name: TuckedSpinMove3
       rect:
         serializedVersion: 2
         x: 288
@@ -4432,7 +4432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_4
+      name: TuckedSpinMove4
       rect:
         serializedVersion: 2
         x: 304
@@ -4453,7 +4453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_5
+      name: TuckedSpinMove5
       rect:
         serializedVersion: 2
         x: 320
@@ -4474,7 +4474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_6
+      name: TuckedSpinMove6
       rect:
         serializedVersion: 2
         x: 336
@@ -4495,7 +4495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_7
+      name: TuckedSpinMove7
       rect:
         serializedVersion: 2
         x: 352
@@ -4516,7 +4516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_8
+      name: TuckedSpinMove8
       rect:
         serializedVersion: 2
         x: 368
@@ -4537,7 +4537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple280_9
+      name: TuckedSpinMove9
       rect:
         serializedVersion: 2
         x: 384
@@ -4558,7 +4558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_7
+      name: SpinMove7
       rect:
         serializedVersion: 2
         x: 96
@@ -4579,7 +4579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapple0_8
+      name: SpinMove8
       rect:
         serializedVersion: 2
         x: 112
@@ -5020,11 +5020,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LandDust1
+      name: RunDust1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 420
+        x: 128
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -5041,11 +5041,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LandDust2
+      name: RunDust2
       rect:
         serializedVersion: 2
-        x: 112
-        y: 420
+        x: 144
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -5062,11 +5062,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LandDust3
+      name: RunDust3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 420
+        x: 160
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -5083,11 +5083,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LandDust4
+      name: RunDust4
       rect:
         serializedVersion: 2
-        x: 144
-        y: 420
+        x: 176
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -5104,11 +5104,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LandDust5
+      name: RunDust5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 420
+        x: 192
+        y: 400
         width: 16
         height: 20
       alignment: 0
@@ -5135,10 +5135,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      IdleAnimation3_6: -666985588
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
-      Grapple280_8: -2113553996
       Grapple90_15: 1936200411
       IdleAnimation1_15: 701219836
       Walk7: 262825427
@@ -5147,7 +5147,6 @@ TextureImporter:
       Grapple180_1: 1983362834
       IdleAnimation3_12: 1232399295
       Run1: 714852578
-      Grapple0_5: -488648695
       Grapple240_10: -1435755676
       RunLand5: 56251326
       Grapple45_1: 143883605
@@ -5157,16 +5156,17 @@ TextureImporter:
       CrouchToIdle5: 1241014414
       Jump1: -1930377851
       Land1: -370638125
+      SpinMove8: -1767738677
       IdleAnimation6_12: 389977770
       Grapple90_14: -291193394
       Grapple25_2: -5727486
       Walk8: 228908333
       Grapple25_5: -23068108
       CrouchIdle3: 1080385358
-      Grapple280_3: -382355210
-      Grapple180_3: 376200176
       Grapple180_6: -1190249538
+      Grapple180_3: 376200176
       Grapple25_4: 2102483572
+      TuckedSpinMove9: 1530248399
       Grapple180_11: 1997691233
       IdleAnimation4_6: 1809246072
       DuckFallUp1: -1963087674
@@ -5183,6 +5183,7 @@ TextureImporter:
       Player_0: -205308670
       IdleAnimation3_2: 321241199
       Land4: -1428735518
+      TuckedSpinMove2: -1381816108
       IdleAnimation3_8: 510144468
       IdleAnimation4_8: -596760569
       CrouchToIdle2: -30985629
@@ -5201,30 +5202,30 @@ TextureImporter:
       IdleAnimation6_5: 1927807041
       Jump2: -889395046
       IdleAnimation2_2: 484992433
+      RunDust3: 902054103
       IdleAnimation4_13: 1624606214
       IdleAnimation4_5: 1867262842
+      RunDust5: 1486444896
       Grapple180_10: 1259683043
       IdleAnimation2_3: 455182933
-      IdleAnimation1_12: -515760547
       IdleAnimation4_9: 1993296839
+      IdleAnimation1_12: -515760547
       Grapple240_1: -317169499
       Run2: 661897010
+      TuckedSpinMove5: -2012338064
       FallUp1: -1639335269
       IdleAnimation5_11: 271833366
       Grapple45_9: -710601245
       FallUp2: -623329574
       RunLand6: 1797858514
       CrouchToIdle1: 789473743
-      Grapple0_7: 484378025
       IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
-      LandDust3: 902054103
       IdleAnimation3_16: -1821077686
       Idle2: -2129158148
       Run8: 639294488
       CrouchMove4: -879121644
       IdleAnimation4_12: -1405390554
-      Grapple280_2: -1381816108
       IdleAnimation5_5: -1963581632
       Run7: 891213739
       IdleAnimation1_7: -888520995
@@ -5234,6 +5235,7 @@ TextureImporter:
       IdleAnimation4_1: -1339107401
       IdleAnimation4_15: 451958213
       IdleAnimation5_3: 93428952
+      RunDust4: 553165050
       IdleAnimation2_14: -666565507
       IdleAnimation1_16: -761519852
       IdleToCrouch4: 1487651710
@@ -5243,21 +5245,20 @@ TextureImporter:
       Jump6: 1514062040
       Grapple45_6: 742414792
       Grapple45_11: -1955663139
-      LandDust2: 344051348
       IdleAnimation1_1: 1911868729
       DuckFallUp2: 676980007
       Grapple240_12: 967897272
+      SpinMove4: -1878558320
       IdleAnimation3_3: -59072642
       IdleAnimation3_4: -967969996
+      TuckedSpinMove6: -1145793415
       IdleAnimation3_15: -1572300371
       Hand: 1026481696
       IdleToCrouch2: -1982604452
       Walk1: -1041322399
       Grapple45_3: 512399136
-      Grapple280_5: -2012338064
       IdleAnimation2_12: 1226429865
       IdleAnimation5_16: -1429589492
-      Grapple0_8: -1767738677
       IdleAnimation5_8: -458041391
       Grapple45_7: 991325206
       IdleAnimation4_7: -40234528
@@ -5268,30 +5269,30 @@ TextureImporter:
       IdleAnimation5_6: 801206500
       CrouchToIdle4: -140621692
       Grapple180_4: 1517064791
-      LandDust5: 1486444896
       IdleAnimation6_4: 1573799587
       Grapple240_4: -457800802
       Grapple45_12: 1598997819
       Walk6: 1787655019
       DuckFallUp3: -1452327139
       JumpDust2: -742184115
-      Grapple0_2: 1640947786
+      TuckedSpinMove4: 1928833766
+      Grapple90_11: -789003794
+      TuckedSpinMove7: 1100227248
       IdleAnimation4_16: -735847317
       IdleAnimation1_14: -1913911974
       CrouchIdle4: 1779137581
       IdleAnimation1_13: 100124353
       Grapple240_2: 412739037
       IdleAnimation5_1: 1330476595
-      Grapple280_4: 1928833766
       Walk2: 2053448171
-      Grapple280_9: 1530248399
+      SpinMove6: -1146516442
+      TuckedSpinMove8: -2113553996
+      SpinMove2: 1640947786
       Grapple90_16: 730261817
       IdleAnimation3_7: -1822553759
-      LandDust1: 1008351478
       Run4: -177503077
       IdleAnimation3_9: 1654809289
       IdleAnimation3_2_3: 2013470214
-      Grapple90_11: -789003794
       IdleAnimation5_2: 1631144890
       IdleAnimation1_8: 401381628
       IdleAnimation3_2_2: 1149095073
@@ -5300,16 +5301,16 @@ TextureImporter:
       RunLand3: -1824072872
       IdleAnimation1_2: -455165870
       IdleAnimation4_4: 1892453347
+      TuckedSpinMove1: 455350862
       IdleAnimation5_4: -1150247595
       Grapple180_2: 1862591225
-      Grapple280_1: 455350862
-      LandDust4: 553165050
       Grapple45_8: 697041811
       JumpDust3: -760749299
       IdleAnimation5_13: -910542130
       Grapple180_7v: 1192723399
       IdleAnimation2_15: 1186205921
       Grapple240_11: -1489902095
+      SpinMove7: 484378025
       IdleAnimation5_12: 1172422447
       IdleAnimation6_7: 821869472
       Grapple25_1: 923320106
@@ -5319,22 +5320,20 @@ TextureImporter:
       Grapple25_3: 714515964
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
+      TuckedSpinMove3: -382355210
+      RunDust1: 1008351478
       IdleToCrouch3: -2062956259
-      Grapple0_6: -1146516442
       DuckFallDown1: -503808755
       IdleAnimation2_7: -1980418090
       IdleAnimation6_15: -1577836067
       RunLand4: 677299120
       IdleToCrouch5: -1166947941
-      Grapple0_3: 251219581
       IdleAnimation3_1: 1519249165
       DuckFallDown2: 1349593762
-      Grapple0_4: -1878558320
+      Grapple240_13: -1388031781
       FallUp3: 266447733
       Grapple90_10: -405534994
-      Grapple240_13: -1388031781
       IdleAnimation1_5: 372288239
-      Grapple0_1: -918881017
       RunLand1: 1129583229
       FallDown3: -217655920
       IdleAnimation6_6: -411499884
@@ -5350,7 +5349,7 @@ TextureImporter:
       Grapple240_9: -65749614
       Grapple45_10: 256462962
       Walk4: -717370663
-      Grapple280_6: -1145793415
+      SpinMove3: 251219581
       FallDown2: -357969022
       Idle4: -1384108245
       IdleAnimation3_11: 11387822
@@ -5358,9 +5357,10 @@ TextureImporter:
       CrouchMove3: -674195431
       JumpDust4: -1386526435
       Grapple240_7: 767583624
+      RunDust2: 1795680736
       CrouchMove5: 1614172104
+      SpinMove5: -488648695
       IdleAnimation6_16: -1334437742
-      Grapple280_7: 1100227248
       Grapple45_13: -477044822
       IdleAnimation2_11: 624417265
       Grapple240_8: 298918360
@@ -5387,13 +5387,13 @@ TextureImporter:
       Grapple240_6: -45246963
       Grapple45_4: -1351265971
       Idle1: 912300089
-      IdleAnimation3_14: 991644159
-      Land6: 675238711
-      IdleAnimation2_6: -439164633
-      IdleAnimation3_6: -666985588
-      IdleAnimation5_14: -1590202609
-      JumpDust5: 515763601
       DuckFallDown3: -1199758741
+      IdleAnimation3_14: 991644159
+      JumpDust5: 515763601
+      IdleAnimation2_6: -439164633
+      Land6: 675238711
+      SpinMove1: -918881017
+      IdleAnimation5_14: -1590202609
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

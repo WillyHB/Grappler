@@ -8,8 +8,6 @@ public class PlayerLandState : PlayerMoveState
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-
-        Instantiate(sm.LandDust, sm.transform.position, Quaternion.identity);
         sm.Animator.Play(sm.Animations.Land);
     }
 

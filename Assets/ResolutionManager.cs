@@ -7,6 +7,7 @@ public class ResolutionManager : MonoBehaviour
 {
     public Camera MainCamera;
     public Camera RenderCamera;
+    public Camera PlayerCamera;
 
     public GameObject Quad;
 
@@ -21,11 +22,26 @@ public class ResolutionManager : MonoBehaviour
     public int VirtualHeight = 180;
     private int virtualHeight;
 
+    [Min(0)]
+    public float Zoom;
+
+    private float zoom;
+
     public static Vector2Int VirtualDimensions { get; private set; } = new();
 
     public static Vector2Int ClientDimensions { get; private set; } = new();
 
     public static float ScaleValue { get; private set; }
+
+    private void Awake()
+    {
+        CameraEffects.Zoom += (v) => zoom = v;
+    }
+
+    private void OnDisable()
+    {
+        CameraEffects.Zoom -= (v) => zoom = v;
+    }
 
     private void Start()
     {
@@ -51,12 +67,20 @@ public class ResolutionManager : MonoBehaviour
 
         Quad.GetComponent<MeshRenderer>().material = renderMaterial;
 
+
+        float orthoSize = (float)VirtualDimensions.x / ((((float)VirtualDimensions.x / VirtualDimensions.y) * 2) * 16);
+
+
         Quad.transform.localScale =
-            new Vector3((RenderCamera.orthographicSize * 2) * AspectRatio + 0.2f, (RenderCamera.orthographicSize * 2) + 0.2f, 1);
+            new Vector3((orthoSize * 2) * AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
+
+        RenderCamera.orthographicSize = orthoSize - Zoom;
+        PlayerCamera.orthographicSize = orthoSize - Zoom;
 
         aspectRatio = AspectRatio;
         virtualHeight = VirtualHeight;
         acar = AutomaticallyConfigureAspectRatio;
+        zoom = Zoom;
     }
 
     private void CreateRenderTexture()
@@ -80,7 +104,8 @@ public class ResolutionManager : MonoBehaviour
         if (aspectRatio != AspectRatio
             || virtualHeight != VirtualHeight
             || new Vector2Int(Screen.width, Screen.height) != ClientDimensions
-            || acar != AutomaticallyConfigureAspectRatio)
+            || acar != AutomaticallyConfigureAspectRatio
+            || zoom != Zoom)
         {
             Start();
         }

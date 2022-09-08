@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4149945994547940534}
   - component: {fileID: 4149945994547940535}
   - component: {fileID: 4149945994547940520}
-  - component: {fileID: -7495991986853803705}
+  - component: {fileID: 7508190647064723749}
   m_Layer: 0
-  m_Name: LandDust
+  m_Name: RunDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4149945994547940535
 SpriteRenderer:
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 4149945994547940521}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4dd352974cb4d8f46aad56f824828e90, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -106,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-7495991986853803705
+--- !u!114 &7508190647064723749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,8 +115,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4149945994547940521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b963f16140b2f2f4cbdd122b168c1bd2, type: 3}
+  m_Script: {fileID: 11500000, guid: c04be338ca18baf4a8999e94c5d8ad93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Clip: {fileID: 7400000, guid: a5ffcf81e78868b438604e14da74b796, type: 2}
-  DestroyOnComplete: 1

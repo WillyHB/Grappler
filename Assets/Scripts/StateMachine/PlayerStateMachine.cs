@@ -37,12 +37,14 @@ public class PlayerStateMachine : StateMachine
 
         public int Grapple { get; private set; } = Animator.StringToHash("Grapple");
 
+        #region GrappleExits
         public int GrappleSpinExit { get; private set; } = Animator.StringToHash("GrappleSpinExit");
         public int GrappleTuckedSpinExit { get; private set; } = Animator.StringToHash("GrappleTuckedSpinExit");
         public int GrappleFrontFlipExit { get; private set; } = Animator.StringToHash("GrappleFrontflipExit");
         public int GrappleBackFlipExit { get; private set; } = Animator.StringToHash("GrappleBackflipExit");
         public int GrappleUDBackFlipExit { get; private set; } = Animator.StringToHash("GrappleUpsideDownBackflipExit");
         public int GrappleJumpExit { get; private set; } = Animator.StringToHash("GrappleJumpExit");
+        #endregion
     }
 
     public Anims Animations { get; } = new();
@@ -64,7 +66,7 @@ public class PlayerStateMachine : StateMachine
 
     public GameObject KickRock;
     public GameObject JumpDust;
-    public GameObject LandDust;
+    public GameObject RunDust;
 
     protected override void Update()
     {
