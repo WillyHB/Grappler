@@ -14,6 +14,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerLandState LandState;
     public GrappleState GrappleState;
     public GrappleExitState GrappleExitState;
+    public PlayerAirTrickState AirTrickState;
 
     public PlayerDuckState Duck;
 
@@ -44,6 +45,13 @@ public class PlayerStateMachine : StateMachine
         public int GrappleBackFlipExit { get; private set; } = Animator.StringToHash("GrappleBackflipExit");
         public int GrappleUDBackFlipExit { get; private set; } = Animator.StringToHash("GrappleUpsideDownBackflipExit");
         public int GrappleJumpExit { get; private set; } = Animator.StringToHash("GrappleJumpExit");
+        #endregion
+
+        #region AirTricks
+        public int SpinTrick { get; private set; } = Animator.StringToHash("SpinTrick");
+        public int TuckedSpinTrick { get; private set; } = Animator.StringToHash("TuckedSpinTrick");
+        public int FrontFlipTrick { get; private set; } = Animator.StringToHash("FrontFlipTrick");
+        public int SideSpinTrick { get; private set; } = Animator.StringToHash("SideSpinTrick");
         #endregion
     }
 

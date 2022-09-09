@@ -39,13 +39,10 @@ public class PlayerFallState : PlayerAirborneState
 
     private void Jump()
     {
-        if (coyoteTimeEnabled)
+        if (coyoteTimeEnabled && coyoteTimer < CoyoteTime)
         {
-            if (coyoteTimer < CoyoteTime)
-            {
-                sm.Transition(sm.JumpState);
-                return;
-            }
+            sm.Transition(sm.JumpState);
+            return;
         }
 
         jumpBuffered = true;

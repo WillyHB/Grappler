@@ -5124,6 +5124,804 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SpinTrick1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8eaf3c96bf19444086aee095a185c8d
+      internalID: 1092151281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956f9e30d09623b41ba71c1849f1d7cd
+      internalID: 539158545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd508fc9283db17449fe2e4da7004574
+      internalID: -546468843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f1e86ced8b5394d8cb5c9ea9fa3c8d
+      internalID: 1617065576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e36276235d3064eb32d6ec3b671d61
+      internalID: -1878834907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fba26887cd189a498a1ac85caf8045c
+      internalID: 1387871184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4b269192a46e74b809d9735889bcf6
+      internalID: 327638191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpinTrick8
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 400
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b869151b1115743b156eb44aa956c2
+      internalID: 762018095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d869aafc337af4c41a00a530f783ebc1
+      internalID: -1080965336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1910ec76a601e7a4583ab62395dd7326
+      internalID: -2056143185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cedeaa6828141b48a70b84e57371b16
+      internalID: -837841702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132705590be87d14cbd74a8236b00729
+      internalID: 1641837106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f84074b60be10b4994ca5532542d897
+      internalID: 1385239526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46706de7f5801df4a979b2b6d149b231
+      internalID: 2084775756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350698f90e250d8418d454bdf75c0d8f
+      internalID: 908138525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick8
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79d984fe96890b499e97ff8b4db7744
+      internalID: 299795567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b3bba18b216b54c96180e6f2d3617b
+      internalID: 970132580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c162d737e180a14896606b72d2e2cca
+      internalID: -1482948392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5263cd4570f824baf05e6989454d5d
+      internalID: 607189459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick12
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a585fc1348ec946b0c9b807181bee9
+      internalID: 1738936110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick13
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895d6a20fab04ca40adbc423a63a49a5
+      internalID: -640291995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d8273d132553844985af7f5f97759a
+      internalID: 1705055691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c62431b6edbdc0448f180163ff7c44d
+      internalID: -1956075079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49640719c4da3224cbc76ab7280160bd
+      internalID: -2105281274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ea11bfe0a950241b3c5547d44260c6
+      internalID: 185024408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d827262db12c5d14f84aa2e0365aed57
+      internalID: -1634281182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758a58087ed4f4040b88d7d55b8bebd8
+      internalID: 1113733513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1266b32fcc6b49b49ab172440322993d
+      internalID: 1735440196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick8
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc25b5c82b0851c4795202977568a419
+      internalID: -279781953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2daa8350e5707524b8897191f560e3a9
+      internalID: 317311740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450a0422a1c8c644a9b5e90d1e8c8047
+      internalID: 1639830093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e0685b5816a2447b43f682029a7ca5
+      internalID: 2050668309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick12
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f360a1bf107c64da548a094c5a3b96
+      internalID: -1918401872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick13
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5860c444f5c034c82d68425d74ef93
+      internalID: 1776812108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick14
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf3359888775354c929bc8eb41764db
+      internalID: -1401312218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641bb8c562d13d44c8c5b3aaf3c618e6
+      internalID: -717765109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick16
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89377185d28dc7241afe06f38769938e
+      internalID: 1141045384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontFlipTrick17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 360
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b14ef290e26a54fb27d3077b693fd1
+      internalID: 1876566736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -5139,6 +5937,7 @@ TextureImporter:
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
+      SpinTrick6: 1387871184
       Grapple90_15: 1936200411
       IdleAnimation1_15: 701219836
       Walk7: 262825427
@@ -5147,14 +5946,17 @@ TextureImporter:
       Grapple180_1: 1983362834
       IdleAnimation3_12: 1232399295
       Run1: 714852578
+      FrontFlipTrick10: 1639830093
       Grapple240_10: -1435755676
       RunLand5: 56251326
       Grapple45_1: 143883605
       IdleAnimation6_2: 525753452
       Run6: -235617297
+      FrontFlipTrick12: -1918401872
       Jump3: 947154949
       CrouchToIdle5: 1241014414
       Jump1: -1930377851
+      SpinTrick8: 762018095
       Land1: -370638125
       SpinMove8: -1767738677
       IdleAnimation6_12: 389977770
@@ -5163,12 +5965,16 @@ TextureImporter:
       Walk8: 228908333
       Grapple25_5: -23068108
       CrouchIdle3: 1080385358
-      Grapple180_6: -1190249538
+      FrontFlipTrick8: -279781953
+      FrontFlipTrick16: 1141045384
       Grapple180_3: 376200176
-      Grapple25_4: 2102483572
       TuckedSpinMove9: 1530248399
+      Grapple25_4: 2102483572
+      Grapple180_6: -1190249538
+      SideSpinTrick2: -2056143185
       Grapple180_11: 1997691233
       IdleAnimation4_6: 1809246072
+      FrontFlipTrick7: 1735440196
       DuckFallUp1: -1963087674
       Grapple90_17: 459033479
       Jump4: 580864854
@@ -5190,11 +5996,14 @@ TextureImporter:
       IdleAnimation2_4: -1504739677
       CrouchMove2: 1313551571
       IdleAnimation3_10: -1848476239
+      FrontFlipTrick13: 1776812108
+      SideSpinTrick10: -1482948392
       Land3: -1852222810
       Grapple180_8: -2114529771
       IdleAnimation1_3: 1143752939
-      Walk5: -1537998552
+      SpinTrick4: 1617065576
       IdleAnimation5_7: 205717580
+      Walk5: -1537998552
       FallDown1: 1904917662
       IdleAnimation3_13: -701427122
       CrouchMove8: 212058146
@@ -5210,9 +6019,11 @@ TextureImporter:
       IdleAnimation2_3: 455182933
       IdleAnimation4_9: 1993296839
       IdleAnimation1_12: -515760547
+      TuckedSpinMove5: -2012338064
       Grapple240_1: -317169499
       Run2: 661897010
-      TuckedSpinMove5: -2012338064
+      SpinTrick3: -546468843
+      FrontFlipTrick11: 2050668309
       FallUp1: -1639335269
       IdleAnimation5_11: 271833366
       Grapple45_9: -710601245
@@ -5224,12 +6035,16 @@ TextureImporter:
       IdleAnimation3_16: -1821077686
       Idle2: -2129158148
       Run8: 639294488
+      SideSpinTrick4: 1641837106
       CrouchMove4: -879121644
       IdleAnimation4_12: -1405390554
+      FrontFlipTrick15: -717765109
       IdleAnimation5_5: -1963581632
       Run7: 891213739
       IdleAnimation1_7: -888520995
+      SideSpinTrick7: 908138525
       IdleAnimation6_8: 1646270115
+      FrontFlipTrick2: -1956075079
       IdleAnimation2_5: -68598466
       JumpDust6: 462777879
       IdleAnimation4_1: -1339107401
@@ -5238,6 +6053,7 @@ TextureImporter:
       RunDust4: 553165050
       IdleAnimation2_14: -666565507
       IdleAnimation1_16: -761519852
+      SpinTrick1: 1092151281
       IdleToCrouch4: 1487651710
       RunLand2: -300902084
       Run5: -802913842
@@ -5257,8 +6073,11 @@ TextureImporter:
       IdleToCrouch2: -1982604452
       Walk1: -1041322399
       Grapple45_3: 512399136
+      FrontFlipTrick1: 1705055691
+      SideSpinTrick12: 1738936110
       IdleAnimation2_12: 1226429865
       IdleAnimation5_16: -1429589492
+      Player_18: 1912536193
       IdleAnimation5_8: -458041391
       Grapple45_7: 991325206
       IdleAnimation4_7: -40234528
@@ -5272,21 +6091,21 @@ TextureImporter:
       IdleAnimation6_4: 1573799587
       Grapple240_4: -457800802
       Grapple45_12: 1598997819
+      Grapple90_11: -789003794
       Walk6: 1787655019
       DuckFallUp3: -1452327139
-      JumpDust2: -742184115
       TuckedSpinMove4: 1928833766
-      Grapple90_11: -789003794
       TuckedSpinMove7: 1100227248
+      JumpDust2: -742184115
+      TuckedSpinMove8: -2113553996
       IdleAnimation4_16: -735847317
       IdleAnimation1_14: -1913911974
       CrouchIdle4: 1779137581
       IdleAnimation1_13: 100124353
-      Grapple240_2: 412739037
-      IdleAnimation5_1: 1330476595
       Walk2: 2053448171
+      IdleAnimation5_1: 1330476595
+      Grapple240_2: 412739037
       SpinMove6: -1146516442
-      TuckedSpinMove8: -2113553996
       SpinMove2: 1640947786
       Grapple90_16: 730261817
       IdleAnimation3_7: -1822553759
@@ -5303,12 +6122,16 @@ TextureImporter:
       IdleAnimation4_4: 1892453347
       TuckedSpinMove1: 455350862
       IdleAnimation5_4: -1150247595
+      SideSpinTrick9: 970132580
       Grapple180_2: 1862591225
+      FrontFlipTrick14: -1401312218
       Grapple45_8: 697041811
+      FrontFlipTrick4: 185024408
       JumpDust3: -760749299
       IdleAnimation5_13: -910542130
       Grapple180_7v: 1192723399
       IdleAnimation2_15: 1186205921
+      SpinTrick5: -1878834907
       Grapple240_11: -1489902095
       SpinMove7: 484378025
       IdleAnimation5_12: 1172422447
@@ -5318,21 +6141,25 @@ TextureImporter:
       IdleAnimation6_10: -373267078
       CrouchIdle1: 114542888
       Grapple25_3: 714515964
+      FrontFlipTrick6: 1113733513
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
       TuckedSpinMove3: -382355210
       RunDust1: 1008351478
       IdleToCrouch3: -2062956259
+      FrontFlipTrick5: -1634281182
       DuckFallDown1: -503808755
       IdleAnimation2_7: -1980418090
       IdleAnimation6_15: -1577836067
       RunLand4: 677299120
+      SideSpinTrick8: 299795567
       IdleToCrouch5: -1166947941
       IdleAnimation3_1: 1519249165
       DuckFallDown2: 1349593762
       Grapple240_13: -1388031781
       FallUp3: 266447733
       Grapple90_10: -405534994
+      SideSpinTrick6: 2084775756
       IdleAnimation1_5: 372288239
       RunLand1: 1129583229
       FallDown3: -217655920
@@ -5348,11 +6175,14 @@ TextureImporter:
       IdleAnimation1_4: -1284626785
       Grapple240_9: -65749614
       Grapple45_10: 256462962
+      SideSpinTrick1: -1080965336
       Walk4: -717370663
       SpinMove3: 251219581
       FallDown2: -357969022
       Idle4: -1384108245
       IdleAnimation3_11: 11387822
+      SpinTrick2: 539158545
+      SideSpinTrick3: -837841702
       IdleAnimation1_11: -486842872
       CrouchMove3: -674195431
       JumpDust4: -1386526435
@@ -5361,20 +6191,26 @@ TextureImporter:
       CrouchMove5: 1614172104
       SpinMove5: -488648695
       IdleAnimation6_16: -1334437742
+      SideSpinTrick11: 607189459
       Grapple45_13: -477044822
       IdleAnimation2_11: 624417265
       Grapple240_8: 298918360
       IdleAnimation2_16: -952894969
+      SpinTrick7: 327638191
+      SideSpinTrick5: 1385239526
       IdleAnimation6_1: 204713442
       CrouchToIdle8: -1128936512
       IdleAnimation2_8: -542813681
+      FrontFlipTrick17: 1876566736
       Grapple90_13: 367468263
       JumpDust7: 827480225
       CrouchToIdle3: -1482473290
+      FrontFlipTrick3: -2105281274
       IdleAnimation5_10: -280108904
       Grapple45_2: -333356188
       IdleAnimation2_13: -1047535884
       IdleAnimation3_2_1: 686762662
+      SideSpinTrick13: -640291995
       Grapple: 633395182
       Idle3: -582828682
       CrouchToIdle7: 644483532
@@ -5387,6 +6223,7 @@ TextureImporter:
       Grapple240_6: -45246963
       Grapple45_4: -1351265971
       Idle1: 912300089
+      FrontFlipTrick9: 317311740
       DuckFallDown3: -1199758741
       IdleAnimation3_14: 991644159
       JumpDust5: 515763601
