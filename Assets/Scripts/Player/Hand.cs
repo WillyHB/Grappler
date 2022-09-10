@@ -9,6 +9,8 @@ public class Hand : MonoBehaviour
     public Vector2? followPosition;
     public float armLength = 1f;
 
+    public Vector2 GrappleDirection { get; private set; }
+
     public Vector2 Direction { get; set; }
 
     void Update()
@@ -42,6 +44,8 @@ public class Hand : MonoBehaviour
         }
 
         shoulderToDir.z = 0;
+
+        GrappleDirection = shoulderToDir.normalized;
 
         transform.position = shoulder.position + (armLength * shoulderToDir.normalized);
 

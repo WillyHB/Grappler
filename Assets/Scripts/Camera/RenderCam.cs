@@ -28,8 +28,6 @@ public class RenderCam : MonoBehaviour
     {
         do
         {
-            Debug.Log(coroutineTime);
-
             xShakeOffset = amplitude * Mathf.Sin(frequency * coroutineTime);
 
             yield return null;
@@ -71,7 +69,7 @@ public class RenderCam : MonoBehaviour
             renderSurface.localPosition = new Vector3(-dif.x - xShakeOffset, -dif.y, 10);
         }
 
-        PlayerCam.transform.position = new Vector3(cam.FloatPosition.x + xShakeOffset, cam.FloatPosition.y, cam.FloatPosition.y);
+        PlayerCam.transform.position = new Vector3(cam.FloatPosition.x + xShakeOffset, cam.FloatPosition.y, -5);
 
 
     }

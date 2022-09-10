@@ -14,7 +14,6 @@ public class PlayerStateMachine : StateMachine
     public PlayerLandState LandState;
     public GrappleState GrappleState;
     public GrappleExitState GrappleExitState;
-    public PlayerAirTrickState AirTrickState;
 
     public PlayerDuckState Duck;
 
@@ -96,6 +95,8 @@ public class PlayerStateMachine : StateMachine
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
     }
 
     protected override void FixedUpdate()

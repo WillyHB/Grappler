@@ -130,10 +130,10 @@ TextureImporter:
       name: Hand
       rect:
         serializedVersion: 2
-        x: 23
-        y: 490
-        width: 6
-        height: 6
+        x: 16
+        y: 482
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5922,6 +5922,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Shoot1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470f780e776d20044a2cb0921450631c
+      internalID: 1117871094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807e0fd744f95774cadd4e8dcd47eff6
+      internalID: 614054028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7fab634344f7c4e9a536396d70ec77
+      internalID: 1482177342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27e8df588b92564097e48c7204cbdd3
+      internalID: 1483945766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57df715ec0c62c488cbe9b61ab48a68
+      internalID: -1902555984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e019e329e9f1be84cab66d6d318eb4ec
+      internalID: -617983417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 482
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb9ecb01218ad7499ce4b95feea631a
+      internalID: 723450598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -5933,11 +6080,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleAnimation3_6: -666985588
+      Land6: 675238711
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
-      SpinTrick6: 1387871184
+      IdleAnimation5_14: -1590202609
       Grapple90_15: 1936200411
       IdleAnimation1_15: 701219836
       Walk7: 262825427
@@ -5965,12 +6112,12 @@ TextureImporter:
       Walk8: 228908333
       Grapple25_5: -23068108
       CrouchIdle3: 1080385358
-      FrontFlipTrick8: -279781953
       FrontFlipTrick16: 1141045384
-      Grapple180_3: 376200176
+      FrontFlipTrick8: -279781953
+      Grapple180_6: -1190249538
       TuckedSpinMove9: 1530248399
       Grapple25_4: 2102483572
-      Grapple180_6: -1190249538
+      Grapple180_3: 376200176
       SideSpinTrick2: -2056143185
       Grapple180_11: 1997691233
       IdleAnimation4_6: 1809246072
@@ -6002,8 +6149,8 @@ TextureImporter:
       Grapple180_8: -2114529771
       IdleAnimation1_3: 1143752939
       SpinTrick4: 1617065576
-      IdleAnimation5_7: 205717580
       Walk5: -1537998552
+      IdleAnimation5_7: 205717580
       FallDown1: 1904917662
       IdleAnimation3_13: -701427122
       CrouchMove8: 212058146
@@ -6030,6 +6177,8 @@ TextureImporter:
       FallUp2: -623329574
       RunLand6: 1797858514
       CrouchToIdle1: 789473743
+      Player_8: -567756082
+      Shoot2: 614054028
       IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
       IdleAnimation3_16: -1821077686
@@ -6056,6 +6205,7 @@ TextureImporter:
       SpinTrick1: 1092151281
       IdleToCrouch4: 1487651710
       RunLand2: -300902084
+      Shoot5: -1902555984
       Run5: -802913842
       Run3: 479359299
       Jump6: 1514062040
@@ -6071,6 +6221,7 @@ TextureImporter:
       IdleAnimation3_15: -1572300371
       Hand: 1026481696
       IdleToCrouch2: -1982604452
+      Shoot3: 1482177342
       Walk1: -1041322399
       Grapple45_3: 512399136
       FrontFlipTrick1: 1705055691
@@ -6091,7 +6242,7 @@ TextureImporter:
       IdleAnimation6_4: 1573799587
       Grapple240_4: -457800802
       Grapple45_12: 1598997819
-      Grapple90_11: -789003794
+      Player_9: 1886152553
       Walk6: 1787655019
       DuckFallUp3: -1452327139
       TuckedSpinMove4: 1928833766
@@ -6104,9 +6255,11 @@ TextureImporter:
       IdleAnimation1_13: 100124353
       Walk2: 2053448171
       IdleAnimation5_1: 1330476595
+      Shoot1: 1117871094
       Grapple240_2: 412739037
       SpinMove6: -1146516442
       SpinMove2: 1640947786
+      Grapple90_11: -789003794
       Grapple90_16: 730261817
       IdleAnimation3_7: -1822553759
       Run4: -177503077
@@ -6142,6 +6295,7 @@ TextureImporter:
       CrouchIdle1: 114542888
       Grapple25_3: 714515964
       FrontFlipTrick6: 1113733513
+      Shoot6: -617983417
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
       TuckedSpinMove3: -382355210
@@ -6176,11 +6330,13 @@ TextureImporter:
       Grapple240_9: -65749614
       Grapple45_10: 256462962
       SideSpinTrick1: -1080965336
+      Shoot7: 723450598
       Walk4: -717370663
       SpinMove3: 251219581
       FallDown2: -357969022
       Idle4: -1384108245
       IdleAnimation3_11: 11387822
+      Shoot4: 1483945766
       SpinTrick2: 539158545
       SideSpinTrick3: -837841702
       IdleAnimation1_11: -486842872
@@ -6224,13 +6380,13 @@ TextureImporter:
       Grapple45_4: -1351265971
       Idle1: 912300089
       FrontFlipTrick9: 317311740
-      DuckFallDown3: -1199758741
       IdleAnimation3_14: 991644159
-      JumpDust5: 515763601
+      SpinTrick6: 1387871184
       IdleAnimation2_6: -439164633
-      Land6: 675238711
+      IdleAnimation3_6: -666985588
       SpinMove1: -918881017
-      IdleAnimation5_14: -1590202609
+      JumpDust5: 515763601
+      DuckFallDown3: -1199758741
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
