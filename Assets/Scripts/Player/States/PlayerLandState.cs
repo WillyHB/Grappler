@@ -5,10 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="States/Player/LandState")]
 public class PlayerLandState : PlayerMoveState
 {
+    public GameObject LandDust;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-        Instantiate(sm.JumpDust, sm.transform.position, Quaternion.identity);
+        Instantiate(LandDust, sm.transform.position, Quaternion.identity);
         sm.Animator.Play(sm.Animations.Land);
     }
 

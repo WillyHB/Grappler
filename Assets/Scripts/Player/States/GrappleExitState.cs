@@ -16,8 +16,6 @@ public class GrappleExitState : PlayerAirborneState
         
         if (sm.GetComponent<SpriteRenderer>().flipX) rot = 360 - rot;
 
-            Debug.Log(rot);
-
         sm.Animator.Play(rot switch
         {
             >= 340 => sm.Animations.GrappleSpinExit,

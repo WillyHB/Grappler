@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
+    public RumbleEventChannel channel;
     public InputProvider InputProvider;
     public GameObject Bullet;
     public Transform GunEdge;
@@ -25,6 +27,7 @@ public class Gun : MonoBehaviour
 
     private void OnShoot()
     {
+        channel.PerformRumble(1, 0, 0.25f);
 
         GameObject bullet = Instantiate(Bullet, GunEdge.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().AddForce(Hand.GrappleDirection * BulletSpeed);

@@ -17,3 +17,4 @@ MonoBehaviour:
   JumpForce: 250
   JumpGravityModifier: 1
   MaxJumpHeight: 1
+  JumpDust: {fileID: 4376059334936633576, guid: c185946d892753743aa80987d7859cc6, type: 3}

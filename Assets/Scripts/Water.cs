@@ -14,6 +14,8 @@ public class Water : MonoBehaviour
     public float Tension = 0.025f;
     public float Dampening = 0.025f;
     public float Spread = 0.025f;
+    public float WaveSpeed = 1;
+    public float WaveAmplitude;
 
     public void Splash(int index, float speed)
     {
@@ -36,13 +38,17 @@ public class Water : MonoBehaviour
 
     public void Update()
     {
-        if (Keyboard.current.kKey.wasPressedThisFrame)
+        if (Keyboard.current.fKey.wasPressedThisFrame)
         {
-            Splash(50, -10);
+            Splash(50, -5);
         }
         for (int i = 0; i < springs.Length; i++)
         {
-            springs[i].Update(Dampening, Tension);
+            /*
+            springs[i].Height += 0.5f * WaveAmplitude * Mathf.Sin((i * 0.1f + Time.time*WaveSpeed));
+            springs[i].Height += 0.3f * WaveAmplitude * Mathf.Sin((i * 0.15f - Time.time*WaveSpeed));
+            */
+            springs[i].Update(Dampening, Tension, boxCollider.size.y);
         }
 
         float[] leftDeltas = new float[springs.Length];
@@ -79,7 +85,6 @@ public class Water : MonoBehaviour
         lineRenderer.positionCount = springs.Length;
         Vector3[] points = new Vector3[springs.Length];
 
-        Debug.Log(boxCollider.size.x);
         for (int i = 0; i < springs.Length; i++)
         {
             points[i] = new Vector3((boxCollider.size.x / springs.Length) * i, springs[i].Height, 0);
@@ -91,18 +96,17 @@ public class Water : MonoBehaviour
 
     public class Spring
     {
-        public Spring(float targetHeight)
+        public Spring(float height)
         {
-            Height = targetHeight;
-            TargetHeight = targetHeight;
+            Height = height;
         }
         public float Height;
-        public float TargetHeight;
         public float Velocity { get; set; }
 
-        public void Update(float dampening, float tension)
+        public void Update(float dampening, float tension, float targetHeight)
         {
-            float x = Height - TargetHeight;
+            
+            float x = Height - targetHeight;
 
             Velocity += -tension * x - dampening * Velocity;
 

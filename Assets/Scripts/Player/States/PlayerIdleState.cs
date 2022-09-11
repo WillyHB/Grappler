@@ -49,9 +49,6 @@ public class PlayerIdleState : GroundedState
                 sm.Transition(sm.WalkState);
                 return;
             }
-
-            Instantiate(sm.RunDust, sm.transform.position, Quaternion.identity)
-                .GetComponent<SpriteRenderer>().flipX = sm.GetComponent<SpriteRenderer>().flipX;
             
             sm.Transition(sm.RunState);
             return;

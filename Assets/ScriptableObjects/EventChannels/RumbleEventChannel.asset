@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc449693457a54c469496b8a0ccb1826, type: 3}
-  m_Name: PlayerLandState
+  m_Script: {fileID: 11500000, guid: 7c83a36fb531caf429bd5f0b5ace47fc, type: 3}
+  m_Name: RumbleEventChannel
   m_EditorClassIdentifier: 
-  Speed: 275
-  StartAccelerant: 45
-  LandDust: {fileID: 4376059334936633576, guid: c185946d892753743aa80987d7859cc6, type: 3}
