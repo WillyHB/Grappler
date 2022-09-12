@@ -39,6 +39,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TestTex:
+        m_Texture: {fileID: 8228938214290033325, guid: e36a0707b595fae4ca5a6465df4b380a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0

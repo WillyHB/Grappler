@@ -69,7 +69,6 @@ public class GrappleState : State
     public override void OnExit()
     {
         base.OnExit();
-
         sm.InputProvider.Jumped -= Jump;
     }
 

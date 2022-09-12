@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 275
   StartAccelerant: 45
+  rumbleChannel: {fileID: 11400000, guid: f49bfc6f9d623b744ab8b74e68a5131f, type: 2}
   LandDust: {fileID: 4376059334936633576, guid: c185946d892753743aa80987d7859cc6, type: 3}

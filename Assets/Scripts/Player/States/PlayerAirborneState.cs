@@ -21,7 +21,12 @@ public class PlayerAirborneState : State
 
     public override void OnExit()
     {
-        base.OnExit();;
+        base.OnExit();
+    }
+
+    public override void Update()
+    {
+        base.Update();
     }
 
     public override void FixedUpdate()

@@ -51,10 +51,16 @@ public class GamepadRumbleManager : MonoBehaviour
         channel.Rumble += Rumble;
         channel.RumbleLinear += RumbleLinear;
         channel.RumblePulse += PulseRumble;
+        channel.Stop += StopRumble;
     }
 
     private void OnDisable()
     {
+        channel.Rumble -= Rumble;
+        channel.RumbleLinear -= RumbleLinear;
+        channel.RumblePulse -= PulseRumble;
+        channel.Stop -= StopRumble;
+
         StopRumble();
     }
 
@@ -64,7 +70,7 @@ public class GamepadRumbleManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > time)
+            if (timer > time && time > -1)
             {
                 StopRumble();
             }

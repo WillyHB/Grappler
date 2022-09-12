@@ -1,15 +1,24 @@
 Shader "Unlit/TestShader"
 {
+
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex("Texture", 2D) = "white"{}
+        _Color("Color", Color) = (1, 1, 1, 1)
+        _TestTex("FartTexture", 2D) = "blue"{}
     }
+
     SubShader
     {
         LOD 100
 
+        Tags{
+            "Queue" = "Transparent"
+            }
         Pass
         {
+            Blend SrcAlpha OneMinusSrcAlpha
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -31,6 +40,10 @@ Shader "Unlit/TestShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            sampler2D _Color;
+
+            sampler2D _TestTex;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -41,12 +54,9 @@ Shader "Unlit/TestShader"
 
             float4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                /*float4 col = tex2D(_MainTex, i.uv);
+                return tex2D(_MainTex, i.uv);
 
-                return col;*/
-
-                return float4(i.uv.r, i.uv.g, 0, 1);
+                //return float4(i.uv.x, i.uv.y, 1, 1);
             }
             ENDCG
         }
