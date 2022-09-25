@@ -4,8 +4,8 @@ Shader "Unlit/TestShader"
     Properties
     {
         _MainTex("Texture", 2D) = "white"{}
-        _Color("Color", Color) = (1, 1, 1, 1)
-        _TestTex("FartTexture", 2D) = "blue"{}
+        _Value("Value", Float) = 69.0
+        _Color("Coloruing", Color) = (1, 1, 1, 1)
     }
 
     SubShader
@@ -13,6 +13,7 @@ Shader "Unlit/TestShader"
         LOD 100
 
         Tags{
+            "RenderType" = "Opaque"
             "Queue" = "Transparent"
             }
         Pass
@@ -25,7 +26,7 @@ Shader "Unlit/TestShader"
 
             #include "UnityCG.cginc"
 
-            struct appdata
+            struct meshData
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
@@ -37,14 +38,14 @@ Shader "Unlit/TestShader"
                 float4 vertex : SV_POSITION;
             };
 
+            float _Slider;
+            sampler2D _SecondTex;
+            float _Value;
+            float4 _Color;
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
-            sampler2D _Color;
-
-            sampler2D _TestTex;
-
-            v2f vert (appdata v)
+            v2f vert (meshData v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -52,10 +53,9 @@ Shader "Unlit/TestShader"
                 return o;
             }
 
-            float4 frag (v2f i) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
-                return tex2D(_MainTex, i.uv);
-
+                return tex2D(_MainTex, i.uv) * _Color;
                 //return float4(i.uv.x, i.uv.y, 1, 1);
             }
             ENDCG
