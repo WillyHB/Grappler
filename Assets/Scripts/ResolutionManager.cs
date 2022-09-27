@@ -62,8 +62,10 @@ public class ResolutionManager : MonoBehaviour
 
         MainCamera.targetTexture = RenderTexture;
 
-        Material renderMaterial = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
-        renderMaterial.mainTexture = RenderTexture;
+        Material renderMaterial = new(Shader.Find("Universal Render Pipeline/Unlit"))
+        {
+            mainTexture = RenderTexture
+        };
 
         Quad.GetComponent<MeshRenderer>().material = renderMaterial;
 

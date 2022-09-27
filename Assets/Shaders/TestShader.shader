@@ -12,7 +12,7 @@ Shader "Unlit/TestShader"
     {
         LOD 100
 
-        Tags{
+       Tags{
             "RenderType" = "Opaque"
             "Queue" = "Transparent"
             }
