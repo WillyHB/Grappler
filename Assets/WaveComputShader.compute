@@ -1,0 +1,72 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+struct Spring
+{
+    float height;
+    float velocity;
+};
+
+float tension = 0.01;
+float dampening = 0.01;
+float spread = 0.02;
+float waveSpeed = 1;
+int numberOfPoints = 100;
+
+RWStructuredBuffer<Spring> springs;
+RWStructuredBuffer<float> points;
+
+float2 size;
+
+void updateSpring(int i)
+{
+    float x = springs[i].height - 1;
+    float velocity = 0;
+    
+    velocity += -tension * x - dampening * springs[i].velocity;
+
+    springs[i].velocity = velocity;
+    springs[i].height += springs[i].velocity;
+    
+    points[i] = springs[i].height;
+}
+
+[numthreads(8,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    for (int i = 0; i < numberOfPoints; i++)
+    {
+        updateSpring(i);
+    }
+
+
+    float leftDeltas[2000];
+    float rightDeltas[2000];
+
+        // do some passes where springs pull on their neighbours
+    for (int j = 0; j < 8; j++)
+    {
+        for (int i = 0; i < numberOfPoints; i++)
+        {
+            if (i > 0)
+            {
+                leftDeltas[i] = spread * (springs[i].height - springs[i - 1].height);
+                springs[i - 1].velocity += leftDeltas[i];
+            }
+            if (i < numberOfPoints - 1)
+            {
+                rightDeltas[i] = spread * (springs[i].height - springs[i + 1].height);
+                springs[i + 1].velocity += rightDeltas[i];
+            }
+        }
+
+        for (int k = 0; k < numberOfPoints; k++)
+        {
+            if (k > 0)
+                springs[k - 1].height += leftDeltas[k];
+            if (k < numberOfPoints - 1)
+                springs[k + 1].height += rightDeltas[k];
+        }
+    }
+}
+

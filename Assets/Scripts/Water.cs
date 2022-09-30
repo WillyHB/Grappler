@@ -6,129 +6,125 @@ using System.Linq;
 
 public class Water : MonoBehaviour
 {
-    private List<Spring> springs = new List<Spring>();
-
     public float Tension = 0.025f;
     public float Dampening = 0.025f;
     public float Spread = 0.025f;
     public float WaveSpeed = 1;
-    public float PointDensity = 0.1f;
-    public float WaveAmplitude;
+    public int NumberOfPoints = 100;
 
-    public int NumberOfPoints => (int)(PointDensity * GetComponent<SpriteRenderer>().bounds.size.x);
-
-    [Range(0, 1)]
+    private MeshFilter meshFilter;
+    private MeshRenderer meshRenderer;
     public float TargetHeight;
+
+    public ComputeShader ComputeShader;
+    private ComputeBuffer springsBuffer;
+    private ComputeBuffer pointBuffer;
 
     public Vector2 Splashz;
 
     public void Splash(int index, float speed)
     {
-        if (index >= 0 && index < NumberOfPoints)
-        {
-            springs[index].Velocity = speed;
-        }
+        
+    }
+
+    public void OnDisable()
+    {
+        pointBuffer.Dispose();
+        springsBuffer.Dispose();
     }
 
     public void Start()
     {
-        springs.Clear();
-        springs = new List<Spring>();
-        springs.Capacity = NumberOfPoints;
+        meshFilter = GetComponent<MeshFilter>();
+        meshRenderer = GetComponent<MeshRenderer>();
 
-        for (int i = 0; i < NumberOfPoints; i++)
+        springsBuffer = new ComputeBuffer(2000, 8);
+        pointBuffer = new ComputeBuffer(NumberOfPoints, 4);
+
+        ComputeShader.SetBuffer(0, "springs", springsBuffer);
+        ComputeShader.SetBuffer(0, "points", pointBuffer);
+
+        InitSprings();
+    }
+
+    private void InitMesh()
+    {
+
+        Vector3[] vertices = new Vector3[NumberOfPoints * 2];
+        int[] triangles = new int[(int)(((NumberOfPoints * 2.0f) / 4.0f) * 6.0f)];
+        Vector2[] uv = new Vector2[vertices.Length];
+
+        for (int i = 0; i < vertices.Length; i += 2)
         {
-            springs.Add(new Spring(GetComponent<SpriteRenderer>().size.y - GetComponent<SpriteRenderer>().bounds.size.y * TargetHeight));
+
+            vertices[i] = new Vector3(-0.5f + (i / (NumberOfPoints * 2.0f)), -0.5f, 0);
+            vertices[i + 1] = new Vector3(-0.5f + (i / (NumberOfPoints * 2.0f)), 0.5f, 0);
+
+            uv[i] = new Vector3(-0.5f + (i / (NumberOfPoints * 2.0f)), -0.5f, 0);
+            uv[i + 1] = new Vector3(-0.5f + (i / (NumberOfPoints * 2.0f)), 0.5f, 0);
         }
+
+        int j = 0;
+        for (int i = 0; i < triangles.Length; i += 6)
+        {
+            triangles[i + 0] = j;
+            triangles[i + 1] = j + 1;
+            triangles[i + 2] = j + 2;
+            triangles[i + 3] = j + 2;
+            triangles[i + 4] = j + 1;
+            triangles[i + 5] = j + 3;
+
+            j += 2;
+        }
+
+
+
+        Mesh mesh = new()
+        {
+            name = "WaterMesh"
+        };
+
+        meshFilter.mesh.Clear();
+        meshFilter.mesh = mesh;
+
+
+
+        meshFilter.mesh.vertices = vertices;
+        meshFilter.mesh.triangles = triangles;
+        meshFilter.mesh.uv = uv;
+    }
+
+    private void InitSprings()
+    {
+        InitMesh();
     }
 
     public void Update()
     {
-        Debug.Log(springs.Count);
-        if (springs.Count != NumberOfPoints)
-        {
-            Start();
-        }
+        ComputeShader.SetFloat("tension", Tension);
+        ComputeShader.SetFloat("dampening", Dampening);
+        ComputeShader.SetFloat("spread", Spread);
+        ComputeShader.SetFloat("waveSpeed", WaveSpeed);
+        ComputeShader.SetInt("numberOfPoints", NumberOfPoints);
+        ComputeShader.Dispatch(0, 8, 1, 1);
 
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
             Splash((int)Splashz.x, Splashz.y);
         }
-        for (int i = 0; i < NumberOfPoints; i++)
-        {
-            /*
-            springs[i].Height += 0.5f * WaveAmplitude * Mathf.Sin((i * 0.1f + Time.time*WaveSpeed));
-            springs[i].Height += 0.3f * WaveAmplitude * Mathf.Sin((i * 0.15f - Time.time*WaveSpeed));
-            */
-            springs[i].Update(Dampening, Tension, GetComponent<SpriteRenderer>().size.y - GetComponent<SpriteRenderer>().bounds.size.y * TargetHeight);
-        }
 
-        float[] leftDeltas = new float[NumberOfPoints];
-        float[] rightDeltas = new float[NumberOfPoints];
-
-        // do some passes where springs pull on their neighbours
-        for (int j = 0; j < 8; j++)
-        {
-            for (int i = 0; i < NumberOfPoints; i++)
-            {
-                if (i > 0)
-                {
-                    leftDeltas[i] = Spread * (springs[i].Height - springs[i - 1].Height);
-                    springs[i - 1].Velocity += leftDeltas[i];
-                }
-                if (i < NumberOfPoints - 1)
-                {
-                    rightDeltas[i] = Spread * (springs[i].Height - springs[i + 1].Height);
-                    springs[i + 1].Velocity += rightDeltas[i];
-                }
-            }
-
-            for (int i = 0; i < NumberOfPoints; i++)
-            {
-                if (i > 0)
-                    springs[i - 1].Height += leftDeltas[i];
-                if (i < NumberOfPoints - 1)
-                    springs[i + 1].Height += rightDeltas[i];
+        meshRenderer.material.SetFloat("springCount", NumberOfPoints);
+        meshRenderer.material.SetVector("size",
+            new Vector4(meshRenderer.bounds.size.x, meshRenderer.bounds.size.y, TargetHeight, 0));
 
 
-            }
-        }
 
-        Vector4[] points = new Vector4[2000];
-
-
-        for (int i = 0; i < NumberOfPoints; i++)
-        {
-            points[i] = new Vector4((GetComponent<SpriteRenderer>().bounds.size.x / NumberOfPoints) * i, springs[i].Height, 0, 0);
-
-        }
-
-        Debug.Log(points[50]);
-
-        GetComponent<SpriteRenderer>().material.SetVectorArray("springPoints", points.ToList());
-        GetComponent<SpriteRenderer>().material.SetFloat("springCount", NumberOfPoints);
-        GetComponent<SpriteRenderer>().material.SetVector("size", GetComponent<SpriteRenderer>().size);
     }
 
-    public class Spring
+    public struct Spring
     {
-        public Spring(float height)
-        {
-            Height = height;
-        }
         public float Height;
         public float Velocity { get; set; }
-
-        public void Update(float dampening, float tension, float targetHeight)
-        {
-
-            float x = Height - targetHeight;
-
-            Velocity += -tension * x - dampening * Velocity;
-
-            Height += Velocity;
-        }
-
     }
 }
 
