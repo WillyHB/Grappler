@@ -11,9 +11,7 @@ public class Water : MonoBehaviour
     public float Tension = 0.025f;
     public float Dampening = 0.025f;
     public float Spread = 0.025f;
-    public float WaveSpeed = 1;
     public int NumberOfPoints = 100;
-    public float WaveAmplitude;
     public float WaterHeight = 0;
 
     private MeshFilter meshFilter;

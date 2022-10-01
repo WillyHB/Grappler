@@ -3681,10 +3681,8 @@ MonoBehaviour:
   Tension: 0.01
   Dampening: 0.01
   Spread: 0.02
-  WaveSpeed: 1
-  NumberOfPoints: 100
-  WaveAmplitude: 0
   WaterHeight: 0
+  PointDensity: 0.035
   Splashz: {x: 25, y: -1}
 --- !u!4 &664580621
 Transform:
