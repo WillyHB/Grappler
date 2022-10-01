@@ -1,4 +1,4 @@
-Shader "Unlit/WaterShader"
+Shader "Unlit/WaterShader2"
 {
     Properties
     {
@@ -8,16 +8,15 @@ Shader "Unlit/WaterShader"
     {
         Tags 
         { 
-            "RenderType"="Opaque"
+            "RenderType"="Opaque" 
             "Queue" = "Transparent"
         }
-     
+        
         Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {
             CGPROGRAM
-
             #pragma vertex vert
             #pragma fragment frag
 
@@ -36,8 +35,7 @@ Shader "Unlit/WaterShader"
                 float4 vertex : SV_POSITION;
             };
 
-
-            float points[2000];
+                        float points[2000];
             float4 size;
 
             sampler2D _MainTex;
@@ -46,7 +44,7 @@ Shader "Unlit/WaterShader"
             v2f vert (appdata v)
             {
                 v2f o;
-                
+
                 if (v.vertexID % 2 == 0)
                 {
                     // BOTTOM VERTEX
@@ -56,27 +54,20 @@ Shader "Unlit/WaterShader"
                 {  
                     // TOP VERTEX
 
-                    v.vertex.y = ((points[v.vertexID/2] + size.y) / size.y - 0.5);
+                    v.vertex.y = points[v.vertexID] - 0.5;
 
                 }
 
-                
                 o.vertex = UnityObjectToClipPos(v.vertex);
-
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                if (i.uv.y > 0.48){
-                     return fixed4(0.5, 0.5, 0.7, 0.5); 
-                    }
-                
-                return fixed4(0.5, 0.5, 0.7, 0.25);
-                
+                // sample the texture
+                return fixed4(1, 1, 1, 1);
             }
-
             ENDCG
         }
     }

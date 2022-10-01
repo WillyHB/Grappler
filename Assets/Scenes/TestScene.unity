@@ -2848,7 +2848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!210 &190196150
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -2903,7 +2903,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a9faf17140a31a14c93fe92b1dbced2c, type: 3}
-  m_Color: {r: 0.5234959, g: 0.6415094, b: 0.63585114, a: 1}
+  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3683,8 +3683,8 @@ MonoBehaviour:
   Spread: 0.02
   WaveSpeed: 1
   NumberOfPoints: 100
-  TargetHeight: 1
-  ComputeShader: {fileID: 7200000, guid: 1ceda11633b626d41b887b06f820728f, type: 3}
+  WaveAmplitude: 0
+  WaterHeight: 0
   Splashz: {x: 25, y: -1}
 --- !u!4 &664580621
 Transform:
@@ -4563,6 +4563,7 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1317877424
 GameObject:
   m_ObjectHideFlags: 0
