@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Grappleable
   - Player
   - Lighting
-  - 
-  - 
+  - Background
+  - PostProcess
   - 
   - 
   - 
@@ -38,9 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2239895037
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 2437223085
+    locked: 0
+  - name: Water
+    uniqueID: 1728591103
     locked: 0

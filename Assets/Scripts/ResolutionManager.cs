@@ -5,13 +5,9 @@ using UnityEditor;
 
 public class ResolutionManager : MonoBehaviour
 {
-    public Camera MainCamera;
+    public RenderCamera[] Cameras;
+
     public Camera RenderCamera;
-    public Camera PlayerCamera;
-
-    public GameObject Quad;
-
-    public static RenderTexture RenderTexture { get; set; }
 
     public bool AutomaticallyConfigureAspectRatio;
     private bool acar;
@@ -57,27 +53,21 @@ public class ResolutionManager : MonoBehaviour
         ScaleValue = (float)ClientDimensions.y / VirtualHeight;
 
         VirtualDimensions = new Vector2Int(virtualWidth, VirtualHeight);
-
-        CreateRenderTexture();
-
-        MainCamera.targetTexture = RenderTexture;
-
-        Material renderMaterial = new(Shader.Find("Universal Render Pipeline/Unlit"))
-        {
-            mainTexture = RenderTexture
-        };
-
-        Quad.GetComponent<MeshRenderer>().material = renderMaterial;
-
-
         float orthoSize = (float)VirtualDimensions.x / ((((float)VirtualDimensions.x / VirtualDimensions.y) * 2) * 16);
 
+        CreateRenderTextures();
 
-        Quad.transform.localScale =
-            new Vector3((orthoSize * 2) * AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
+
+        for (int i = 0; i < Cameras.Length; i++)
+        {
+            Cameras[i].Camera.targetTexture = Cameras[i].RenderTexture;
+            Cameras[i].RenderMaterial.mainTexture = Cameras[i].RenderTexture;
+            Cameras[i].RenderSurface.GetComponent<MeshRenderer>().material = Cameras[i].RenderMaterial;
+
+            Cameras[i].RenderSurface.transform.localScale = new Vector3((orthoSize * 2) * AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
+        }
 
         RenderCamera.orthographicSize = orthoSize - Zoom;
-        PlayerCamera.orthographicSize = orthoSize - Zoom;
 
         aspectRatio = AspectRatio;
         virtualHeight = VirtualHeight;
@@ -85,20 +75,17 @@ public class ResolutionManager : MonoBehaviour
         zoom = Zoom;
     }
 
-    private void CreateRenderTexture()
+    private void CreateRenderTextures()
     {
-        if (RenderTexture != null)
+        for (int i = 0; i < Cameras.Length; i++)
         {
-            RenderTexture.Release();
-            RenderTexture = null;
+            Vector2Int dimensions = Cameras[i].RenderInVirtualSpace ? VirtualDimensions : ClientDimensions;
+            Cameras[i].RenderTexture = new RenderTexture(dimensions.x, dimensions.y, 24)
+            {
+                filterMode = FilterMode.Point,
+                name = Cameras[i].Name,
+            };
         }
-
-        RenderTexture = new RenderTexture(VirtualDimensions.x, VirtualDimensions.y, 24)
-        {
-            filterMode = FilterMode.Point
-        };
-
-        RenderTexture.Create();
     }
 
     private void Update()
@@ -112,4 +99,15 @@ public class ResolutionManager : MonoBehaviour
             Start();
         }
     }
+}
+
+[System.Serializable]
+public struct RenderCamera
+{
+    public string Name;
+    public Camera Camera;
+    public Material RenderMaterial;
+    public RenderTexture RenderTexture { get; set; }
+    public GameObject RenderSurface;
+    public bool RenderInVirtualSpace;
 }

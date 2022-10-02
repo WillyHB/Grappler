@@ -45,6 +45,7 @@ Shader "Unlit/WaterShader"
 
             v2f vert (appdata v)
             {
+
                 v2f o;
                 
                 if (v.vertexID % 2 == 0)
@@ -55,19 +56,10 @@ Shader "Unlit/WaterShader"
                 else
                 {  
                     // TOP VERTEX
-
-     
-                    //springs[i].Height += 0.3f * WaveAmplitude * Mathf.Sin((i * 0.15f - Time.time*WaveSpeed));
-
-                   
                     v.vertex.y = ((points[v.vertexID/2] + size.y) / size.y - 0.5);
 
-                    v.vertex.y += 0.01 * sin(v.vertexID/2 * 0.2f + _Time*60);
-                    v.vertex.y += 0.025 * sin(v.vertexID/2 * 0.1f - _Time*50);
-                   
-
-
-
+                    v.vertex.y += (0.02 * sin(v.vertexID/2 * 0.2f + _Time*60)) / size.y;
+                    v.vertex.y += (0.05 * sin(v.vertexID/2 * 0.1f - _Time*50)) / size.y;             
                 }
 
                 
@@ -79,7 +71,7 @@ Shader "Unlit/WaterShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                if (i.uv.y > 0.48){
+                if (i.uv.y > 0.5 - (0.07 / (size.y))){
                      return fixed4(0.7, 0.7, 0.8, 0.8); 
                     }
                 

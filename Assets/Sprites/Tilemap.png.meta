@@ -399,6 +399,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Background
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9fb0cc24254bc488911bb7f25aedf9
+      internalID: -1145624153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -411,13 +432,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Dirt00: -731902708
-      Tilemap_4: 1038202652
       Tilemap_3: 535032631
       Dirt22: 333929273
       Dirt10: -875013081
       Tilemap_2: 1940058329
       Dirt12: 2060426437
       Rock: 37421356
+      Background: 1038202652
       Dirt11: -1410485487
       Dirt20: 473750227
       Tilemap_0: -1318240640

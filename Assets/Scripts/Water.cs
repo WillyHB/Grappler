@@ -126,10 +126,6 @@ public class Water : MonoBehaviour
         }
         for (int i = 0; i < NumberOfPoints; i++)
         {
-            /*
-            springs[i].Height += 0.5f * WaveAmplitude * Mathf.Sin((i * 0.1f + Time.time*WaveSpeed));
-            springs[i].Height += 0.3f * WaveAmplitude * Mathf.Sin((i * 0.15f - Time.time*WaveSpeed));
-            */
             springs[i].Update(Dampening, Tension);
         }
 
@@ -137,31 +133,28 @@ public class Water : MonoBehaviour
         float[] rightDeltas = new float[NumberOfPoints];
 
         // do some passes where springs pull on their neighbours
-        for (int j = 0; j < 8; j++)
+        for (int i = 0; i < NumberOfPoints; i++)
         {
-            for (int i = 0; i < NumberOfPoints; i++)
+            if (i > 0)
             {
-                if (i > 0)
-                {
-                    leftDeltas[i] = Spread * (springs[i].Height - springs[i - 1].Height);
-                    springs[i - 1].Velocity += leftDeltas[i];
-                }
-                if (i < NumberOfPoints - 1)
-                {
-                    rightDeltas[i] = Spread * (springs[i].Height - springs[i + 1].Height);
-                    springs[i + 1].Velocity += rightDeltas[i];
-                }
+                leftDeltas[i] = Spread * (springs[i].Height - springs[i - 1].Height);
+                springs[i - 1].Velocity += leftDeltas[i];
             }
-
-            for (int i = 0; i < NumberOfPoints; i++)
+            if (i < NumberOfPoints - 1)
             {
-                if (i > 0)
-                    springs[i - 1].Height += leftDeltas[i];
-                if (i < NumberOfPoints - 1)
-                    springs[i + 1].Height += rightDeltas[i];
-
-
+                rightDeltas[i] = Spread * (springs[i].Height - springs[i + 1].Height);
+                springs[i + 1].Velocity += rightDeltas[i];
             }
+        }
+
+        for (int i = 0; i < NumberOfPoints; i++)
+        {
+            if (i > 0)
+                springs[i - 1].Height += leftDeltas[i];
+            if (i < NumberOfPoints - 1)
+                springs[i + 1].Height += rightDeltas[i];
+
+
         }
 
         float[] points = new float[2000];

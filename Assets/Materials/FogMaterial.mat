@@ -19,7 +19,7 @@ Material:
   m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _Speed
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -42,9 +42,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Pixelation: 0.138
+    - _Pixelation: 0.124
     - _Speed: 0.3
-    - _Strength: 10.74
+    - _Strength: 9.07
     - _Time: 4.97
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
