@@ -11,7 +11,9 @@ public class Water : MonoBehaviour
     public float Tension = 0.025f;
     public float Dampening = 0.025f;
     public float Spread = 0.025f;
-    public int NumberOfPoints = 100;
+    public int NumberOfPoints => (int)(transform.localScale.x / PointDensity);
+    private int numberOfPoints;
+    public float PointDensity = 0.1f;
     public float WaterHeight = 0;
 
     private MeshFilter meshFilter;
@@ -38,11 +40,10 @@ public class Water : MonoBehaviour
     }
 
     private void InitMesh()
-    {
-       
+    {      
         Vector3[] vertices = new Vector3[NumberOfPoints * 2];
 
-        int numberOfVertices = 200;
+        int numberOfVertices = (NumberOfPoints * 2);
         int boxNumber = 0;
 
         if ((numberOfVertices -= 4) > 0)
@@ -101,6 +102,9 @@ public class Water : MonoBehaviour
 
     private void InitSprings()
     {
+        numberOfPoints = NumberOfPoints;
+
+
         springs.Clear();
         springs = new List<Spring>();
         springs.Capacity = NumberOfPoints;
@@ -115,7 +119,7 @@ public class Water : MonoBehaviour
 
     public void Update()
     {
-        if (springs.Count != NumberOfPoints)
+        if (numberOfPoints != NumberOfPoints)
         {
             InitSprings();
         }

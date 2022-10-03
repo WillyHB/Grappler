@@ -58,8 +58,11 @@ Shader "Unlit/WaterShader"
                     // TOP VERTEX
                     v.vertex.y = ((points[v.vertexID/2] + size.y) / size.y - 0.5);
 
-                    v.vertex.y += (0.02 * sin(v.vertexID/2 * 0.2f + _Time*60)) / size.y;
-                    v.vertex.y += (0.05 * sin(v.vertexID/2 * 0.1f - _Time*50)) / size.y;             
+                    v.vertex.y += (0.03 * sin(v.vertexID/2 * 0.2f + _Time*60)) / size.y;
+                    v.vertex.y += (0.05 * sin(v.vertexID/2 * 0.1f - _Time*50)) / size.y;   
+                    
+
+                    v.vertex.y += (0.15 * sin(0.1f - _Time*20)) / size.y;             
                 }
 
                 
