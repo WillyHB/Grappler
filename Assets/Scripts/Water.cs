@@ -14,11 +14,13 @@ public class Water : MonoBehaviour
     public int NumberOfPoints => (int)(transform.localScale.x / PointDensity);
     private int numberOfPoints;
     public float PointDensity = 0.1f;
-    public float WaterHeight = 0;
+
+    public float SplashDownMultiplier = 0.075f;
+    public float SplashUpMultiplier = 0.5f;
 
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
-
+    private EdgeCollider2D edgeCollider2D;
 
     public Vector2 Splashz;
 
@@ -35,6 +37,7 @@ public class Water : MonoBehaviour
     {
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
+        edgeCollider2D = GetComponent<EdgeCollider2D>();
 
         InitSprings();
     }
@@ -62,7 +65,6 @@ public class Water : MonoBehaviour
 
         for (int i = 0; i < vertices.Length; i += 2)
         {
-            
             vertices[i] = new Vector3(-0.5f + ((float)i / vertices.Length), -0.5f, 0);
             vertices[i + 1] = new Vector3(-0.5f + ((float)i / vertices.Length), 0.5f, 0);
 
@@ -162,18 +164,35 @@ public class Water : MonoBehaviour
         }
 
         float[] points = new float[2000];
+        List<Vector2> pointz = new();
 
         for (int i = 0; i < NumberOfPoints; i++)
         {
             points[i] = springs[i].Height;
+
+            pointz.Add(
+                new Vector2(
+                    (float)i / NumberOfPoints, 
+                    (springs[i].Height + meshRenderer.bounds.size.y) / meshRenderer.bounds.size.y));
         }
+
+        edgeCollider2D.SetPoints(pointz);
+        edgeCollider2D.offset = new Vector2(-0.5f, -0.5f);
 
         meshRenderer.material.SetFloatArray("points", points);
         meshRenderer.material.SetVector("size", 
-            new Vector4(meshRenderer.bounds.size.x, meshRenderer.bounds.size.y, WaterHeight, 0));
+            new Vector4(meshRenderer.bounds.size.x, meshRenderer.bounds.size.y, 0));
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        float velocity = collision.attachedRigidbody.velocity.y;
 
+        float x = collision.transform.position.x;
 
+        Splash(
+                (int)((x - (transform.position.x - meshRenderer.bounds.size.x / 2)) / meshRenderer.bounds.size.x * NumberOfPoints),
+                velocity * (velocity > 0 ? SplashUpMultiplier : SplashDownMultiplier));
     }
 
     public class Spring

@@ -62,7 +62,6 @@ public class ResolutionManager : MonoBehaviour
         {
             Cameras[i].Camera.targetTexture = Cameras[i].RenderTexture;
             Cameras[i].RenderMaterial.mainTexture = Cameras[i].RenderTexture;
-            Cameras[i].RenderSurface.GetComponent<MeshRenderer>().material = Cameras[i].RenderMaterial;
 
             Cameras[i].RenderSurface.transform.localScale = new Vector3((orthoSize * 2) * AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
         }

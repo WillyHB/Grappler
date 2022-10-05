@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6750984759069912462}
   - component: {fileID: 6750984759069912463}
   - component: {fileID: 6750984759069912460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TwoPointRope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +86,8 @@ MonoBehaviour:
   GustPowerFrom: 0
   GustPowerTo: 0
   NormalizedWindDirection: {x: 0, y: 0}
+  PushedByRigidbodies: 0
+  PushMultiplier: 0.1
   StartPoint: {fileID: 6750984759920552087}
   EndPoint: {fileID: 6750984758678311653}
 --- !u!120 &6750984759069912460

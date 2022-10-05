@@ -8,7 +8,8 @@ public class RenderCam : MonoBehaviour
     private Transform renderSurface;
 
     public Camera PlayerCam;
-    public Camera PostProcessCam;
+    public Camera FrontCam;
+    public Camera BackCam;
     public Camera WaterCam;
 
     public GameObject[] RenderSurfaces;
@@ -72,13 +73,14 @@ public class RenderCam : MonoBehaviour
 
             foreach (GameObject go in RenderSurfaces)
             {
-                go.transform.localPosition = new Vector3(-dif.x - xShakeOffset, -dif.y, 10);
+                go.transform.localPosition = new Vector3(-dif.x - xShakeOffset, -dif.y, go.transform.localPosition.z);
             }
         }
 
-        PlayerCam.transform.position = new Vector3(cam.FloatPosition.x + xShakeOffset, cam.FloatPosition.y, -5);
-        PostProcessCam.transform.position = new Vector3(cam.FloatPosition.x + xShakeOffset, cam.FloatPosition.y, -5);
-        WaterCam.transform.position = new Vector3(cam.FloatPosition.x + xShakeOffset, cam.FloatPosition.y, -5);
+        PlayerCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
+        FrontCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
+        BackCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
+        WaterCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
 
 
     }

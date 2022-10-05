@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using System.Linq;
 
 public class PlayerStateMachine : StateMachine
 {
@@ -56,7 +56,7 @@ public class PlayerStateMachine : StateMachine
 
     public Anims Animations { get; } = new();
     [Space(25)]
-    public LayerMask GroundLayerMask;
+    public string GroundTag = "Ground";
 
     public float GroundedCheckRadius = 0.25f;
 
@@ -77,12 +77,24 @@ public class PlayerStateMachine : StateMachine
     {
         base.Update();
 
-        Debug.Log(CurrentState.GetType().ToString());
         MoveValue = InputProvider.GetState().MoveDirection;
 
-        IsGrounded = Physics2D.OverlapCircle(
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(
             new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
-            GroundedCheckRadius, GroundLayerMask);
+            GroundedCheckRadius);
+
+        bool grounded = false;
+
+        foreach (Collider2D col in colliders)
+        {
+            if (col.CompareTag(GroundTag))
+            {
+                grounded = true;
+                break;
+            }
+        }
+
+        IsGrounded = grounded;
 
         if (InputProvider.GetState().MoveDirection > 0)
         {

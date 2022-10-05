@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4967889191475284235}
   - component: {fileID: 4967889191475284234}
   - component: {fileID: 4967889191475284232}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OnePointRope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +53,8 @@ MonoBehaviour:
   GustPowerFrom: 0
   GustPowerTo: 0
   NormalizedWindDirection: {x: 0, y: 0}
+  PushedByRigidbodies: 0
+  PushMultiplier: 0.1
   FollowMousePosition: 0
 --- !u!120 &4967889191475284232
 LineRenderer:

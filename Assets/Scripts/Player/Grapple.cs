@@ -10,7 +10,7 @@ public class Grapple : MonoBehaviour
 
     public float GrappleExtensionSpeed = 2;
 
-    public LayerMask GroundLayerMask;
+    public string GrappleTag = "Ground";
 
     public GameObject TwoPointRope;
     private GameObject hook;
@@ -66,20 +66,32 @@ public class Grapple : MonoBehaviour
 
     private void OnGrapple()
     {
-        RaycastHit2D hit = default;
+        RaycastHit2D[] hits = default;
 
         if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
-            hit = Physics2D.Linecast(transform.position, mousePos, GroundLayerMask);
+            hits = Physics2D.LinecastAll(transform.position, mousePos);
         }
 
         else if (InputDeviceManager.CurrentDeviceType == InputDevices.Controller)
         {
-            hit = Physics2D.Raycast(transform.position, Gamepad.current.rightStick.ReadValue(), 1000, GroundLayerMask);
+            hits = Physics2D.RaycastAll(transform.position, Gamepad.current.rightStick.ReadValue(), 1000);
         }
 
-        if (hit)
+        bool grappleHit = false;
+        RaycastHit2D hit = new();
+
+        foreach (var h in hits)
+        {
+            if (h.collider.CompareTag(GrappleTag))
+            {
+                hit = h;
+                grappleHit = true;
+            }
+        }
+
+        if (grappleHit)
         {
             grappledThisFrame = true;
 
