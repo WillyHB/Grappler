@@ -41,8 +41,6 @@ public abstract class PlayerMoveState : GroundedState
             {
                 accelerant = speed;
             }
-
-
         }
 
         else if (sm.MoveValue < 0)

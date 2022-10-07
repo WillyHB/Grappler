@@ -17,18 +17,20 @@ public abstract class StateMachine : MonoBehaviour
 
     public State Transition(State state)
     {
-        if (CurrentState != null)
+        if (CurrentState != state)
         {
-            CurrentState.OnExit();
-            PreviousState = CurrentState.GetType();
+            if (CurrentState != null)
+            {
+                CurrentState.OnExit();
+                PreviousState = CurrentState.GetType();
+            }
+
+            CurrentState = state;
+
+            state.OnEnter(this);
         }
 
-        CurrentState = state;
-
-        state.OnEnter(this);
-
         return CurrentState;
-
     }
 
     // Update is called once per frame

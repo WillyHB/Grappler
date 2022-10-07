@@ -69,6 +69,7 @@ public class InputProvider : ScriptableObject
 public struct InputState
 {
     public float MoveDirection { get; set; }
+    public float SwimDirection { get; set; }
     public float GrappleLength { get; set; }
 
     public bool IsJumping { get; set; }

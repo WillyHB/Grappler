@@ -6069,6 +6069,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Swim1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 340
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e549bc75062664ab4390e3c1583bed
+      internalID: 2017012884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swim2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 340
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30779dee7b3b5644b0e57ac1ca6fc3e
+      internalID: -1301192796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swim3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 340
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b4022a0b709bb48b5f90b13389b514
+      internalID: 1681099172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swim4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 340
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552eee71d93d0894e963d9b8f8658c03
+      internalID: -1232148011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swim5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 340
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad7d92385e4a5f419a478ee35fde457
+      internalID: -258264132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swim6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 340
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d5277db60624f48b4770745f2c2ebe
+      internalID: 736817484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -6080,11 +6206,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Land6: 675238711
+      SpinMove1: -918881017
+      IdleAnimation2_6: -439164633
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
-      IdleAnimation5_14: -1590202609
+      Swim2: -1301192796
       Grapple90_15: 1936200411
       IdleAnimation1_15: 701219836
       Walk7: 262825427
@@ -6095,6 +6222,7 @@ TextureImporter:
       Run1: 714852578
       FrontFlipTrick10: 1639830093
       Grapple240_10: -1435755676
+      Swim6: 736817484
       RunLand5: 56251326
       Grapple45_1: 143883605
       IdleAnimation6_2: 525753452
@@ -6112,12 +6240,12 @@ TextureImporter:
       Walk8: 228908333
       Grapple25_5: -23068108
       CrouchIdle3: 1080385358
-      FrontFlipTrick16: 1141045384
       FrontFlipTrick8: -279781953
-      Grapple180_6: -1190249538
+      FrontFlipTrick16: 1141045384
+      Grapple180_3: 376200176
       TuckedSpinMove9: 1530248399
       Grapple25_4: 2102483572
-      Grapple180_3: 376200176
+      Grapple180_6: -1190249538
       SideSpinTrick2: -2056143185
       Grapple180_11: 1997691233
       IdleAnimation4_6: 1809246072
@@ -6148,9 +6276,9 @@ TextureImporter:
       Land3: -1852222810
       Grapple180_8: -2114529771
       IdleAnimation1_3: 1143752939
-      SpinTrick4: 1617065576
       Walk5: -1537998552
       IdleAnimation5_7: 205717580
+      SpinTrick4: 1617065576
       FallDown1: 1904917662
       IdleAnimation3_13: -701427122
       CrouchMove8: 212058146
@@ -6166,6 +6294,7 @@ TextureImporter:
       IdleAnimation2_3: 455182933
       IdleAnimation4_9: 1993296839
       IdleAnimation1_12: -515760547
+      Swim4: -1232148011
       TuckedSpinMove5: -2012338064
       Grapple240_1: -317169499
       Run2: 661897010
@@ -6176,6 +6305,7 @@ TextureImporter:
       Grapple45_9: -710601245
       FallUp2: -623329574
       RunLand6: 1797858514
+      Swim5: -258264132
       CrouchToIdle1: 789473743
       Player_8: -567756082
       Shoot2: 614054028
@@ -6236,6 +6366,7 @@ TextureImporter:
       Grapple25_6: 663668167
       Grapple180_5: -864176640
       IdleAnimation6_14: 420363046
+      Swim1: 2017012884
       IdleAnimation5_6: 801206500
       CrouchToIdle4: -140621692
       Grapple180_4: 1517064791
@@ -6265,6 +6396,7 @@ TextureImporter:
       Run4: -177503077
       IdleAnimation3_9: 1654809289
       IdleAnimation3_2_3: 2013470214
+      Swim3: 1681099172
       IdleAnimation5_2: 1631144890
       IdleAnimation1_8: 401381628
       IdleAnimation3_2_2: 1149095073
@@ -6380,13 +6512,13 @@ TextureImporter:
       Grapple45_4: -1351265971
       Idle1: 912300089
       FrontFlipTrick9: 317311740
-      IdleAnimation3_14: 991644159
       SpinTrick6: 1387871184
-      IdleAnimation2_6: -439164633
-      IdleAnimation3_6: -666985588
-      SpinMove1: -918881017
-      JumpDust5: 515763601
       DuckFallDown3: -1199758741
+      IdleAnimation3_6: -666985588
+      IdleAnimation3_14: 991644159
+      Land6: 675238711
+      JumpDust5: 515763601
+      IdleAnimation5_14: -1590202609
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

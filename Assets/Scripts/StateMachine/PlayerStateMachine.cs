@@ -14,6 +14,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerLandState LandState;
     public GrappleState GrappleState;
     public GrappleExitState GrappleExitState;
+    public PlayerSwimmingState SwimState;
 
     public PlayerDuckState Duck;
 
@@ -71,12 +72,15 @@ public class PlayerStateMachine : StateMachine
 
     public float MoveValue {get; set;}
 
+    public Water CurrentWater { get; set; }
+
     public GameObject KickRock;
 
     protected override void Update()
     {
         base.Update();
 
+        Debug.Log(CurrentState);
         MoveValue = InputProvider.GetState().MoveDirection;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(
@@ -107,6 +111,8 @@ public class PlayerStateMachine : StateMachine
         }
 
         Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
+
+        if (CurrentWater != null) Transition(SwimState);
     }
 
     protected override void FixedUpdate()

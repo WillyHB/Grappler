@@ -18,11 +18,12 @@ public class Water : MonoBehaviour
     public float SplashDownMultiplier = 0.075f;
     public float SplashUpMultiplier = 0.5f;
 
-    private MeshFilter meshFilter;
-    private MeshRenderer meshRenderer;
-    private EdgeCollider2D edgeCollider2D;
+    [Range(0, 1)]
+    public float ColliderSurfaceHeight = 1;
 
-    public Vector2 Splashz;
+    private MeshFilter meshFilter;
+    public MeshRenderer meshRenderer { get; set; }
+    private BoxCollider2D boxCollider;
 
     public void Splash(int index, float speed)
     {
@@ -37,7 +38,7 @@ public class Water : MonoBehaviour
     {
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
-        edgeCollider2D = GetComponent<EdgeCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
 
         InitSprings();
     }
@@ -121,15 +122,16 @@ public class Water : MonoBehaviour
 
     public void Update()
     {
+        float size = (ColliderSurfaceHeight + meshRenderer.bounds.size.y) / meshRenderer.bounds.size.y;
+
+        boxCollider.size = new Vector2(1, size);
+        boxCollider.offset = new Vector2(0, (size - 1) / 2f);
+
         if (numberOfPoints != NumberOfPoints)
         {
             InitSprings();
         }
 
-        if (Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            Splash((int)Splashz.x, Splashz.y);
-        }
         for (int i = 0; i < NumberOfPoints; i++)
         {
             springs[i].Update(Dampening, Tension);
@@ -164,20 +166,11 @@ public class Water : MonoBehaviour
         }
 
         float[] points = new float[2000];
-        List<Vector2> pointz = new();
 
         for (int i = 0; i < NumberOfPoints; i++)
         {
             points[i] = springs[i].Height;
-
-            pointz.Add(
-                new Vector2(
-                    (float)i / NumberOfPoints, 
-                    (springs[i].Height + meshRenderer.bounds.size.y) / meshRenderer.bounds.size.y));
         }
-
-        edgeCollider2D.SetPoints(pointz);
-        edgeCollider2D.offset = new Vector2(-0.5f, -0.5f);
 
         meshRenderer.material.SetFloatArray("points", points);
         meshRenderer.material.SetVector("size", 
@@ -193,6 +186,19 @@ public class Water : MonoBehaviour
         Splash(
                 (int)((x - (transform.position.x - meshRenderer.bounds.size.x / 2)) / meshRenderer.bounds.size.x * NumberOfPoints),
                 velocity * (velocity > 0 ? SplashUpMultiplier : SplashDownMultiplier));
+
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerStateMachine>().CurrentWater = this;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerStateMachine>().CurrentWater = null;
+        }
     }
 
     public class Spring

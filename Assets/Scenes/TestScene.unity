@@ -5179,7 +5179,7 @@ GameObject:
   - component: {fileID: 664580624}
   m_Layer: 4
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5200,8 +5200,9 @@ MonoBehaviour:
   Dampening: 0.005
   Spread: 0.08
   PointDensity: 0.05
-  WaterHeight: 0
-  Splashz: {x: 25, y: -1}
+  SplashDownMultiplier: 0.075
+  SplashUpMultiplier: 0.5
+  ColliderSurfaceHeight: 0.5
 --- !u!4 &664580621
 Transform:
   m_ObjectHideFlags: 0
@@ -5267,8 +5268,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!68 &664580624
-EdgeCollider2D:
+--- !u!61 &664580624
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5281,14 +5282,18 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1 &676480554
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,6 +5444,7 @@ MonoBehaviour:
   LandState: {fileID: 11400000, guid: 6b5b8395ac7738c45bf642455ab48894, type: 2}
   GrappleState: {fileID: 11400000, guid: 6ea15e989b5dc8c4b8ba91b5b5406544, type: 2}
   GrappleExitState: {fileID: 11400000, guid: 44a042520166f3b4d95ff5fd6c405cc2, type: 2}
+  SwimState: {fileID: 11400000, guid: c5c3b6b2ecfe7e649ad61749d1249731, type: 2}
   Duck: {fileID: 11400000, guid: c20440d0762784e44ac4c99f1b060261, type: 2}
   GroundTag: Ground
   GroundedCheckRadius: 0.07
