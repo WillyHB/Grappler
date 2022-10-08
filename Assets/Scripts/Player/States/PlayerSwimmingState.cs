@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections; 
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +21,10 @@ public class PlayerSwimmingState : State
     public float FootSurfaceDistance = 0.1f;
     public float MaxSurfaceDistance = 0.1f;
 
-    public bool NearSurface => sm.transform.position.y - sm.GetComponent<CapsuleCollider2D>().bounds.size.y / 2
+    [Range(0f, 1f)]
+    public float SurfaceTension;
+
+    public bool NearSurface => sm.transform.position.y - sm.GetComponent<BoxCollider2D>().bounds.size.y / 2
             > sm.CurrentWater.transform.position.y
             + sm.CurrentWater.GetComponent<BoxCollider2D>().bounds.size.y / 2
             + sm.CurrentWater.GetComponent<BoxCollider2D>().offset.y
@@ -38,7 +41,10 @@ public class PlayerSwimmingState : State
         oldGravity = sm.Rigidbody.gravityScale;
         sm.Rigidbody.gravityScale = 0;
 
+        sm.Animator.Play(sm.Animations.Swim);
         sm.InputProvider.Jumped += Jump;
+
+        accelerant.y += (-accelerant.y * SurfaceTension);
     }
 
     public override void OnExit()
@@ -52,6 +58,7 @@ public class PlayerSwimmingState : State
     {
         if (NearSurface)
         {
+            sm.CurrentWater = null;
             sm.Transition(sm.JumpState);
         }
     }
@@ -156,13 +163,18 @@ public class PlayerSwimmingState : State
     {
         base.Update();
 
+        float speedx = sm.MoveValue;
+        float speedy = sm.InputProvider.GetState().SwimDirection;
+        if (speedx != 0)
+        {
+            sm.Animator.Play(sm.Animations.SwimMove);
+        }
+
+        else
+        {
+            sm.Animator.Play(sm.Animations.Swim);
+        }
+
         if (sm.CurrentWater == null) sm.Transition(sm.IdleState);
-        // if at the waters surface, don't allow further climbing
-
-        // if near surface, push to top
-
-        // allow jumping out when at surface
-
-
     }
 }

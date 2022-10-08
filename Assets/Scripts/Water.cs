@@ -15,8 +15,7 @@ public class Water : MonoBehaviour
     private int numberOfPoints;
     public float PointDensity = 0.1f;
 
-    public float SplashDownMultiplier = 0.075f;
-    public float SplashUpMultiplier = 0.5f;
+    public float SplashMultiplier = 0.075f;
 
     [Range(0, 1)]
     public float ColliderSurfaceHeight = 1;
@@ -185,7 +184,7 @@ public class Water : MonoBehaviour
 
         Splash(
                 (int)((x - (transform.position.x - meshRenderer.bounds.size.x / 2)) / meshRenderer.bounds.size.x * NumberOfPoints),
-                velocity * (velocity > 0 ? SplashUpMultiplier : SplashDownMultiplier));
+                velocity * SplashMultiplier);
 
         if (collision.CompareTag("Player"))
         {

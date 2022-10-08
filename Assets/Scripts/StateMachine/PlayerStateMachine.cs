@@ -38,6 +38,9 @@ public class PlayerStateMachine : StateMachine
 
         public int Grapple { get; private set; } = Animator.StringToHash("Grapple");
 
+        public int Swim { get; private set; } = Animator.StringToHash("Swim");
+        public int SwimMove { get; private set; } = Animator.StringToHash("SwimMove");
+
         #region GrappleExits
         public int GrappleSpinExit { get; private set; } = Animator.StringToHash("GrappleSpinExit");
         public int GrappleTuckedSpinExit { get; private set; } = Animator.StringToHash("GrappleTuckedSpinExit");
@@ -84,7 +87,7 @@ public class PlayerStateMachine : StateMachine
         MoveValue = InputProvider.GetState().MoveDirection;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(
-            new Vector2(transform.position.x, transform.position.y - GetComponent<CapsuleCollider2D>().size.y / 2),
+            new Vector2(transform.position.x, transform.position.y - GetComponent<BoxCollider2D>().size.y / 2 + GetComponent<BoxCollider2D>().offset.y),
             GroundedCheckRadius);
 
         bool grounded = false;
@@ -93,6 +96,7 @@ public class PlayerStateMachine : StateMachine
         {
             if (col.CompareTag(GroundTag))
             {
+                Debug.Log("Forreal is grounded yo!");
                 grounded = true;
                 break;
             }

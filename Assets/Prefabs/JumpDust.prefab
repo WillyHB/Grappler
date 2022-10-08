@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6617395283658745601}
   - component: {fileID: 9037895136284416713}
   - component: {fileID: 6146522622981186334}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: JumpDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}

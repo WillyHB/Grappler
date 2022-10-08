@@ -399,7 +399,7 @@
                 {
                     "name": "positive",
                     "id": "72818468-53db-4b4a-9745-0f4c042fbfe5",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

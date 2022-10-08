@@ -28,6 +28,13 @@ public class PlayerJumpState : PlayerAirborneState
         sm.Animator.Play(sm.Animations.Jump);
     }
 
+    public override void OnExit()
+    {
+        base.OnExit();
+
+        sm.Rigidbody.gravityScale = defaultGravity;
+    }
+
     public override void Update()
     {
 
@@ -36,8 +43,6 @@ public class PlayerJumpState : PlayerAirborneState
             || sm.transform.position.y - startY >= MaxJumpHeight
             || sm.Rigidbody.velocity.y < 0))
         {
-            sm.Rigidbody.gravityScale = defaultGravity;
-
             sm.Transition(sm.FallState);
             return;
         }

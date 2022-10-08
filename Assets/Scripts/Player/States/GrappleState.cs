@@ -37,7 +37,6 @@ public class GrappleState : State
 
         if (!sm.Grapple.IsGrappling)
         {
-            sm.transform.rotation = Quaternion.identity;
             sm.Transition(sm.IdleState);
 
             return;
@@ -60,7 +59,6 @@ public class GrappleState : State
 
         if (sm.IsGrounded)
         {
-            sm.transform.rotation = Quaternion.identity;
             sm.Transition(sm.LandState);
             return;
         }
@@ -69,6 +67,7 @@ public class GrappleState : State
     public override void OnExit()
     {
         base.OnExit();
+        sm.transform.rotation = Quaternion.identity;
         sm.InputProvider.Jumped -= Jump;
     }
 

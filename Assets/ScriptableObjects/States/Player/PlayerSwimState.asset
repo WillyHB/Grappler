@@ -16,7 +16,8 @@ MonoBehaviour:
   HorizontalDampening: 10
   HorizontalAccelerant: 10
   VerticalAccelerant: 10
-  HorizontalSpeed: 100
-  VerticalSpeed: 100
+  HorizontalSpeed: 150
+  VerticalSpeed: 150
   FootSurfaceDistance: 0.5
-  FootSurfaceDistanceLong: 0.5
+  MaxSurfaceDistance: 0
+  SurfaceTension: 0.6
