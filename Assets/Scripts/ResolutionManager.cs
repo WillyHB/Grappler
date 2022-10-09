@@ -21,22 +21,34 @@ public class ResolutionManager : MonoBehaviour
     [Min(0)]
     public float Zoom;
 
-    private float zoom;
-
     public static Vector2Int VirtualDimensions { get; private set; } = new();
 
     public static Vector2Int ClientDimensions { get; private set; } = new();
 
     public static float ScaleValue { get; private set; }
 
+    public static float CameraZoom { get; private set; }
+
     private void Awake()
     {
-        CameraEffects.Zoom += (v) => zoom = v;
+        CameraEffects.Zoom += (v) => CameraZoom = v;
     }
 
     private void OnDisable()
     {
-        CameraEffects.Zoom -= (v) => zoom = v;
+        CameraEffects.Zoom -= (v) => CameraZoom = v;
+    }
+
+    public static Vector2 ScreenToWorld(Vector2 point)
+    {
+        float orthoSize = (float)VirtualDimensions.x / ((((float)VirtualDimensions.x / VirtualDimensions.y) * 2) * 16);
+
+        Camera.main.orthographicSize = orthoSize - CameraZoom;
+        Vector2 finalPoint = Camera.main.ScreenToWorldPoint(point / ScaleValue);
+        Camera.main.orthographicSize = orthoSize;
+
+        return finalPoint;
+
     }
 
     private void Start()
@@ -71,7 +83,7 @@ public class ResolutionManager : MonoBehaviour
         aspectRatio = AspectRatio;
         virtualHeight = VirtualHeight;
         acar = AutomaticallyConfigureAspectRatio;
-        zoom = Zoom;
+        CameraZoom = Zoom;
     }
 
     private void CreateRenderTextures()
@@ -93,7 +105,7 @@ public class ResolutionManager : MonoBehaviour
             || virtualHeight != VirtualHeight
             || new Vector2Int(Screen.width, Screen.height) != ClientDimensions
             || acar != AutomaticallyConfigureAspectRatio
-            || zoom != Zoom)
+            || CameraZoom != Zoom)
         {
             Start();
         }

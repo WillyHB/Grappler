@@ -70,7 +70,8 @@ public class Grapple : MonoBehaviour
 
         if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue() / ResolutionManager.ScaleValue);
+            Vector2 mousePos = ResolutionManager.ScreenToWorld(Mouse.current.position.ReadValue());
+
             hits = Physics2D.LinecastAll(transform.position, mousePos);
         }
 

@@ -96,7 +96,6 @@ public class PlayerStateMachine : StateMachine
         {
             if (col.CompareTag(GroundTag))
             {
-                Debug.Log("Forreal is grounded yo!");
                 grounded = true;
                 break;
             }

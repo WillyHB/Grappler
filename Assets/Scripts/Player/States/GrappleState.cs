@@ -13,6 +13,8 @@ public class GrappleState : State
 
     protected PlayerStateMachine sm;
 
+    private bool isJumping;
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
@@ -25,6 +27,7 @@ public class GrappleState : State
 
     private void Jump()
     {
+        isJumping = true;
         sm.Grapple.ReleaseGrapple();
         sm.Transition(sm.GrappleExitState);
     }
@@ -67,7 +70,12 @@ public class GrappleState : State
     public override void OnExit()
     {
         base.OnExit();
-        sm.transform.rotation = Quaternion.identity;
+
+        if (!isJumping)
+            sm.transform.rotation = Quaternion.identity;
+
+        isJumping = false;
+
         sm.InputProvider.Jumped -= Jump;
     }
 
