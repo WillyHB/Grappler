@@ -76,7 +76,7 @@ public abstract class Rope : MonoBehaviour
             }
 
             List<Vector2> points = new();
-            ropeSegments.ForEach(seg => points.Add(seg.posNow));
+            ropeSegments.ForEach(seg => points.Add(transform.InverseTransformPoint(seg.posNow)));
             GetComponent<EdgeCollider2D>().SetPoints(points);
         }
 

@@ -79,7 +79,10 @@ public class Grapple : MonoBehaviour
         {
             hits = Physics2D.RaycastAll(transform.position, Gamepad.current.rightStick.ReadValue(), 1000);
         }
-
+        /*
+         * 
+         * FIX ROPE POSITIONING
+         * */
         bool grappleHit = false;
         RaycastHit2D hit = new();
 
