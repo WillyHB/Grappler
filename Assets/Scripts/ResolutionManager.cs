@@ -29,14 +29,15 @@ public class ResolutionManager : MonoBehaviour
 
     public static float CameraZoom { get; private set; }
 
+
     private void Awake()
     {
-        CameraEffects.Zoom += (v) => CameraZoom = v;
+        CameraEffects.Zoom += (v) => Zoom = v;
     }
 
     private void OnDisable()
     {
-        CameraEffects.Zoom -= (v) => CameraZoom = v;
+        CameraEffects.Zoom -= (v) => Zoom = v;
     }
 
     public static Vector2 ScreenToWorld(Vector2 point)
@@ -84,7 +85,7 @@ public class ResolutionManager : MonoBehaviour
         virtualHeight = VirtualHeight;
         acar = AutomaticallyConfigureAspectRatio;
         CameraZoom = Zoom;
-    }
+    } 
 
     private void CreateRenderTextures()
     {

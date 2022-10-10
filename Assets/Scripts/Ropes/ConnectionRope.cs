@@ -80,7 +80,6 @@ public class ConnectionRope : Rope
         distanceJoint.connectedAnchor = EndOffset;
         distanceJoint.maxDistanceOnly = true;
         distanceJoint.enableCollision = true;
-        lineRenderer = GetComponent<LineRenderer>();
 
         ResetRope(StartRigidbody.transform.position);
     }
@@ -88,13 +87,13 @@ public class ConnectionRope : Rope
     private void OnEnable()
     {
         distanceJoint.enabled = true;
-        lineRenderer.enabled = true;
+        LineRenderer.enabled = true;
     }
 
     private void OnDisable()
     {
         distanceJoint.enabled = false;
-        lineRenderer.enabled = false;
+        LineRenderer.enabled = false;
     }
 
     // Update is called once per frame
@@ -161,8 +160,8 @@ public class ConnectionRope : Rope
 
     private void DrawRope()
     {
-        lineRenderer.startWidth = LineWidth;
-        lineRenderer.endWidth = LineWidth;
+        LineRenderer.startWidth = LineWidth;
+        LineRenderer.endWidth = LineWidth;
 
         Vector3[] ropePositions = new Vector3[NumberOfSegments];
         for (int i = 0; i < NumberOfSegments; i++)
@@ -170,7 +169,7 @@ public class ConnectionRope : Rope
             ropePositions[i] = ropeSegments[i].posNow;
         }
 
-        lineRenderer.positionCount = ropePositions.Length;
-        lineRenderer.SetPositions(ropePositions);
+        LineRenderer.positionCount = ropePositions.Length;
+        LineRenderer.SetPositions(ropePositions);
     }
 }

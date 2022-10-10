@@ -10,16 +10,14 @@ public class OnePointRope : Rope
     // Use this for initialization
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-
-        ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position);
+        ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : Vector2.zero);
     }
 
     // Update is called once per frame
     void Update()
     {
         RopeSegment firstSegment = ropeSegments[0];
-        firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : transform.position;
+        firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : Vector2.zero;
         ropeSegments[0] = firstSegment;
 
         if (NumberOfSegments != numberOfSegments)
@@ -74,8 +72,8 @@ public class OnePointRope : Rope
 
     private void DrawRope()
     {
-        lineRenderer.startWidth = LineWidth;
-        lineRenderer.endWidth = LineWidth;
+        LineRenderer.startWidth = LineWidth;
+        LineRenderer.endWidth = LineWidth;
 
         Vector3[] ropePositions = new Vector3[NumberOfSegments];
         for (int i = 0; i < NumberOfSegments; i++)
@@ -83,7 +81,7 @@ public class OnePointRope : Rope
             ropePositions[i] = ropeSegments[i].posNow;
         }
 
-        lineRenderer.positionCount = ropePositions.Length;
-        lineRenderer.SetPositions(ropePositions);
+        LineRenderer.positionCount = ropePositions.Length;
+        LineRenderer.SetPositions(ropePositions);
     }
 }

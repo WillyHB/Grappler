@@ -10,8 +10,6 @@ public class TwoPointRope : Rope
 
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-
         ResetRope(StartPoint.position);
     }
    
@@ -19,17 +17,16 @@ public class TwoPointRope : Rope
     void Update()
     {
         RopeSegment firstSegment = ropeSegments[0];
-        firstSegment.posNow = StartPoint.position;
+        firstSegment.posNow = StartPoint.localPosition;
         ropeSegments[0] = firstSegment;
 
         RopeSegment endSegment = ropeSegments[^1];
-        endSegment.posNow = EndPoint.position;
+        endSegment.posNow = EndPoint.localPosition;
         ropeSegments[^1] = endSegment;
 
         if (NumberOfSegments != numberOfSegments)
         {
             ModifyLength(EndPoint.position);
-
         }
 
 
@@ -45,8 +42,6 @@ public class TwoPointRope : Rope
 
     protected override void ApplyConstraint()
     {
-
-
         for (int i = 0; i < NumberOfSegments - 1; i++)
         {
             RopeSegment firstSeg = ropeSegments[i];
@@ -76,8 +71,8 @@ public class TwoPointRope : Rope
 
     private void DrawRope()
     {
-        lineRenderer.startWidth = LineWidth;
-        lineRenderer.endWidth = LineWidth;
+        LineRenderer.startWidth = LineWidth;
+        LineRenderer.endWidth = LineWidth;
 
         Vector3[] ropePositions = new Vector3[NumberOfSegments];
         for (int i = 0; i < NumberOfSegments; i++)
@@ -85,7 +80,7 @@ public class TwoPointRope : Rope
             ropePositions[i] = ropeSegments[i].posNow;
         }
 
-        lineRenderer.positionCount = ropePositions.Length;
-        lineRenderer.SetPositions(ropePositions);
+        LineRenderer.positionCount = ropePositions.Length;
+        LineRenderer.SetPositions(ropePositions);
     }
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Ground
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -39,15 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2239895037
+  - name: Back
+    uniqueID: 1097636351
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 2437223085
-    locked: 0
-  - name: Water
-    uniqueID: 1728591103
+  - name: Front
+    uniqueID: 2674779325
     locked: 0

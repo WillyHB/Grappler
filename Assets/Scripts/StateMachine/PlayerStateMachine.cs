@@ -64,6 +64,9 @@ public class PlayerStateMachine : StateMachine
 
     public float GroundedCheckRadius = 0.25f;
 
+    [Range(0, 20)]
+    public float MovementZoomMagnitude = 10;
+
 
     public Rigidbody2D Rigidbody { get; private set; }
     public InputProvider InputProvider;

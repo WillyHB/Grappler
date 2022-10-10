@@ -15,9 +15,17 @@ public static class CameraEffects
         Shaked?.Invoke(freq, amp, time);
     }
 
+    private static float _zoom = -1;
+
     public static void SetZoomValue(float zoom)
     {
-        Zoom?.Invoke(zoom < 0 ? 0 : zoom);
+        if (zoom != _zoom)
+        {
+            Zoom?.Invoke(zoom < 0 ? 0 : zoom);
+        }
+
+        _zoom = zoom;
+
     }
 
 }

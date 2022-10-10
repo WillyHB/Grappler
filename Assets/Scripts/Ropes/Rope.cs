@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
 public abstract class Rope : MonoBehaviour
 {
-    protected LineRenderer lineRenderer;
+    public LineRenderer LineRenderer;
 
     protected readonly List<RopeSegment> ropeSegments = new List<RopeSegment>();
 
@@ -76,7 +75,8 @@ public abstract class Rope : MonoBehaviour
             }
 
             List<Vector2> points = new();
-            ropeSegments.ForEach(seg => points.Add(transform.InverseTransformPoint(seg.posNow)));
+
+            ropeSegments.ForEach(seg => points.Add(seg.posNow));
             GetComponent<EdgeCollider2D>().SetPoints(points);
         }
 
