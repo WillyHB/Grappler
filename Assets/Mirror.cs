@@ -9,6 +9,8 @@ public class Mirror : MonoBehaviour
     public Camera MirrorCam;
     public Shader MirrorShader;
 
+    public Texture2D CrackTexture;
+
     private RenderTexture renderTex;
     private Material renderMaterial;
     private MeshRenderer meshRenderer;
@@ -45,6 +47,7 @@ public class Mirror : MonoBehaviour
             GenerateRenderSurfaces();
         }
 
+        renderMaterial.SetTexture("_CrackTex", CrackTexture);
         renderMaterial.SetVector("size", new Vector4(meshRenderer.bounds.size.x, meshRenderer.bounds.size.y, 0, 0));
         MirrorCam.transform.localPosition = new Vector3(DistanceFromMirror, 0, -5);
     }

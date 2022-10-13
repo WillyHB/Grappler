@@ -3,6 +3,7 @@ Shader "Unlit/MirrorShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _CrackTex("Texture", 2D) = ""{}
     }
     SubShader
     {
@@ -38,6 +39,8 @@ Shader "Unlit/MirrorShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            sampler2D _CrackTex;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -50,11 +53,27 @@ Shader "Unlit/MirrorShader"
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-                // apply fog
+
+                if (tex2D(_CrackTex, i.uv).a != 0)
+                {
+  
+                     col = tex2D(_MainTex, i.uv - 0.05) + fixed4(0.3, 0.3, 0.3, 1);
+
+                     if (tex2D(_CrackTex, i.uv).r == 1) col += + fixed4(0.3, 0.3, 0.3, 1);
+                }
 
 
-                if (col.a < 0.9) return fixed4(0.5, 0.5, 0.75, 1);
-                return col + fixed4(0.3, 0.3, 0.5, 0.5);
+                if (col.a < 0.9) col = fixed4(0.5, 0.5, 0.75, 1);
+                else col += fixed4(0.3, 0.3, 0.5, 0.5);
+
+                if (i.uv.x * size.x < 0.1 || i.uv.y * size.y < 0.1 || i.uv.y * size.y > size.y * 0.99 || i.uv.x * size.x > size.x * 0.99)
+                {
+                   return fixed4(0.7, 0.7, 0.85, 1);
+                }
+
+
+
+                return col;
             }
             ENDCG
         }
