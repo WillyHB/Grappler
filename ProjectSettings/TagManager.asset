@@ -14,14 +14,14 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Grappleable
+  - Subpixel
   - Player
   - Lighting
   - Background
   - PostProcess
   - Front
   - Back
-  - 
+  - Reflective
   - 
   - 
   - 

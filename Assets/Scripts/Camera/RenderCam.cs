@@ -10,7 +10,7 @@ public class RenderCam : MonoBehaviour
     public Camera PlayerCam;
     public Camera FrontCam;
     public Camera BackCam;
-    public Camera WaterCam;
+    public Camera ReflectiveCam;
 
     public GameObject[] RenderSurfaces;
 
@@ -80,9 +80,7 @@ public class RenderCam : MonoBehaviour
         PlayerCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
         FrontCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
         BackCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
-        WaterCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
-
-
+        ReflectiveCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
     }
 }
 
