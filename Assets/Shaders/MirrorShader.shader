@@ -52,26 +52,25 @@ Shader "Unlit/MirrorShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_MainTex, i.uv);                      
 
-                if (tex2D(_CrackTex, i.uv).a != 0)
+                if (i.uv.x * size.x < 0.1 || i.uv.y * size.y < 0.1 || i.uv.y * size.y > size.y * 0.98 || i.uv.x * size.x > size.x * 0.98)
+                {
+                   col = fixed4(0.7, 0.7, 0.85, 1);
+                }
+
+                if (tex2D(_CrackTex, i.uv).a == 1)
                 {
   
-                     col = tex2D(_MainTex, i.uv - 0.05) + fixed4(0.3, 0.3, 0.3, 1);
-
-                     if (tex2D(_CrackTex, i.uv).r == 1) col += + fixed4(0.3, 0.3, 0.3, 1);
+                    col = tex2D(_CrackTex, i.uv);
                 }
 
-
-                if (col.a < 0.9) col = fixed4(0.5, 0.5, 0.75, 1);
-                else col += fixed4(0.3, 0.3, 0.5, 0.5);
-
-                if (i.uv.x * size.x < 0.1 || i.uv.y * size.y < 0.1 || i.uv.y * size.y > size.y * 0.99 || i.uv.x * size.x > size.x * 0.99)
+                else if (tex2D(_CrackTex, i.uv).a != 0)
                 {
-                   return fixed4(0.7, 0.7, 0.85, 1);
+                    col = tex2D(_MainTex, i.uv - 0.1) - fixed4(tex2D(_CrackTex, i.uv).r,tex2D(_CrackTex, i.uv).g,tex2D(_CrackTex, i.uv).b, 0);
                 }
 
-
+                col += fixed4(0.1, 0.1, 0.2, 0);   
 
                 return col;
             }
