@@ -32,7 +32,16 @@ public class GrappleExitState : PlayerAirborneState
 
         sm.transform.rotation = Quaternion.identity;
 
-        sm.Rigidbody.AddForce(Vector2.up * JumpForce);
+        if(sm.Rigidbody.velocity.y < 0)
+        {
+            sm.Rigidbody.AddForce(Vector2.up * JumpForce + sm.Rigidbody.velocity);
+        }
+
+        else
+        {
+            sm.Rigidbody.AddForce(Vector2.up * JumpForce);
+        }
+
     }
 
     public override void Update()
