@@ -66,6 +66,8 @@ public class Grapple : MonoBehaviour
 
     private void OnGrapple()
     {
+        if (IsGrappling) return;
+
         RaycastHit2D[] hits = default;
 
         if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)

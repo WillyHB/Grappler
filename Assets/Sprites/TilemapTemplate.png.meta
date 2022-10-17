@@ -1134,6 +1134,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Bg
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47ab717b16e56b4b9f8f5b03ac0a8ab
+      internalID: 306343998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1145,7 +1166,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      duoUp: 1813052829
+      CornerBottomLeftDown: -1659641994
       duoLeft: -1627239106
       duoRight: 807821915
       CornerTopRightRight: -1052072913
@@ -1190,6 +1211,7 @@ TextureImporter:
       TLeft: -1290018293
       CornerTopRightAll: 1708162347
       3x00: -144583573
+      Bg: 306343998
       TBigUp: 1265570984
       duoCenterVertical: 800731333
       Stair2x11: 736022384
@@ -1209,7 +1231,7 @@ TextureImporter:
       CornerBottomLeftLeft: 112331058
       3x01: 614571039
       duoCornerTopLeft: 1033331401
-      CornerBottomLeftDown: -1659641994
+      duoUp: 1813052829
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
