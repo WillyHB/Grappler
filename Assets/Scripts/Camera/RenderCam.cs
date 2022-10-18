@@ -5,17 +5,9 @@ using System;
 
 public class RenderCam : MonoBehaviour
 {
-    private Transform renderSurface;
-
-    public Camera PlayerCam;
-    public Camera FrontCam;
-    public Camera BackCam;
-    public Camera ReflectiveCam;
-
     public GameObject[] RenderSurfaces;
 
-    private Camera renderCam;
-    private Cam cam;
+    public Cam Cam;
 
     private float xShakeOffset;
 
@@ -40,21 +32,9 @@ public class RenderCam : MonoBehaviour
         } while ((coroutineTime += Time.deltaTime) < time);
     }
 
-    /*
-     
-    Aspect Ratio Settings changes the render textures size
-    Render texture will try to fit, else it will letterbox
-    We will try to automatically set the aspect ratio on start
-    */
-    // Start is called before the first frame update
     void Start()
     {
         CameraEffects.Shaked += Shake;
-
-        renderCam = GetComponent<Camera>();
-
-        cam = Camera.main.GetComponent<Cam>();
-        renderSurface = transform.GetChild(0);
     }
 
     private void OnDisable()
@@ -69,18 +49,13 @@ public class RenderCam : MonoBehaviour
     {
         if (Smooth)
         {
-            Vector2 dif = cam.FloatPosition - cam.transform.position;
+            Vector2 dif = Cam.FloatPosition - Cam.PixelPerfectPosition;
 
             foreach (GameObject go in RenderSurfaces)
             {
                 go.transform.localPosition = new Vector3(-dif.x - xShakeOffset, -dif.y, go.transform.localPosition.z);
             }
         }
-
-        PlayerCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
-        FrontCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
-        BackCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
-        ReflectiveCam.transform.position = new Vector3(cam.transform.position.x + xShakeOffset, cam.transform.position.y, -5);
     }
 }
 
