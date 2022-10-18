@@ -17,6 +17,11 @@ public class Cam : MonoBehaviour
 
     void FixedUpdate()
     {
+        PlayerCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
+        FrontCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
+        BackCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
+        ReflectiveCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
+
         if (Follow != null)
         {
             FloatPosition = Vector3.Lerp(FloatPosition, new Vector3(Follow.position.x, Follow.position.y, -10), SmoothSpeed);
@@ -26,10 +31,5 @@ public class Cam : MonoBehaviour
                  FloatPosition.y - (FloatPosition.y % (1.0f / 16)),
                   FloatPosition.z - (FloatPosition.z % (1.0f / 16)));
         }
-
-        PlayerCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
-        FrontCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
-        BackCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
-        ReflectiveCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
     }
 }

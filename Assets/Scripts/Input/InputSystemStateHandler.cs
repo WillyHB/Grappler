@@ -18,7 +18,10 @@ public class InputSystemStateHandler : InputStateHandler
 
     public void OnDisable()
     {
-        
+        Actions.FindActionMap("Player").FindAction("Jump").performed -= (cc) => PerformJump();
+        Actions.FindActionMap("Player").FindAction("Shoot").performed -= (cc) => PerformShoot();
+        Actions.FindActionMap("Player").FindAction("Grapple").performed -= (cc) => PerformGrapple();
+        Actions.FindActionMap("Player").FindAction("CancelGrapple").performed -= (cc) => CancelGrapple();
     }
 
     public override InputState HandleInputState(InputState state)

@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "3e859577-06c3-436d-b66b-1a3a9e60f0bd",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "AxisDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
@@ -80,9 +80,9 @@
                 {
                     "name": "Swim",
                     "type": "Button",
-                    "id": "60a3eaf7-0bcf-4270-8a9b-0215d8063efa",
+                    "id": "86305db4-6c1d-4418-b58d-b4c9f8bccbbc",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "AxisDeadzone",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -343,7 +343,7 @@
                 },
                 {
                     "name": "Keyboard",
-                    "id": "c24b3c2a-15d9-48e9-9804-aab948366856",
+                    "id": "c2242079-8509-4d0f-b3dc-97f362ca0805",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -354,7 +354,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "0ddbc513-8626-4f00-b4ac-a75329c932f4",
+                    "id": "be580b7f-5a64-4bf4-8958-27f78ff4e25a",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -365,7 +365,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "ad7a6079-93a3-4121-8a1a-78ff09ee8008",
+                    "id": "4c967b9f-f079-47b4-9ed5-0bbe7b055fba",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -376,7 +376,7 @@
                 },
                 {
                     "name": "Gamepad",
-                    "id": "ec2f0b7d-39cc-4c80-8e5b-b0193a812796",
+                    "id": "4e88b7fe-2402-4b85-a520-1322d1c47a2a",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -387,7 +387,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "b150494f-778e-45f5-b137-dfe108c671a2",
+                    "id": "926a9e2b-1821-4b8a-934a-9977c2ea8e06",
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
@@ -398,7 +398,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "72818468-53db-4b4a-9745-0f4c042fbfe5",
+                    "id": "aa0b6b93-19c2-4127-8ac9-a7611d4850d9",
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
