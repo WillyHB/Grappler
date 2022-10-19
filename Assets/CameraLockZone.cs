@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMoveZone : MonoBehaviour
+public class CameraLockZone : MonoBehaviour
 {
-    public Vector2 Position;
+    public bool LockX;
+    public float XLockValue;
+    [Space(10)]
+    public bool LockY;
+    public float YLockValue;
     public CameraEventChannel CamEventChannel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            CamEventChannel.LockPosition();
-            CamEventChannel.SetPosition(Position);
+            CamEventChannel.LockPosition(LockX, LockY);
+
+            CamEventChannel.SetPosition(XLockValue, YLockValue);
         }
     }
 

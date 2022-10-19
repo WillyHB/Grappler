@@ -15,9 +15,34 @@ public class Cam : MonoBehaviour
     public bool LockX;
     public bool LockY;
 
-    
-    public void SetPosition(Vector3 position) => FloatPosition = position;
-    public void SetPosition(Vector2 position) => FloatPosition = position;
+    public CameraEventChannel CamEventChannel;
+
+    public void Start()
+    {
+        CamEventChannel.Repositioned += SetPosition;
+        CamEventChannel.Locked += Lock;
+    }
+
+    public void OnDisable()
+    {
+        CamEventChannel.Repositioned -= SetPosition;
+        CamEventChannel.Locked -= Lock;
+    }
+
+    public void Lock(bool x, bool y)
+    {
+        LockX = x;
+        LockY = y;
+    }
+
+    public void SetPosition(Vector3 position)
+    {
+        foreach (Camera cam in Cameras)
+        {
+            cam.transform.position = position;
+        }
+    }
+
 
     void FixedUpdate()
     {

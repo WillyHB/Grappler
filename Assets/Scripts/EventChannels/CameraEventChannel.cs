@@ -11,6 +11,19 @@ public class CameraEventChannel : ScriptableObject
     /// </summary>
     public event Action<float, float, float> Shake;
 
+    public event Action<bool, bool> Locked;
+
+    public event Action<Vector3> Repositioned;
+
+    public void LockPosition() => Locked?.Invoke(true, true);
+    public void UnlockPosition() => Locked?.Invoke(false, false);
+    public void LockPosition(bool x, bool y) => Locked?.Invoke(x, y);
+
+    public void SetPosition(Vector2 position) => Repositioned?.Invoke(position);
+    public void SetPosition(float x, float y) => Repositioned?.Invoke(new Vector2(x, y));
+    public void SetPosition(float x, float y, float z) => Repositioned?.Invoke(new Vector3(x, y, z));
+    public void SetPosition(Vector3 position) => Repositioned?.Invoke(position);
+
     public void PerformZoom(float zoom) => Zoom?.Invoke(zoom);
     public void PerformShake(float freq, float amp, float time) => Shake?.Invoke(freq, amp, time);
 }

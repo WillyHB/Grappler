@@ -8,16 +8,8 @@ public class CameraZoomZone : MonoBehaviour
     public float Zoom;
 
     private float oldZoom;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public CameraEventChannel CamEventChannel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +17,7 @@ public class CameraZoomZone : MonoBehaviour
         {
             oldZoom = ResolutionManager.CameraZoom;
 
-            //CameraEffects.SetZoomValue(Zoom);
+            CamEventChannel.PerformZoom(Zoom);
         }
     }
 
@@ -33,7 +25,7 @@ public class CameraZoomZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //CameraEffects.SetZoomValue(oldZoom);
+            CamEventChannel.PerformZoom(oldZoom);
         }
     }
 }
