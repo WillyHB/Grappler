@@ -82,16 +82,13 @@ public class PlayerStateMachine : StateMachine
 
     public GameObject KickRock;
 
+
     protected override void Update()
     {
         base.Update();
 
         //Debug.Log(CurrentState);
 
-        if (UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            CameraEffects.PerformShake(1, 1, 5);
-        }
         MoveValue = InputProvider.GetState().MoveDirection;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(

@@ -10,17 +10,23 @@ public class Cam : MonoBehaviour
     public Vector3 FloatPosition { get; private set; }
     public Vector3 PixelPerfectPosition { get; private set; }
 
-    public Camera PlayerCam;
-    public Camera FrontCam;
-    public Camera BackCam;
-    public Camera ReflectiveCam;
+    public Camera[] Cameras;
+
+    public bool LockX;
+    public bool LockY;
+
+    
+    public void SetPosition(Vector3 position) => FloatPosition = position;
+    public void SetPosition(Vector2 position) => FloatPosition = position;
 
     void FixedUpdate()
     {
-        PlayerCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
-        FrontCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
-        BackCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
-        ReflectiveCam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
+        foreach (Camera cam in Cameras)
+        {
+            cam.transform.position = new Vector3(
+                LockX ? cam.transform.position.x : PixelPerfectPosition.x,
+                LockY ? cam.transform.position.y : PixelPerfectPosition.y, -5);
+        }
 
         if (Follow != null)
         {
@@ -33,3 +39,5 @@ public class Cam : MonoBehaviour
         }
     }
 }
+
+

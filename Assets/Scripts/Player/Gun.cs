@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
-    public RumbleEventChannel channel;
     public InputProvider InputProvider;
     public GameObject Bullet;
     public Transform GunEdge;
@@ -14,6 +13,9 @@ public class Gun : MonoBehaviour
     public int BoostPower;
     public Rigidbody2D PlayerRigidbody;
     public float ShootMoveBlockTime;
+
+    public RumbleEventChannel RumbleEventChannel;
+    public CameraEventChannel CamEventChannel;
 
     public void Start()
     {
@@ -27,12 +29,12 @@ public class Gun : MonoBehaviour
 
     private void OnShoot()
     {
-        channel.PerformRumble(1, 0, 0.25f);
+        RumbleEventChannel.PerformRumble(1, 0, 0.25f);
 
         GameObject bullet = Instantiate(Bullet, GunEdge.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().AddForce(Hand.GrappleDirection * BulletSpeed);
         StartCoroutine(BulletWait(bullet));
-        CameraEffects.PerformShake(40, 0.1f, 0.15f);
+        CamEventChannel.PerformShake(40, 0.1f, 0.15f);
         GetComponent<Animator>().Play("Shoot");
     }
 

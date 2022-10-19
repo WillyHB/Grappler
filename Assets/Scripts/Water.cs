@@ -153,7 +153,6 @@ public class Water : MonoBehaviour
                 springs[i + 1].Velocity += rightDeltas[i];
             }
         }
-
         for (int i = 0; i < NumberOfPoints; i++)
         {
             if (i > 0)
@@ -163,6 +162,7 @@ public class Water : MonoBehaviour
 
 
         }
+
 
         float[] points = new float[2000];
 

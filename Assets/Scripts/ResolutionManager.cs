@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using ElRaccoone.Tweens;
 
 public class ResolutionManager : MonoBehaviour
 {
@@ -29,15 +30,17 @@ public class ResolutionManager : MonoBehaviour
 
     public static float CameraZoom { get; private set; }
 
+    public CameraEventChannel CamEventChannel;
+
 
     private void Awake()
     {
-        CameraEffects.Zoom += (v) => Zoom = v;
+        CamEventChannel.Zoom += (v) => Zoom = v;
     }
 
     private void OnDisable()
     {
-        CameraEffects.Zoom -= (v) => Zoom = v;
+        CamEventChannel.Zoom -= (v) => Zoom = v;
     }
 
     public static Vector2 ScreenToWorld(Vector2 point)

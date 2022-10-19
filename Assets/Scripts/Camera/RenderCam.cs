@@ -13,7 +13,9 @@ public class RenderCam : MonoBehaviour
 
     private float coroutineTime;
 
-    public void Shake(float frequency, float amplitude, float time)
+    public CameraEventChannel CamEventChannel;
+
+    public void OnShake(float frequency, float amplitude, float time)
     {
         coroutineTime = 0;
         xShakeOffset = 0;
@@ -34,12 +36,12 @@ public class RenderCam : MonoBehaviour
 
     void Start()
     {
-        CameraEffects.Shaked += Shake;
+        CamEventChannel.Shake += OnShake;
     }
 
     private void OnDisable()
     {
-        CameraEffects.Shaked -= Shake;
+        CamEventChannel.Shake -= OnShake;
     }
 
     public bool Smooth = true;
@@ -53,7 +55,7 @@ public class RenderCam : MonoBehaviour
 
             foreach (GameObject go in RenderSurfaces)
             {
-                go.transform.localPosition = new Vector3(-dif.x - xShakeOffset, -dif.y, go.transform.localPosition.z);
+                go.transform.localPosition = new Vector3((Cam.LockX ? 0 : -dif.x) - xShakeOffset, Cam.LockY ? 0 : -dif.y, go.transform.localPosition.z);
             }
         }
     }
