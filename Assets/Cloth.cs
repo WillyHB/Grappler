@@ -12,6 +12,10 @@ public class Cloth : MonoBehaviour
     public float Gravity = 0.24f;
     public float Friction = 0.99f;
 
+    private int rows;
+    private int columns;
+    private float spacing;
+
     [Space(10)]
     [Header("Wind")]
 
@@ -21,16 +25,12 @@ public class Cloth : MonoBehaviour
 
     public Vector2 NormalizedWindDirection;
 
-    private List<GameObject> spheres;
     private List<Particle> particles;
     private List<Connector> connectors;
 
     public class Connector
     {
-        public bool enabled = true;
-        public LineRenderer lineRender;
-        public GameObject p0;
-        public GameObject p1;
+        public bool isHorizontal;
         public Particle point0;
         public Particle point1;
         public Vector2 changeDir;
@@ -49,11 +49,14 @@ public class Cloth : MonoBehaviour
     // Initalize
     void Start()
     {
+        rows = Rows;
+        columns = Columns;
+        spacing = Spacing;
+
         meshFilter = GetComponent<MeshFilter>();
 
-        Vector2 spawnParticlePos = new Vector2(0, 0);
+        Vector2 spawnParticlePos = new(0, 0);
 
-        spheres = new List<GameObject>();
         particles = new List<Particle>();
         connectors = new List<Connector>();
 
@@ -61,63 +64,43 @@ public class Cloth : MonoBehaviour
         {
             for (int x = 0; x <= Columns; x++)
             {
-                // Create a sphere
-                GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                sphere.layer = 11;
-                sphere.transform.parent = transform;
-
-                var mat = sphere.GetComponent<Renderer>();
-                sphere.transform.localPosition = new Vector2(spawnParticlePos.y, spawnParticlePos.x);
-                sphere.transform.localScale = new Vector2(0.2f, 0.2f);
-
+                Vector2 spawnPos = new(spawnParticlePos.y, spawnParticlePos.x);
                 // Create particle
-                Particle point = new Particle();
-                point.pinnedPos = new Vector2(spawnParticlePos.y, spawnParticlePos.x);
+                Particle point = new()
+                {
+                    pinnedPos = spawnPos
+                };
 
                 // Create a vertical connector 
                 if (x != 0)
                 {
-                    LineRenderer line = new GameObject("Line").AddComponent<LineRenderer>();
-                    line.gameObject.layer = 11;
-                    line.useWorldSpace = false;
+                    Connector connector = new()
+                    {
+                        isHorizontal = false,
 
-                    Connector connector = new Connector();
-                    connector.p0 = sphere;
-                    connector.p1 = spheres[spheres.Count - 1]; //
-
-                    connector.point0 = point;
-                    connector.point1 = particles[particles.Count - 1]; //
-                    connector.point0.pos = sphere.transform.localPosition;
-                    connector.point0.oldPos = sphere.transform.localPosition;
+                        point0 = point,
+                        point1 = particles[^1] //
+                    };
+                    connector.point0.pos = spawnPos;
+                    connector.point0.oldPos = spawnPos;
 
                     connectors.Add(connector);
-
-                    connector.lineRender = line;
-                    connector.lineRender.transform.parent = transform;
-                    connector.lineRender.transform.localPosition = Vector2.zero;
                 }
 
                 // Create a horizontal connector
                 if (y != 0)
                 {
-                    LineRenderer line = new GameObject("Line").AddComponent<LineRenderer>();
-                    line.gameObject.layer = 11;
-                    line.useWorldSpace = false;
+                    Connector connector = new()
+                    {
+                        isHorizontal = true,
 
-                    Connector connector = new Connector();
-                    connector.p0 = sphere;
-                    connector.p1 = spheres[(y - 1) * (Rows + 1) + x]; //
-
-                    connector.point0 = point;
-                    connector.point1 = particles[(y - 1) * (Rows + 1) + x]; //
-                    connector.point0.pos = sphere.transform.localPosition;
-                    connector.point0.oldPos = sphere.transform.localPosition;
+                        point0 = point,
+                        point1 = particles[x + (y-1) * (Columns + 1)] //
+                    };
+                    connector.point0.pos = spawnPos;
+                    connector.point0.oldPos = spawnPos;
 
                     connectors.Add(connector);
-
-                    connector.lineRender = line;
-                    connector.lineRender.transform.parent = transform;
-                    connector.lineRender.transform.localPosition = Vector2.zero;
                 }
 
                 // Pin the points in the top row of the grid
@@ -128,11 +111,7 @@ public class Cloth : MonoBehaviour
 
                 spawnParticlePos.x -= Spacing;
 
-                // Add particle and spehere to lists
-                spheres.Add(sphere);
                 particles.Add(point);
-
-
             }
 
             spawnParticlePos.x = 0;
@@ -141,33 +120,37 @@ public class Cloth : MonoBehaviour
 
         InitMesh();
     }
-    
+
     private void InitMesh()
     {
         List<Vector3> vertices = new();
         List<int> triangles = new();
 
-        int xCapacity = (Columns - 1);
-        int yCapacity = (Rows - 1);
+        int Width = Columns + 1;
+        int Height = Rows + 1;
 
-        for (float i = 0; i < Rows; i++)
+        int xCapacity = (Width - 1);
+        int yCapacity = (Height - 1);
+
+        for (float j = 0; j < Width; j++)
         {
-            for (float j = 0; j < Columns; j++)
+            for (float i = 0; i < Height; i++)
             {
-                vertices.Add(new Vector3(j / Columns, i / Rows, 0));
+                vertices.Add(new Vector3(j / Width, i / Height, 0));
             }
         }
-        for (int i = 0; i < yCapacity; i++)
-        {
-            for (int j = 0; j < xCapacity; j++)
-            {
-                triangles.Add(j + (i + 1) * Columns);
-                triangles.Add((j + 1) + i * Columns);
-                triangles.Add(j + i * Columns);
 
-                triangles.Add((j + 1) + (i + 1) * Columns);
-                triangles.Add((j + 1) + i * Columns);
-                triangles.Add(j + (i + 1) * Columns);
+        for (int j = 0; j < xCapacity; j++)
+        {
+            for (int i = 0; i < yCapacity; i++)
+            {
+                triangles.Add(j + i * Width);
+                triangles.Add((j + 1) + i * Width);
+                triangles.Add(j + (i + 1) * Width);
+
+                triangles.Add(j + (i + 1) * Width);
+                triangles.Add((j + 1) + i * Width);
+                triangles.Add((j + 1) + (i + 1) * Width);
             }
         }
 
@@ -183,6 +166,16 @@ public class Cloth : MonoBehaviour
         meshFilter.mesh.SetTriangles(triangles, 0);
     }
 
+    private void Update()
+    {
+        if (rows != Rows
+            || columns != Columns
+            || spacing != Spacing)
+        {
+            Start();
+        }
+    }
+
     private void FixedUpdate()
     {
         Simulate();
@@ -192,38 +185,19 @@ public class Cloth : MonoBehaviour
 
     private void Draw()
     {
+        List<Vector3> vertices = new();
+
+        meshFilter.mesh.GetVertices(vertices);
+
         for (int p = 0; p < particles.Count; p++)
         {
             Particle point = particles[p];
-            spheres[p].transform.localPosition = new Vector2(point.pos.x, point.pos.y);
-            spheres[p].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-
+            vertices[p] = point.pos;
         }
 
-        // Set lines
-        for (int i = 0; i < connectors.Count; i++)
-        {
-            if (connectors[i].enabled == false)
-            {
-                Destroy(connectors[i].lineRender);
-            }
-
-            else
-            {
-                // Set points for the lines
-                var points = new Vector3[2];
-                points[0] = connectors[i].p0.transform.localPosition + new Vector3(0, 0, 1);
-                points[1] = connectors[i].p1.transform.localPosition + new Vector3(0, 0, 1);
-
-                // Draw lines
-                connectors[i].lineRender.startWidth = 0.04f;
-                connectors[i].lineRender.endWidth = 0.04f;
-                connectors[i].lineRender.SetPositions(points);
-
-            }
-
-        }
+        meshFilter.mesh.SetVertices(vertices);
     }
+
     private void Simulate()
     {
         for (int p = 0; p < particles.Count; p++)
@@ -243,42 +217,29 @@ public class Cloth : MonoBehaviour
 
                 point.pos += point.vel;
                 point.pos.y -= Gravity * Time.fixedDeltaTime;
-
             }
-
-
         }
-
     }
 
     private void Constrain()
     {
         for (int i = 0; i < connectors.Count; i++)
         {
-            if (connectors[i].enabled == false)
+            float dist = (connectors[i].point0.pos - connectors[i].point1.pos).magnitude;
+            float error = Mathf.Abs(dist - Spacing);
+
+            if (dist > Spacing)
             {
-                // Do nothing
+                connectors[i].changeDir = (connectors[i].point0.pos - connectors[i].point1.pos).normalized;
+            }
+            else if (dist < Spacing)
+            {
+                connectors[i].changeDir = (connectors[i].point1.pos - connectors[i].point0.pos).normalized;
             }
 
-            else
-            {
-                float dist = (connectors[i].point0.pos - connectors[i].point1.pos).magnitude;
-                float error = Mathf.Abs(dist - Spacing);
-
-                if (dist > Spacing)
-                {
-                    connectors[i].changeDir = (connectors[i].point0.pos - connectors[i].point1.pos).normalized;
-                }
-                else if (dist < Spacing)
-                {
-                    connectors[i].changeDir = (connectors[i].point1.pos - connectors[i].point0.pos).normalized;
-                }
-
-                Vector2 changeAmount = connectors[i].changeDir * error;
-                connectors[i].point0.pos -= changeAmount * 0.5f;
-                connectors[i].point1.pos += changeAmount * 0.5f;
-
-            }
+            Vector2 changeAmount = connectors[i].changeDir * error;
+            connectors[i].point0.pos -= changeAmount * 0.5f;
+            connectors[i].point1.pos += changeAmount * 0.5f;
         }
     }
 }
