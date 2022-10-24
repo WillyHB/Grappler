@@ -1,17 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cloth : MonoBehaviour
+public class VelvetCloth : MonoBehaviour
 {
 
     private MeshFilter meshFilter;
+    private MeshRenderer meshRenderer;
 
     public int Rows = 16;
     public int Columns = 16;
     public float Spacing = 0.25f;
     public float Gravity = 0.24f;
     public float Friction = 0.99f;
-
+    public int ConstraintsPerFrame = 1;
+    public Transform FollowTransform;
     private int rows;
     private int columns;
     private float spacing;
@@ -30,7 +32,6 @@ public class Cloth : MonoBehaviour
 
     public class Connector
     {
-        public bool isHorizontal;
         public Particle point0;
         public Particle point1;
         public Vector2 changeDir;
@@ -45,7 +46,6 @@ public class Cloth : MonoBehaviour
         public Vector2 vel;
     }
 
-
     // Initalize
     void Start()
     {
@@ -54,6 +54,7 @@ public class Cloth : MonoBehaviour
         spacing = Spacing;
 
         meshFilter = GetComponent<MeshFilter>();
+        meshRenderer = GetComponent<MeshRenderer>();
 
         Vector2 spawnParticlePos = new(0, 0);
 
@@ -64,7 +65,7 @@ public class Cloth : MonoBehaviour
         {
             for (int x = 0; x <= Columns; x++)
             {
-                Vector2 spawnPos = new(spawnParticlePos.y, spawnParticlePos.x);
+                Vector2 spawnPos = new(spawnParticlePos.x, spawnParticlePos.y);
                 // Create particle
                 Particle point = new()
                 {
@@ -72,12 +73,24 @@ public class Cloth : MonoBehaviour
                 };
 
                 // Create a vertical connector 
+                if (y != 0)
+                {
+                    Connector connector = new()
+                    {
+                        point0 = point,
+                        point1 = particles[x + (y - 1) * (Columns + 1)] //
+                    };
+                    connector.point0.pos = spawnPos;
+                    connector.point0.oldPos = spawnPos;
+
+                    connectors.Add(connector);
+                }
+
+                // Create a horizontal connector
                 if (x != 0)
                 {
                     Connector connector = new()
                     {
-                        isHorizontal = false,
-
                         point0 = point,
                         point1 = particles[^1] //
                     };
@@ -87,35 +100,19 @@ public class Cloth : MonoBehaviour
                     connectors.Add(connector);
                 }
 
-                // Create a horizontal connector
-                if (y != 0)
-                {
-                    Connector connector = new()
-                    {
-                        isHorizontal = true,
-
-                        point0 = point,
-                        point1 = particles[x + (y-1) * (Columns + 1)] //
-                    };
-                    connector.point0.pos = spawnPos;
-                    connector.point0.oldPos = spawnPos;
-
-                    connectors.Add(connector);
-                }
-
                 // Pin the points in the top row of the grid
-                if (x == 0)
+                if (y == 0)
                 {
                     point.pinned = true;
                 }
 
-                spawnParticlePos.x -= Spacing;
+                spawnParticlePos.x += Spacing;
 
                 particles.Add(point);
             }
 
             spawnParticlePos.x = 0;
-            spawnParticlePos.y -= Spacing;
+            spawnParticlePos.y += Spacing;
         }
 
         InitMesh();
@@ -124,25 +121,29 @@ public class Cloth : MonoBehaviour
     private void InitMesh()
     {
         List<Vector3> vertices = new();
+        List<Vector2> uv = new();
         List<int> triangles = new();
 
         int Width = Columns + 1;
         int Height = Rows + 1;
 
-        int xCapacity = (Width - 1);
-        int yCapacity = (Height - 1);
-
-        for (float j = 0; j < Width; j++)
+        
+        for (float i = Height-1; i >= 0; i--)
         {
-            for (float i = 0; i < Height; i++)
+            for (float j = 0; j < Width; j++)
             {
                 vertices.Add(new Vector3(j / Width, i / Height, 0));
+
             }
         }
-
-        for (int j = 0; j < xCapacity; j++)
+        for (int i = 0; i < vertices.Count; i++)
         {
-            for (int i = 0; i < yCapacity; i++)
+            uv.Add(vertices[i]);
+        }
+
+        for (int i = Rows-1; i >= 0; i--)
+        {
+            for (int j = 0; j < Columns; j++)
             {
                 triangles.Add(j + i * Width);
                 triangles.Add((j + 1) + i * Width);
@@ -154,6 +155,7 @@ public class Cloth : MonoBehaviour
             }
         }
 
+
         Mesh mesh = new()
         {
             name = "ClothMesh"
@@ -164,6 +166,7 @@ public class Cloth : MonoBehaviour
 
         meshFilter.mesh.SetVertices(vertices);
         meshFilter.mesh.SetTriangles(triangles, 0);
+        meshFilter.mesh.SetUVs(0, uv);
     }
 
     private void Update()
@@ -179,23 +182,29 @@ public class Cloth : MonoBehaviour
     private void FixedUpdate()
     {
         Simulate();
-        Constrain();
+        
+        for (int i = 0; i < ConstraintsPerFrame; i++)
+        {
+            Constrain();
+        }
         Draw();
     }
 
     private void Draw()
     {
         List<Vector3> vertices = new();
-
+        Vector4[] points = new Vector4[2000];
         meshFilter.mesh.GetVertices(vertices);
 
         for (int p = 0; p < particles.Count; p++)
         {
             Particle point = particles[p];
+            points[p] = new Vector4(point.pos.x, point.pos.y);
             vertices[p] = point.pos;
         }
 
-        meshFilter.mesh.SetVertices(vertices);
+        meshRenderer.material.SetVectorArray("points", points);
+        meshRenderer.material.SetVector("points", new Vector4((Columns +1) * Spacing, (Rows + 1) * Spacing, 0, 0));
     }
 
     private void Simulate()
@@ -205,14 +214,15 @@ public class Cloth : MonoBehaviour
             Particle point = particles[p];
             if (point.pinned == true)
             {
-                point.pos = point.pinnedPos;
-                point.oldPos = point.pinnedPos;
+                point.pos = FollowTransform != null ? FollowTransform.position : point.pinnedPos;
+                point.oldPos = FollowTransform != null ? FollowTransform.position : point.pinnedPos;
             }
 
             else
             {
                 point.vel = (point.pos - point.oldPos) * Friction;
-                point.vel += Random.Range(GustPowerFrom, GustPowerTo) * Time.deltaTime * NormalizedWindDirection.normalized;
+                point.vel += (Random.Range(GustPowerFrom, GustPowerTo) * Time.deltaTime * NormalizedWindDirection.normalized);
+
                 point.oldPos = point.pos;
 
                 point.pos += point.vel;
@@ -238,8 +248,8 @@ public class Cloth : MonoBehaviour
             }
 
             Vector2 changeAmount = connectors[i].changeDir * error;
-            connectors[i].point0.pos -= changeAmount * 0.5f;
-            connectors[i].point1.pos += changeAmount * 0.5f;
+            if (!connectors[i].point0.pinned) connectors[i].point0.pos -= changeAmount * 0.5f;
+            if (!connectors[i].point1.pinned) connectors[i].point1.pos += changeAmount * 0.5f;
         }
     }
 }
