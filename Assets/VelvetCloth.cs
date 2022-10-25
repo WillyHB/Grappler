@@ -13,10 +13,11 @@ public class VelvetCloth : MonoBehaviour
     public float Gravity = 0.24f;
     public float Friction = 0.99f;
     public int ConstraintsPerFrame = 1;
-    public Transform FollowTransform;
     private int rows;
     private int columns;
     private float spacing;
+
+    private Vector2 worldPos;
 
     [Space(10)]
     [Header("Wind")]
@@ -26,6 +27,10 @@ public class VelvetCloth : MonoBehaviour
     public float GustPowerTo;
 
     public Vector2 NormalizedWindDirection;
+
+    [Header("Collision")]
+    public bool CollideWithRigidbodies;
+    public float Stiffness;
 
     private List<Particle> particles;
     private List<Connector> connectors;
@@ -39,8 +44,8 @@ public class VelvetCloth : MonoBehaviour
 
     public class Particle
     {
+        public Vector2 baseOffset;
         public bool pinned = false;
-        public Vector2 pinnedPos;
         public Vector2 pos;
         public Vector2 oldPos;
         public Vector2 vel;
@@ -56,7 +61,7 @@ public class VelvetCloth : MonoBehaviour
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
 
-        Vector2 spawnParticlePos = new(0, 0);
+        Vector2 spawnParticlePos = transform.position;
 
         particles = new List<Particle>();
         connectors = new List<Connector>();
@@ -69,7 +74,7 @@ public class VelvetCloth : MonoBehaviour
                 // Create particle
                 Particle point = new()
                 {
-                    pinnedPos = spawnPos
+                    baseOffset = spawnPos - (Vector2)transform.position
                 };
 
                 // Create a vertical connector 
@@ -80,6 +85,7 @@ public class VelvetCloth : MonoBehaviour
                         point0 = point,
                         point1 = particles[x + (y - 1) * (Columns + 1)] //
                     };
+
                     connector.point0.pos = spawnPos;
                     connector.point0.oldPos = spawnPos;
 
@@ -171,6 +177,17 @@ public class VelvetCloth : MonoBehaviour
 
     private void Update()
     {
+        if ((Vector2)transform.position != worldPos)
+        {
+            foreach (Particle p in particles)
+            {
+                if (p.pinned)
+                {
+                    p.pos = transform.position;
+                    p.oldPos = transform.position;
+                }
+            }
+        }
         if (rows != Rows
             || columns != Columns
             || spacing != Spacing)
@@ -187,8 +204,15 @@ public class VelvetCloth : MonoBehaviour
         {
             Constrain();
         }
+
+        if (CollideWithRigidbodies)
+        {
+            GenerateCollider();
+        }
         Draw();
     }
+
+
 
     private void Draw()
     {
@@ -199,12 +223,13 @@ public class VelvetCloth : MonoBehaviour
         for (int p = 0; p < particles.Count; p++)
         {
             Particle point = particles[p];
-            points[p] = new Vector4(point.pos.x, point.pos.y);
+
+            points[p] = new Vector4(point.pos.x - transform.position.x , point.pos.y - transform.position.y);
             vertices[p] = point.pos;
         }
 
         meshRenderer.material.SetVectorArray("points", points);
-        meshRenderer.material.SetVector("points", new Vector4((Columns +1) * Spacing, (Rows + 1) * Spacing, 0, 0));
+        meshRenderer.material.SetVector("size", new Vector4((Columns +1) * Spacing, (Rows + 1) * Spacing, 0, 0));
     }
 
     private void Simulate()
@@ -214,8 +239,8 @@ public class VelvetCloth : MonoBehaviour
             Particle point = particles[p];
             if (point.pinned == true)
             {
-                point.pos = FollowTransform != null ? FollowTransform.position : point.pinnedPos;
-                point.oldPos = FollowTransform != null ? FollowTransform.position : point.pinnedPos;
+                point.pos = new Vector2(transform.position.x + point.baseOffset.x, transform.position.y);
+                point.oldPos = new Vector2(transform.position.x + point.baseOffset.x, transform.position.y);
             }
 
             else
@@ -249,7 +274,26 @@ public class VelvetCloth : MonoBehaviour
 
             Vector2 changeAmount = connectors[i].changeDir * error;
             if (!connectors[i].point0.pinned) connectors[i].point0.pos -= changeAmount * 0.5f;
-            if (!connectors[i].point1.pinned) connectors[i].point1.pos += changeAmount * 0.5f;
+            if (!connectors[i].point1.pinned) connectors[i].point1.pos += changeAmount * 0.5f;           
+        }
+    }
+
+    private void GenerateCollider()
+    {
+        GetComponent<MeshCollider>().sharedMesh = meshFilter.sharedMesh;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (CollideWithRigidbodies)
+        {
+            foreach (Particle particle in particles)
+            {
+                if (collision.bounds.Contains(particle.pos))
+                {
+                    particle.pos += collision.GetComponent<Rigidbody2D>().velocity / Stiffness;
+                }
+            }
         }
     }
 }

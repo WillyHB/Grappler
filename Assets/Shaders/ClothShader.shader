@@ -12,7 +12,7 @@ Shader "Unlit/ClothShader"
             }
 
         Blend SrcAlpha OneMinusSrcAlpha
-
+        Cull Off
 
         Pass
         {
