@@ -7,9 +7,8 @@ Shader "Unlit/FogShader"
         _Colour("Fog Colour", Color) = (1, 1, 1, 1)
         _Speed("Fog Speed", Float) = 0.5
         _Pixelation("Fog Pixelation", Range(0.00001, 0.5)) = 0.00001
-
-
     }
+
     SubShader
     {
         Tags{
@@ -26,12 +25,6 @@ Shader "Unlit/FogShader"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-
-            float rand(float2 coord)
-            {
-                
-                return frac(sin(dot(coord, float2(56, 78)) * 1000.0) * 1000.0);
-            }
 
             struct meshData
             {
@@ -62,6 +55,11 @@ Shader "Unlit/FogShader"
                 return o;
             }
 
+            float rand(float2 coord)
+            {         
+                return frac(sin(dot(coord, float2(56, 78)) * 1000.0) * 1000.0);
+            }
+
             float noise(float2 coord)
             {
 
@@ -80,7 +78,6 @@ Shader "Unlit/FogShader"
 
             float fbm(float2 coord){
                 //fractal brownian movement
-
                 float value = 0;
 
                 float scale = 0.5;
@@ -93,7 +90,6 @@ Shader "Unlit/FogShader"
 
                  return value;
             }
-
 
             fixed4 frag (v2f i) : SV_Target
             {
@@ -109,10 +105,8 @@ Shader "Unlit/FogShader"
                 float a = abs(ax * ay);
 
                 return fixed4(_Colour.x, _Colour.y, _Colour.z, (final - final % _Pixelation) * _Strength * a);
-                //return tex2D(_MainTex, i.uv);
             }
 
-  
             ENDCG
         }
     }

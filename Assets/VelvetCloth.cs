@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class VelvetCloth : MonoBehaviour
 {
@@ -27,11 +28,11 @@ public class VelvetCloth : MonoBehaviour
     public float GustPowerTo;
 
     public Vector2 NormalizedWindDirection;
-
+    /*
     [Header("Collision")]
     public bool CollideWithRigidbodies;
     public float Stiffness;
-
+    */
     private List<Particle> particles;
     private List<Connector> connectors;
 
@@ -205,10 +206,6 @@ public class VelvetCloth : MonoBehaviour
             Constrain();
         }
 
-        if (CollideWithRigidbodies)
-        {
-            GenerateCollider();
-        }
         Draw();
     }
 
@@ -277,12 +274,7 @@ public class VelvetCloth : MonoBehaviour
             if (!connectors[i].point1.pinned) connectors[i].point1.pos += changeAmount * 0.5f;           
         }
     }
-
-    private void GenerateCollider()
-    {
-        GetComponent<MeshCollider>().sharedMesh = meshFilter.sharedMesh;
-    }
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (CollideWithRigidbodies)
@@ -295,5 +287,5 @@ public class VelvetCloth : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }
