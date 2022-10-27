@@ -3,9 +3,14 @@ Shader "Unlit/FireShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _InnerColour("Inner Colour", Color) = (1, 1, 1, 1)
-        _OuterColour("Outer Colour", Color) = (1, 1, 1, 1)
-        _TestValue("Test", Float) = 0
+        _FirstColour("First Colour", Color) = (1, 1, 1, 1)
+        _SecondColour("Second Colour", Color) = (1, 1, 1, 1)
+        _ThirdColour("Third Colour", Color) = (1, 1, 1, 1)
+        _FourthColour("Fourth Colour", Color) = (1, 1, 1, 1)
+        _FirstThreshold("First Threshold", Float) = 0
+        _SecondThreshold("Second Threshold", Float) = 0
+        _ThirdThreshold("Third Threshold", Float) = 0
+        _FourthThreshold("Fourth Threshold", Float) = 0
     }
     SubShader
     {
@@ -19,6 +24,7 @@ Shader "Unlit/FireShader"
         Pass
         {
             CGPROGRAM
+            #pragma enable_d3d11_debug_symbols
             #pragma vertex vert
             #pragma fragment frag
 
@@ -36,9 +42,16 @@ Shader "Unlit/FireShader"
                 float4 vertex : SV_POSITION;
             };
 
-            float4 _InnerColour;
-            float4 _OuterColour;
-            float _Test;
+            float4 _FirstColour;
+            float4 _SecondColour;
+            float4 _ThirdColour;
+            float4 _FourthColour;
+
+            float _FirstThreshold;
+            float _SecondThreshold;
+            float _ThirdThreshold;
+            float _FourthThreshold;
+
             uniform float4 transparent = (0, 0, 0, 0);
             sampler2D _MainTex;
             float4 _MainTex_ST;
@@ -50,7 +63,6 @@ Shader "Unlit/FireShader"
 
             float noise(float2 coord)
             {
-
                 float2 i = floor(coord);
                 float2 f = frac(coord);
 
@@ -126,14 +138,12 @@ Shader "Unlit/FireShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 coord = i.uv * 8;
-                float2 fbmCoord = coord / 6;
+                float2 fbmCoord = coord / 6.0;
 
-                float egg = eggShape(i.uv, 0.4);
-                float egg2 = eggShape(i.uv, 0.2);
-
-
-                _Test = 3;
-
+                float egg = eggShape(i.uv, 0.4);                
+                egg += eggShape(i.uv, 0.3) / 2;
+                egg += eggShape(i.uv, 0.2) / 2;
+                egg += eggShape(i.uv, 0.1) / 2;
 
                 float noise1 = noise(coord - float2(_Time.y * 0.25, _Time.y * 3.5));
                 float noise2 = noise(coord - float2(_Time.y * 0.5, _Time.y * 5.5));
@@ -141,12 +151,39 @@ Shader "Unlit/FireShader"
 
                 float fbmNoise = fbm(fbmCoord - float2(0, _Time.y * 3));
                 fbmNoise = overlay(fbmNoise, 0.9-i.uv.y);
-
+ 
                 float combined = combinedNoise * fbmNoise * egg;
-                float val = combined;
-                fixed4 col = fixed4(val,val, val, 1);
 
-                return col;
+
+                float val = combined;
+                
+                if (combined < _FourthThreshold)
+                {
+                    return fixed4(0, 0, 0, 0);
+                }
+
+                else if (combined < _ThirdThreshold)
+                {
+                    return _FourthColour;
+                }
+
+                else if (combined < _SecondThreshold)
+                {
+                    return _ThirdColour;
+                }
+
+                else if (combined < _FirstThreshold)
+                {
+                    return _SecondColour;
+                }
+
+                else
+                {
+                    return _FirstColour;
+                }
+
+                return fixed4(val, val, val, 1);
+
             }
             ENDCG
         }
