@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireMaterial
-  m_Shader: {fileID: 4800000, guid: 6309181183e81f54b8e0a155940b5b0a, type: 3}
+  m_Name: SmokeMaterial
+  m_Shader: {fileID: 4800000, guid: c6fec3a62b84b3e4c82cb4d438eef955, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,24 +41,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BackSpeed: 0.5
+    - _CenterY: 0
     - _EnableExternalAlpha: 0
-    - _FirstThreshold: 0.74
-    - _FourthThreshold: 0.12
-    - _InnerThreshold: 0.5
-    - _OuterThreshold: 0.15
-    - _SecondThreshold: 0.46
-    - _SoftEdge: 0
-    - _TestValue: 0
-    - _ThirdThreshold: 0.22
+    - _FirstThreshold: 0.82
+    - _FourthThreshold: 0.17
+    - _FrontSpeed: 0.25
+    - _Height: 4.59
+    - _Pixelation: 0.0001
+    - _Radius: 0.2
+    - _SecondThreshold: 0.51
+    - _ThirdThreshold: 0.29
+    - _Threshold: 0.009
+    - _WindModifier: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _FirstColour: {r: 1, g: 0.965744, b: 0, a: 1}
+    - _Colour: {r: 0, g: 0, b: 0, a: 1}
+    - _FirstColour: {r: 1, g: 0.959195, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _FourthColour: {r: 0.7075472, g: 0.030037368, b: 0.106614985, a: 1}
-    - _InnerColour: {r: 0.9433962, g: 0.6842311, b: 0.33374867, a: 1}
-    - _OuterColour: {r: 0.8666667, g: 0.42438284, b: 0.29019606, a: 1}
+    - _FourthColour: {r: 0.4716981, g: 0, b: 0, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SecondColour: {r: 1, g: 0.7202713, b: 0, a: 1}
-    - _ThirdColour: {r: 0.8301887, g: 0.3844716, b: 0, a: 1}
-    - _ThirdsColour: {r: 0, g: 0.28873968, b: 1, a: 1}
+    - _SecondColour: {r: 1, g: 0.38102233, b: 0, a: 1}
+    - _ThirdColour: {r: 0.7735849, g: 0.12438032, b: 0, a: 1}
   m_BuildTextureStacks: []

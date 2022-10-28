@@ -7,6 +7,7 @@ Shader "Unlit/FogShader"
         _Colour("Fog Colour", Color) = (1, 1, 1, 1)
         _Speed("Fog Speed", Float) = 0.5
         _Pixelation("Fog Pixelation", Range(0.00001, 0.5)) = 0.00001
+        _Scale("Scale", Float) = 25
     }
 
     SubShader
@@ -46,6 +47,7 @@ Shader "Unlit/FogShader"
             float _Strength;
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _Scale;
 
             v2f vert (meshData v)
             {
@@ -57,7 +59,7 @@ Shader "Unlit/FogShader"
 
             float rand(float2 coord)
             {         
-                return frac(sin(dot(coord, float2(56, 78)) * 1000.0) * 1000.0);
+             return frac(sin(dot(coord, float2(12.9898, 78.233))) * 43758.5453123);
             }
 
             float noise(float2 coord)
@@ -93,7 +95,7 @@ Shader "Unlit/FogShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float2 coord = i.uv * 25;
+                float2 coord = i.uv * _Scale;
 
                 float2 motion = (float2)(fbm(coord + _Time.y * _Speed));            
                 

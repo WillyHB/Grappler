@@ -43,8 +43,9 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _Pixelation: 0.124
+    - _Scale: 68.63
     - _Speed: 0.3
-    - _Strength: 9.07
+    - _Strength: 5.93
     - _Time: 4.97
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

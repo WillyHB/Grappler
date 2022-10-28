@@ -1,22 +1,18 @@
-Shader "Unlit/FireShader"
+Shader "Unlit/SmokeShader"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _FirstColour("First Colour", Color) = (1, 1, 1, 1)
-        _SecondColour("Second Colour", Color) = (1, 1, 1, 1)
-        _ThirdColour("Third Colour", Color) = (1, 1, 1, 1)
-        _FourthColour("Fourth Colour", Color) = (1, 1, 1, 1)
-        _FirstThreshold("First Threshold", Range(0, 1)) = 0
-        _SecondThreshold("Second Threshold",  Range(0, 1)) = 0
-        _ThirdThreshold("Third Threshold",  Range(0, 1)) = 0
-        _FourthThreshold("Fourth Threshold",  Range(0, 1)) = 0
         _FrontSpeed("Front Speed", Float) = 0.25
         _BackSpeed("Back Speed", Float) = 0.5
         _WindModifier("Wind", Float) = 0
         _CenterY("Center Y", Float) = 0.2
         _Radius("Radius", Float) = 1
+        _Pixelation("Pixelation", Range(0.0001, 1)) = 0.3
+        _Threshold("Alpha Threshold", Range(0, 1)) = 0.05
+        _Colour("Colour", Color) = (1, 1, 1, 1)
         _Height("Height", Float) = 2
+
     }
     SubShader
     {
@@ -48,16 +44,6 @@ Shader "Unlit/FireShader"
                 float4 vertex : SV_POSITION;
             };
 
-            float4 _FirstColour;
-            float4 _SecondColour;
-            float4 _ThirdColour;
-            float4 _FourthColour;
-
-            float _FirstThreshold;
-            float _SecondThreshold;
-            float _ThirdThreshold;
-            float _FourthThreshold;
-
             float _FrontSpeed;
             float _BackSpeed;
             float _WindModifier;
@@ -65,6 +51,13 @@ Shader "Unlit/FireShader"
             float _CenterY;
             float _Radius;
             float _Height;
+
+            float _Pixelation;
+            float _Threshold;
+
+            float4 _Colour;
+
+
 
             uniform float4 transparent = (0, 0, 0, 0);
             sampler2D _MainTex;
@@ -115,19 +108,6 @@ Shader "Unlit/FireShader"
                 return o;
             }
 
-            float overlay(float base, float top)
-            {
-                if (base < 0.5)
-                {
-                    return 2 * base * top;
-                }
-
-                else
-                {
-                    return 1-2 * (1-base) * (1-top);
-                }
-            }
-
             float eggShape(float2 coord, float radius)
             {
                 float2 center = float2(0.5, _CenterY);
@@ -145,60 +125,41 @@ Shader "Unlit/FireShader"
                 }
 
                 float dist = sqrt(diff.x * diff.x + diff.y * diff.y) / radius;
-                float value = sqrt(1 - dist * dist);
-                return clamp(value, 0, 1);
+                float value = clamp(1 - dist, 0, 1);
+                return clamp(value*value, 0, 1);
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float2 coord = i.uv * 8;
-                float2 fbmCoord = coord / 6.0;
+                float2 scaledCoords = i.uv * 6;
 
-                float egg = eggShape(i.uv, _Radius);                
-                egg += eggShape(i.uv, lerp(0, _Radius, 0.75)) / 2;
-                egg += eggShape(i.uv, lerp(0, _Radius, 0.5)) / 2;
-                egg += eggShape(i.uv, lerp(0, _Radius, 0.25)) / 2;
+                float warp = 1-i.uv.y;
+                float distFromCenter = abs(i.uv.x - 0.5) * 4;
+                if (i.uv.x > 0.5)
+                {
+                    warp = 1 - warp;
+                }
 
-                float noise1 = noise(coord - float2(_Time.y * _WindModifier, _Time.y * _FrontSpeed));
-                float noise2 = noise(coord - float2(_Time.y * _WindModifier + 0.5, _Time.y * _BackSpeed
-                    ));
-                float combinedNoise = (noise1+noise2) / 2;
+                float2 warpVec = float2(warp, 0) * distFromCenter;
 
-                float fbmNoise = fbm(fbmCoord - float2(0, _Time.y * 3));
-                fbmNoise = overlay(fbmNoise, 0.9-i.uv.y);
+                float motionFbm = fbm(scaledCoords - float2(_Time.y * 0.4, _Time.y * 1.3));
+                float smokeFbm = fbm(scaledCoords - float2(_Time.y * _WindModifier, _Time.y * 1) + motionFbm + warpVec);
  
-                float combined = combinedNoise * fbmNoise * egg;
+                float egg = eggShape(i.uv, _Radius);
+                             
 
-
-                float val = combined;
-                
-                if (combined < _FourthThreshold)
+                smokeFbm *= egg;
+                smokeFbm = clamp(smokeFbm - _Threshold, 0, 1) / (1 - _Threshold);
+                if (smokeFbm < 0.1)
                 {
-                    return fixed4(0, 0, 0, 0);
+                    smokeFbm *= smokeFbm/0.1;
                 }
+                smokeFbm /= egg;
+                smokeFbm = sqrt(smokeFbm);
+                smokeFbm = clamp(smokeFbm, 0, 1);
 
-                else if (combined < _ThirdThreshold)
-                {
-                    return _FourthColour;
-                }
 
-                else if (combined < _SecondThreshold)
-                {
-                    return _ThirdColour;
-                }
-
-                else if (combined < _FirstThreshold)
-                {
-                    return _SecondColour;
-                }
-
-                else
-                {
-                    return _FirstColour;
-                }
-
-                return fixed4(val, val, val, 1);
-
+                return fixed4(smokeFbm * _Colour.r, smokeFbm * _Colour.g, smokeFbm * _Colour.b,  smokeFbm - smokeFbm % _Pixelation);
             }
             ENDCG
         }
