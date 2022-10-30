@@ -4,6 +4,7 @@ Shader "Unlit/ClothShader"
     {
         _MainTex ("Texture", 2D) = "white" {}
     }
+
     SubShader
     {
         Tags{
@@ -13,7 +14,7 @@ Shader "Unlit/ClothShader"
 
         Blend SrcAlpha OneMinusSrcAlpha
         Cull Off
-
+        
         Pass
         {
             CGPROGRAM
@@ -21,12 +22,17 @@ Shader "Unlit/ClothShader"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
+            #include "Lighting.cginc"
+
 
             struct appdata
             {
                 float4 vertex : POSITION;
+                half3 normal : NORMAL;
+                
                 float2 uv : TEXCOORD0;
                 uint vertexID : SV_VertexID;
+
             };
 
             struct v2f
@@ -44,24 +50,18 @@ Shader "Unlit/ClothShader"
             {
                  v.vertex = points[v.vertexID];
 
-
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                /*
-                if (i.uv.x > 0.5) return fixed4(0, 1, 0, 1);
-                return fixed4(1, 0, 0, 1);*/
-
-                return col;
+                return tex2D(_MainTex, i.uv);
             }
             ENDCG
         }
-    }
+    } 
 }

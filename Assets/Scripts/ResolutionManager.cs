@@ -13,8 +13,7 @@ public class ResolutionManager : MonoBehaviour
     public bool AutomaticallyConfigureAspectRatio;
     private bool acar;
 
-    public float AspectRatio;
-    private float aspectRatio;
+    public float _AspectRatio;
 
     public int VirtualHeight = 180;
     private int virtualHeight;
@@ -26,6 +25,7 @@ public class ResolutionManager : MonoBehaviour
 
     public static Vector2Int ClientDimensions { get; private set; } = new();
 
+    public static float AspectRatio { get; private set; }
     public static float ScaleValue { get; private set; }
 
     public static float CameraZoom { get; private set; }
@@ -61,10 +61,10 @@ public class ResolutionManager : MonoBehaviour
 
         if (AutomaticallyConfigureAspectRatio)
         {
-            AspectRatio = (float)ClientDimensions.x / ClientDimensions.y;
+            _AspectRatio = (float)ClientDimensions.x / ClientDimensions.y;
         }
 
-        int virtualWidth = (int)(VirtualHeight * AspectRatio);
+        int virtualWidth = (int)(VirtualHeight * _AspectRatio);
 
         ScaleValue = (float)ClientDimensions.y / VirtualHeight;
 
@@ -79,12 +79,12 @@ public class ResolutionManager : MonoBehaviour
             Cameras[i].Camera.targetTexture = Cameras[i].RenderTexture;
             Cameras[i].RenderMaterial.mainTexture = Cameras[i].RenderTexture;
 
-            Cameras[i].RenderSurface.transform.localScale = new Vector3((orthoSize * 2) * AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
+            Cameras[i].RenderSurface.transform.localScale = new Vector3((orthoSize * 2) * _AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
         }
 
         RenderCamera.orthographicSize = orthoSize - Zoom;
 
-        aspectRatio = AspectRatio;
+        AspectRatio = _AspectRatio;
         virtualHeight = VirtualHeight;
         acar = AutomaticallyConfigureAspectRatio;
         CameraZoom = Zoom;
@@ -105,7 +105,7 @@ public class ResolutionManager : MonoBehaviour
 
     private void Update()
     {
-        if (aspectRatio != AspectRatio
+        if (AspectRatio != _AspectRatio
             || virtualHeight != VirtualHeight
             || new Vector2Int(Screen.width, Screen.height) != ClientDimensions
             || acar != AutomaticallyConfigureAspectRatio

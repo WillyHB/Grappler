@@ -128,7 +128,6 @@ public class VelvetCloth : MonoBehaviour
     private void InitMesh()
     {
         List<Vector3> vertices = new();
-        List<Vector2> uv = new();
         List<int> triangles = new();
 
         int Width = Columns + 1;
@@ -142,10 +141,6 @@ public class VelvetCloth : MonoBehaviour
                 vertices.Add(new Vector3(j / Width, i / Height, 0));
 
             }
-        }
-        for (int i = 0; i < vertices.Count; i++)
-        {
-            uv.Add(vertices[i]);
         }
 
         for (int i = Rows-1; i >= 0; i--)
@@ -172,8 +167,8 @@ public class VelvetCloth : MonoBehaviour
         meshFilter.mesh = mesh;
 
         meshFilter.mesh.SetVertices(vertices);
+        meshFilter.mesh.SetUVs(0, vertices);
         meshFilter.mesh.SetTriangles(triangles, 0);
-        meshFilter.mesh.SetUVs(0, uv);
     }
 
     private void Update()
@@ -213,16 +208,14 @@ public class VelvetCloth : MonoBehaviour
 
     private void Draw()
     {
-        List<Vector3> vertices = new();
         Vector4[] points = new Vector4[2000];
-        meshFilter.mesh.GetVertices(vertices);
 
         for (int p = 0; p < particles.Count; p++)
         {
             Particle point = particles[p];
 
             points[p] = new Vector4(point.pos.x - transform.position.x , point.pos.y - transform.position.y);
-            vertices[p] = point.pos;
+
         }
 
         meshRenderer.material.SetVectorArray("points", points);

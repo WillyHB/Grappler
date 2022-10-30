@@ -47,16 +47,16 @@ Material:
     - _FirstThreshold: 0.82
     - _FourthThreshold: 0.17
     - _FrontSpeed: 0.25
-    - _Height: 4.59
-    - _Pixelation: 0.0001
-    - _Radius: 0.2
+    - _Height: 7.37
+    - _Pixelation: 0.174
+    - _Radius: 0.15
     - _SecondThreshold: 0.51
     - _ThirdThreshold: 0.29
-    - _Threshold: 0.009
+    - _Threshold: 0
     - _WindModifier: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 0, g: 0, b: 0, a: 1}
+    - _Colour: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
     - _FirstColour: {r: 1, g: 0.959195, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _FourthColour: {r: 0.4716981, g: 0, b: 0, a: 1}

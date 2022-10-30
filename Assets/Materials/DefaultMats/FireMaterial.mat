@@ -50,7 +50,7 @@ Material:
     - _Height: 3
     - _InnerThreshold: 0.5
     - _OuterThreshold: 0.15
-    - _Radius: 0.3
+    - _Radius: 0.4
     - _SecondThreshold: 0.46
     - _SoftEdge: 0
     - _TestValue: 0
