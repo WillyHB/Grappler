@@ -20,6 +20,7 @@ public abstract class Rope : MonoBehaviour
     public int ConstraintAppliedPerFrame = 100;
 
     public float GravityScale = 1;
+    public float Friction = 1;
 
     [Space(10)]
     [Header("Wind")]
@@ -44,7 +45,7 @@ public abstract class Rope : MonoBehaviour
         for (int i = 1; i < NumberOfSegments; i++)
         {
             RopeSegment firstSegment = ropeSegments[i];
-            Vector2 velocity = firstSegment.posNow - firstSegment.posOld;
+            Vector2 velocity = (firstSegment.posNow - firstSegment.posOld) * Friction;
 
             if (i != ropeSegments.Count - 1 && i != 0)
             {

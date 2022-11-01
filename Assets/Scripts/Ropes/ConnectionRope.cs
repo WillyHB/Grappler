@@ -50,19 +50,18 @@ public class ConnectionRope : Rope
 
     private DistanceJoint2D distanceJoint;
         
-    public Vector2 GetRotatedPoint(Vector2 point, float eulerRotation)
+    public Vector2 GetRotatedPoint(Vector2 point, float eulerRotation, Vector2 size)
     {
         float radians = eulerRotation * Mathf.Deg2Rad;
 
-        float xRotate = point.x * Mathf.Cos(radians) - point.y * Mathf.Sin(radians);
-        float yRotate = point.x * Mathf.Sin(radians) + point.y * Mathf.Cos(radians);
+        float xRotate = point.x * (Mathf.Cos(radians)) - point.y * (Mathf.Sin(radians));
+        float yRotate = point.x * (Mathf.Sin(radians)) + point.y * (Mathf.Cos(radians));
 
         return new Vector2(xRotate, yRotate);
     }
     public Vector2 GetCalculatedEndPoint()
     {
-
-        Vector2 rotate = GetRotatedPoint(endOffset, connectedBody.rotation);
+        Vector2 rotate = GetRotatedPoint(endOffset, connectedBody.rotation, connectedBody.transform.localScale);
 
         return new Vector2(rotate.x + connectedBody.transform.position.x, rotate.y + connectedBody.transform.position.y);
     }

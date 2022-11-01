@@ -102,13 +102,27 @@ public class Grapple : MonoBehaviour
 
             if (hit.collider.GetComponent<Rigidbody2D>() != null)
             {
-
                 connectionRope.connectedBody = hit.transform.gameObject.GetComponent<Rigidbody2D>();
 
                 Vector3 offset = (Vector3)hit.point - hit.transform.position;
 
+                offset = new Vector3(
+                    offset.x / connectionRope.connectedBody.transform.localScale.x,
+                    offset.y / connectionRope.connectedBody.transform.localScale.y, 
+                    0);
+
                 connectionRope.endOffset = offset;
                 connectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
+                
+                /*
+                hookInstance = Instantiate(hook, hit.collider.transform);
+                hookInstance.name = "Hook";
+
+                hookInstance.transform.position = hit.point;
+                connectionRope.endOffset = Vector2.zero;
+                connectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
+                connectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);*/
+                
             }
 
             else

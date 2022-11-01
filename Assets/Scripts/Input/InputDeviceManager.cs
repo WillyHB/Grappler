@@ -18,7 +18,6 @@ public class InputDeviceManager : MonoBehaviour
 
     private void ControlsChanged(PlayerInput playerInput)
     {
-
         CurrentDeviceType = playerInput.currentControlScheme switch
         {
             "Keyboard&Mouse" => InputDevices.MnK,
@@ -31,5 +30,6 @@ public class InputDeviceManager : MonoBehaviour
 
     public static event Action<InputDevices> DeviceChanged;
 
-    public static InputDevices CurrentDeviceType;
+    public static InputActionMap CurrentActionMap { get; private set; }
+    public static InputDevices CurrentDeviceType { get; private set; }
 }

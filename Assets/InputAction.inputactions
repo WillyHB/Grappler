@@ -42,7 +42,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Crouch",
+                    "name": "VerticalMove",
                     "type": "Button",
                     "id": "c74701bd-1e2f-4c52-9566-569d8461bdc8",
                     "expectedControlType": "Button",
@@ -74,15 +74,6 @@
                     "id": "3db75018-05dc-47da-9acf-0e1b689fc50c",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Swim",
-                    "type": "Button",
-                    "id": "86305db4-6c1d-4418-b58d-b4c9f8bccbbc",
-                    "expectedControlType": "Button",
-                    "processors": "AxisDeadzone",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -266,28 +257,6 @@
                 },
                 {
                     "name": "",
-                    "id": "dd97af5f-46cc-44bf-a3f8-9f8e6ef4ce81",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "37199eab-c1e1-4315-a461-3dc37384ea36",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "12e1a99a-aef9-438a-b40b-54d70931626c",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -343,67 +312,67 @@
                 },
                 {
                     "name": "Keyboard",
-                    "id": "c2242079-8509-4d0f-b3dc-97f362ca0805",
+                    "id": "a70c5c74-07a8-409c-b80e-b8207721b684",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Swim",
+                    "action": "VerticalMove",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "negative",
-                    "id": "be580b7f-5a64-4bf4-8958-27f78ff4e25a",
+                    "id": "749d6ecd-0d40-498d-9714-82722d1aa32c",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Swim",
+                    "groups": "",
+                    "action": "VerticalMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
-                    "id": "4c967b9f-f079-47b4-9ed5-0bbe7b055fba",
+                    "id": "2a5b19bb-f46c-4d8a-8b8d-d0a413d88998",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Swim",
+                    "groups": "",
+                    "action": "VerticalMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "Gamepad",
-                    "id": "4e88b7fe-2402-4b85-a520-1322d1c47a2a",
+                    "id": "43cefc32-60c3-44a6-b6f4-d7c959ea88e9",
                     "path": "1DAxis",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "AxisDeadzone",
                     "groups": "",
-                    "action": "Swim",
+                    "action": "VerticalMove",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "negative",
-                    "id": "926a9e2b-1821-4b8a-934a-9977c2ea8e06",
+                    "id": "019dc33b-616a-4966-b4b5-3ea54fd376c5",
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Swim",
+                    "action": "VerticalMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
-                    "id": "aa0b6b93-19c2-4127-8ac9-a7611d4850d9",
+                    "id": "a2f03609-45f3-447c-baa2-a31efbe4cda3",
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Swim",
+                    "action": "VerticalMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
@@ -922,6 +891,89 @@
                     "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Swim",
+            "id": "f264073e-cac2-4274-9aad-f4e1ffddf124",
+            "actions": [
+                {
+                    "name": "Swim",
+                    "type": "Button",
+                    "id": "e555e2ce-650a-4b18-8d23-1cf667a07d5c",
+                    "expectedControlType": "Button",
+                    "processors": "AxisDeadzone",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Keyboard",
+                    "id": "694d5d3e-6df8-4cb4-a3b8-143d5c3c4b8e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swim",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "a039d27b-eeef-42f9-a66e-7104616272c9",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Swim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "5918d02f-b6cb-4be9-84a4-9b20bcc843a6",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Swim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Gamepad",
+                    "id": "2ecbe8a9-5a82-4090-a582-aea0803140a5",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swim",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "82dcddd7-bb89-42c2-ba88-fdbd3e861f91",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "307d57a6-0a14-4cb6-a68f-6d22ece94f26",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

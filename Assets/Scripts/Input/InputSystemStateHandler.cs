@@ -27,7 +27,7 @@ public class InputSystemStateHandler : InputStateHandler
     public override InputState HandleInputState(InputState state)
     {
         state.MoveDirection = Actions.FindActionMap("Player").FindAction("Move").ReadValue<float>();
-        state.SwimDirection = Actions.FindActionMap("Player").FindAction("Swim").ReadValue<float>();
+        state.SwimDirection = Actions.FindActionMap("Player").FindAction("VerticalMove").ReadValue<float>();
         state.GrappleLength = Actions.FindActionMap("Player").FindAction("GrappleLength").ReadValue<float>();
 
         state.CanJump = true;
@@ -35,7 +35,7 @@ public class InputSystemStateHandler : InputStateHandler
         state.CanShoot = true;
 
         state.IsJumping = Actions.FindActionMap("Player").FindAction("Jump").IsPressed();
-        state.IsCrouching = Actions.FindActionMap("Player").FindAction("Crouch").IsPressed();
+        state.IsCrouching = Actions.FindActionMap("Player").FindAction("VerticalMove").ReadValue<float>() < 0;
         state.IsWalking = Actions.FindActionMap("Player").FindAction("Walk").IsPressed() 
             || ((state.MoveDirection > 0 && state.MoveDirection < 0.5f) || (state.MoveDirection < 0 && state.MoveDirection > -0.5f));
         return state;

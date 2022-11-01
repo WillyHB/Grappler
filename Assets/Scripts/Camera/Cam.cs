@@ -8,9 +8,12 @@ public class Cam : MonoBehaviour
 
     public Transform Follow;
     public Vector3 FloatPosition { get; private set; }
+    public Vector3 FutureFloatPosition { get; private set; }
     public Vector3 PixelPerfectPosition { get; private set; }
 
-    public LayerMask BlindZoneLayer;
+    public LayerMask BlindZoneLayers;
+    public LayerMask LenientLayer;
+    public LayerMask NonLenietLayer;
 
     public Camera[] Cameras;
 
@@ -57,34 +60,92 @@ public class Cam : MonoBehaviour
 
         if (Follow != null)
         {
-            Vector3 tempFloatPos = Vector3.Lerp(FloatPosition, new Vector3(Follow.position.x, Follow.position.y, -10), SmoothSpeed);
+            Vector3 tempFloatPos = FutureFloatPosition;
 
-            float sizeX = Camera.main.orthographicSize * ResolutionManager.AspectRatio*2;
-            float sizeY = Camera.main.orthographicSize*2;
+            float sizeX = (Camera.main.orthographicSize - ResolutionManager.CameraZoom) * ResolutionManager.AspectRatio * 2;
+            float sizeY = (Camera.main.orthographicSize - ResolutionManager.CameraZoom) * 2;
 
-            if (Physics2D.BoxCast(
-                FloatPosition, 
-                new Vector2(sizeX, sizeY), 0, 
-                new Vector2(tempFloatPos.x - FloatPosition.x, 0),
-                Mathf.Abs(tempFloatPos.x - FloatPosition.x), 
-                BlindZoneLayer))
+            Vector2 diff = new(tempFloatPos.x - FloatPosition.x, tempFloatPos.y - FloatPosition.y);
+
+
+            RaycastHit2D hit
+                = Physics2D.BoxCast(FloatPosition, new Vector2(sizeX, sizeY), 0, Vector2.zero, 0, BlindZoneLayers);
+
+            if (hit)
             {
-                tempFloatPos.x = FloatPosition.x;
+                Bounds camBounds = new(FloatPosition, new Vector3(sizeX, sizeY));
+
+                Collider2D col = hit.collider;
+                Vector2 edgePoint = camBounds.ClosestPoint(hit.point);
+
+                if (edgePoint.x < hit.point.x)
+                {
+                    tempFloatPos.x = hit.point.x - sizeX / 2 + ResolutionManager.CameraZoom;
+                }
+
+                else
+                {
+                    tempFloatPos.x = hit.point.x + sizeX / 2 + ResolutionManager.CameraZoom;
+                }
             }
 
-            if (Physics2D.BoxCast(
-                FloatPosition,
-                new Vector2(sizeX, sizeY), 0,
-                new Vector2(0, tempFloatPos.y - FloatPosition.y),
-                Mathf.Abs(tempFloatPos.y - FloatPosition.y),
-                BlindZoneLayer))
+            else
             {
-                tempFloatPos.y = FloatPosition.y;
+                RaycastHit2D newHitX
+                     = Physics2D.BoxCast(FloatPosition + new Vector3(diff.x, 0, 0), new Vector2(sizeX, sizeY), 0, Vector2.zero, 0, BlindZoneLayers);
+                RaycastHit2D newHitY
+                    = Physics2D.BoxCast(FloatPosition + new Vector3(0, diff.y, 0), new Vector2(sizeX, sizeY), 0, Vector2.zero, 0, BlindZoneLayers);
+
+                Collider2D colX = newHitX.collider;
+                Collider2D colY = newHitY.collider;
+
+                if (colX != null)
+                {
+                    if ((Follow.position.x > colX.transform.position.x) != (tempFloatPos.x > colX.transform.position.x) 
+                        && (LenientLayer & 1 << colX.gameObject.layer) == 1 << colX.gameObject.layer)
+                    {
+                        if (Follow.position.x > colX.transform.position.x)
+                        {
+                            tempFloatPos.x = colX.transform.position.x + sizeX / 2 + ResolutionManager.CameraZoom;
+                        }
+
+                        else if (Follow.position.x < colX.transform.position.x)
+                        {
+                            tempFloatPos.x = colX.transform.position.x - sizeX / 2 - ResolutionManager.CameraZoom;
+                        }
+                    }
+
+                    else
+                    {
+                        tempFloatPos.x = FloatPosition.x;
+                    }
+                }
+
+                if (colY != null)
+                {
+                    if ((Follow.position.y > colY.transform.position.y) != (tempFloatPos.y > colY.transform.position.y)
+                         && (LenientLayer & 1 << colY.gameObject.layer) == 1 << colY.gameObject.layer)
+                    {
+                        if (Follow.position.y > colY.transform.position.y)
+                        {
+                            tempFloatPos.y = colY.transform.position.y + sizeY / 2 + ResolutionManager.CameraZoom;
+                        }
+
+                        else if (Follow.position.y < colY.transform.position.y)
+                        {
+                            tempFloatPos.y = colY.transform.position.y - sizeY / 2 - ResolutionManager.CameraZoom;
+                        }
+                    }
+
+                    else
+                    {
+                        tempFloatPos.y = FloatPosition.y;
+                    }
+                }
             }
-
-
 
             FloatPosition = tempFloatPos;
+            FutureFloatPosition = Vector3.Lerp(FloatPosition, new Vector3(Follow.position.x, Follow.position.y, -10), SmoothSpeed);
 
             PixelPerfectPosition = new Vector3(
                 FloatPosition.x - (FloatPosition.x % (1.0f / 16)),

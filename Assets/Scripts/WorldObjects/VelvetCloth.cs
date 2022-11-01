@@ -183,6 +183,8 @@ public class VelvetCloth : MonoBehaviour
                     p.oldPos = transform.position;
                 }
             }
+
+            worldPos = transform.position;
         }
         if (rows != Rows
             || columns != Columns
@@ -267,18 +269,4 @@ public class VelvetCloth : MonoBehaviour
             if (!connectors[i].point1.pinned) connectors[i].point1.pos += changeAmount * 0.5f;           
         }
     }
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (CollideWithRigidbodies)
-        {
-            foreach (Particle particle in particles)
-            {
-                if (collision.bounds.Contains(particle.pos))
-                {
-                    particle.pos += collision.GetComponent<Rigidbody2D>().velocity / Stiffness;
-                }
-            }
-        }
-    }*/
 }
