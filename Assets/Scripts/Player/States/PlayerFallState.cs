@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using ElRaccoone.Tweens;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName ="States/Player/FallState")]

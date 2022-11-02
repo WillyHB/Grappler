@@ -7,13 +7,14 @@ using System;
 [CreateAssetMenu(menuName = "Event Channels/Camera")]
 public class CameraEventChannel : ScriptableObject
 {
-    public event Action<float> Zoom;
+    public event Action<float, float> Zoom;
     /// </summary>
     public event Action<float, float, float> Shake;
 
     public event Action<bool, bool> Locked;
 
     public event Action<Vector3> Repositioned;
+    public event Action<Transform> ResetFollow;
 
     public void LockPosition() => Locked?.Invoke(true, true);
     public void UnlockPosition() => Locked?.Invoke(false, false);
@@ -24,6 +25,9 @@ public class CameraEventChannel : ScriptableObject
     public void SetPosition(float x, float y, float z) => Repositioned?.Invoke(new Vector3(x, y, z));
     public void SetPosition(Vector3 position) => Repositioned?.Invoke(position);
 
-    public void PerformZoom(float zoom) => Zoom?.Invoke(zoom);
+    public void SetFollow(Transform follow) => ResetFollow?.Invoke(follow);
+
+    public void PerformZoom(float zoom) => Zoom?.Invoke(zoom, 0);
+    public void PerformZoom(float zoom, float time) => Zoom?.Invoke(zoom, time);
     public void PerformShake(float freq, float amp, float time) => Shake?.Invoke(freq, amp, time);
 }

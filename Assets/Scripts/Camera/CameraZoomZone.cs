@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraZoomZone : MonoBehaviour
 {
-
     public float Zoom;
+    public float Time;
 
     private float oldZoom;
 
@@ -17,7 +15,7 @@ public class CameraZoomZone : MonoBehaviour
         {
             oldZoom = ResolutionManager.CameraZoom;
 
-            CamEventChannel.PerformZoom(Zoom);
+            CamEventChannel.PerformZoom(Zoom, Time);
         }
     }
 
@@ -25,7 +23,7 @@ public class CameraZoomZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CamEventChannel.PerformZoom(oldZoom);
+            CamEventChannel.PerformZoom(oldZoom, Time);
         }
     }
 }

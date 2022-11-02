@@ -6,7 +6,7 @@ using System.Linq;
 
 public class Water : MonoBehaviour
 {
-    private List<Spring> springs = new List<Spring>();
+    private List<Spring> springs = new();
 
     public float Tension = 0.025f;
     public float Dampening = 0.025f;
@@ -23,6 +23,7 @@ public class Water : MonoBehaviour
     private MeshFilter meshFilter;
     public MeshRenderer meshRenderer { get; set; }
     private BoxCollider2D boxCollider;
+    public Bounds Bounds { get; private set; }
 
     public void Splash(int index, float speed)
     {
@@ -108,8 +109,10 @@ public class Water : MonoBehaviour
 
 
         springs.Clear();
-        springs = new List<Spring>();
-        springs.Capacity = NumberOfPoints;
+        springs = new List<Spring>
+        {
+            Capacity = NumberOfPoints
+        };
 
         for (int i = 0; i < NumberOfPoints; i++)
         {
@@ -173,9 +176,8 @@ public class Water : MonoBehaviour
 
         meshRenderer.material.SetFloatArray("points", points);
         meshRenderer.material.SetVector("size", 
-            new Vector4(meshRenderer.bounds.size.x, meshRenderer.bounds.size.y, 0));
+        new Vector4(meshRenderer.bounds.size.x, meshRenderer.bounds.size.y, 0));
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         float velocity = collision.attachedRigidbody.velocity.y;
