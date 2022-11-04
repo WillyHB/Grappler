@@ -7,7 +7,7 @@ using System;
 [CreateAssetMenu(menuName = "Event Channels/Camera")]
 public class CameraEventChannel : ScriptableObject
 {
-    public event Action<float, float> Zoom;
+    public event Action<float> Zoom;
     /// </summary>
     public event Action<float, float, float> Shake;
 
@@ -27,7 +27,6 @@ public class CameraEventChannel : ScriptableObject
 
     public void SetFollow(Transform follow) => ResetFollow?.Invoke(follow);
 
-    public void PerformZoom(float zoom) => Zoom?.Invoke(zoom, 0);
-    public void PerformZoom(float zoom, float time) => Zoom?.Invoke(zoom, time);
+    public void PerformZoom(float zoom) => Zoom?.Invoke(zoom);
     public void PerformShake(float freq, float amp, float time) => Shake?.Invoke(freq, amp, time);
 }

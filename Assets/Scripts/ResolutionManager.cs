@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEditor;
-
 
 public class ResolutionManager : MonoBehaviour
 {
@@ -19,6 +17,9 @@ public class ResolutionManager : MonoBehaviour
     [Min(0)]
     public float Zoom;
 
+    private float currentZoom;
+
+    public float ZoomSmoothing = 0.075f;
     public static int UnitSize => 16;
     public static Vector2Int VirtualDimensions { get; private set; } = new();
 
@@ -35,24 +36,12 @@ public class ResolutionManager : MonoBehaviour
 
     private void Awake()
     {
-        CamEventChannel.Zoom += CamZoom;
-    }
-
-    private void CamZoom(float zoom, float time)
-    {
-        if (zoomCamTween != null)
-        {
-            LeanTween.cancel(zoomCamTween.id);
-        }
-
-        zoomCamTween = LeanTween.value(gameObject, (u) => { Zoom = u; }, Zoom, zoom, time);
-
-        zoomCamTween.setOnComplete(() => { zoomCamTween = null; });
+        CamEventChannel.Zoom += v => Zoom = v;
     }
 
     private void OnDisable()
     {
-        CamEventChannel.Zoom -= CamZoom;
+        CamEventChannel.Zoom -= v => Zoom = v;
     }
 
     public static Vector2 ScreenToWorld(Vector2 point)
@@ -118,11 +107,14 @@ public class ResolutionManager : MonoBehaviour
     private float GenerateRenderOrthoSize()
     {
         float orthoSize = (float)VirtualDimensions.x / ((((float)VirtualDimensions.x / VirtualDimensions.y) * 2) * UnitSize);
-        return orthoSize - Zoom;
+        return orthoSize - currentZoom;
     }
 
     private void Update()
     {
+        CameraZoom = Zoom;
+        currentZoom = Mathf.Lerp(currentZoom, Zoom, ZoomSmoothing);
+
         if (AspectRatio != _AspectRatio
             || virtualHeight != VirtualHeight
             || new Vector2Int(Screen.width, Screen.height) != ClientDimensions
@@ -131,10 +123,7 @@ public class ResolutionManager : MonoBehaviour
             Start();
         }
 
-        if (CameraZoom != Zoom)
-        {
-            RenderCamera.orthographicSize = GenerateRenderOrthoSize();
-        }
+        RenderCamera.orthographicSize = GenerateRenderOrthoSize();
     }
 }
 

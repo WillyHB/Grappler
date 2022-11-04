@@ -3,7 +3,6 @@ using UnityEngine;
 public class CameraZoomZone : MonoBehaviour
 {
     public float Zoom;
-    public float Time;
 
     private float oldZoom;
 
@@ -15,7 +14,7 @@ public class CameraZoomZone : MonoBehaviour
         {
             oldZoom = ResolutionManager.CameraZoom;
 
-            CamEventChannel.PerformZoom(Zoom, Time);
+            CamEventChannel.PerformZoom(Zoom);
         }
     }
 
