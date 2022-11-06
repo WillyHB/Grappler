@@ -22,7 +22,7 @@ public class CameraZoomZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CamEventChannel.PerformZoom(oldZoom, Time);
+            CamEventChannel.PerformZoom(oldZoom);
         }
     }
 }

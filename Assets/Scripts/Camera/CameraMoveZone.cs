@@ -5,15 +5,16 @@ using UnityEngine;
 public class CameraMoveZone : MonoBehaviour
 {
     public CameraEventChannel CamEventChannel;
-
-    private Transform oldTransform;
+    public Vector2 Position;
+    public bool SetToCurrentTransformPosition;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            oldTransform = FindObjectOfType<Cam>().Follow;
-            CamEventChannel.SetFollow(transform);
+            
+            CamEventChannel.LockPosition();
+            CamEventChannel.SetPosition(SetToCurrentTransformPosition ? (Vector2)transform.position : Position);
         }
     }
 
@@ -21,7 +22,8 @@ public class CameraMoveZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CamEventChannel.SetFollow(oldTransform);
+            CamEventChannel.SetPosition(FindObjectOfType<Cam>().Follow.position);
+            CamEventChannel.UnlockPosition();
         }
     }
 }
