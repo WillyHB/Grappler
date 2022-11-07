@@ -25,6 +25,12 @@ public class ResolutionManager : MonoBehaviour
 
     public static Vector2Int ClientDimensions { get; private set; } = new();
 
+    public static Vector2 CamViewDimensions
+        => new((Camera.main.orthographicSize - CameraZoom) * AspectRatio * 2, (Camera.main.orthographicSize - CameraZoom) * 2);
+
+    public static Vector2 GetCustomCamViewDimensions(float? zoom, float? aspectRatio)
+    => new((Camera.main.orthographicSize - zoom ?? CameraZoom) * aspectRatio ?? AspectRatio * 2, (Camera.main.orthographicSize - zoom ?? CameraZoom) * 2);
+
     public static float AspectRatio { get; private set; }
     public static float ScaleValue { get; private set; }
 

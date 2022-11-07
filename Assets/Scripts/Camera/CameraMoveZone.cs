@@ -8,11 +8,12 @@ public class CameraMoveZone : MonoBehaviour
     public Vector2 Position;
     public bool SetToCurrentTransformPosition;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            
+
             CamEventChannel.LockPosition();
             CamEventChannel.SetPosition(SetToCurrentTransformPosition ? (Vector2)transform.position : Position);
         }
@@ -23,6 +24,7 @@ public class CameraMoveZone : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             CamEventChannel.SetPosition(FindObjectOfType<Cam>().Follow.position);
+
             CamEventChannel.UnlockPosition();
         }
     }

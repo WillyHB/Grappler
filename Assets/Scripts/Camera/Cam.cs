@@ -11,6 +11,8 @@ public class Cam : MonoBehaviour
     public Vector3 OldFloatPosition { get; private set; }
     public Vector3 PixelPerfectPosition { get; private set; }
 
+    public bool IgnoreBlockages;
+
     public LayerMask BlindZoneLayers;
     public LayerMask LenientLayer;
     public LayerMask NonLenietLayer;
@@ -53,6 +55,15 @@ public class Cam : MonoBehaviour
 
         position = new Vector3(position.x, position.y, -5);
 
+
+        RaycastHit2D hit
+            = Physics2D.BoxCast(FloatPosition, new Vector2(ResolutionManager.CamViewDimensions.x, ResolutionManager.CamViewDimensions.y), 0, Vector2.zero, 0, BlindZoneLayers);
+
+        if (hit)
+        {
+            position = ManageCameraBlockHit(position, hit);
+        }
+
         FloatPosition = position;
 
         foreach (Camera cam in Cameras)
@@ -61,7 +72,36 @@ public class Cam : MonoBehaviour
         }
     }
 
+    private Vector3 ManageCameraBlockHit(Vector3 futurePos, RaycastHit2D hit)
+    {
+        if (hit.normal.y == 0)
+        {
+            Debug.Log("Poop");
+            if (Follow.position.x > hit.transform.position.x)
+            {
+                futurePos.x = hit.transform.position.x + ResolutionManager.CamViewDimensions.x / 2 + 0.01f;
+            }
+            else
+            {
+                futurePos.x = hit.transform.position.x - ResolutionManager.CamViewDimensions.x / 2 - 0.01f;
+            }
+        }
 
+        else
+        {
+            Debug.Log("Fart");
+            if (Follow.position.y > hit.transform.position.y)
+            {
+                futurePos.y = hit.transform.position.y + ResolutionManager.CamViewDimensions.y / 2 + 0.01f;
+            }
+            else
+            {
+                futurePos.y = hit.transform.position.y - ResolutionManager.CamViewDimensions.y / 2 - 0.01f;
+            }
+        }
+
+        return futurePos;
+    }
 
     void FixedUpdate()
     {
@@ -74,71 +114,79 @@ public class Cam : MonoBehaviour
         {
             Vector3 futurePos = Vector3.Lerp(FloatPosition, new Vector3(Follow.position.x, Follow.position.y, -10), SmoothSpeed);
 
-            float sizeX = (Camera.main.orthographicSize - ResolutionManager.CameraZoom) * ResolutionManager.AspectRatio * 2;
-            float sizeY = (Camera.main.orthographicSize - ResolutionManager.CameraZoom) * 2;
-
             Vector2 diff = futurePos - FloatPosition;
 
             RaycastHit2D hit
-    = Physics2D.BoxCast(FloatPosition, new Vector2(sizeX, sizeY), 0, Vector2.zero, 0, BlindZoneLayers);
+            = Physics2D.BoxCast(FloatPosition, new Vector2(ResolutionManager.CamViewDimensions.x, ResolutionManager.CamViewDimensions.y), 0, Vector2.zero, 0, BlindZoneLayers);
 
-            if (true)
+            if (!IgnoreBlockages)
             {
-                RaycastHit2D newHitX
-                     = Physics2D.BoxCast(FloatPosition + new Vector3(diff.x, 0, 0), new Vector2(sizeX, sizeY), 0, Vector2.zero, 0, BlindZoneLayers);
-                RaycastHit2D newHitY
-                    = Physics2D.BoxCast(FloatPosition + new Vector3(0, diff.y, 0), new Vector2(sizeX, sizeY), 0, Vector2.zero, 0, BlindZoneLayers);
-                Collider2D colX = newHitX.collider;
-                Collider2D colY = newHitY.collider;
-                if (colX != null)
+                if (hit)
                 {
-                    float difference = Mathf.Abs(FloatPosition.x - colX.transform.position.x);
-
-                    if ((Follow.position.x > colX.transform.position.x) != (futurePos.x > colX.transform.position.x)
-                        && (LenientLayer & 1 << colX.gameObject.layer) == 1 << colX.gameObject.layer)
-                    {
-                        if (Follow.position.x > colX.transform.position.x)
-                        {
-                            futurePos.x = colX.transform.position.x + difference;
-                        }
-                        else
-                        {
-                            futurePos.x = colX.transform.position.x - difference;
-                        }
-
-                        SetPosition(futurePos);
-                    }
-                    else
-                    {
-                        futurePos.x = FloatPosition.x;
-                    }
+                    futurePos = ManageCameraBlockHit(futurePos, hit);
                 }
 
-                if (colY != null)
+                else
                 {
-                    float difference = Mathf.Abs(FloatPosition.y - colY.transform.position.y);
+                    RaycastHit2D newHitX
+                         = Physics2D.BoxCast(FloatPosition + new Vector3(diff.x, 0, 0), new Vector2(ResolutionManager.CamViewDimensions.x, ResolutionManager.CamViewDimensions.y), 0, Vector2.zero, 0, BlindZoneLayers);
+                    RaycastHit2D newHitY
+                        = Physics2D.BoxCast(FloatPosition + new Vector3(0, diff.y, 0), new Vector2(ResolutionManager.CamViewDimensions.x, ResolutionManager.CamViewDimensions.y), 0, Vector2.zero, 0, BlindZoneLayers);
 
-                    if ((Follow.position.y > colY.transform.position.y) != (futurePos.y > colY.transform.position.y)
-                       && (LenientLayer & 1 << colY.gameObject.layer) == 1 << colY.gameObject.layer)
+
+                    Collider2D colX = newHitX.collider;
+                    Collider2D colY = newHitY.collider;
+                    if (colX != null)
                     {
-                        if (Follow.position.y > colY.transform.position.y)
+                        float difference = Mathf.Abs(FloatPosition.x - colX.transform.position.x);
+
+                        if ((Follow.position.x > colX.transform.position.x) != (futurePos.x > colX.transform.position.x)
+                            && (LenientLayer & 1 << colX.gameObject.layer) == 1 << colX.gameObject.layer)
                         {
-                            futurePos.y = colY.transform.position.y + difference;
+                            if (Follow.position.x > colX.transform.position.x)
+                            {
+                                futurePos.x = colX.transform.position.x + difference;
+                            }
+                            else
+                            {
+                                futurePos.x = colX.transform.position.x - difference;
+                            }
+
+                            SetPosition(futurePos);
                         }
                         else
                         {
-                            futurePos.y = colY.transform.position.y - difference;
+                            futurePos.x = FloatPosition.x;
                         }
-
-                        SetPosition(futurePos);
                     }
 
-                    else
+                    if (colY != null)
                     {
-                        futurePos.y = FloatPosition.y;
+                        float difference = Mathf.Abs(FloatPosition.y - colY.transform.position.y);
+
+                        if ((Follow.position.y > colY.transform.position.y) != (futurePos.y > colY.transform.position.y)
+                           && (LenientLayer & 1 << colY.gameObject.layer) == 1 << colY.gameObject.layer)
+                        {
+                            if (Follow.position.y > colY.transform.position.y)
+                            {
+                                futurePos.y = colY.transform.position.y + difference;
+                            }
+                            else
+                            {
+                                futurePos.y = colY.transform.position.y - difference;
+                            }
+
+                            SetPosition(futurePos);
+                        }
+
+                        else
+                        {
+                            futurePos.y = FloatPosition.y;
+                        }
                     }
                 }
             }
+            
 
             OldFloatPosition = FloatPosition;
             // LERP VELOCITY??
