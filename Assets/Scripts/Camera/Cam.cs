@@ -74,7 +74,7 @@ public class Cam : MonoBehaviour
 
     private Vector3 ManageCameraBlockHit(Vector3 futurePos, RaycastHit2D hit)
     {
-        if (hit.normal.y == 0)
+        if (hit.normal.y == 0 || hit.normal.y == -1)
         {
             Debug.Log("Poop");
             if (Follow.position.x > hit.transform.position.x)
@@ -105,6 +105,7 @@ public class Cam : MonoBehaviour
 
     void FixedUpdate()
     {
+        /*
         foreach (Camera cam in Cameras)
         {
             cam.transform.position = new Vector3(PixelPerfectPosition.x, PixelPerfectPosition.y, -5);
@@ -197,7 +198,7 @@ public class Cam : MonoBehaviour
                 FloatPosition.x - (FloatPosition.x % (1.0f / 16)),
                  FloatPosition.y - (FloatPosition.y % (1.0f / 16)),
                   FloatPosition.z - (FloatPosition.z % (1.0f / 16)));
-        }
+        */
     }
 }
 
