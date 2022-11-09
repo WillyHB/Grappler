@@ -76,7 +76,6 @@ public class Cam : MonoBehaviour
     {
         if (hit.normal.y == 0 || hit.normal.y == -1)
         {
-            Debug.Log("Poop");
             if (Follow.position.x > hit.transform.position.x)
             {
                 futurePos.x = hit.transform.position.x + ResolutionManager.CamViewDimensions.x / 2 + 0.01f;

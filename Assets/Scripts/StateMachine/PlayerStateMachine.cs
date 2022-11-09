@@ -82,6 +82,19 @@ public class PlayerStateMachine : StateMachine
 
     public GameObject KickRock;
 
+    public bool IsFrozen { get; private set; }
+
+    public void Freeze()
+    {
+        IsFrozen = true;
+        Animator.speed = 0;
+    }
+
+    public void UnFreeze()
+    {
+        IsFrozen = false;
+        Animator.speed = 1;
+    }
 
     protected override void Update()
     {
@@ -118,7 +131,8 @@ public class PlayerStateMachine : StateMachine
             GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
+        if (IsFrozen) Rigidbody.velocity = Vector2.zero;
+        else Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
 
         if (CurrentWater != null) Transition(SwimState);
     }

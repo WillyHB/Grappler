@@ -11,19 +11,19 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Subpixel
+  - 
   - Player
   - Lighting
   - Background
-  - PostProcess
+  - 
   - Front
   - Back
   - Reflective
-  - BlindZone
-  - LenientBlindZone
+  - 
+  - 
   - 
   - 
   - 
