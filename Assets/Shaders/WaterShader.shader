@@ -3,6 +3,8 @@ Shader "Unlit/WaterShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _WaterColour("Water Colour", Color) = (0.5, 0.5, 0.8, 0.45)
+        _CrestColour("Water Crest Colour", Color) = (0.7, 0.7, 0.8, 0.8)
     }
     SubShader
     {
@@ -42,6 +44,9 @@ Shader "Unlit/WaterShader"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+
+            float4 _WaterColour;
+            float4 _CrestColour;
 
             v2f vert (appdata v)
             {
