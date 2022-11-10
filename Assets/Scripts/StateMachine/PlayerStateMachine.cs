@@ -84,14 +84,18 @@ public class PlayerStateMachine : StateMachine
 
     public bool IsFrozen { get; private set; }
 
+    private Vector2 frozenVelocity;
     public void Freeze()
     {
+        frozenVelocity = Rigidbody.velocity;
+        Rigidbody.velocity = Vector2.zero;
         IsFrozen = true;
         Animator.speed = 0;
     }
 
-    public void UnFreeze()
+    public void UnFreeze(bool preserveVelocity = false)
     {
+        Rigidbody.velocity = preserveVelocity ? frozenVelocity : Vector2.zero;
         IsFrozen = false;
         Animator.speed = 1;
     }
