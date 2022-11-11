@@ -5,13 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Grapple : MonoBehaviour
 {
-    private ConnectionRope connectionRope;
+    public ConnectionRope ConnectionRope { get; private set; }
 
     public float GrappleExtensionSpeed = 2;
 
     public string GrappleTag = "Ground";
 
-    public GameObject TwoPointRope;
     private GameObject hook;
     private GameObject hookInstance;
 
@@ -21,7 +20,7 @@ public class Grapple : MonoBehaviour
 
     public GameObject Hand;
 
-    public bool IsGrappling => connectionRope.enabled;
+    public bool IsGrappling => ConnectionRope.enabled;
 
     private bool grappledThisFrame;
 
@@ -30,8 +29,8 @@ public class Grapple : MonoBehaviour
         hook = new GameObject();
         hook.AddComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
-        connectionRope = GetComponent<ConnectionRope>();
-        connectionRope.enabled = false;
+        ConnectionRope = GetComponent<ConnectionRope>();
+        ConnectionRope.enabled = false;
 
         InputProvider.GrappleCanceled += ReleaseGrapple;
         InputProvider.Grappled += OnGrapple;
@@ -48,17 +47,17 @@ public class Grapple : MonoBehaviour
     {
         if (IsGrappling)
         {
-            connectionRope.startOffset = GrapplePos.position - transform.position;
+            ConnectionRope.startOffset = GrapplePos.position - transform.position;
             grappledThisFrame = false;
 
             float grappleVal = InputProvider.GetState().GrappleLength;
 
             if (grappleVal != 0)
             {
-                connectionRope.SetLength(connectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
+                ConnectionRope.SetLength(ConnectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
             }
 
-            Hand.GetComponent<Hand>().followPosition = (Vector2)connectionRope.connectedBody.transform.position + connectionRope.endOffset;
+            Hand.GetComponent<Hand>().followPosition = (Vector2)ConnectionRope.connectedBody.transform.position + ConnectionRope.endOffset;
         }
 
     }
@@ -101,27 +100,17 @@ public class Grapple : MonoBehaviour
 
             if (hit.collider.GetComponent<Rigidbody2D>() != null)
             {
-                connectionRope.connectedBody = hit.transform.gameObject.GetComponent<Rigidbody2D>();
+                ConnectionRope.connectedBody = hit.transform.gameObject.GetComponent<Rigidbody2D>();
 
                 Vector3 offset = (Vector3)hit.point - hit.transform.position;
 
                 offset = new Vector3(
-                    offset.x / connectionRope.connectedBody.transform.localScale.x,
-                    offset.y / connectionRope.connectedBody.transform.localScale.y, 
+                    offset.x / ConnectionRope.connectedBody.transform.localScale.x,
+                    offset.y / ConnectionRope.connectedBody.transform.localScale.y, 
                     0);
 
-                connectionRope.endOffset = offset;
-                connectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
-                
-                /*
-                hookInstance = Instantiate(hook, hit.collider.transform);
-                hookInstance.name = "Hook";
-
-                hookInstance.transform.position = hit.point;
-                connectionRope.endOffset = Vector2.zero;
-                connectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
-                connectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);*/
-                
+                ConnectionRope.endOffset = offset;
+                ConnectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);              
             }
 
             else
@@ -130,12 +119,12 @@ public class Grapple : MonoBehaviour
                 hookInstance.name = "Hook";
 
                 hookInstance.transform.position = hit.point;
-                connectionRope.endOffset = Vector2.zero;
-                connectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
-                connectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
+                ConnectionRope.endOffset = Vector2.zero;
+                ConnectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
+                ConnectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
             }
 
-            connectionRope.enabled = true;
+            ConnectionRope.enabled = true;
         }
 
     }
@@ -145,7 +134,7 @@ public class Grapple : MonoBehaviour
         if (!grappledThisFrame)
         {
             Destroy(hookInstance);
-            connectionRope.enabled = false;
+            ConnectionRope.enabled = false;
 
             Hand.GetComponent<Hand>().followPosition = null;
         }

@@ -48,9 +48,14 @@ public class ConnectionRope : Rope
         }
     }
 
+    public bool IsStretched(float threshold = 0.01f)
+    {
+        return Mathf.Abs(GetLength() - GetDistanceBetweenBodies()) < threshold;
+    }
+
     private DistanceJoint2D distanceJoint;
         
-    public Vector2 GetRotatedPoint(Vector2 point, float eulerRotation, Vector2 size)
+    public Vector2 GetRotatedPoint(Vector2 point, float eulerRotation)
     {
         float radians = eulerRotation * Mathf.Deg2Rad;
 
@@ -61,7 +66,7 @@ public class ConnectionRope : Rope
     }
     public Vector2 GetCalculatedEndPoint()
     {
-        Vector2 rotate = GetRotatedPoint(endOffset, connectedBody.rotation, connectedBody.transform.localScale);
+        Vector2 rotate = GetRotatedPoint(endOffset, connectedBody.rotation);
 
         return new Vector2(rotate.x + connectedBody.transform.position.x, rotate.y + connectedBody.transform.position.y);
     }

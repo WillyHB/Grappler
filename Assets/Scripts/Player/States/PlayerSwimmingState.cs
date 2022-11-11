@@ -163,9 +163,7 @@ public class PlayerSwimmingState : State
     {
         base.Update();
 
-        float speedx = sm.MoveValue;
-        float speedy = sm.InputProvider.GetState().SwimDirection;
-        if (speedx != 0)
+        if (sm.MoveValue != 0)
         {
             sm.Animator.Play(sm.Animations.SwimMove);
         }

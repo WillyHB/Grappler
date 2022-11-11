@@ -7,7 +7,6 @@ public class RenderCam : MonoBehaviour
 {
     public GameObject[] RenderSurfaces;
 
-
     private float xShakeOffset;
 
     private float coroutineTime;
@@ -48,16 +47,10 @@ public class RenderCam : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
-        if (Smooth)
+        foreach (GameObject go in RenderSurfaces)
         {
-            Vector2 dif = Cam.FloatPosition - Cam.PixelPerfectPosition;
-
-            foreach (GameObject go in RenderSurfaces)
-            {
-                go.transform.localPosition = new Vector3((Cam.LockX ? 0 : -dif.x) - xShakeOffset, Cam.LockY ? 0 : -dif.y, go.transform.localPosition.z);
-            }
-        }*/
+            go.transform.localPosition = new Vector3(xShakeOffset, go.transform.localPosition.y, go.transform.localPosition.z);
+        }
     }
 }
 

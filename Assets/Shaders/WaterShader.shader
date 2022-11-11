@@ -60,7 +60,7 @@ Shader "Unlit/WaterShader"
                 else
                 {  
                     // TOP VERTEX
-                    v.vertex.y = ((points[v.vertexID/2] + size.y) / size.y - 0.5);           
+                    v.vertex.y = ((points[v.vertexID/2] + size.y) / size.y - 0.55);           
 
                     v.vertex.y += (0.03 * sin(v.vertexID/2 * 0.2f + _Time*60)) / size.y;
                     v.vertex.y += (0.05 * sin(v.vertexID/2 * 0.1f - _Time*50)) / size.y;   
@@ -78,10 +78,10 @@ Shader "Unlit/WaterShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 if (i.uv.y > 0.5 - (0.07 / (size.y))){
-                     return fixed4(0.7, 0.7, 0.8, 0.8); 
+                     return _CrestColour; 
                     }
                 
-                return fixed4(0.5, 0.5, 0.8, 0.45);
+                return _WaterColour;
                 
             }
 

@@ -33,6 +33,16 @@ public class PlayerRunState : PlayerMoveState
             sm.Transition(sm.WalkState);
             return;
         }
+
+        if (sm.Grapple.IsGrappling && sm.Grapple.ConnectionRope.IsStretched())
+        {
+            sm.Animator.Play(sm.Animations.GrapplePull);
+        }
+
+        else
+        {
+            sm.Animator.Play(sm.Animations.Run);
+        }
     }
 
     public override void FixedUpdate()

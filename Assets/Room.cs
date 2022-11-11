@@ -7,6 +7,7 @@ using Cinemachine;
 public class Room : MonoBehaviour
 {
     public static Room ActiveRoom { get; private set; }
+    public Transform Checkpoint;
 
     public RoomTraversalInputStateHandler RoomTraversalInputStateHandler;
 

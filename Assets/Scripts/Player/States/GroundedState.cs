@@ -58,6 +58,7 @@ public class GroundedState : State
     {
         base.Update();
 
+
         if (!sm.IsGrounded)
         {
             if (sm.Grapple.IsGrappling)

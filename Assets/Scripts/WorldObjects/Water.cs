@@ -17,7 +17,7 @@ public class Water : MonoBehaviour
 
     public float SplashMultiplier = 0.075f;
 
-    [Range(0, 1)]
+    [Range(-1, 1)]
     public float ColliderSurfaceHeight = 1;
 
     private MeshFilter meshFilter;

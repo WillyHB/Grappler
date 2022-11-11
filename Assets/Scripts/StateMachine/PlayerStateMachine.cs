@@ -16,6 +16,8 @@ public class PlayerStateMachine : StateMachine
     public GrappleExitState GrappleExitState;
     public PlayerSwimmingState SwimState;
 
+    public PlayerDeathState DeathState;
+
     public PlayerDuckState Duck;
 
     public class Anims
@@ -40,6 +42,8 @@ public class PlayerStateMachine : StateMachine
 
         public int Swim { get; private set; } = Animator.StringToHash("Swim");
         public int SwimMove { get; private set; } = Animator.StringToHash("SwimMove");
+
+        public int GrapplePull { get; private set; } = Animator.StringToHash("GrapplePull");
 
         #region GrappleExits
         public int GrappleSpinExit { get; private set; } = Animator.StringToHash("GrappleSpinExit");
@@ -98,6 +102,14 @@ public class PlayerStateMachine : StateMachine
         Rigidbody.velocity = preserveVelocity ? frozenVelocity : Vector2.zero;
         IsFrozen = false;
         Animator.speed = 1;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Die")
+        {
+            Debug.Log("Oh Yeah Baby");
+        }
     }
 
     protected override void Update()

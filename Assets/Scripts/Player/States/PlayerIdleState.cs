@@ -88,7 +88,7 @@ public class PlayerIdleState : GroundedState
 
         kickRock.transform.position = pos;
 
-        IEnumerator wait(GameObject kr)
+        static IEnumerator wait(GameObject kr)
         {
             yield return new WaitForSeconds(3);
 
