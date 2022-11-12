@@ -43,8 +43,7 @@ public class PlayerStateMachine : StateMachine
         public int Swim { get; private set; } = Animator.StringToHash("Swim");
         public int SwimMove { get; private set; } = Animator.StringToHash("SwimMove");
 
-        public int GrapplePull { get; private set; } = Animator.StringToHash("GrapplePull");
-
+        public int Pull { get; private set; } = Animator.StringToHash("Pull");
         public int Push { get; private set; } = Animator.StringToHash("Push");
 
         #region GrappleExits

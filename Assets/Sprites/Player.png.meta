@@ -6406,7 +6406,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrapplePull0
+      name: Pull0
       rect:
         serializedVersion: 2
         x: 256
@@ -6427,7 +6427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrapplePull1
+      name: Pull1
       rect:
         serializedVersion: 2
         x: 272
@@ -6448,7 +6448,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrapplePull2
+      name: Pull2
       rect:
         serializedVersion: 2
         x: 288
@@ -6473,7 +6473,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6494,7 +6494,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 272
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6515,7 +6515,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6536,7 +6536,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 304
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6557,7 +6557,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6578,7 +6578,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6599,7 +6599,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6620,7 +6620,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 368
-        y: 260
+        y: 280
         width: 16
         height: 20
       alignment: 0
@@ -6636,6 +6636,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pull3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 300
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a371f52a628e3194bbbb1e0e6941580e
+      internalID: 1761813349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pull4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 300
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4ca9ea679501a4285064a57a6bf2c6
+      internalID: -1654704883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pull5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 300
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea85dd8dd0f67e54e9f77b3f3902db1b
+      internalID: -2053512418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pull6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 300
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb3712f131a5a648a8ae7f1b85a1db1
+      internalID: 747690645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pull7
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 300
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b684874afa7be3d4898de33bdfdedd9a
+      internalID: -1395205627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -6647,200 +6752,270 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleAnimation2_6: -439164633
-      IdleAnimation1_9: 476256835
-      IdleAnimation5_9: 1138030341
-      IdleAnimation6_13: 472166624
-      DuckFallDown3: -1199758741
-      Grapple90_15: 1936200411
-      IdleAnimation1_15: 701219836
-      Walk7: 262825427
       IdleAnimation2_9: -1337931963
-      IdleAnimation3_2_4: 1509294314
       Grapple180_1: 1983362834
-      IdleAnimation3_12: 1232399295
-      Run1: 714852578
       FrontFlipTrick10: 1639830093
-      Grapple240_10: -1435755676
-      Swim6: 736817484
+      Run1: 714852578
       RunLand5: 56251326
       Grapple45_1: 143883605
-      IdleAnimation6_2: 525753452
-      Run6: -235617297
-      GrapplePull1: -1563583218
       FrontFlipTrick12: -1918401872
       Jump3: 947154949
-      CrouchToIdle5: 1241014414
-      Jump1: -1930377851
-      SwimMove1: -455479334
-      SpinTrick8: 762018095
-      Land1: -370638125
       SpinMove8: -1767738677
       IdleAnimation6_12: 389977770
       Grapple90_14: -291193394
-      Grapple25_2: -5727486
       Walk8: 228908333
       Grapple25_5: -23068108
       CrouchIdle3: 1080385358
-      FrontFlipTrick16: 1141045384
       FrontFlipTrick8: -279781953
-      Grapple180_6: -1190249538
+      FrontFlipTrick16: 1141045384
       TuckedSpinMove9: 1530248399
-      Grapple25_4: 2102483572
-      Grapple180_3: 376200176
       SideSpinTrick2: -2056143185
-      Grapple180_11: 1997691233
-      IdleAnimation4_6: 1809246072
-      FrontFlipTrick7: 1735440196
-      DuckFallUp1: -1963087674
-      Grapple90_17: 459033479
-      SwimMove6: 804450907
       Jump4: 580864854
       Walk3: 2058452194
       IdleAnimation3_5: -1683964253
-      IdleAnimation4_2: 1153047506
-      IdleAnimation6_3: -592407775
       Grapple240_5: 830205345
-      Grapple180_9: 1558281505
-      IdleAnimation1_10: 2003987032
-      IdleAnimation6_11: 1240544054
-      Player_0: -205308670
+      Pull7: -1395205627
       IdleAnimation3_2: 321241199
-      Land4: -1428735518
+      CrouchMove2: 1313551571
       TuckedSpinMove2: -1381816108
-      IdleAnimation3_8: 510144468
-      IdleAnimation4_8: -596760569
-      CrouchToIdle2: -30985629
       SwimMove8: 1030055182
       IdleAnimation2_4: -1504739677
-      CrouchMove2: 1313551571
       IdleAnimation3_10: -1848476239
-      FrontFlipTrick13: 1776812108
-      SideSpinTrick10: -1482948392
       Land3: -1852222810
-      Grapple180_8: -2114529771
       IdleAnimation1_3: 1143752939
       SpinTrick4: 1617065576
-      Walk5: -1537998552
       IdleAnimation5_7: 205717580
       FallDown1: 1904917662
       IdleAnimation3_13: -701427122
       CrouchMove8: 212058146
       Swim7: 576929782
       IdleToCrouch1: -1726323450
-      GrapplePull2: 1909984194
       IdleAnimation6_5: 1927807041
-      Jump2: -889395046
-      IdleAnimation2_2: 484992433
-      RunDust3: 902054103
-      IdleAnimation4_13: 1624606214
       IdleAnimation4_5: 1867262842
       RunDust5: 1486444896
       Grapple180_10: 1259683043
-      IdleAnimation2_3: 455182933
-      IdleAnimation4_9: 1993296839
-      IdleAnimation1_12: -515760547
-      Swim4: -1232148011
       TuckedSpinMove5: -2012338064
-      Grapple240_1: -317169499
-      Run2: 661897010
-      SpinTrick3: -546468843
-      FrontFlipTrick11: 2050668309
-      FallUp1: -1639335269
+      Swim4: -1232148011
       IdleAnimation5_11: 271833366
       Grapple45_9: -710601245
       FallUp2: -623329574
-      RunLand6: 1797858514
       Swim5: -258264132
       CrouchToIdle1: 789473743
       Shoot2: 614054028
-      IdleAnimation1_6: 1554090901
-      CrouchIdle2: 2126956299
-      IdleAnimation3_16: -1821077686
       Idle2: -2129158148
-      Run8: 639294488
-      SideSpinTrick4: 1641837106
       CrouchMove4: -879121644
-      IdleAnimation4_12: -1405390554
-      FrontFlipTrick15: -717765109
-      SwimMove7: 1837206162
       IdleAnimation5_5: -1963581632
-      Run7: 891213739
       IdleAnimation1_7: -888520995
       SideSpinTrick7: 908138525
-      IdleAnimation6_8: 1646270115
-      FrontFlipTrick2: -1956075079
-      IdleAnimation2_5: -68598466
-      JumpDust6: 462777879
-      IdleAnimation4_1: -1339107401
       IdleAnimation4_15: 451958213
       IdleAnimation5_3: 93428952
-      RunDust4: 553165050
       IdleAnimation2_14: -666565507
-      IdleAnimation1_16: -761519852
-      SpinTrick1: 1092151281
       IdleToCrouch4: 1487651710
       RunLand2: -300902084
       Shoot5: -1902555984
       Run5: -802913842
-      Run3: 479359299
       Jump6: 1514062040
-      Grapple45_6: 742414792
-      Grapple45_11: -1955663139
       IdleAnimation1_1: 1911868729
       DuckFallUp2: 676980007
-      Grapple240_12: 967897272
-      SpinMove4: -1878558320
-      IdleAnimation3_3: -59072642
+      Shoot3: 1482177342
       IdleAnimation3_4: -967969996
-      TuckedSpinMove6: -1145793415
       IdleAnimation3_15: -1572300371
       Hand: 1026481696
       IdleToCrouch2: -1982604452
-      Shoot3: 1482177342
       GrapplePull4: -1294108084
-      Walk1: -1041322399
       Grapple45_3: 512399136
-      FrontFlipTrick1: 1705055691
       SideSpinTrick12: 1738936110
       IdleAnimation2_12: 1226429865
-      IdleAnimation5_16: -1429589492
       Player_18: 1912536193
-      IdleAnimation5_8: -458041391
       Grapple45_7: 991325206
-      IdleAnimation4_7: -40234528
-      Land5: 1549593719
       Grapple25_6: 663668167
+      Land5: 1549593719
       Swim1: 2017012884
-      IdleAnimation6_14: 420363046
-      Push1: -1899172819
+      Pull5: -2053512418
       IdleAnimation5_6: 801206500
       CrouchToIdle4: -140621692
-      Grapple180_4: 1517064791
-      Grapple180_5: -864176640
-      IdleAnimation6_4: 1573799587
-      Grapple240_4: -457800802
       Grapple45_12: 1598997819
-      Player_9: 1886152553
-      Walk6: 1787655019
-      Push5: -138088622
       DuckFallUp3: -1452327139
       TuckedSpinMove4: 1928833766
-      TuckedSpinMove7: 1100227248
       JumpDust2: -742184115
-      TuckedSpinMove8: -2113553996
       Swim8: -2106533748
-      IdleAnimation4_16: -735847317
-      IdleAnimation1_14: -1913911974
+      Shoot1: 1117871094
       CrouchIdle4: 1779137581
+      Grapple240_2: 412739037
       IdleAnimation1_13: 100124353
       Walk2: 2053448171
-      IdleAnimation5_1: 1330476595
-      Shoot1: 1117871094
-      Grapple240_2: 412739037
+      Pull2: 1909984194
       SpinMove6: -1146516442
-      SpinMove2: 1640947786
+      IdleAnimation3_2_2: 1149095073
+      Pull6: 747690645
+      JumpDust1: 1576278609
+      IdleAnimation1_2: -455165870
+      IdleAnimation5_4: -1150247595
+      SideSpinTrick9: 970132580
+      Grapple180_2: 1862591225
+      JumpDust3: -760749299
+      Grapple180_7v: 1192723399
+      SpinTrick5: -1878834907
+      Grapple240_11: -1489902095
+      SpinMove7: 484378025
+      IdleAnimation5_12: 1172422447
+      SwimMove3: 141030528
+      IdleAnimation4_3: 141186354
+      CrouchIdle1: 114542888
+      Grapple25_3: 714515964
+      Shoot6: -617983417
+      IdleAnimation6_9: -1006772707
+      Jump5: -1236504202
+      RunDust1: 1008351478
+      GrapplePull3: 1889993379
+      IdleAnimation2_7: -1980418090
+      SideSpinTrick8: 299795567
+      IdleToCrouch5: -1166947941
+      Push0: -1238954592
+      Push7: -567756082
+      SwimMove5: 1568133265
+      Grapple240_13: -1388031781
+      SideSpinTrick6: 2084775756
+      FallDown3: -217655920
+      IdleAnimation6_6: -411499884
+      IdleAnimation4_14: 972096725
+      Grapple90_12: -572736711
+      IdleAnimation5_15: 537903817
+      CrouchToIdle6: 644297186
+      Grapple240_9: -65749614
+      Grapple45_14: -680871094
+      SideSpinTrick1: -1080965336
+      GrapplePull5: -450265939
+      Push4: 230138371
+      Shoot7: 723450598
+      Walk4: -717370663
+      Shoot4: 1483945766
+      CrouchMove3: -674195431
+      JumpDust4: -1386526435
+      GrapplePull6: 451181541
+      CrouchMove5: 1614172104
+      IdleAnimation6_16: -1334437742
+      Grapple45_13: -477044822
+      SideSpinTrick5: 1385239526
+      CrouchToIdle8: -1128936512
+      Grapple90_13: 367468263
+      JumpDust7: 827480225
+      CrouchToIdle3: -1482473290
+      FrontFlipTrick3: -2105281274
+      IdleAnimation3_2_1: 686762662
+      Land2: 169385046
+      Grapple240_3: -1473579635
+      IdleAnimation2_1: 77415944
+      CrouchMove7: -1791173712
+      IdleAnimation4_10: 1216400280
+      Grapple240_6: -45246963
+      Grapple45_4: -1351265971
+      SpinTrick6: 1387871184
+      Land6: 675238711
+      IdleAnimation5_14: -1590202609
+      SpinMove1: -918881017
+      IdleAnimation1_9: 476256835
+      IdleAnimation5_9: 1138030341
+      IdleAnimation6_13: 472166624
+      Grapple90_15: 1936200411
+      IdleAnimation1_15: 701219836
+      Walk7: 262825427
+      IdleAnimation3_2_4: 1509294314
+      IdleAnimation3_12: 1232399295
+      Grapple240_10: -1435755676
+      Swim6: 736817484
+      IdleAnimation6_2: 525753452
+      Run6: -235617297
+      CrouchToIdle5: 1241014414
+      Jump1: -1930377851
+      SwimMove1: -455479334
+      SpinTrick8: 762018095
+      Land1: -370638125
+      Grapple25_2: -5727486
+      Grapple180_3: 376200176
+      Grapple180_6: -1190249538
+      Grapple25_4: 2102483572
+      Grapple180_11: 1997691233
+      IdleAnimation4_6: 1809246072
+      FrontFlipTrick7: 1735440196
+      DuckFallUp1: -1963087674
+      Grapple90_17: 459033479
+      SwimMove6: 804450907
+      IdleAnimation4_2: 1153047506
+      IdleAnimation6_3: -592407775
+      Grapple180_9: 1558281505
+      IdleAnimation1_10: 2003987032
+      IdleAnimation6_11: 1240544054
+      Player_0: -205308670
+      Land4: -1428735518
+      IdleAnimation3_8: 510144468
+      Pull4: -1654704883
+      CrouchToIdle2: -30985629
+      IdleAnimation4_8: -596760569
+      FrontFlipTrick13: 1776812108
+      SideSpinTrick10: -1482948392
+      Grapple180_8: -2114529771
+      Walk5: -1537998552
+      Jump2: -889395046
+      IdleAnimation2_2: 484992433
+      RunDust3: 902054103
+      IdleAnimation4_13: 1624606214
+      SpinTrick3: -546468843
+      FrontFlipTrick11: 2050668309
+      IdleAnimation2_3: 455182933
+      IdleAnimation4_9: 1993296839
+      IdleAnimation1_12: -515760547
+      Grapple240_1: -317169499
+      Run2: 661897010
+      FallUp1: -1639335269
+      RunLand6: 1797858514
+      IdleAnimation1_6: 1554090901
+      CrouchIdle2: 2126956299
+      IdleAnimation3_16: -1821077686
+      Run8: 639294488
+      FrontFlipTrick15: -717765109
+      SideSpinTrick4: 1641837106
+      IdleAnimation4_12: -1405390554
+      SwimMove7: 1837206162
+      Run7: 891213739
+      FrontFlipTrick2: -1956075079
+      IdleAnimation6_8: 1646270115
+      IdleAnimation2_5: -68598466
+      JumpDust6: 462777879
+      IdleAnimation4_1: -1339107401
+      RunDust4: 553165050
+      IdleAnimation1_16: -761519852
+      SpinTrick1: 1092151281
+      Run3: 479359299
+      Grapple45_6: 742414792
+      Grapple45_11: -1955663139
+      Grapple240_12: 967897272
+      SpinMove4: -1878558320
+      IdleAnimation3_3: -59072642
+      TuckedSpinMove6: -1145793415
+      Walk1: -1041322399
+      FrontFlipTrick1: 1705055691
+      IdleAnimation5_16: -1429589492
+      IdleAnimation5_8: -458041391
+      Grapple180_4: 1517064791
+      IdleAnimation4_7: -40234528
+      Grapple240_4: -457800802
+      Push1: -1899172819
+      Grapple180_5: -864176640
+      IdleAnimation6_14: 420363046
       Grapple90_11: -789003794
+      Push5: -138088622
+      IdleAnimation6_4: 1573799587
+      Pull0: 398363178
+      Player_9: 1886152553
+      Walk6: 1787655019
+      TuckedSpinMove7: 1100227248
+      TuckedSpinMove8: -2113553996
+      IdleAnimation4_16: -735847317
+      IdleAnimation1_14: -1913911974
+      IdleAnimation5_1: 1330476595
+      Pull3: 1761813349
+      SpinMove2: 1640947786
       Grapple90_16: 730261817
       IdleAnimation3_7: -1822553759
       Run4: -177503077
@@ -6849,142 +7024,77 @@ TextureImporter:
       Swim3: 1681099172
       IdleAnimation5_2: 1631144890
       IdleAnimation1_8: 401381628
-      IdleAnimation3_2_2: 1149095073
       IdleAnimation4_11: 1746836410
-      GrapplePull0: 398363178
-      JumpDust1: 1576278609
       RunLand3: -1824072872
-      IdleAnimation1_2: -455165870
       IdleAnimation4_4: 1892453347
       TuckedSpinMove1: 455350862
-      IdleAnimation5_4: -1150247595
-      SideSpinTrick9: 970132580
-      Grapple180_2: 1862591225
       FrontFlipTrick14: -1401312218
       Grapple45_8: 697041811
       FrontFlipTrick4: 185024408
-      JumpDust3: -760749299
-      IdleAnimation5_13: -910542130
-      Grapple180_7v: 1192723399
       SwimMove2: 1404383816
+      IdleAnimation5_13: -910542130
       SwimMove4: 335667971
       IdleAnimation2_15: 1186205921
-      SpinTrick5: -1878834907
-      Grapple240_11: -1489902095
-      SpinMove7: 484378025
-      IdleAnimation5_12: 1172422447
       IdleAnimation6_7: 821869472
-      SwimMove3: 141030528
       Grapple25_1: 923320106
-      IdleAnimation4_3: 141186354
       IdleAnimation6_10: -373267078
-      CrouchIdle1: 114542888
-      Grapple25_3: 714515964
       FrontFlipTrick6: 1113733513
-      Shoot6: -617983417
-      IdleAnimation6_9: -1006772707
-      Jump5: -1236504202
       TuckedSpinMove3: -382355210
-      RunDust1: 1008351478
+      FrontFlipTrick5: -1634281182
       IdleToCrouch3: -2062956259
       Push2: -111940220
-      FrontFlipTrick5: -1634281182
-      GrapplePull3: 1889993379
       DuckFallDown1: -503808755
-      IdleAnimation2_7: -1980418090
       IdleAnimation6_15: -1577836067
       RunLand4: 677299120
-      SideSpinTrick8: 299795567
-      IdleToCrouch5: -1166947941
-      Push0: -1238954592
-      Push7: -567756082
-      SwimMove5: 1568133265
       IdleAnimation3_1: 1519249165
       DuckFallDown2: 1349593762
-      Grapple240_13: -1388031781
       FallUp3: 266447733
       Grapple90_10: -405534994
       Push3: 1542094390
-      SideSpinTrick6: 2084775756
       IdleAnimation1_5: 372288239
       RunLand1: 1129583229
-      FallDown3: -217655920
-      IdleAnimation6_6: -411499884
       IdleAnimation2_10: -1098940462
-      Grapple90_12: -572736711
-      IdleAnimation4_14: 972096725
-      Grapple45_5: -2021032421
-      IdleAnimation5_15: 537903817
       CrouchMove1: 902103042
-      CrouchToIdle6: 644297186
-      Grapple45_14: -680871094
+      Grapple45_5: -2021032421
       IdleAnimation1_4: -1284626785
-      Grapple240_9: -65749614
       Grapple45_10: 256462962
-      SideSpinTrick1: -1080965336
-      Shoot7: 723450598
-      Push4: 230138371
-      Walk4: -717370663
-      GrapplePull5: -450265939
       SpinMove3: 251219581
       FallDown2: -357969022
       Idle4: -1384108245
       IdleAnimation3_11: 11387822
-      Shoot4: 1483945766
       SpinTrick2: 539158545
       SideSpinTrick3: -837841702
       IdleAnimation1_11: -486842872
-      CrouchMove3: -674195431
-      JumpDust4: -1386526435
       Grapple240_7: 767583624
+      SpinTrick7: 327638191
       RunDust2: 1795680736
-      CrouchMove5: 1614172104
       SpinMove5: -488648695
-      IdleAnimation6_16: -1334437742
-      GrapplePull6: 451181541
       SideSpinTrick11: 607189459
-      Grapple45_13: -477044822
       IdleAnimation2_11: 624417265
       Grapple240_8: 298918360
       IdleAnimation2_16: -952894969
-      SpinTrick7: 327638191
-      SideSpinTrick5: 1385239526
       IdleAnimation6_1: 204713442
-      CrouchToIdle8: -1128936512
       IdleAnimation2_8: -542813681
       FrontFlipTrick17: 1876566736
-      Grapple90_13: 367468263
-      JumpDust7: 827480225
-      CrouchToIdle3: -1482473290
-      FrontFlipTrick3: -2105281274
       IdleAnimation5_10: -280108904
       Grapple45_2: -333356188
       IdleAnimation2_13: -1047535884
       GrapplePull7: 1517889015
-      IdleAnimation3_2_1: 686762662
       SideSpinTrick13: -640291995
       Grapple: 633395182
       Idle3: -582828682
       CrouchToIdle7: 644483532
-      Land2: 169385046
       CrouchMove6: 1264050570
-      Grapple240_3: -1473579635
-      IdleAnimation2_1: 77415944
-      CrouchMove7: -1791173712
-      IdleAnimation4_10: 1216400280
       Swim2: -1301192796
-      Grapple45_4: -1351265971
-      Idle1: 912300089
-      Grapple240_6: -45246963
       Push6: -2036637412
+      Pull1: -1563583218
+      Idle1: 912300089
       FrontFlipTrick9: 317311740
+      DuckFallDown3: -1199758741
       IdleAnimation3_14: 991644159
-      SpinTrick6: 1387871184
       IdleAnimation3_6: -666985588
       JumpDust5: 515763601
-      Land6: 675238711
-      SpinMove1: -918881017
-      IdleAnimation5_14: -1590202609
+      IdleAnimation2_6: -439164633
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
