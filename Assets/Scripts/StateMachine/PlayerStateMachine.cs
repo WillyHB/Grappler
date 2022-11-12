@@ -94,12 +94,14 @@ public class PlayerStateMachine : StateMachine
     {
         frozenVelocity = Rigidbody.velocity;
         Rigidbody.velocity = Vector2.zero;
+        Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         IsFrozen = true;
         Animator.speed = 0;
     }
 
     public void UnFreeze(bool preserveVelocity = false)
     {
+        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         Rigidbody.velocity = preserveVelocity ? frozenVelocity : Vector2.zero;
         IsFrozen = false;
         Animator.speed = 1;
@@ -109,7 +111,7 @@ public class PlayerStateMachine : StateMachine
     {
         if (collision.tag == "Die")
         {
-            Debug.Log("Oh Yeah Baby");
+            Transition(DeathState);
         }
     }
 

@@ -88,15 +88,13 @@ public class PlayerIdleState : GroundedState
 
         kickRock.transform.position = pos;
 
-        static IEnumerator wait(GameObject kr)
+        static async void wait(GameObject kr)
         {
-            yield return new WaitForSeconds(3);
+            await System.Threading.Tasks.Task.Delay(3000);
 
             Destroy(kr);
         }
 
-        sm.StartCoroutine(wait(kickRock));
-
-
+        wait(kickRock);  
     }
 }

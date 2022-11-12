@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "States/Player/DeathState")]
 public class PlayerDeathState : State
 {
+    public VoidEventChannel DeathEventChannel;
     PlayerStateMachine sm;
     public override void OnEnter(StateMachine fsm)
     {
@@ -11,7 +12,7 @@ public class PlayerDeathState : State
 
         sm = fsm as PlayerStateMachine;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+        DeathEventChannel.RaiseEvent();
+        sm.Freeze();
     }
 }

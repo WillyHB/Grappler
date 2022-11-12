@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Threading.Tasks;
 
 public class RenderCam : MonoBehaviour
 {
@@ -13,21 +14,24 @@ public class RenderCam : MonoBehaviour
 
     public CameraEventChannel CamEventChannel;
 
-    public void OnShake(float frequency, float amplitude, float time)
+    public async void OnShake(float frequency, float amplitude, float time)
     {
         coroutineTime = 0;
         xShakeOffset = 0;
 
-        StartCoroutine(ShakeCoroutine(frequency, amplitude, time));
+        await Shake(frequency, amplitude, time);
+
+        coroutineTime = 0;
+        xShakeOffset = 0;
     }
 
-    private IEnumerator ShakeCoroutine(float frequency, float amplitude, float time)
+    private async Task Shake(float frequency, float amplitude, float time)
     {
         do
         {
             xShakeOffset = amplitude * Mathf.Sin(frequency * coroutineTime);
 
-            yield return null;
+            await System.Threading.Tasks.Task.Yield();
 
         } while ((coroutineTime += Time.deltaTime) < time);
     }
@@ -47,6 +51,11 @@ public class RenderCam : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            OnShake(10, 1, 5);
+        }
+
         foreach (GameObject go in RenderSurfaces)
         {
             go.transform.localPosition = new Vector3(xShakeOffset, go.transform.localPosition.y, go.transform.localPosition.z);
