@@ -22,6 +22,36 @@ public abstract class PlayerMoveState : GroundedState
     public override void Update()
     {
         base.Update();
+
+        RaycastHit2D[] hit;
+        hit = Physics2D.RaycastAll(sm.transform.position, sm.GetComponent<SpriteRenderer>().flipX ? Vector2.left : Vector2.right, sm.GetComponent<BoxCollider2D>().bounds.size.x / 2 + sm.GetComponent<BoxCollider2D>().offset.x + 0.1f);
+
+        bool hasHit = false;
+
+        foreach (var h in hit)
+        {
+            if (h.transform.CompareTag("Ground"))
+            {
+                hasHit = true;
+            }
+
+        }
+
+        if (hasHit && sm.CurrentState != sm.LandState)
+        {
+            sm.Animator.Play(sm.Animations.Push);
+        }
+
+        else if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Push)
+        {
+            sm.Transition(sm.CurrentState);
+        }
+        
+        /*
+        else if (sm.Grapple.IsGrappling && sm.Grapple.ConnectionRope.IsStretched())
+        {
+            sm.Animator.Play(sm.Animations.GrapplePull);
+        }*/
     }
     // Update is called once per frame
     public override void FixedUpdate()

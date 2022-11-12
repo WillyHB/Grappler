@@ -45,6 +45,8 @@ public class PlayerStateMachine : StateMachine
 
         public int GrapplePull { get; private set; } = Animator.StringToHash("GrapplePull");
 
+        public int Push { get; private set; } = Animator.StringToHash("Push");
+
         #region GrappleExits
         public int GrappleSpinExit { get; private set; } = Animator.StringToHash("GrappleSpinExit");
         public int GrappleTuckedSpinExit { get; private set; } = Animator.StringToHash("GrappleTuckedSpinExit");
