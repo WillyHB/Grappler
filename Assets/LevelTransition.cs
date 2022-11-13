@@ -1,42 +1,45 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class LevelTransition : MonoBehaviour
+public static class LevelTransition
 {
-    private AsyncOperation _asyncOperation;
+    private static AsyncOperation _asyncOperation;
 
-    public GameObject Transition;
-
-    protected void Start()
-    {
-        Transition.transform.localPosition = new Vector2(0, 0);
-    }
-
-    private IEnumerator LoadSceneAsyncProcess(int level)
+    private static async void LoadSceneAsyncProcess(int level)
     {
         // Begin to load the Scene you have specified.
         _asyncOperation = SceneManager.LoadSceneAsync(level);
-
         // Don't let the Scene activate until you allow it to.
         _asyncOperation.allowSceneActivation = false;
-
-        yield return new WaitForSeconds(2f);
+        await Task.Yield();
 
         LoadLevel();
     }
 
-    public void Load(int level)
+    public static void Load(int level)
     {
         if (_asyncOperation == null)
         {
-            StartCoroutine(LoadSceneAsyncProcess(level));
+            LoadSceneAsyncProcess(level);
         }
     }
 
-    private void LoadLevel()
+    public static void Reload()
     {
+        if (_asyncOperation == null)
+        {
+            LoadSceneAsyncProcess(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+
+    private static void LoadLevel()
+    {
+
         _asyncOperation.allowSceneActivation = true;
+        _asyncOperation = null;
     }
 }

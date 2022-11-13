@@ -47,9 +47,11 @@ public abstract class PlayerMoveState : GroundedState
             sm.Animator.Play(sm.Animations.Pull);
         }
 
-        else
+        else if (sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Pull
+            || sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Push)
         {
-            sm.Transition(sm.CurrentState);
+
+            OnEnter(sm);
         }
         
         

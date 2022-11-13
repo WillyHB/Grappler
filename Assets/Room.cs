@@ -19,6 +19,7 @@ public class Room : MonoBehaviour
         {    
             if (ActiveRoom != null) ActiveRoom.Leave();
             ActiveRoom = this;
+
             ActiveRoom.Enter();
         }
     }

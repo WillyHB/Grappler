@@ -12,7 +12,11 @@ public class PlayerDeathState : State
 
         sm = fsm as PlayerStateMachine;
 
-        DeathEventChannel.RaiseEvent();
         sm.Freeze();
+
+        LevelTransition.Reload();
+
+        //DeathEventChannel.RaiseEvent();
+
     }
 }
