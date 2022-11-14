@@ -89,6 +89,9 @@ public class PlayerStateMachine : StateMachine
 
     public bool IsFrozen { get; private set; }
 
+    public PlayerEventChannel PlayerEventChannel;
+
+
     private Vector2 frozenVelocity;
     public void Freeze()
     {
@@ -107,19 +110,9 @@ public class PlayerStateMachine : StateMachine
         Animator.speed = 1;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Die")
-        {
-            Transition(DeathState);
-        }
-    }
-
     protected override void Update()
     {
         base.Update();
-
-        //Debug.Log(CurrentState);
 
         MoveValue = InputProvider.GetState().MoveDirection;
 
@@ -163,9 +156,22 @@ public class PlayerStateMachine : StateMachine
 
     protected void Awake()
     {
+        PlayerEventChannel.Die += () => Transition(DeathState);
+
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+
+        /*
+        if (PlayerPrefs.HasKey("Checkpoint"))
+        {
+            transform.position = FindObjectOfType<RoomManager>().rooms[PlayerPrefs.GetInt("Checkpoint")].Checkpoint.position;
+        }*/
+    }
+
+    protected void OnDisable()
+    {
+        PlayerEventChannel.Die -= () => Transition(DeathState);
     }
 
     protected override State GetInitialState() => IdleState;
