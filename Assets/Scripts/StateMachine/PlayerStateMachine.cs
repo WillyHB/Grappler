@@ -5,6 +5,7 @@ using System.Linq;
 
 public class PlayerStateMachine : StateMachine
 {
+
     public PlayerWalkState WalkState;
     public PlayerRunState RunState;
     public PlayerIdleState IdleState;
@@ -162,11 +163,7 @@ public class PlayerStateMachine : StateMachine
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
 
-        /*
-        if (PlayerPrefs.HasKey("Checkpoint"))
-        {
-            transform.position = FindObjectOfType<RoomManager>().rooms[PlayerPrefs.GetInt("Checkpoint")].Checkpoint.position;
-        }*/
+        //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
     }
 
     protected void OnDisable()

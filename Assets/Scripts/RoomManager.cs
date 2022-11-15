@@ -8,11 +8,21 @@ public class RoomManager : MonoBehaviour
 
     public void Start()
     {
-        Room.RoomEntered += (room) => PlayerPrefs.SetInt("Checkpoint", rooms.IndexOf(room));
+        Room.RoomEntered += (room) =>
+        {
+            SaveObject so = GameData.Load();
+            so.Checkpoint = rooms.IndexOf(room);
+            GameData.Save(so);
+        };
     }
 
     private void OnDisable()
     {
-        Room.RoomEntered -= (room) => PlayerPrefs.SetInt("Checkpoint", rooms.IndexOf(room));
+        Room.RoomEntered -= (room) =>
+        {
+            SaveObject so = GameData.Load();
+            so.Checkpoint = rooms.IndexOf(room);
+            GameData.Save(so);
+        };
     }
 }
