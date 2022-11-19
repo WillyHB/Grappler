@@ -28,7 +28,11 @@ public class GamepadRumbleManager : MonoBehaviour
 
     public void StopRumble()
     {
-        Gamepad.current.SetMotorSpeeds(0, 0);
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(0, 0);
+        }
+
         isRumbling = false;
 
         lowA = 0;
@@ -37,12 +41,15 @@ public class GamepadRumbleManager : MonoBehaviour
         burstTime = 0;
         timeBetween = 0;
         burstTimer = 0;
-
     }
 
     public void PauseRumble()
     {
-        Gamepad.current.SetMotorSpeeds(0, 0);
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(0, 0);
+        }
+
         isRumbling = false;
     }
 
@@ -68,46 +75,55 @@ public class GamepadRumbleManager : MonoBehaviour
     {
         if (isRumbling)
         {
-            timer += Time.deltaTime;
-
-            if (timer > time && time > -1)
+            if (Gamepad.current != null)
             {
-                StopRumble();
+                timer += Time.deltaTime;
+
+                if (timer > time && time > -1)
+                {
+                    StopRumble();
+                }
+
+                else
+                {
+                    switch (rumblePattern)
+                    {
+                        case RumblePattern.Linear:
+                            Gamepad.current.SetMotorSpeeds(Mathf.Lerp(lowA, lowB, time), Mathf.Lerp(highA, highB, time));
+                            break;
+
+                        case RumblePattern.Pulse:
+                            burstTimer += Time.deltaTime;
+
+                            if (burstRumble)
+                            {
+                                if (burstTimer >= burstTime)
+                                {
+                                    burstRumble = false;
+                                    burstTimer = 0;
+                                    PauseRumble();
+                                }
+                            }
+
+                            else
+                            {
+                                if (burstTimer >= timeBetween)
+                                {
+                                    burstRumble = true;
+                                    burstTimer = 0;
+                                    Gamepad.current.SetMotorSpeeds(lowA, lowB);
+                                }
+                            }
+
+                            break;
+                    }
+                }
+
             }
 
             else
             {
-                switch (rumblePattern)
-                {
-                    case RumblePattern.Linear:
-                        Gamepad.current.SetMotorSpeeds(Mathf.Lerp(lowA, lowB, time), Mathf.Lerp(highA, highB, time));
-                        break;
-
-                    case RumblePattern.Pulse:
-                        burstTimer += Time.deltaTime;
-
-                        if (burstRumble)
-                        {
-                            if (burstTimer >= burstTime)
-                            {
-                                burstRumble = false;
-                                burstTimer = 0;
-                                PauseRumble();
-                            }
-                        }
-
-                        else
-                        {
-                            if (burstTimer >= timeBetween)
-                            {
-                                burstRumble = true;
-                                burstTimer = 0;
-                                Gamepad.current.SetMotorSpeeds(lowA, lowB);
-                            }
-                        }
-
-                        break;
-                }
+                StopRumble();
             }
 
         }
