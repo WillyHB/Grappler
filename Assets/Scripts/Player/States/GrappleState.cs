@@ -26,7 +26,6 @@ public class GrappleState : State
 
     private void Jump()
     {
-        Debug.Log("Grapple Jumped");
         isJumping = true;
         sm.Grapple.ReleaseGrapple();
         sm.Transition(sm.GrappleExitState);
