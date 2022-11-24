@@ -9,6 +9,7 @@ public class GrappleExitState : PlayerAirborneState
 
     public override void OnEnter(StateMachine fsm)
     {
+        Debug.Log("Grapel Exit!");
         base.OnEnter(fsm);
 
         float rot = sm.transform.eulerAngles.z % 360;
