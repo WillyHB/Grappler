@@ -68,19 +68,4 @@ public class TwoPointRope : Rope
             }
         }
     }
-
-    private void DrawRope()
-    {
-        LineRenderer.startWidth = LineWidth;
-        LineRenderer.endWidth = LineWidth;
-
-        Vector3[] ropePositions = new Vector3[NumberOfSegments];
-        for (int i = 0; i < NumberOfSegments; i++)
-        {
-            ropePositions[i] = ropeSegments[i].posNow;
-        }
-
-        LineRenderer.positionCount = ropePositions.Length;
-        LineRenderer.SetPositions(ropePositions);
-    }
 }

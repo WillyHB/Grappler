@@ -7,7 +7,6 @@ public class OnePointRope : Rope
 {
     public bool FollowMousePosition;
 
-    // Use this for initialization
     void Start()
     {
         ResetRope(FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : Vector2.zero);
@@ -36,8 +35,6 @@ public class OnePointRope : Rope
 
     protected override void ApplyConstraint()
     {
-        //Constraint to Mouse
-
         for (int i = 0; i < NumberOfSegments - 1; i++)
         {   
             RopeSegment firstSeg = ropeSegments[i];
@@ -68,20 +65,5 @@ public class OnePointRope : Rope
                 ropeSegments[i + 1] = secondSeg;
             }
         }
-    }
-
-    private void DrawRope()
-    {
-        LineRenderer.startWidth = LineWidth;
-        LineRenderer.endWidth = LineWidth;
-
-        Vector3[] ropePositions = new Vector3[NumberOfSegments];
-        for (int i = 0; i < NumberOfSegments; i++)
-        {
-            ropePositions[i] = ropeSegments[i].posNow;
-        }
-
-        LineRenderer.positionCount = ropePositions.Length;
-        LineRenderer.SetPositions(ropePositions);
     }
 }
