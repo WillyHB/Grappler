@@ -256,7 +256,7 @@ TextureImporter:
       name: BridgeFlora_7
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 0
         width: 64
         height: 144
@@ -277,7 +277,7 @@ TextureImporter:
       name: BridgeFlora_8
       rect:
         serializedVersion: 2
-        x: 130
+        x: 64
         y: 0
         width: 80
         height: 144
@@ -294,6 +294,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1
+        width: 80
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cdf582787d36845913798cc0e0a677
+      internalID: -738846752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfdf2538383f17408495ab4e07c4c6b
+      internalID: 1156884403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0dbd8389b65964d8857534eaca7ffc
+      internalID: -845421782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbb21c9761bbf844bedc78c2077f383
+      internalID: 1782299455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbcf48b93464574fa7d33122bb9d8a7
+      internalID: 314560475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72324acb83b3a3d4fa9e80a3c803d5d1
+      internalID: 773586212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -305,15 +431,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BridgeFlora_8: 1027892548
       BridgeFlora_5: -1875839852
+      BridgeFlora_13: 314560475
+      BridgeFlora_12: 1782299455
       BridgeFlora_7: -833751734
       BridgeFlora_6: -1597825983
       BridgeFlora_3: -1483624752
       BridgeFlora_4: -1955782782
       BridgeFlora_0: 2071317652
+      BridgeFlora_11: -845421782
       BridgeFlora_2: 390817299
+      BridgeFlora_10: 1156884403
       BridgeFlora_1: -1822099682
-      BridgeFlora_8: 1027892548
+      BridgeFlora_14: 773586212
+      BridgeFlora_9: -738846752
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
