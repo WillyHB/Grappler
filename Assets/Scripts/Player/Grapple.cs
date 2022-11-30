@@ -10,6 +10,7 @@ public class Grapple : MonoBehaviour
     public float GrappleExtensionSpeed = 2;
 
     public string GrappleTag = "Ground";
+    public string GrappleBlockTag = "BlockGrapple";
 
     private GameObject hook;
     private GameObject hookInstance;
@@ -85,10 +86,13 @@ public class Grapple : MonoBehaviour
 
         foreach (var h in hits)
         {
+            if (h.collider.CompareTag(GrappleBlockTag)) break;
+
             if (h.collider.CompareTag(GrappleTag))
             {
                 hit = h;
                 grappleHit = true;
+                break;
             }
         }
 
