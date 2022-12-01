@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Event Channels/Audio")]
 public class AudioEventChannel : ScriptableObject
 {
+    public Audio.MixerGroup MixerGroup;
 
-    public delegate AudioMaster.PlayingClip PlayDelegate(Audio clip);
+    public delegate AudioMaster.PlayingClip PlayDelegate(Audio clip, Audio.MixerGroup mixerGroup);
 
     public event PlayDelegate Played;
-
 
     public event Action<Audio?> Stopped;
     public event Action<AudioMaster.PlayingClip> StoppedSpecific;
@@ -18,7 +19,7 @@ public class AudioEventChannel : ScriptableObject
     /// </summary>
     /// <param name="clip"></param>
     /// <returns></returns>
-    public AudioMaster.PlayingClip? Play(Audio clip) => Played?.Invoke(clip);
+    public AudioMaster.PlayingClip? Play(Audio clip) => Played?.Invoke(clip, MixerGroup);
 
     public void Stop(AudioMaster.PlayingClip playingClip) => StoppedSpecific?.Invoke(playingClip);
 

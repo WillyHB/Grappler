@@ -5,15 +5,16 @@ using UnityEngine.Audio;
 
 public class AudioMaster : MonoBehaviour
 {
-    public AudioEventChannel eventChannel;
-
-    private AudioSource audioSource;
+    public List<AudioEventChannel> eventChannels;
 
     public AudioMixer AudioMixer;
 
-    public List<AudioMixerG> AudioMixerGroups = new();
+    private List<PlayingClip> PlayingClips;
 
-    public List<PlayingClip> PlayingClips;
+    public AudioMixerGroup PlayerMixerGroup;
+    public AudioMixerGroup MasterMixerGroup;
+    public AudioMixerGroup MusicMixerGroup;
+    public AudioMixerGroup EnvironmentMixerGroup;
 
     [System.Serializable]
     public struct PlayingClip
@@ -28,37 +29,18 @@ public class AudioMaster : MonoBehaviour
         public AudioSource Source;
     }
 
-    [System.Serializable]
-    public struct AudioMixerG
-    {
-        public Audio.MixerGroup MixerGroup;
-        public AudioMixerGroup AudioMixerGroup;
-    }
-
     private void Start()
     {
-        eventChannel.Played += Play;
-        eventChannel.Stopped += Stop;
-        eventChannel.StoppedSpecific += Stop;
-        audioSource = GetComponent<AudioSource>();
+        eventChannels.ForEach(ch => ch.Played += Play);
+        eventChannels.ForEach(ch => ch.Stopped += Stop);
+        eventChannels.ForEach(ch => ch.StoppedSpecific += Stop);
     }
 
-    public void Stop(Audio? clip)
+    public void Stop(Audio? clip = null)
     {
-        if (clip != null)
+        foreach (var pClip in PlayingClips)
         {
-            foreach (var pClip in PlayingClips)
-            {
-                if (pClip.Clip == clip)
-                {
-                    Stop(pClip);
-                }
-            }
-        }
-
-        else
-        {
-            foreach (var pClip in PlayingClips)
+            if (pClip.Clip == clip || clip == null)
             {
                 Stop(pClip);
             }
@@ -73,17 +55,23 @@ public class AudioMaster : MonoBehaviour
         Destroy(clip.Source);
     }
 
-    public PlayingClip Play(Audio clip)
+    public PlayingClip Play(Audio clip, Audio.MixerGroup mixerGroup)
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
 
         source.volume = clip.Volume;
         source.clip = clip.AudioClip;
         source.loop = clip.Loop;
-
-
-
         source.panStereo = clip.Pan;
+
+        source.outputAudioMixerGroup = mixerGroup switch
+        {
+            Audio.MixerGroup.Player => PlayerMixerGroup,
+            Audio.MixerGroup.Environment => EnvironmentMixerGroup,
+            Audio.MixerGroup.Master => MasterMixerGroup,
+            Audio.MixerGroup.Music => MusicMixerGroup,
+            _ => null
+        };
 
         source.Play();
 
