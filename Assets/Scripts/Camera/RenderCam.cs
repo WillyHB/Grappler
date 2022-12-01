@@ -51,11 +51,6 @@ public class RenderCam : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            OnShake(10, 1, 5);
-        }
-
         foreach (GameObject go in RenderSurfaces)
         {
             go.transform.localPosition = new Vector3(xShakeOffset, go.transform.localPosition.y, go.transform.localPosition.z);

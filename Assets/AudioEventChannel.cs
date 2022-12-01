@@ -4,9 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Event Channels/Audio")]
 public class AudioEventChannel : ScriptableObject
 {
-    public Audio.MixerGroup MixerGroup;
+    public MixerGroup MixerGroup;
 
-    public delegate AudioMaster.PlayingClip PlayDelegate(Audio clip, Audio.MixerGroup mixerGroup);
+    public delegate AudioMaster.PlayingClip PlayDelegate(Audio clip, MixerGroup mixerGroup);
 
     public event PlayDelegate Played;
 

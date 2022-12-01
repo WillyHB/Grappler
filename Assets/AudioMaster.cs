@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -9,7 +8,7 @@ public class AudioMaster : MonoBehaviour
 
     public AudioMixer AudioMixer;
 
-    private List<PlayingClip> PlayingClips;
+    private readonly List<PlayingClip> PlayingClips = new();
 
     public AudioMixerGroup PlayerMixerGroup;
     public AudioMixerGroup MasterMixerGroup;
@@ -36,6 +35,33 @@ public class AudioMaster : MonoBehaviour
         eventChannels.ForEach(ch => ch.StoppedSpecific += Stop);
     }
 
+    private void OnDisable()
+    {
+        eventChannels.ForEach(ch => ch.Played -= Play);
+        eventChannels.ForEach(ch => ch.Stopped -= Stop);
+        eventChannels.ForEach(ch => ch.StoppedSpecific -= Stop);
+    }
+
+    private void Update()
+    {
+
+        List<PlayingClip> toDelete = new();
+
+        foreach (var pClip in PlayingClips)
+        {
+            if (!pClip.Source.isPlaying)
+            {
+                toDelete.Add(pClip);
+            }
+        }
+
+        while (toDelete.Count > 0)
+        {
+            Stop(toDelete[0]);
+            toDelete.RemoveAt(0);
+        }
+    }
+
     public void Stop(Audio? clip = null)
     {
         foreach (var pClip in PlayingClips)
@@ -55,7 +81,7 @@ public class AudioMaster : MonoBehaviour
         Destroy(clip.Source);
     }
 
-    public PlayingClip Play(Audio clip, Audio.MixerGroup mixerGroup)
+    public PlayingClip Play(Audio clip, MixerGroup mixerGroup)
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
 
@@ -66,10 +92,10 @@ public class AudioMaster : MonoBehaviour
 
         source.outputAudioMixerGroup = mixerGroup switch
         {
-            Audio.MixerGroup.Player => PlayerMixerGroup,
-            Audio.MixerGroup.Environment => EnvironmentMixerGroup,
-            Audio.MixerGroup.Master => MasterMixerGroup,
-            Audio.MixerGroup.Music => MusicMixerGroup,
+            MixerGroup.Player => PlayerMixerGroup,
+            MixerGroup.Environment => EnvironmentMixerGroup,
+            MixerGroup.Master => MasterMixerGroup,
+            MixerGroup.Music => MusicMixerGroup,
             _ => null
         };
 

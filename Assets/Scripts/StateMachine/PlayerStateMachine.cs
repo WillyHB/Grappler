@@ -5,7 +5,9 @@ using System.Linq;
 
 public class PlayerStateMachine : StateMachine
 {
+    public Audio[] DirtFootsteps;
 
+    [Space(25)]
     public PlayerWalkState WalkState;
     public PlayerRunState RunState;
     public PlayerIdleState IdleState;
@@ -91,6 +93,9 @@ public class PlayerStateMachine : StateMachine
     public bool IsFrozen { get; private set; }
 
     public PlayerEventChannel PlayerEventChannel;
+    public AudioEventChannel PlayerAudioEventChannel;
+
+    public Audio FartSound;
 
 
     private Vector2 frozenVelocity;
@@ -113,6 +118,10 @@ public class PlayerStateMachine : StateMachine
 
     protected override void Update()
     {
+        if (UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            PlayerAudioEventChannel.Play(FartSound);
+        }
         base.Update();
 
         MoveValue = InputProvider.GetState().MoveDirection;
@@ -164,6 +173,11 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
+    }
+
+    public void PlayFootstep()
+    {
+        PlayerAudioEventChannel.Play(DirtFootsteps[Random.Range(0, DirtFootsteps.Length-1)]);
     }
 
     protected void OnDisable()
