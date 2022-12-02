@@ -136,6 +136,7 @@ public class PlayerStateMachine : StateMachine
         {
             if (col.CompareTag(GroundTag))
             {
+                
                 grounded = true;
                 break;
             }
