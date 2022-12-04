@@ -13,6 +13,7 @@ public class AudioEventChannel : ScriptableObject
     public event Action<Audio?> Stopped;
     public event Action<AudioMaster.PlayingClip> StoppedSpecific;
 
+
     /// <summary>
     /// Plays an audio clip, returns null if no AudioMaster is found in the scene or the event channel is not connected to one.
     /// </summary>
