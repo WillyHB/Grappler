@@ -49,7 +49,7 @@ public class AudioMaster : MonoBehaviour
 
         foreach (var pClip in PlayingClips)
         {
-            if (!pClip.Source.isPlaying && Application.isFocused)
+            if (!pClip.Source.isPlaying)
             {
                 toDelete.Add(pClip);
             }
