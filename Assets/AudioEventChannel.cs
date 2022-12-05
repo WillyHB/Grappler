@@ -21,11 +21,6 @@ public class AudioEventChannel : ScriptableObject
     /// <returns></returns>
     public AudioMaster.PlayingClip? Play(Audio clip) => Played?.Invoke(clip, MixerGroup);
 
-    public void SetReverb(float reverb)
-    {
-
-    }
-
     public void Stop(AudioMaster.PlayingClip playingClip) => StoppedSpecific?.Invoke(playingClip);
 
     public void Stop(Audio clip) => Stopped?.Invoke(clip);
