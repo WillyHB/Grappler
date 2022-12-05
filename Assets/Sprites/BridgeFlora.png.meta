@@ -366,7 +366,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,7 +387,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -408,7 +408,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -416,6 +416,48 @@ TextureImporter:
       bones: []
       spriteID: 72324acb83b3a3d4fa9e80a3c803d5d1
       internalID: 773586212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b481005ad20ce8419aca7a429512f25
+      internalID: 393536718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeFlora_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b7a888ee87eb747a77a93b2b6e8d57
+      internalID: 1937305148
       vertices: []
       indices: 
       edges: []
@@ -436,9 +478,11 @@ TextureImporter:
       BridgeFlora_13: 314560475
       BridgeFlora_12: 1782299455
       BridgeFlora_7: -833751734
+      BridgeFlora_16: 1937305148
       BridgeFlora_6: -1597825983
       BridgeFlora_3: -1483624752
       BridgeFlora_4: -1955782782
+      BridgeFlora_15: 393536718
       BridgeFlora_0: 2071317652
       BridgeFlora_11: -845421782
       BridgeFlora_2: 390817299
