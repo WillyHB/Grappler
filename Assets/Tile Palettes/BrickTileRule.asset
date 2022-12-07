@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520e76fa680d13840a47b1b6efb12002, type: 3}
   m_Name: BrickTileRule
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 0}
+  m_DefaultSprite: {fileID: 415368996, guid: af1f6f5ea78c8274fa8574acb5cd7e03, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:

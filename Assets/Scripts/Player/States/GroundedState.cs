@@ -29,7 +29,6 @@ public class GroundedState : State
     {
         base.OnExit();
 
-
         sm.InputProvider.Jumped -= Jump;
     }
 

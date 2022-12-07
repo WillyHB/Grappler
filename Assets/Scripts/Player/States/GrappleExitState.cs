@@ -18,12 +18,12 @@ public class GrappleExitState : PlayerAirborneState
 
         sm.Animator.Play(rot switch
         {
-            >= 340 => sm.Animations.GrappleSpinExit,
+            >= 350 => sm.Animations.GrappleSpinExit,
             >= 320 => sm.Animations.GrappleTuckedSpinExit,
             >= 240 => sm.Animations.GrappleFrontFlipExit,
             >= 135 => sm.Animations.GrappleUDBackFlipExit,
             >= 40 => sm.Animations.GrappleBackFlipExit,
-            >= 38 => sm.Animations.GrappleTuckedSpinExit,
+            >= 30 => sm.Animations.GrappleTuckedSpinExit,
             >= 15 => sm.Animations.GrappleJumpExit,
             >= 0 => sm.Animations.GrappleSpinExit,
             _ => throw new System.Exception($"Angle {rot} does not exist wtf"),
