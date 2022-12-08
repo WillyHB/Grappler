@@ -5,8 +5,6 @@ using System.Linq;
 
 public class PlayerStateMachine : StateMachine
 {
-    public Audio[] DirtFootsteps;
-
     [Space(25)]
     public PlayerWalkState WalkState;
     public PlayerRunState RunState;
@@ -90,13 +88,12 @@ public class PlayerStateMachine : StateMachine
 
     public GameObject KickRock;
 
+    public GroundSoundManager GroundSoundManager;
+
     public bool IsFrozen { get; private set; }
 
     public PlayerEventChannel PlayerEventChannel;
     public AudioEventChannel PlayerAudioEventChannel;
-
-    public Audio FartSound;
-
 
     private Vector2 frozenVelocity;
     public void Freeze()
@@ -118,10 +115,6 @@ public class PlayerStateMachine : StateMachine
 
     protected override void Update()
     {
-        if (UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            PlayerAudioEventChannel.Play(FartSound);
-        }
         base.Update();
 
         MoveValue = InputProvider.GetState().MoveDirection;
@@ -178,7 +171,22 @@ public class PlayerStateMachine : StateMachine
 
     public void PlayFootstep()
     {
-        PlayerAudioEventChannel.Play(DirtFootsteps[Random.Range(0, DirtFootsteps.Length-1)]);
+        Audio[] footsteps = GroundSoundManager.GetCurrentTileSounds()?.Footsteps;
+
+        if (footsteps == null)
+            return;
+
+        PlayerAudioEventChannel.Play(footsteps[Random.Range(0, footsteps.Length-1)]);
+    }
+
+    public void PlayImpact()
+    {
+        Audio impact = GroundSoundManager.GetCurrentTileSounds().Value.Land;
+
+        if (impact == null)
+            return;
+
+        PlayerAudioEventChannel.Play(impact);
     }
 
     protected void OnDisable()
