@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class RenderCam : MonoBehaviour
 {
-    public GameObject[] RenderSurfaces;
+    public GameObject RenderSurfaceParent;
 
     private float xShakeOffset;
 
@@ -51,10 +51,8 @@ public class RenderCam : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        foreach (GameObject go in RenderSurfaces)
-        {
-            go.transform.localPosition = new Vector3(xShakeOffset, go.transform.localPosition.y, go.transform.localPosition.z);
-        }
+        RenderSurfaceParent.transform.localPosition 
+            = new Vector3(xShakeOffset, RenderSurfaceParent.transform.localPosition.y, RenderSurfaceParent.transform.localPosition.z);
     }
 }
 
