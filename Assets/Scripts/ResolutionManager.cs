@@ -38,8 +38,6 @@ public class ResolutionManager : MonoBehaviour
 
     public CameraEventChannel CamEventChannel;
 
-    private LTDescr zoomCamTween;
-
     private void Awake()
     {
         CamEventChannel.Zoom += v => Zoom = v;
