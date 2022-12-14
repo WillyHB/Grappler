@@ -30,7 +30,6 @@ public class PlayerFallState : PlayerAirborneState
 
     public override void OnExit()
     {
-
         base.OnExit();
 
         sm.InputProvider.Jumped -= Jump;

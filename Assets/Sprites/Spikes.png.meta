@@ -109,8 +109,8 @@ TextureImporter:
       name: SpikeTop
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 64
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -122,10 +122,10 @@ TextureImporter:
         - {x: 8, y: -8}
         - {x: 8, y: -3}
       physicsShape:
-      - - {x: -7, y: -4}
-        - {x: -7, y: -8}
-        - {x: 7, y: -8}
-        - {x: 7, y: -4}
+      - - {x: -8, y: -4}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: -4}
       tessellationDetail: 0
       bones: []
       spriteID: f6ea5a30e3c522d408794e9de9076856
@@ -138,8 +138,8 @@ TextureImporter:
       name: SpikeRight
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 112
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -151,10 +151,10 @@ TextureImporter:
         - {x: -8, y: -8}
         - {x: -3, y: -8}
       physicsShape:
-      - - {x: -4, y: 6}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -4, y: -6}
+      - - {x: -4, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: -4, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: 8ff0ef1f0958d7c4aba1744f65e64405
@@ -167,8 +167,8 @@ TextureImporter:
       name: SpikeBottom
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 64
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -180,10 +180,10 @@ TextureImporter:
         - {x: 8, y: 3}
         - {x: 8, y: 8}
       physicsShape:
-      - - {x: -7, y: 8}
-        - {x: -7, y: 4}
-        - {x: 7, y: 4}
-        - {x: 7, y: 8}
+      - - {x: -8, y: 8}
+        - {x: -8, y: 4}
+        - {x: 8, y: 4}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: ecd5735a385304c49a8b7bd015300c54
@@ -196,8 +196,8 @@ TextureImporter:
       name: SpikeLeft
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 16
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -209,10 +209,10 @@ TextureImporter:
         - {x: 8, y: -8}
         - {x: 8, y: 8}
       physicsShape:
-      - - {x: 4, y: 6}
-        - {x: 4, y: -6}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
+      - - {x: 4, y: 8}
+        - {x: 4, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: 13a65389aa7123748a67d935dcce6098
@@ -222,28 +222,207 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeCornerTL
+      name: SpikeTopL
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 48
+        y: 112
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -7, y: -4}
+        - {x: -7, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: -4}
       tessellationDetail: 0
       bones: []
-      spriteID: 1c845bbdb1c7bd34085276c9ce51b758
-      internalID: -791259990
+      spriteID: 765af5e9e07647c44b1647e5e9b588f6
+      internalID: -2040280481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeCornerTR
+      name: SpikeTopR
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -4}
+        - {x: -8, y: -8}
+        - {x: 7, y: -8}
+        - {x: 7, y: -4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db527ad6b6bf2544b8ad15ddbc4f384
+      internalID: -87528591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeRightT
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: 6}
+        - {x: -8, y: 6}
+        - {x: -8, y: -8}
+        - {x: -4, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da716ddbed0f5d42b5a92dd969696f7
+      internalID: 1657550525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeRightD
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -6}
+        - {x: -4, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9103f0984b51419408124db5fdbaf4b7
+      internalID: -1371825210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeBottomR
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: 4}
+        - {x: 7, y: 4}
+        - {x: 7, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bfe0d6a5be11a4bb8b1e48485d7e04
+      internalID: -458627743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeBottomL
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -7, y: 8}
+        - {x: -7, y: 4}
+        - {x: 8, y: 4}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80ef3b5b49e5a34aa4bc9c2209a4444
+      internalID: 410437266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeLeftT
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: 6}
+        - {x: 4, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7870541fee4d9264296f859b3e57a325
+      internalID: 1839018404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeLeftB
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: 8}
+        - {x: 4, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671b1a0c69eb749438de8d5a103721be
+      internalID: -452442418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CornerBottomL
       rect:
         serializedVersion: 2
         x: 32
@@ -254,53 +433,98 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -7, y: 8}
+        - {x: -7, y: 4}
+        - {x: 4, y: 4}
+        - {x: 4, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
-      spriteID: 44359418dd0bbec44a3193a43c34ce8c
-      internalID: 132141246
+      spriteID: ba75dfc11fd28d24ba6ae0303ebfe4c8
+      internalID: -1032465046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBR
+      name: CornerBottomR
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -6}
+        - {x: -4, y: -6}
+        - {x: -4, y: 4}
+        - {x: 7, y: 4}
+        - {x: 7, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c362779c8f141764a967816b9d9031b1
+      internalID: 1613595199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CornerTopL
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 4, y: 6}
+        - {x: 4, y: -4}
+        - {x: -7, y: -4}
+        - {x: -7, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 6}
       tessellationDetail: 0
       bones: []
-      spriteID: 75b2f82dc314f6b42aaf75d2ee136545
-      internalID: -2036123813
+      spriteID: 05c9738260009734da3d656611e46f6f
+      internalID: -588204922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBL
+      name: CornerTopR
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 96
+        y: 96
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -4, y: 6}
+        - {x: -8, y: 6}
+        - {x: -8, y: -8}
+        - {x: 7, y: -8}
+        - {x: 7, y: -4}
+        - {x: -4, y: -4}
       tessellationDetail: 0
       bones: []
-      spriteID: 4f3aa5bdc0d56a64fa554ed3e1015358
-      internalID: 101371429
+      spriteID: 1c50aa47494569c409079fe9d99ab231
+      internalID: -257052404
       vertices: []
       indices: 
       edges: []
@@ -318,11 +542,23 @@ TextureImporter:
     nameFileIdTable:
       SpikeBottom: -1727645911
       SpikeBL: 101371429
+      SpikeLeftT: 1839018404
       SpikeTop: -54350789
+      SpikeBottomR: -458627743
       SpikeCornerTL: -791259990
+      CornerTopR: -257052404
       SpikeBR: -2036123813
+      SpikeRightT: 1657550525
+      SpikeLeftB: -452442418
       SpikeLeft: -739479254
+      CornerBottomL: -1032465046
+      SpikeRightD: -1371825210
+      SpikeTopR: -87528591
+      CornerBottomR: 1613595199
+      CornerTopL: -588204922
       SpikeRight: 2127539196
+      SpikeTopL: -2040280481
+      SpikeBottomL: 410437266
       SpikeCornerTR: 132141246
   spritePackingTag: 
   pSDRemoveMatte: 0

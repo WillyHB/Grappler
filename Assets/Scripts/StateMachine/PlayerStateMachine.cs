@@ -151,6 +151,8 @@ public class PlayerStateMachine : StateMachine
         else Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
 
         if (CurrentWater != null) Transition(SwimState);
+
+        Debug.Log(CurrentState.GetType().ToString());
     }
 
     protected override void FixedUpdate()
@@ -166,7 +168,7 @@ public class PlayerStateMachine : StateMachine
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
 
-        //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
     }
 
     public void PlayFootstep()

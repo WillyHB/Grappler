@@ -29,6 +29,8 @@ public class GroundedState : State
     {
         base.OnExit();
 
+        Debug.Log("Please exit man");
+
         sm.InputProvider.Jumped -= Jump;
     }
 
