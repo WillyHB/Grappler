@@ -172,12 +172,12 @@ TextureImporter:
       name: BridgeMisc_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 32
+        x: 81
+        y: 80
+        width: 96
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: BridgeMisc_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
+        x: 81
+        y: 48
+        width: 96
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

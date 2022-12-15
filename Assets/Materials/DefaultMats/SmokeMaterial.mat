@@ -42,14 +42,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _BackSpeed: 0.5
-    - _CenterY: 0
+    - _CenterY: -0.36
     - _EnableExternalAlpha: 0
     - _FirstThreshold: 0.82
     - _FourthThreshold: 0.17
     - _FrontSpeed: 0.25
     - _Height: 7.37
     - _Pixelation: 0.174
-    - _Radius: 0.15
+    - _Radius: 0.21
     - _SecondThreshold: 0.51
     - _ThirdThreshold: 0.29
     - _Threshold: 0

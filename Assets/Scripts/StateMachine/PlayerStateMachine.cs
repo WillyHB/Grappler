@@ -168,7 +168,8 @@ public class PlayerStateMachine : StateMachine
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
 
-        transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
+        //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().rooms[0].Checkpoint.position;
     }
 
     public void PlayFootstep()
