@@ -177,7 +177,7 @@ TextureImporter:
         width: 96
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: BridgeMisc_2
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 48
         width: 96
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,6 +231,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Dummy
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3211dce50d0b5b7428cc0b8fa44bfa26
+      internalID: 983952223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -244,6 +265,7 @@ TextureImporter:
     nameFileIdTable:
       BridgeMisc_2: -262606778
       BridgeMisc_0: 551008624
+      Dummy: 983952223
       BridgeMisc_1: -1264987487
       BridgeMisc_3: -556182186
       Platform: -467941344

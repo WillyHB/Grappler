@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -9,7 +7,6 @@ public class GroundedState : State
     protected PlayerStateMachine sm;
 
     protected float accelerant;
-
 
     public override void OnEnter(StateMachine fsm)
     {
