@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-[CreateAssetMenu(menuName = "Cutscene/Events/PlayerMove")]
-public class PlayerMoveEvent : CutsceneEvent
+namespace Cutscene
 {
-    public PlayerMoveEvent(float direction, int duration)
+    public class PlayerMoveEvent : CutsceneEvent
     {
-        Direction = direction;
-        DurationMilliseconds = duration;
+        public PlayerMoveEvent(float direction, int duration, bool walk = false)
+        {
+            Direction = direction;
+            DurationMilliseconds = duration;
+            Walk = walk;
+
+        }
+        public float Direction;
+        public int DurationMilliseconds;
+        public bool Walk;
+
+        public override async Task HandleEvent(CutsceneSystem system)
+        {
+            await system.stateHandler.Move(Direction, DurationMilliseconds, Walk);
+        }
     }
-    public float Direction;
-    public int DurationMilliseconds;
+
 }

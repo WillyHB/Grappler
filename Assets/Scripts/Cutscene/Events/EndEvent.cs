@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-[CreateAssetMenu(menuName = "Cutscene/Events/End")]
-public class EndEvent : CutsceneEvent
+namespace Cutscene
 {
+    public class EndEvent : CutsceneEvent
+    {
 
+        public override async Task HandleEvent(CutsceneSystem system)
+        {
+
+        }
+    }
 }

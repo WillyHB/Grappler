@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-[CreateAssetMenu(menuName = "Cutscene/Events/CameraZoom")]
-public class CameraZoomEvent : CutsceneEvent
+namespace Cutscene
 {
-    public CameraZoomEvent(float zoom) => Zoom = zoom;
-    public float Zoom;
+    public class CameraZoomEvent : CutsceneEvent
+    {
+        public CameraZoomEvent(float zoom) => Zoom = zoom;
+        public float Zoom;
+
+        public override async Task HandleEvent(CutsceneSystem system)
+        {
+            system.CamEventChannel.PerformZoom(Zoom);
+        }
+    }
+
 }

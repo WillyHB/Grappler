@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-[CreateAssetMenu(menuName = "Cutscene/Events/Delay")]
-public class DelayEvent : CutsceneEvent
+namespace Cutscene
 {
-    public DelayEvent(int milliseconds) => Milliseconds = milliseconds;
-    public int Milliseconds;
+    public class DelayEvent : CutsceneEvent
+    {
+        public DelayEvent(int milliseconds) => Milliseconds = milliseconds;
+        public int Milliseconds;
+
+        public override async Task HandleEvent(CutsceneSystem system)
+        {
+            await Task.Delay(Milliseconds);
+        }
+    }
+
 }

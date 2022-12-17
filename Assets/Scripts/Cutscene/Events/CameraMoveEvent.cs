@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
-[CreateAssetMenu(menuName = "Cutscene/Events/CameraMove")]
-public class CameraMoveEvent : CutsceneEvent
+namespace Cutscene
 {
-    public CameraMoveEvent(Vector2 position) => Position = position;
-    public Vector2 Position;
+    public class CameraMoveEvent : CutsceneEvent
+    {
+        public CameraMoveEvent(Transform follow) => Follow = follow;
+        public Transform Follow;
+
+        public override async Task HandleEvent(CutsceneSystem system)
+        {
+            system.CamEventChannel.SetFollow(Follow);
+        }
+    }
 }

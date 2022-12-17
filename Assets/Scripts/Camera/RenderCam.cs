@@ -31,7 +31,7 @@ public class RenderCam : MonoBehaviour
         {
             xShakeOffset = amplitude * Mathf.Sin(frequency * coroutineTime);
 
-            await System.Threading.Tasks.Task.Yield();
+            await Task.Yield();
 
         } while ((coroutineTime += Time.deltaTime) < time);
     }
