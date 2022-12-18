@@ -240,7 +240,7 @@ TextureImporter:
         width: 16
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,6 +248,48 @@ TextureImporter:
       bones: []
       spriteID: 3211dce50d0b5b7428cc0b8fa44bfa26
       internalID: 983952223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeMisc_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86831662c1b516b40a0d4674bcb1b916
+      internalID: 1201817183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgeMisc_5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9553b2b567e15354cb7fc32cc38e833a
+      internalID: 23881811
       vertices: []
       indices: 
       edges: []
@@ -263,8 +305,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BridgeMisc_5: 23881811
       BridgeMisc_2: -262606778
       BridgeMisc_0: 551008624
+      BridgeMisc_4: 1201817183
       Dummy: 983952223
       BridgeMisc_1: -1264987487
       BridgeMisc_3: -556182186

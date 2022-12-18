@@ -5,25 +5,28 @@ using System.Threading.Tasks;
 
 public abstract class CutsceneSystem : MonoBehaviour
 {
-    public List<CutsceneEvent> Events { get; set; } = new();
+    private List<CutsceneEvent> events { get; set; } = new();
 
     public CameraEventChannel CamEventChannel;
     public CutsceneSystemStateHandler stateHandler;
+    public DialogueEventChannel DialogueEventChannel;
 
-    public abstract void GenerateCutscene();
+    public abstract List<CutsceneEvent> GenerateCutscene();
+
+    public bool RunOnStart;
 
     public void Start()
     {
         stateHandler.IsInCutscene = true;
-        GenerateCutscene();
-        Play();
+        events = GenerateCutscene();
+        if (RunOnStart) Play();
     }
 
     public async void Play()
     {
         playing = true;
 
-        foreach (var e in Events)
+        foreach (var e in events)
         {
             await e.HandleEvent(this);
 

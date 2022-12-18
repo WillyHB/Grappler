@@ -14,11 +14,9 @@ namespace Cutscene
             this.text = text;
         }
 
-        public override async Task HandleEvent(Dialogue system)
+        public override async Task HandleEvent(Dialogue system, DialogueEventChannel eventChannel)
         {
-            Debug.Log(text);
-
-            await Task.Delay(2000);
+            
         }
     }
 

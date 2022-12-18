@@ -16,10 +16,14 @@ namespace Cutscene
 
         public override async Task HandleEvent(CutsceneSystem system)
         {
+            system.DialogueEventChannel.OpenDialogue();
+
             foreach (var e in Events)
             {
-                await e.HandleEvent(this);
+                await e.HandleEvent(this, system.DialogueEventChannel);
             }
+
+            system.DialogueEventChannel.CloseDialogue();
         }
     }
 
