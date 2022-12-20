@@ -14,9 +14,9 @@ namespace Cutscene
             this.text = text;
         }
 
-        public override async Task HandleEvent(Dialogue system, DialogueEventChannel eventChannel)
+        public override async Task HandleEvent(Dialogue system)
         {
-            
+            await system.DialogueSystem.GetComponent<DialogueSystem>().SetText(text, 100);
         }
     }
 

@@ -13,23 +13,6 @@ public class CutsceneSystemStateHandler : InputStateHandler
     private bool isWalking;
     public bool IsInCutscene { get; set; }
 
-    /*
-    public void OnEnable()
-    {
-        Actions.FindActionMap("Player").FindAction("Jump").performed += (cc) => PerformJump();
-        Actions.FindActionMap("Player").FindAction("Shoot").performed += (cc) => PerformShoot();
-        Actions.FindActionMap("Player").FindAction("Grapple").performed += (cc) => PerformGrapple();
-        Actions.FindActionMap("Player").FindAction("CancelGrapple").performed += (cc) => CancelGrapple();
-    }
-
-    public void OnDisable()
-    {
-        Actions.FindActionMap("Player").FindAction("Jump").performed -= (cc) => PerformJump();
-        Actions.FindActionMap("Player").FindAction("Shoot").performed -= (cc) => PerformShoot();
-        Actions.FindActionMap("Player").FindAction("Grapple").performed -= (cc) => PerformGrapple();
-        Actions.FindActionMap("Player").FindAction("CancelGrapple").performed -= (cc) => CancelGrapple();
-    }*/
-
     public async Task Move(float direction, int time, bool walk)
     {
         isWalking = walk;

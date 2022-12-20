@@ -6,6 +6,7 @@ public class BridgeStartCutscene : CutsceneSystem
 {
     public Transform MoveTransform;
     public Transform Player;
+    public GameObject DialogueSystemPrefab;
 
     public override List<CutsceneEvent> GenerateCutscene()
     {
@@ -17,16 +18,36 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.DelayEvent(5000),
             new Cutscene.PlayerMoveEvent(-1, 2000, true),
             new Cutscene.DelayEvent(1000),
-            new Cutscene.Dialogue(new List<Cutscene.DialogueEvent>()
+            new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
-            new Cutscene.DialogueTextEvent("Yeah Mama"),
-             new Cutscene.DialogueTextEvent("And papa too!"),
+                new Cutscene.DialogueTextEvent("Yo bro, whats up baby!"),
+                new Cutscene.DialogueQuestionEvent("You need help?", "Yeah", "Nah", "NO FUCK YOU!")
+                {
+                    Answer1Events = new()
+                    {
+                        new Cutscene.DialogueTextEvent("Yeah Ok I'll help you man"),
+                    },
+
+                    Answer2Events = new()
+                    {
+                        new Cutscene.DialogueTextEvent("Damn aight, keep your head up man!"),
+                    },
+
+                    Answer3Events = new()
+                    {
+                        new Cutscene.DialogueTextEvent("Wtf, Fuck you!"),
+                    }
+                }
             }),
-            new Cutscene.DelayEvent(2000),
+            new Cutscene.DelayEvent(1000),
             new Cutscene.PlayerMoveEvent(1, 2000, true),
             new Cutscene.DelayEvent(1000),
             new Cutscene.PlayerMoveEvent(-0.1f, 10, true),
-            new Cutscene.DelayEvent(3000),
+             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
+            {
+                new Cutscene.DialogueTextEvent("Good luck to you out there! Come back for us!"),
+            }),
+            new Cutscene.DelayEvent(1000),
             new Cutscene.PlayerMoveEvent(0.1f, 10, true),
             new Cutscene.CameraMoveEvent(Player),
             new Cutscene.CameraZoomEvent(0)

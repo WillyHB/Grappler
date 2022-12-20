@@ -9,7 +9,6 @@ public abstract class CutsceneSystem : MonoBehaviour
 
     public CameraEventChannel CamEventChannel;
     public CutsceneSystemStateHandler stateHandler;
-    public DialogueEventChannel DialogueEventChannel;
 
     public abstract List<CutsceneEvent> GenerateCutscene();
 

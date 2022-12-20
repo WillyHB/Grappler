@@ -7,7 +7,7 @@ namespace Cutscene
 {
     public abstract class DialogueEvent
     {      
-        public abstract Task HandleEvent(Dialogue system, DialogueEventChannel eventChannel);
+        public abstract Task HandleEvent(Dialogue system);
     }
 
 }

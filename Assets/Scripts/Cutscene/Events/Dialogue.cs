@@ -8,22 +8,27 @@ namespace Cutscene
     public class Dialogue : CutsceneEvent
     {
         public List<DialogueEvent> Events { get; set; }
+        public GameObject DialogueSystemPrefab;
+        public GameObject DialogueSystem;
 
-        public Dialogue(List<DialogueEvent> events = null)
+        public Dialogue(GameObject dialogueSystemPrefab, List<DialogueEvent> events = null)
         {
+            DialogueSystemPrefab = dialogueSystemPrefab;
             Events = events ?? new();
         }
 
         public override async Task HandleEvent(CutsceneSystem system)
         {
-            system.DialogueEventChannel.OpenDialogue();
+            DialogueSystem = Object.Instantiate(DialogueSystemPrefab);
+
+            DialogueSystem.GetComponent<DialogueSystem>().Open();
 
             foreach (var e in Events)
             {
-                await e.HandleEvent(this, system.DialogueEventChannel);
+                await e.HandleEvent(this);
             }
-
-            system.DialogueEventChannel.CloseDialogue();
+            DialogueSystem.GetComponent<DialogueSystem>().Close();
+            Object.Destroy(DialogueSystem);
         }
     }
 

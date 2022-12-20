@@ -6,69 +6,95 @@ using System.Threading.Tasks;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public GameObject LeftCharacter;
-    public GameObject RightCharacter;
+    public Image Potrait;
+    public TMPro.TextMeshProUGUI Text;
 
-    public List<Button> Options;
-    public Image OptionDivider;
+    public Button Continue;
 
-    public async void Start()
+    public GameObject[] Options;
+    public GameObject OptionDivider;
+
+    private string text;
+    private string currentText;
+
+    private bool continuePressed;
+    private int? chosenOption = null;
+
+
+    public void Open()
     {
-        await SetText(true, "I CAN'T FUCKING DO THIS SHIT ANYMORE", 100);
-
-        await Task.Delay(5000);
-
-        await SetOption("DON'T KILL YOURSELF MAN PLEASE!", 100, "You can't stop me", "I want to!", "Fine I won't");
 
     }
 
-    public async Task SetText(bool isPlayer, string text, int textSpeed)
+    public void Close()
     {
-        RightCharacter.SetActive(false);
-        LeftCharacter.SetActive(false);
 
-        if (isPlayer)
-        {
-            RightCharacter.SetActive(true);
-            RightCharacter.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "";
-            foreach (char c in text)
-            {
-                RightCharacter.GetComponentInChildren<TMPro.TextMeshProUGUI>().text += c;
-                await Task.Delay(textSpeed);
-            }
-        }
-
-        else
-        {
-            LeftCharacter.SetActive(true);
-
-            LeftCharacter.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "";
-            foreach (char c in text)
-            {
-                LeftCharacter.GetComponentInChildren<TMPro.TextMeshProUGUI>().text += c;
-                await Task.Delay(textSpeed);
-            }
-        }
     }
 
-    public async Task SetOption(string text, int textSpeed, string Option1, string Option2, string Option3)
+    public async Task SetText(string text, int textSpeed)
     {
-        RightCharacter.SetActive(false);
+        continuePressed = false;
 
-        LeftCharacter.SetActive(true);
+        Continue.gameObject.SetActive(true);
+        Text.text = "";
 
-        LeftCharacter.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "";
         foreach (char c in text)
         {
-            LeftCharacter.GetComponentInChildren<TMPro.TextMeshProUGUI>().text += c;
+            Text.text += c;
+            await Task.Delay(textSpeed);
+        }
+
+         while (!continuePressed)
+        {
+            await Task.Yield();
+        }
+    }
+
+    public async Task<int> SetOption(string text, int textSpeed, string Option1 = null, string Option2 = null, string Option3 = null)
+    {
+        chosenOption = null;
+
+        Continue.gameObject.SetActive(false);
+
+        Text.text = "";
+        foreach (char c in text)
+        {
+            Text.text += c;
             await Task.Delay(textSpeed);
         }
 
         await Task.Delay(500);
-        Options.ForEach(b => b.gameObject.SetActive(true));
+
+        OptionDivider.SetActive(true);
+        Options[0].SetActive(Option1 != null);
+        Options[1].SetActive(Option2 != null);
+        Options[2].SetActive(Option3 != null);
 
         Options[0].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = Option1;
         Options[1].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = Option2;
         Options[2].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = Option3;
+
+        while (chosenOption == null)
+        {
+            await Task.Yield();
+        }
+
+
+        OptionDivider.SetActive(false);
+        Options[0].SetActive(false);
+        Options[1].SetActive(false);
+        Options[2].SetActive(false);
+
+        return chosenOption.Value;
     }
+
+    public void OnContinueClick()
+    {
+        continuePressed = true;
+    }
+
+    public void OnOptionClick(int option)
+    {
+        chosenOption = option;
+    } 
 }
