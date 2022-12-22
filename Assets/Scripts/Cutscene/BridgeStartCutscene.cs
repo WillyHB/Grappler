@@ -24,31 +24,18 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.DelayEvent(1000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
-                new Cutscene.DialogueTextEvent("Yo bro, whats up baby!"),
-                new Cutscene.DialogueQuestionEvent("You need help?", "Yeah", "Nah", "NO FUCK YOU!")
-                {
-                    Answer1Events = new()
-                    {
-                        new Cutscene.DialogueTextEvent("Yeah Ok I'll help you man"),
-                    },
-
-                    Answer2Events = new()
-                    {
-                        new Cutscene.DialogueTextEvent("Damn aight, keep your head up man!"),
-                    },
-
-                    Answer3Events = new()
-                    {
-                        new Cutscene.DialogueQuestionEvent("Wtf, Fuck you! Why would you say that?", "Idk thought it'd be funny", "Cause I HATE YOU FUCK YOU!")
-                        {
-                            Answer1Events = new()
-                            {
-                                new Cutscene.DialogueTextEvent("Yeah ok it was pretty funny ngl"),
-                            }
-                        },
-                    }
-                }
+                new Cutscene.DialogueTextEvent("Hey, you ok?", true),
+                new Cutscene.DialogueTextEvent("Yeah, I think I'm fine."),
+                new Cutscene.DialogueTextEvent("Where are we?"),
             }),
+
+             new Cutscene.DelayEvent(2000),
+
+            new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
+            {
+                new Cutscene.DialogueTextEvent("I'm certain we got to the island, I'm just not sure where..."),
+            }),
+
             new Cutscene.DelayEvent(1000),
             new Cutscene.PlayerMoveEvent(1, 2000, true),
             new Cutscene.DelayEvent(1000),

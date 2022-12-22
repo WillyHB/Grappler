@@ -13,6 +13,7 @@ namespace Cutscene
         public DialogueTextEvent(string text, bool isPlayer = false)
         {
             this.text = text;
+            this.isPlayer = isPlayer;
         }
 
         public override async Task HandleEvent(Dialogue system)
