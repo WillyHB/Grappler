@@ -13,9 +13,3 @@ public abstract class State : ScriptableObject
     public virtual void OnExit() { }
 
 }
-
-[Serializable]
-public struct Transition
-{
-    public State State;
-}

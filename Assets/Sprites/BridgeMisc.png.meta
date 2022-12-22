@@ -232,11 +232,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dummy
+      name: Jessica
       rect:
         serializedVersion: 2
-        x: 208
-        y: 128
+        x: 192
+        y: 48
         width: 16
         height: 24
       alignment: 0
@@ -261,7 +261,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -282,7 +282,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -290,6 +290,27 @@ TextureImporter:
       bones: []
       spriteID: 9553b2b567e15354cb7fc32cc38e833a
       internalID: 23881811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: George
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19778184c74d3c44196990e8c1e04d58
+      internalID: 256295184
       vertices: []
       indices: 
       edges: []
@@ -305,11 +326,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Jessica: 983952223
       BridgeMisc_5: 23881811
       BridgeMisc_2: -262606778
       BridgeMisc_0: 551008624
+      George: 256295184
       BridgeMisc_4: 1201817183
-      Dummy: 983952223
       BridgeMisc_1: -1264987487
       BridgeMisc_3: -556182186
       Platform: -467941344

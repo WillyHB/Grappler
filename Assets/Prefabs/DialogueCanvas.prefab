@@ -343,8 +343,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8107c1c6c7698545bee01c7ea432cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Potrait: {fileID: 5399506247085830626}
-  Text: {fileID: 5399506246615426160}
+  Player:
+    Potrait: {fileID: 5399506245355746750}
+    Text: {fileID: 5399506246733823052}
+  Other:
+    Potrait: {fileID: 5399506247085830626}
+    Text: {fileID: 5399506246615426160}
   Continue: {fileID: 5399506246766732012}
   Options:
   - {fileID: 5399506245957797114}

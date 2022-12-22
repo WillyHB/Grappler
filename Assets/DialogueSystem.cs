@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public Image Potrait;
-    public TMPro.TextMeshProUGUI Text;
+    [System.Serializable]
+    public struct Character
+    {
+        public Image Potrait;
+        public TMPro.TextMeshProUGUI Text;
+    }
+
+    public Character Player;
+    public Character Other;
 
     public Button Continue;
 
@@ -31,35 +38,56 @@ public class DialogueSystem : MonoBehaviour
 
     }
 
-    public async Task SetText(string text, int textSpeed)
+    private void SetActiveCharacters(bool player, bool other)
+    {
+
+        Player.Potrait.gameObject.SetActive(player);
+        Player.Text.gameObject.SetActive(player);
+
+
+        Other.Potrait.gameObject.SetActive(other);
+        Other.Text.gameObject.SetActive(other);
+    }
+
+    public async Task SetText(string text, int textSpeed, bool isPlayer)
     {
         continuePressed = false;
 
-        Continue.gameObject.SetActive(true);
-        Text.text = "";
+        TMPro.TextMeshProUGUI txt = isPlayer ? Player.Text : Other.Text;
+
+        SetActiveCharacters(isPlayer, !isPlayer);
+
+        Continue.gameObject.SetActive(false);
+        txt.text = "";
 
         foreach (char c in text)
         {
-            Text.text += c;
+            txt.text += c;
             await Task.Delay(textSpeed);
         }
 
-         while (!continuePressed)
+        await Task.Delay(500);
+        Continue.gameObject.SetActive(true);
+
+        while (!continuePressed)
         {
             await Task.Yield();
         }
+
+        SetActiveCharacters(false, false);
     }
 
     public async Task<int> SetOption(string text, int textSpeed, string Option1 = null, string Option2 = null, string Option3 = null)
     {
         chosenOption = null;
 
+        SetActiveCharacters(false, true);
         Continue.gameObject.SetActive(false);
 
-        Text.text = "";
+        Other.Text.text = "";
         foreach (char c in text)
         {
-            Text.text += c;
+            Other.Text.text += c;
             await Task.Delay(textSpeed);
         }
 
@@ -84,6 +112,7 @@ public class DialogueSystem : MonoBehaviour
         Options[0].SetActive(false);
         Options[1].SetActive(false);
         Options[2].SetActive(false);
+        SetActiveCharacters(false, false);
 
         return chosenOption.Value;
     }

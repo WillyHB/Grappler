@@ -16,6 +16,7 @@ public class PlayerStateMachine : StateMachine
     public GrappleState GrappleState;
     public GrappleExitState GrappleExitState;
     public PlayerSwimmingState SwimState;
+    public PlayerEmoteState EmoteState;
 
     public PlayerDeathState DeathState;
 

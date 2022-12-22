@@ -15,9 +15,9 @@ public abstract class StateMachine : MonoBehaviour
 
     protected abstract State GetInitialState();
 
-    public State Transition(State state)
+    public State Transition(State state, bool allowReTranstion = false)
     {
-        if (CurrentState != state)
+        if (CurrentState != state || allowReTranstion)
         {
             if (CurrentState != null)
             {

@@ -13,10 +13,14 @@ public class BridgeStartCutscene : CutsceneSystem
         return new List<CutsceneEvent>()
         {
             new Cutscene.DelayEvent(1000),
+            new Cutscene.AnimationEvent(Player.gameObject, "Intro1", true),
+            new Cutscene.DelayEvent(1000),
             new Cutscene.CameraMoveEvent(MoveTransform),
             new Cutscene.CameraZoomEvent(4),
             new Cutscene.DelayEvent(5000),
-            new Cutscene.PlayerMoveEvent(-1, 2000, true),
+            new Cutscene.AnimationEvent(Player.gameObject, "Intro2", true),
+            new Cutscene.DelayEvent(4000),
+            new Cutscene.PlayerMoveEvent(-1, 2500, true),
             new Cutscene.DelayEvent(1000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
@@ -35,7 +39,13 @@ public class BridgeStartCutscene : CutsceneSystem
 
                     Answer3Events = new()
                     {
-                        new Cutscene.DialogueTextEvent("Wtf, Fuck you!"),
+                        new Cutscene.DialogueQuestionEvent("Wtf, Fuck you! Why would you say that?", "Idk thought it'd be funny", "Cause I HATE YOU FUCK YOU!")
+                        {
+                            Answer1Events = new()
+                            {
+                                new Cutscene.DialogueTextEvent("Yeah ok it was pretty funny ngl"),
+                            }
+                        },
                     }
                 }
             }),

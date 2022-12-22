@@ -6741,6 +6741,1119 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: LyingDown
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 260
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e918d4edd57a649b77f4d34665e404
+      internalID: 240603808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e181c10ea771543901f9c23a1e5485
+      internalID: 1497098947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d1423d820bffc4a8390598a600a602
+      internalID: -1099333403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484a3747b4229bd439447bb816722131
+      internalID: 1312583425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af63f9722ccebb9428ec1fa0d1a8ef13
+      internalID: 891269015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7cf545ee852994195e0e25e0f9fe78
+      internalID: 1716436192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6db2d2013dd4649b132589a1de1fe1
+      internalID: -798048778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0705401f254614b9573437a259d874
+      internalID: -959542231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim7
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379e93a943fa82b43a4c255e130cb7d9
+      internalID: -902391579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6094cb8e68e7cb41b2db4652a7a402c
+      internalID: -713097539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8baefcc7aa37fac478ab6f252a2e76dd
+      internalID: 1429876811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim10
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68584c432b1d3be4faf29bb17227690c
+      internalID: 994142240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim11
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e3359bac7a17c40b2aa61675bbf741
+      internalID: -217928968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e988faaa8af1af1489236967e9f22510
+      internalID: 705685096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim13
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6614e35eae2d2c148951c195bfbbd833
+      internalID: 1404735367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d7d808da632134a900ce7d12e3eb4a
+      internalID: -812459924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim15
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc53968926814cb45b6b1ccf79c34dbf
+      internalID: 2117462875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da993bf12856c1a4f92d9cb78c73cf13
+      internalID: -409325608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim17
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b8946197d3c7d4cac118a2b73022b6
+      internalID: 493964634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim18
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba11dac2032cbb648801c30e3e91144e
+      internalID: 1143893436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim19
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35cdbce8457abe4b98e9d91513aa47c
+      internalID: -847478468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd7527566b707949b3d094cd7f37f18
+      internalID: 2126481734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim21
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e674fb9830fe60449b8e539b34bff5dd
+      internalID: -677770549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim22
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412abd93e18ecbb499b94ef8bfd09e09
+      internalID: -971215564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim23
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891a587856dd5df4987370e24975a716
+      internalID: -1146323484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim24
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f1008baa6ad414fabe74f116e01f8e
+      internalID: 759327990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim25
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2ddccd33484f04b9aa2d5106917fae
+      internalID: 97702147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim26
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7f436e9aeafa9498158dcb9676d5fb
+      internalID: 1505101221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim27
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe18135b367990c41941083118f32535
+      internalID: 2055250204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim28
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3966ddce4398eef4f806517678c2ccca
+      internalID: 1850218831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim29
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e28021b52b479b4eb2dd75502d817b5
+      internalID: -1849294828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim30
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d72b7adea7c624cb16f9b5178f3594
+      internalID: -1164630051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim31
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5251c8990a70fe840bd4513af99dc67b
+      internalID: -327265082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3d6a43fc0d6d042abfb5cde83380e9
+      internalID: 280691884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim33
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c74955bdfff5e4fa1cd75b194a302a
+      internalID: -329217211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim34
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e53ef40f6c63b4392b4e805c93bb69
+      internalID: -115643638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim35
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670d11b6acbfd034f8e5b2831ab78db9
+      internalID: 110032398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim36
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9b023941eca68419e81ff64d432e1b
+      internalID: 917809429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim37
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721cbb1efe420e149801d9bcec595135
+      internalID: -518017049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim38
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b799cd8301530e449a0f255e07030d0
+      internalID: -1758793495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim39
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0802a802d690e2a42954b87cca631215
+      internalID: -586112397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim40
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7afb625cd570f64d9705ecdeb75e723
+      internalID: 1352719576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim41
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496507de6368670489285bd22d04a8d1
+      internalID: 322293176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim42
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a30696cc541c94da3ff4b2c225593b
+      internalID: -1756846949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim43
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c71aa92daa82684a90b859c5b811308
+      internalID: 1448387425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim44
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8eef0822b067948aaf3b5257d4ed8c
+      internalID: -1169792672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim45
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a6ee28b07f61e4994040b7dc523278
+      internalID: -1402839403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim46
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe3544f4e7b420489ea24abb81b36f9
+      internalID: -458287884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim47
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01346147610331445b6d4c86b0a827ab
+      internalID: 1380060148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim48
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8956920d514f4d94baeed292bfe88bab
+      internalID: 722873985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim49
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140d3848e8603b144a7beb3e685df470
+      internalID: 991649889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim50
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e06e4e10724014ca6d5bbbf61282d0
+      internalID: -1708702386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IntroAnim51
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 240
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b840725deafcfcf46a4baab2ed3cbcb0
+      internalID: -13628079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -6752,6 +7865,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      IntroAnim37: -518017049
       IdleAnimation2_9: -1337931963
       Grapple180_1: 1983362834
       FrontFlipTrick10: 1639830093
@@ -6760,16 +7874,19 @@ TextureImporter:
       Grapple45_1: 143883605
       FrontFlipTrick12: -1918401872
       Jump3: 947154949
+      IntroAnim20: 2126481734
       SpinMove8: -1767738677
       IdleAnimation6_12: 389977770
       Grapple90_14: -291193394
       Walk8: 228908333
       Grapple25_5: -23068108
+      IntroAnim7: -902391579
       CrouchIdle3: 1080385358
       FrontFlipTrick8: -279781953
       FrontFlipTrick16: 1141045384
       TuckedSpinMove9: 1530248399
       SideSpinTrick2: -2056143185
+      IntroAnim2: 1312583425
       Jump4: 580864854
       Walk3: 2058452194
       IdleAnimation3_5: -1683964253
@@ -6790,18 +7907,25 @@ TextureImporter:
       CrouchMove8: 212058146
       Swim7: 576929782
       IdleToCrouch1: -1726323450
+      IntroAnim41: 322293176
       IdleAnimation6_5: 1927807041
       IdleAnimation4_5: 1867262842
       RunDust5: 1486444896
-      Grapple180_10: 1259683043
       TuckedSpinMove5: -2012338064
+      Grapple180_10: 1259683043
       Swim4: -1232148011
+      IntroAnim1: -1099333403
+      IntroAnim36: 917809429
       IdleAnimation5_11: 271833366
+      IntroAnim23: -1146323484
       Grapple45_9: -710601245
+      IntroAnim24: 759327990
       FallUp2: -623329574
       Swim5: -258264132
       CrouchToIdle1: 789473743
       Shoot2: 614054028
+      IntroAnim30: -1164630051
+      IntroAnim35: 110032398
       Idle2: -2129158148
       CrouchMove4: -879121644
       IdleAnimation5_5: -1963581632
@@ -6814,6 +7938,7 @@ TextureImporter:
       RunLand2: -300902084
       Shoot5: -1902555984
       Run5: -802913842
+      IntroAnim32: 280691884
       Jump6: 1514062040
       IdleAnimation1_1: 1911868729
       DuckFallUp2: 676980007
@@ -6823,6 +7948,9 @@ TextureImporter:
       Hand: 1026481696
       IdleToCrouch2: -1982604452
       GrapplePull4: -1294108084
+      IntroAnim13: 1404735367
+      IntroAnim49: 991649889
+      IntroAnim11: -217928968
       Grapple45_3: 512399136
       SideSpinTrick12: 1738936110
       IdleAnimation2_12: 1226429865
@@ -6830,6 +7958,7 @@ TextureImporter:
       Grapple45_7: 991325206
       Grapple25_6: 663668167
       Land5: 1549593719
+      IntroAnim5: -798048778
       Swim1: 2017012884
       Pull5: -2053512418
       IdleAnimation5_6: 801206500
@@ -6846,10 +7975,13 @@ TextureImporter:
       Walk2: 2053448171
       Pull2: 1909984194
       SpinMove6: -1146516442
+      IntroAnim29: -1849294828
       IdleAnimation3_2_2: 1149095073
+      IntroAnim46: -458287884
       Pull6: 747690645
       JumpDust1: 1576278609
       IdleAnimation1_2: -455165870
+      IntroAnim38: -1758793495
       IdleAnimation5_4: -1150247595
       SideSpinTrick9: 970132580
       Grapple180_2: 1862591225
@@ -6875,11 +8007,13 @@ TextureImporter:
       Push7: -567756082
       SwimMove5: 1568133265
       Grapple240_13: -1388031781
+      IntroAnim14: -812459924
       SideSpinTrick6: 2084775756
       FallDown3: -217655920
       IdleAnimation6_6: -411499884
       IdleAnimation4_14: 972096725
       Grapple90_12: -572736711
+      IntroAnim44: -1169792672
       IdleAnimation5_15: 537903817
       CrouchToIdle6: 644297186
       Grapple240_9: -65749614
@@ -6887,8 +8021,10 @@ TextureImporter:
       SideSpinTrick1: -1080965336
       GrapplePull5: -450265939
       Push4: 230138371
+      IntroAnim31: -327265082
       Shoot7: 723450598
       Walk4: -717370663
+      IntroAnim40: 1352719576
       Shoot4: 1483945766
       CrouchMove3: -674195431
       JumpDust4: -1386526435
@@ -6896,6 +8032,7 @@ TextureImporter:
       CrouchMove5: 1614172104
       IdleAnimation6_16: -1334437742
       Grapple45_13: -477044822
+      IntroAnim42: -1756846949
       SideSpinTrick5: 1385239526
       CrouchToIdle8: -1128936512
       Grapple90_13: 367468263
@@ -6908,8 +8045,9 @@ TextureImporter:
       IdleAnimation2_1: 77415944
       CrouchMove7: -1791173712
       IdleAnimation4_10: 1216400280
-      Grapple240_6: -45246963
+      IntroAnim6: -959542231
       Grapple45_4: -1351265971
+      Grapple240_6: -45246963
       SpinTrick6: 1387871184
       Land6: 675238711
       IdleAnimation5_14: -1590202609
@@ -6917,7 +8055,9 @@ TextureImporter:
       IdleAnimation1_9: 476256835
       IdleAnimation5_9: 1138030341
       IdleAnimation6_13: 472166624
+      IntroAnim18: 1143893436
       Grapple90_15: 1936200411
+      IntroAnim9: 1429876811
       IdleAnimation1_15: 701219836
       Walk7: 262825427
       IdleAnimation3_2_4: 1509294314
@@ -6929,9 +8069,12 @@ TextureImporter:
       CrouchToIdle5: 1241014414
       Jump1: -1930377851
       SwimMove1: -455479334
+      IntroAnim3: 891269015
       SpinTrick8: 762018095
       Land1: -370638125
       Grapple25_2: -5727486
+      IntroAnim48: 722873985
+      IntroAnim0: 1497098947
       Grapple180_3: 376200176
       Grapple180_6: -1190249538
       Grapple25_4: 2102483572
@@ -6941,6 +8084,8 @@ TextureImporter:
       DuckFallUp1: -1963087674
       Grapple90_17: 459033479
       SwimMove6: 804450907
+      IntroAnim26: 1505101221
+      IntroAnim27: 2055250204
       IdleAnimation4_2: 1153047506
       IdleAnimation6_3: -592407775
       Grapple180_9: 1558281505
@@ -6959,15 +8104,18 @@ TextureImporter:
       Jump2: -889395046
       IdleAnimation2_2: 484992433
       RunDust3: 902054103
+      IntroAnim22: -971215564
       IdleAnimation4_13: 1624606214
       SpinTrick3: -546468843
       FrontFlipTrick11: 2050668309
       IdleAnimation2_3: 455182933
-      IdleAnimation4_9: 1993296839
       IdleAnimation1_12: -515760547
+      IdleAnimation4_9: 1993296839
       Grapple240_1: -317169499
       Run2: 661897010
+      IntroAnim28: 1850218831
       FallUp1: -1639335269
+      IntroAnim19: -847478468
       RunLand6: 1797858514
       IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
@@ -6977,15 +8125,20 @@ TextureImporter:
       SideSpinTrick4: 1641837106
       IdleAnimation4_12: -1405390554
       SwimMove7: 1837206162
+      IntroAnim43: 1448387425
       Run7: 891213739
       FrontFlipTrick2: -1956075079
       IdleAnimation6_8: 1646270115
       IdleAnimation2_5: -68598466
       JumpDust6: 462777879
+      IntroAnim17: 493964634
       IdleAnimation4_1: -1339107401
       RunDust4: 553165050
+      IntroAnim45: -1402839403
+      IntroAnim50: -1708702386
       IdleAnimation1_16: -761519852
       SpinTrick1: 1092151281
+      IntroAnim25: 97702147
       Run3: 479359299
       Grapple45_6: 742414792
       Grapple45_11: -1955663139
@@ -6993,17 +8146,18 @@ TextureImporter:
       SpinMove4: -1878558320
       IdleAnimation3_3: -59072642
       TuckedSpinMove6: -1145793415
+      IntroAnim4: 1716436192
       Walk1: -1041322399
       FrontFlipTrick1: 1705055691
       IdleAnimation5_16: -1429589492
       IdleAnimation5_8: -458041391
       Grapple180_4: 1517064791
       IdleAnimation4_7: -40234528
+      Grapple90_11: -789003794
       Grapple240_4: -457800802
-      Push1: -1899172819
       Grapple180_5: -864176640
       IdleAnimation6_14: 420363046
-      Grapple90_11: -789003794
+      Push1: -1899172819
       Push5: -138088622
       IdleAnimation6_4: 1573799587
       Pull0: 398363178
@@ -7024,10 +8178,13 @@ TextureImporter:
       Swim3: 1681099172
       IdleAnimation5_2: 1631144890
       IdleAnimation1_8: 401381628
+      LyingDown: 240603808
       IdleAnimation4_11: 1746836410
       RunLand3: -1824072872
+      IntroAnim8: -713097539
       IdleAnimation4_4: 1892453347
       TuckedSpinMove1: 455350862
+      IntroAnim16: -409325608
       FrontFlipTrick14: -1401312218
       Grapple45_8: 697041811
       FrontFlipTrick4: 185024408
@@ -7035,6 +8192,7 @@ TextureImporter:
       IdleAnimation5_13: -910542130
       SwimMove4: 335667971
       IdleAnimation2_15: 1186205921
+      IntroAnim47: 1380060148
       IdleAnimation6_7: 821869472
       Grapple25_1: 923320106
       IdleAnimation6_10: -373267078
@@ -7046,6 +8204,8 @@ TextureImporter:
       DuckFallDown1: -503808755
       IdleAnimation6_15: -1577836067
       RunLand4: 677299120
+      IntroAnim21: -677770549
+      IntroAnim51: -13628079
       IdleAnimation3_1: 1519249165
       DuckFallDown2: 1349593762
       FallUp3: 266447733
@@ -7057,7 +8217,9 @@ TextureImporter:
       CrouchMove1: 902103042
       Grapple45_5: -2021032421
       IdleAnimation1_4: -1284626785
+      IntroAnim12: 705685096
       Grapple45_10: 256462962
+      IntroAnim34: -115643638
       SpinMove3: 251219581
       FallDown2: -357969022
       Idle4: -1384108245
@@ -7065,10 +8227,11 @@ TextureImporter:
       SpinTrick2: 539158545
       SideSpinTrick3: -837841702
       IdleAnimation1_11: -486842872
-      Grapple240_7: 767583624
       SpinTrick7: 327638191
+      Grapple240_7: 767583624
       RunDust2: 1795680736
       SpinMove5: -488648695
+      IntroAnim15: 2117462875
       SideSpinTrick11: 607189459
       IdleAnimation2_11: 624417265
       Grapple240_8: 298918360
@@ -7076,15 +8239,18 @@ TextureImporter:
       IdleAnimation6_1: 204713442
       IdleAnimation2_8: -542813681
       FrontFlipTrick17: 1876566736
+      IntroAnim33: -329217211
       IdleAnimation5_10: -280108904
       Grapple45_2: -333356188
       IdleAnimation2_13: -1047535884
       GrapplePull7: 1517889015
       SideSpinTrick13: -640291995
       Grapple: 633395182
+      IntroAnim39: -586112397
       Idle3: -582828682
       CrouchToIdle7: 644483532
       CrouchMove6: 1264050570
+      IntroAnim10: 994142240
       Swim2: -1301192796
       Push6: -2036637412
       Pull1: -1563583218
