@@ -7854,6 +7854,846 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GrabMap0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626ecc4c917c3654d8d16397126cc899
+      internalID: 1825309935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f442d9396e91d8640960dc2d2b872115
+      internalID: 815538255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f08bed97d35504ca8197dac7937084
+      internalID: -676160287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e306d6938e91fb4aa2dad8a8b860692
+      internalID: -140121703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6557b835637b9458b9428452ee3319
+      internalID: -505940527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5094c70a9ecc61e4c864cfd6c089ac45
+      internalID: 1750813880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b9b3c5187dc1e4c807c68d70ffe63f
+      internalID: -220037533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap7
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ae01402a9ae464395680c210603ff7
+      internalID: 824607320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e545b706795b2469bde1bbb9b4056e
+      internalID: -245968351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2fe435a699e4d42b5608c53861230b
+      internalID: -1676943208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap10
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1d020ca94a24943a579fb80f2702a7
+      internalID: -2046604118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap11
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965839b0af0633a48b426bf00e21a443
+      internalID: 867028735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrabMap12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 220
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ec70c5f1c47a0479851ac3cabc1a5c
+      internalID: 1620319764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd9e639dd292e642a0b3075724c2fe3
+      internalID: -1130616696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b850074cbcd2947b8f89faef9c3a25
+      internalID: -767188783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0526d2bd9c872a4da91f90c5b96a7c6
+      internalID: 1603397039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f70e16af4ff39443b3eddc477a66876
+      internalID: -926520293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d633659ee7083248b3e30ceacba5c9f
+      internalID: -2102624223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290f0de1dae9a774e8e596161fc57e55
+      internalID: 344885856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4131af80e143d4c824c0af3551715c
+      internalID: -1817175841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple7
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7b331dd005e1f48a77d9c94898f7ed
+      internalID: -263698030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59678dee0158af5468f3c5e0d9114318
+      internalID: -91666798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e73f74d33336947af727d6e03a663b
+      internalID: -348830422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple10
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f78780e02b2174791dc336bcdfdac1
+      internalID: 989234498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple11
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbc18051fcde164da9d5beb7f68f9d9
+      internalID: 1316032823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3327c9c0039d3ad48acb4e5c44416f7d
+      internalID: -446327949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple13
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864c53b86c3a0a8498fc68c910602059
+      internalID: 1291714354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2247b6401432f294e807d42887470029
+      internalID: -380075515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple15
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e83fb3280cea84396199b426826c1d
+      internalID: 1066643807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727cc1446a1417c4baad51c8cdcb199d
+      internalID: -550515402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple17
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42defeb7a2cd1e5439f5e06f90148ab7
+      internalID: 1503204984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple18
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dcbecf2b940f64f8bf68e438cea2a9
+      internalID: -1856678247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple19
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca20b2158a39af4683a03e0a809b898
+      internalID: -1229164335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecba339a2a890af429f52a17db92d4ca
+      internalID: -1093671965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple21
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d8160ee24993644b408c9dce341b3f
+      internalID: -1133493280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple22
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6407b58f7b305f44f9a64cb6751e8787
+      internalID: -416812571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple23
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d5a1db5de63a74383ad939e90c5179
+      internalID: -1248820029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple24
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162e3defccadd3a44a8f2b1c41407e5d
+      internalID: -232099615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple25
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aaa3526ad9d61a49958d52b6ff3c12f
+      internalID: -1829446312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnlockGrapple26
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 200
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b4d4a43ac48f94ba7bfab2966f5109
+      internalID: -200285680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -7865,15 +8705,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      GrabMap14: 1614910307
       IntroAnim37: -518017049
       IdleAnimation2_9: -1337931963
       Grapple180_1: 1983362834
+      UnlockGrapple22: -416812571
       FrontFlipTrick10: 1639830093
       Run1: 714852578
       RunLand5: 56251326
       Grapple45_1: 143883605
       FrontFlipTrick12: -1918401872
+      GrabMap8: 1886152553
       Jump3: 947154949
+      UnlockGrapple9: -348830422
       IntroAnim20: 2126481734
       SpinMove8: -1767738677
       IdleAnimation6_12: 389977770
@@ -7897,8 +8741,10 @@ TextureImporter:
       TuckedSpinMove2: -1381816108
       SwimMove8: 1030055182
       IdleAnimation2_4: -1504739677
+      GrabMap5: 1750813880
       IdleAnimation3_10: -1848476239
       Land3: -1852222810
+      UnlockGrapple20: -1093671965
       IdleAnimation1_3: 1143752939
       SpinTrick4: 1617065576
       IdleAnimation5_7: 205717580
@@ -7924,8 +8770,11 @@ TextureImporter:
       Swim5: -258264132
       CrouchToIdle1: 789473743
       Shoot2: 614054028
+      UnlockGrapple0: -1130616696
       IntroAnim30: -1164630051
       IntroAnim35: 110032398
+      UnlockGrapple2: 1603397039
+      GrabMap0: 1825309935
       Idle2: -2129158148
       CrouchMove4: -879121644
       IdleAnimation5_5: -1963581632
@@ -7934,6 +8783,7 @@ TextureImporter:
       IdleAnimation4_15: 451958213
       IdleAnimation5_3: 93428952
       IdleAnimation2_14: -666565507
+      UnlockGrapple7: -263698030
       IdleToCrouch4: 1487651710
       RunLand2: -300902084
       Shoot5: -1902555984
@@ -7951,10 +8801,10 @@ TextureImporter:
       IntroAnim13: 1404735367
       IntroAnim49: 991649889
       IntroAnim11: -217928968
+      GrabMap3: -140121703
       Grapple45_3: 512399136
       SideSpinTrick12: 1738936110
       IdleAnimation2_12: 1226429865
-      Player_18: 1912536193
       Grapple45_7: 991325206
       Grapple25_6: 663668167
       Land5: 1549593719
@@ -7963,10 +8813,11 @@ TextureImporter:
       Pull5: -2053512418
       IdleAnimation5_6: 801206500
       CrouchToIdle4: -140621692
+      UnlockGrapple23: -1248820029
       Grapple45_12: 1598997819
       DuckFallUp3: -1452327139
-      TuckedSpinMove4: 1928833766
       JumpDust2: -742184115
+      TuckedSpinMove4: 1928833766
       Swim8: -2106533748
       Shoot1: 1117871094
       CrouchIdle4: 1779137581
@@ -7975,9 +8826,11 @@ TextureImporter:
       Walk2: 2053448171
       Pull2: 1909984194
       SpinMove6: -1146516442
+      GrabMap7: 824607320
       IntroAnim29: -1849294828
       IdleAnimation3_2_2: 1149095073
       IntroAnim46: -458287884
+      GrabMap10: -2046604118
       Pull6: 747690645
       JumpDust1: 1576278609
       IdleAnimation1_2: -455165870
@@ -7985,20 +8838,25 @@ TextureImporter:
       IdleAnimation5_4: -1150247595
       SideSpinTrick9: 970132580
       Grapple180_2: 1862591225
+      GrabMap11: 867028735
+      GrabMap4: -505940527
       JumpDust3: -760749299
       Grapple180_7v: 1192723399
       SpinTrick5: -1878834907
+      UnlockGrapple25: -1829446312
       Grapple240_11: -1489902095
       SpinMove7: 484378025
       IdleAnimation5_12: 1172422447
       SwimMove3: 141030528
       IdleAnimation4_3: 141186354
       CrouchIdle1: 114542888
+      GrabMap1: 815538255
       Grapple25_3: 714515964
       Shoot6: -617983417
       IdleAnimation6_9: -1006772707
       Jump5: -1236504202
       RunDust1: 1008351478
+      UnlockGrapple14: -380075515
       GrapplePull3: 1889993379
       IdleAnimation2_7: -1980418090
       SideSpinTrick8: 299795567
@@ -8008,6 +8866,7 @@ TextureImporter:
       SwimMove5: 1568133265
       Grapple240_13: -1388031781
       IntroAnim14: -812459924
+      UnlockGrapple26: -200285680
       SideSpinTrick6: 2084775756
       FallDown3: -217655920
       IdleAnimation6_6: -411499884
@@ -8024,6 +8883,7 @@ TextureImporter:
       IntroAnim31: -327265082
       Shoot7: 723450598
       Walk4: -717370663
+      GrabMap9: -1676943208
       IntroAnim40: 1352719576
       Shoot4: 1483945766
       CrouchMove3: -674195431
@@ -8040,6 +8900,7 @@ TextureImporter:
       CrouchToIdle3: -1482473290
       FrontFlipTrick3: -2105281274
       IdleAnimation3_2_1: 686762662
+      UnlockGrapple4: -2102624223
       Land2: 169385046
       Grapple240_3: -1473579635
       IdleAnimation2_1: 77415944
@@ -8060,6 +8921,8 @@ TextureImporter:
       IntroAnim9: 1429876811
       IdleAnimation1_15: 701219836
       Walk7: 262825427
+      UnlockGrapple13: 1291714354
+      UnlockGrapple5: 344885856
       IdleAnimation3_2_4: 1509294314
       IdleAnimation3_12: 1232399295
       Grapple240_10: -1435755676
@@ -8070,14 +8933,19 @@ TextureImporter:
       Jump1: -1930377851
       SwimMove1: -455479334
       IntroAnim3: 891269015
+      UnlockGrapple8: -91666798
       SpinTrick8: 762018095
+      UnlockGrapple10: 989234498
+      GrabMap13: 174490739
       Land1: -370638125
+      UnlockGrapple21: -1133493280
       Grapple25_2: -5727486
       IntroAnim48: 722873985
       IntroAnim0: 1497098947
       Grapple180_3: 376200176
       Grapple180_6: -1190249538
       Grapple25_4: 2102483572
+      UnlockGrapple17: 1912536193
       Grapple180_11: 1997691233
       IdleAnimation4_6: 1809246072
       FrontFlipTrick7: 1735440196
@@ -8097,10 +8965,14 @@ TextureImporter:
       Pull4: -1654704883
       CrouchToIdle2: -30985629
       IdleAnimation4_8: -596760569
+      UnlockGrapple24: -232099615
       FrontFlipTrick13: 1776812108
       SideSpinTrick10: -1482948392
       Grapple180_8: -2114529771
+      UnlockGrapple12: -446327949
+      UnlockGrapple1: -767188783
       Walk5: -1537998552
+      UnlockGrapple19: -1229164335
       Jump2: -889395046
       IdleAnimation2_2: 484992433
       RunDust3: 902054103
@@ -8117,6 +8989,7 @@ TextureImporter:
       FallUp1: -1639335269
       IntroAnim19: -847478468
       RunLand6: 1797858514
+      UnlockGrapple6: -1817175841
       IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
       IdleAnimation3_16: -1821077686
@@ -8134,6 +9007,7 @@ TextureImporter:
       IntroAnim17: 493964634
       IdleAnimation4_1: -1339107401
       RunDust4: 553165050
+      GrabMap2: -676160287
       IntroAnim45: -1402839403
       IntroAnim50: -1708702386
       IdleAnimation1_16: -761519852
@@ -8148,6 +9022,7 @@ TextureImporter:
       TuckedSpinMove6: -1145793415
       IntroAnim4: 1716436192
       Walk1: -1041322399
+      UnlockGrapple16: -550515402
       FrontFlipTrick1: 1705055691
       IdleAnimation5_16: -1429589492
       IdleAnimation5_8: -458041391
@@ -8158,10 +9033,10 @@ TextureImporter:
       Grapple180_5: -864176640
       IdleAnimation6_14: 420363046
       Push1: -1899172819
+      UnlockGrapple11: 1316032823
       Push5: -138088622
       IdleAnimation6_4: 1573799587
       Pull0: 398363178
-      Player_9: 1886152553
       Walk6: 1787655019
       TuckedSpinMove7: 1100227248
       TuckedSpinMove8: -2113553996
@@ -8190,13 +9065,16 @@ TextureImporter:
       FrontFlipTrick4: 185024408
       SwimMove2: 1404383816
       IdleAnimation5_13: -910542130
+      IntroAnim47: 1380060148
       SwimMove4: 335667971
       IdleAnimation2_15: 1186205921
-      IntroAnim47: 1380060148
+      UnlockGrapple3: -926520293
       IdleAnimation6_7: 821869472
       Grapple25_1: 923320106
       IdleAnimation6_10: -373267078
       FrontFlipTrick6: 1113733513
+      UnlockGrapple15: 1066643807
+      UnlockGrapple18: -1856678247
       TuckedSpinMove3: -382355210
       FrontFlipTrick5: -1634281182
       IdleToCrouch3: -2062956259
@@ -8223,6 +9101,7 @@ TextureImporter:
       SpinMove3: 251219581
       FallDown2: -357969022
       Idle4: -1384108245
+      GrabMap6: -220037533
       IdleAnimation3_11: 11387822
       SpinTrick2: 539158545
       SideSpinTrick3: -837841702
@@ -8231,6 +9110,7 @@ TextureImporter:
       Grapple240_7: 767583624
       RunDust2: 1795680736
       SpinMove5: -488648695
+      GrabMap12: 1620319764
       IntroAnim15: 2117462875
       SideSpinTrick11: 607189459
       IdleAnimation2_11: 624417265
