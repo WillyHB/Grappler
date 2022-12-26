@@ -62,6 +62,17 @@ public class DialogueSystem : MonoBehaviour
 
         foreach (char c in text)
         {
+            if (UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed)
+            {
+                txt.text = text;
+                break;
+            }
+
+            else if (UnityEngine.InputSystem.Keyboard.current.anyKey.isPressed)
+            {
+                textSpeed /= 2;
+            }
+
             txt.text += c;
             await Task.Delay(textSpeed);
         }
@@ -87,6 +98,18 @@ public class DialogueSystem : MonoBehaviour
         Other.Text.text = "";
         foreach (char c in text)
         {
+            if (UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed)
+            {
+                Other.Text.text = text;
+                break;
+            }
+
+            else if (UnityEngine.InputSystem.Keyboard.current.anyKey.isPressed)
+            {
+                textSpeed /= 2;
+            }
+
+
             Other.Text.text += c;
             await Task.Delay(textSpeed);
         }

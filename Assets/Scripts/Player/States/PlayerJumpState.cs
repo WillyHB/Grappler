@@ -43,6 +43,12 @@ public class PlayerJumpState : PlayerAirborneState
             || sm.transform.position.y - startY >= MaxJumpHeight
             || sm.Rigidbody.velocity.y < 0))
         {
+            if (sm.Grapple.IsGrappling)
+            {
+                sm.Transition(sm.GrappleState);
+                return;
+            }
+
             sm.Transition(sm.FallState);
             return;
         }

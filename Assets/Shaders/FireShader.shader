@@ -69,7 +69,7 @@ Shader "Unlit/FireShader"
             uniform float4 transparent = (0, 0, 0, 0);
             sampler2D _MainTex;
             float4 _MainTex_ST;
-
+            int customID;
             float rand(float2 coord)
             {         
                 return frac(sin(dot(coord, float2(12.9898, 78.233))) * 43758.5453123);
@@ -112,6 +112,7 @@ Shader "Unlit/FireShader"
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+
                 return o;
             }
 
@@ -159,12 +160,12 @@ Shader "Unlit/FireShader"
                 egg += eggShape(i.uv, lerp(0, _Radius, 0.5)) / 2;
                 egg += eggShape(i.uv, lerp(0, _Radius, 0.25)) / 2;
 
-                float noise1 = noise(coord - float2(_Time.y * _WindModifier, _Time.y * _FrontSpeed));
-                float noise2 = noise(coord - float2(_Time.y * _WindModifier + 0.5, _Time.y * _BackSpeed
+                float noise1 = noise(coord - float2((_Time.y+customID) * _WindModifier, _Time.y * _FrontSpeed));
+                float noise2 = noise(coord - float2((_Time.y+customID) * _WindModifier + 0.5, _Time.y * _BackSpeed
                     ));
                 float combinedNoise = (noise1+noise2) / 2;
 
-                float fbmNoise = fbm(fbmCoord - float2(0, _Time.y * 3));
+                float fbmNoise = fbm(fbmCoord - float2(0, (_Time.y+customID) * 3));
                 fbmNoise = overlay(fbmNoise, 0.9-i.uv.y);
  
                 float combined = combinedNoise * fbmNoise * egg;

@@ -24,7 +24,7 @@ public class Grapple : MonoBehaviour
     public bool IsGrappling => ConnectionRope.enabled;
 
     private bool grappledThisFrame;
-    private bool canGrapple;
+    private bool canGrapple = true;
 
     void Start()
     {

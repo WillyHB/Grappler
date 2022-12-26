@@ -43,8 +43,8 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.DelayEvent(1000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
-                new Cutscene.DialogueTextEvent("We're northwest of the main island on a small island, I saw when we we're going down"),
-                new Cutscene.DialogueTextEvent("There's a bridge just south of here, but it didn't look very well kept"),
+                new Cutscene.DialogueTextEvent("We're northwest of the main islan, I saw when we were going down"),
+                new Cutscene.DialogueTextEvent("There's a bridge just south of here, but it didn't look very stable"),
             }),
 
             new Cutscene.DelayEvent(1000),
@@ -56,7 +56,7 @@ public class BridgeStartCutscene : CutsceneSystem
                 new Cutscene.DialogueTextEvent("In George's condition he isn't going anywhere, but we can't just leave him..."),
                 new Cutscene.DialogueTextEvent("As a trained nurse, I'm afraid I have to stay here and tend to his wounds. This leaves only you with the option to go get help"),
                 new Cutscene.DialogueTextEvent("Well, It's quite a long way, I'm not sure how to get there...", true),
-                new Cutscene.DialogueTextEvent("Here, take this map of the island"),
+                new Cutscene.DialogueTextEvent("Here, take this map of the island."),
             }),
 
             new Cutscene.AnimationEvent(gameObject, "HandMap", false),
@@ -66,14 +66,12 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.DelayEvent(2000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
-                new Cutscene.DialogueTextEvent("I hope it can help you"),
-                new Cutscene.DialogueTextEvent("The terrain is terrible, there's no way I can get there though!", true),
-                new Cutscene.DialogueTextEvent("You do have that grapple hook in your bag. Didn't test it, but it should work?"),
+                new Cutscene.DialogueTextEvent("Also, the terrain is most likely quite hard to traverse, so we packed a grapple hook in your bag, I hope it can help you."),
             }),
 
             new Cutscene.AnimationEvent(Player.gameObject, "UnlockGrapple", true),
-            new Cutscene.CustomFunctionEvent(Player.GetComponentInChildren<Grapple>().EnableGrapple),
             new Cutscene.DelayEvent(3000),
+            new Cutscene.CustomFunctionEvent(Player.GetComponentInChildren<Grapple>().EnableGrapple),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
                 new Cutscene.DialogueTextEvent("Well then, seems I have all I need", true),

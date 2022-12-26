@@ -27,7 +27,7 @@ namespace Cutscene
 
         public override async Task HandleEvent(Dialogue system)
         {
-            Task<int> PoseQuestion = system.DialogueSystem.GetComponent<DialogueSystem>().SetOption(question, 100, answer1, answer2, answer3);
+            Task<int> PoseQuestion = system.DialogueSystem.GetComponent<DialogueSystem>().SetOption(question, 80, answer1, answer2, answer3);
 
             await PoseQuestion;
             int option = PoseQuestion.Result;

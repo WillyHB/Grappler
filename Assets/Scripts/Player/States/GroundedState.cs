@@ -24,9 +24,8 @@ public class GroundedState : State
 
     public override void OnExit()
     {
-        base.OnExit();
-
         sm.InputProvider.Jumped -= Jump;
+        base.OnExit();
     }
 
     public override void FixedUpdate()

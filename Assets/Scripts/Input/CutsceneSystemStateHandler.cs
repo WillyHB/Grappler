@@ -11,7 +11,8 @@ public class CutsceneSystemStateHandler : InputStateHandler
 
     private float moveDirection;
     private bool isWalking;
-    public bool IsInCutscene { get; set; }
+
+    public bool IsInCutscene = false;
 
     public async Task Move(float direction, int time, bool walk)
     {

@@ -14,15 +14,20 @@ public abstract class CutsceneSystem : MonoBehaviour
 
     public bool RunOnStart;
 
+    public void Awake()
+    {
+        stateHandler.IsInCutscene = false;    
+    }
+
     public void Start()
     {
-        stateHandler.IsInCutscene = true;
         events = GenerateCutscene();
         if (RunOnStart) Play();
     }
 
     public async void Play()
     {
+        stateHandler.IsInCutscene = true;
         playing = true;
 
         foreach (var e in events)
