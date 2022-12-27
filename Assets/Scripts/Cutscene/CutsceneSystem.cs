@@ -13,6 +13,15 @@ public abstract class CutsceneSystem : MonoBehaviour
     public abstract List<CutsceneEvent> GenerateCutscene();
 
     public bool RunOnStart;
+    public bool RunOnTriggerEnter;
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (RunOnTriggerEnter)
+        {
+            Play();
+        }
+    }
 
     public void Awake()
     {

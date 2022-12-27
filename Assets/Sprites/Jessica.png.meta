@@ -924,6 +924,678 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: JessicaIntro0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ad7a39f3c4ad947902112e30f50af3
+      internalID: 1161283436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039e70dedae8f8e4b9bdc39d11bbea03
+      internalID: 2094122923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d7033bb90e35e429e1bd7c662c3f52
+      internalID: 1673995367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588c206ea4729684a96eb8d2d9ec32ef
+      internalID: -573390452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b6e4147fde5fd4b8b4ca81fc0e4a52
+      internalID: -218286983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458a9170b03ad6046a48c7911fabdd49
+      internalID: 1211626128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62aa27d9931a5aa4f82d426e47478c78
+      internalID: 292205024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a2ff6d9642f01468ea2cc796fa10f1
+      internalID: 1407190520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c56222649d5de249bf715cc5267555a
+      internalID: 1964992458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f444f07cc21ba4a904e0210969ab40
+      internalID: 1697957314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93a8c8bc785eb94aab4ddbf33245be2
+      internalID: -61463167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e0c0920400f8842b85b87ac29bea3f
+      internalID: -986694058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1b0d58dfa21bc42a46cb05708ee6bd
+      internalID: -1281564629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc52febd6cf5ee409dd046460ae6fb1
+      internalID: -703369037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a5a5ed95eec3747bfd7ccb3f3ad187
+      internalID: -849346381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950d852560629d7428965de4879362ac
+      internalID: 510912281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f080dfb3981051f4f95280fa485e7d15
+      internalID: -1212535491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8f9c5ccc69c8149b07ce7a837c1bc4
+      internalID: -1084590659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5462d6055dc4bcb49ac40a0490a5fa0f
+      internalID: -705372160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b388785452bf9ac4f981b83b1588ce03
+      internalID: 1756420984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73db1e40a7786b4c8a2ce49e4cd316f
+      internalID: 1017018336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb6d010e370939429a1ba0032209de1
+      internalID: 2050011525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d08a3c0c36e0094cbdfc31341af1dc9
+      internalID: 1039318810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaIntro23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 20
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781082940c39ba74f840c3637fec723b
+      internalID: 1709520231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c27d36f025e05848b262baa5f887e42
+      internalID: 269890866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933c779853a2dcb4c87aed773fdaf154
+      internalID: -1613971937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103e0af3ec32c9641ae5bbc46129102e
+      internalID: 242583192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104fa685d2e371e4f808a820d1dacc24
+      internalID: 1016764286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feca60323df65df4aac05a604b5f9703
+      internalID: -451292186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk5v
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dda9e5d952e3e469d07e9cd6ec31b4
+      internalID: -109885734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92023785f5b5fe4a812a12d486be6eb
+      internalID: 159639997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessicaWalk7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e54aa2e957492de4eab50825c7b7bbf2
+      internalID: -939837927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -935,45 +1607,77 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JessicaWonderAnim6: -1882698766
-      Jessica_Idle1: -687296467
-      JessicaHandMap4: -1335483986
-      JessicaWonderAnim7: 1104952009
-      JessicaWonderAnim10: -593504899
-      JessicaWonderAnim2: -676771242
       JessicaHandMap1: -1252870533
-      JessicaWonderAnim9: -1528513470
+      JessicaHandMap4: -1335483986
+      JessicaWonderAnim2: -676771242
       JessicaHandMap5: 1174834857
+      JessicaWalk3: 1016764286
+      JessicaWalk0: 269890866
+      JessicaIntro8: 1964992458
+      JessicaHandMap0: -1826914850
+      JessicaHandMap7: -441844916
+      JessicaHandMap9: -934713864
+      JessicaWonderAnim4: 343771768
+      JessicaWonderAnim0: -844438402
+      JessicaHandMap2: -1837893647
+      JessicaIntro10: -61463167
+      JessicaReturnMapHand4: -689940536
+      JessicaReturnMapHand2: -1933833332
+      JessicaIntro23: 1709520231
+      JessicaIntro9: 1697957314
+      JessicaIntro18: -705372160
+      JessicaWonderAnim3: -1016002010
+      JessicaWonderAnim18: 1029725738
+      JessicaIntro12: -1281564629
+      JessicaIntro0: 1161283436
+      JessicaWonderAnim14: -1933137339
+      JessicaIntro5: 1211626128
+      JessicaIntro3: -573390452
+      JessicaHandMap8: 351343114
+      Jessica_Idle3: -1958835587
+      JessicaIntro21: 2050011525
+      JessicaWalk6: 159639997
+      Jessica_Idle0: -2128103456
+      JessicaReturnMapHand0: -1935364831
+      JessicaIntro15: 510912281
+      JessicaHandMap3: -561835462
+      JessicaIntro17: -1084590659
+      JessicaWalk1: -1613971937
+      JessicaIntro22: 1039318810
+      JessicaWalk5v: -109885734
+      JessicaWonderAnim6: -1882698766
+      JessicaWonderAnim7: 1104952009
+      Jessica_Idle1: -687296467
+      JessicaIntro6: 292205024
+      JessicaIntro1: 2094122923
+      JessicaWonderAnim10: -593504899
+      JessicaIntro7: 1407190520
+      JessicaWonderAnim9: -1528513470
+      JessicaIntro14: -849346381
       JessicaWonderAnim13: -552820134
+      JessicaIntro4: -218286983
+      JessicaIntro20: 1017018336
       JessicaWonderAnim1: -1018285708
       JessicaReturnMapHand3: 2117861321
       JessicaWonderAnim8: 1818744278
       JessicaHandMap6: 1291466231
+      JessicaIntro11: -986694058
       JessicaWonderAnim5: 124334928
-      JessicaHandMap0: -1826914850
+      JessicaIntro19: 1756420984
+      JessicaWalk2: 242583192
       JessicaWonderAnim16: -2005782684
-      JessicaWonderAnim4: 343771768
-      JessicaWonderAnim0: -844438402
-      JessicaHandMap2: -1837893647
+      JessicaWalk4: -451292186
+      JessicaWalk7: -939837927
       JessicaWonderAnim17: -1532977071
-      JessicaHandMap7: -441844916
       JessicaHandMap10: -309379083
-      JessicaReturnMapHand4: -689940536
       JessicaWonderAnim12: 388858819
-      JessicaWonderAnim3: -1016002010
       JessicaReturnMapHand1: -1377283497
       Jessica_Idle2: 1336351564
-      JessicaWonderAnim18: 1029725738
-      JessicaReturnMapHand2: -1933833332
-      JessicaWonderAnim14: -1933137339
-      JessicaHandMap9: -934713864
-      JessicaHandMap8: 351343114
-      Jessica_Idle3: -1958835587
+      JessicaIntro13: -703369037
+      JessicaIntro16: -1212535491
       JessicaWonderAnim15: 2047820894
-      Jessica_Idle0: -2128103456
       JessicaWonderAnim11: -1481301307
-      JessicaReturnMapHand0: -1935364831
-      JessicaHandMap3: -561835462
+      JessicaIntro2: 1673995367
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
