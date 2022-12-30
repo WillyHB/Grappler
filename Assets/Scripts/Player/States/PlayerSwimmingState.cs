@@ -24,6 +24,9 @@ public class PlayerSwimmingState : State
     [Range(0f, 1f)]
     public float SurfaceTension;
 
+    public Audio UnderwaterAmbience;
+    public AudioEventChannel AudioEventChannel;
+
     public bool NearSurface => sm.transform.position.y - sm.GetComponent<BoxCollider2D>().bounds.size.y / 2
             > sm.CurrentWater.transform.position.y
             + sm.CurrentWater.GetComponent<BoxCollider2D>().bounds.size.y / 2
@@ -159,9 +162,23 @@ public class PlayerSwimmingState : State
         sm.Rigidbody.velocity = accelerant;
     }
 
+    private bool underwater;
+
     public override void Update()
     {
         base.Update();
+
+        if (NearSurface && underwater)
+        {
+            underwater = false;
+            AudioEventChannel.Stop(UnderwaterAmbience);
+        }
+
+        else if (!underwater)
+        {
+            underwater = true;
+            AudioEventChannel.Play(UnderwaterAmbience);
+        }
 
         if (sm.MoveValue != 0)
         {

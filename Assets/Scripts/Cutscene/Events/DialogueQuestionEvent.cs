@@ -16,8 +16,11 @@ namespace Cutscene
         public List<DialogueEvent> Answer2Events;
         public List<DialogueEvent> Answer3Events;
 
-        public DialogueQuestionEvent(string question, string answer1 = null, string answer2 = null, string answer3 = null)
+        private Sprite potrait;
+
+        public DialogueQuestionEvent(string question, Sprite potrait, string answer1 = null, string answer2 = null, string answer3 = null)
         {
+            this.potrait = potrait;
             this.question = question;
 
             this.answer1 = answer1;
@@ -27,7 +30,7 @@ namespace Cutscene
 
         public override async Task HandleEvent(Dialogue system)
         {
-            Task<int> PoseQuestion = system.DialogueSystem.GetComponent<DialogueSystem>().SetOption(question, 80, answer1, answer2, answer3);
+            Task<int> PoseQuestion = system.DialogueSystem.GetComponent<DialogueSystem>().SetOption(question, 80, potrait, answer1, answer2, answer3);
 
             await PoseQuestion;
             int option = PoseQuestion.Result;

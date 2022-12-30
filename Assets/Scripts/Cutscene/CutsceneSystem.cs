@@ -17,9 +17,12 @@ public abstract class CutsceneSystem : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (RunOnTriggerEnter)
+        if (collision.CompareTag("Player"))
         {
-            Play();
+            if (RunOnTriggerEnter)
+            {
+                Play();
+            }
         }
     }
 

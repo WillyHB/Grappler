@@ -9,16 +9,18 @@ namespace Cutscene
     {
         private string text;
         private bool isPlayer;
+        private Sprite potrait;
 
-        public DialogueTextEvent(string text, bool isPlayer = false)
+        public DialogueTextEvent(string text, Sprite potrait, bool isPlayer = false)
         {
             this.text = text;
             this.isPlayer = isPlayer;
+            this.potrait = potrait;
         }
 
         public override async Task HandleEvent(Dialogue system)
         {
-            await system.DialogueSystem.GetComponent<DialogueSystem>().SetText(text, 80, isPlayer);
+            await system.DialogueSystem.GetComponent<DialogueSystem>().SetText(text, 80, isPlayer, potrait);
         }
     }
 

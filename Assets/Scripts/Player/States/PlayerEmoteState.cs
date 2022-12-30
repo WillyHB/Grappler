@@ -15,6 +15,8 @@ public class PlayerEmoteState : State
         sm = fsm as PlayerStateMachine;
 
         sm.Animator.Play(Animation);
+
+        sm.Rigidbody.velocity = Vector2.zero;
     }
 
     public override void Update()
@@ -23,9 +25,6 @@ public class PlayerEmoteState : State
 
         if (sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1 && !sm.Animator.GetCurrentAnimatorClipInfo(0)[0].clip.isLooping)
         {
-            Debug.Log(sm.Animator.GetCurrentAnimatorClipInfo(0)[0].clip.isLooping);
-            Debug.Log(sm.Animator.GetCurrentAnimatorClipInfo(0)[0].clip);
-            Debug.Log("OH SHIT");
             sm.Transition(sm.IdleState);
         }
     }

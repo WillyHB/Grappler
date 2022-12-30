@@ -9,6 +9,7 @@ public class DialogueSystem : MonoBehaviour
     [System.Serializable]
     public struct Character
     {
+        public Image Background;
         public Image Potrait;
         public TMPro.TextMeshProUGUI Text;
     }
@@ -38,24 +39,29 @@ public class DialogueSystem : MonoBehaviour
 
     }
 
-    private void SetActiveCharacters(bool player, bool other)
+    private void SetActiveCharacters(bool player, bool other, Sprite Potrait = null)
     {
+        if (player)
+        {
+            Player.Potrait.sprite = Potrait;
+        }
 
-        Player.Potrait.gameObject.SetActive(player);
-        Player.Text.gameObject.SetActive(player);
+        else if (other)
+        {
+            Other.Potrait.sprite = Potrait;
+        }
 
-
-        Other.Potrait.gameObject.SetActive(other);
-        Other.Text.gameObject.SetActive(other);
+        Player.Background.gameObject.SetActive(player);
+        Other.Background.gameObject.SetActive(other);
     }
 
-    public async Task SetText(string text, int textSpeed, bool isPlayer)
+    public async Task SetText(string text, int textSpeed, bool isPlayer, Sprite Potrait)
     {
         continuePressed = false;
 
         TMPro.TextMeshProUGUI txt = isPlayer ? Player.Text : Other.Text;
 
-        SetActiveCharacters(isPlayer, !isPlayer);
+        SetActiveCharacters(isPlayer, !isPlayer, Potrait);
 
         Continue.gameObject.SetActive(false);
         txt.text = "";
@@ -88,11 +94,11 @@ public class DialogueSystem : MonoBehaviour
         SetActiveCharacters(false, false);
     }
 
-    public async Task<int> SetOption(string text, int textSpeed, string Option1 = null, string Option2 = null, string Option3 = null)
+    public async Task<int> SetOption(string text, int textSpeed, Sprite Potrait, string Option1 = null, string Option2 = null, string Option3 = null)
     {
         chosenOption = null;
 
-        SetActiveCharacters(false, true);
+        SetActiveCharacters(false, true, Potrait);
         Continue.gameObject.SetActive(false);
 
         Other.Text.text = "";

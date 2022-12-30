@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dd9340caed59448b0f604f29b23627, type: 3}
+  m_Name: Jessica
+  m_EditorClassIdentifier: 
+  Poker: {fileID: -2052293481, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  CloseEyes: {fileID: 1508038795, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Happy: {fileID: -1236639801, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Sad: {fileID: 276546411, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Confused: {fileID: -690776448, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Shocked: {fileID: -1664663460, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Flabbergasted: {fileID: 1555739630, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Angry: {fileID: -1980533263, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}
+  Fear: {fileID: 508174904, guid: fe131ac78d7f58f409ea33584f2767e1, type: 3}

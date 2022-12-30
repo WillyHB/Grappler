@@ -22,6 +22,10 @@ public class Water : MonoBehaviour
     private BoxCollider2D boxCollider;
     public Bounds Bounds { get; private set; }
 
+    [Space(10)]
+    public AudioEventChannel AudioEventChannel;
+    public Audio WaterSplash;
+
     public void Splash(int index, float speed)
     {
         if (index >= 0 && index < NumberOfPoints)
@@ -181,9 +185,16 @@ public class Water : MonoBehaviour
 
         float x = collision.transform.position.x;
 
+        float splashAmount = velocity * SplashMultiplier;
+
+        if (splashAmount <= -0.5)
+        {
+            AudioEventChannel.Play(WaterSplash);
+        }
+
         Splash(
                 (int)((x - (transform.position.x - meshRenderer.bounds.size.x / 2)) / meshRenderer.bounds.size.x * NumberOfPoints),
-                velocity * SplashMultiplier);
+                splashAmount);
 
         if (collision.CompareTag("Player"))
         {
