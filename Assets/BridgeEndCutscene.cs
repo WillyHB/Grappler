@@ -12,7 +12,8 @@ public class BridgeEndCutscene : CutsceneSystem
             new Cutscene.DelayEvent(500),
             new Cutscene.AnimationEvent(GameObject.Find("Player"), "Phew", true),
             new Cutscene.DelayEvent(2000),
-            new Cutscene.PlayerMoveEvent(1, 5000, false),
+            new Cutscene.CameraZoomEvent(0),
+            new Cutscene.CustomFunctionEvent(()=>Destroy(this)),
         };
     }
 }

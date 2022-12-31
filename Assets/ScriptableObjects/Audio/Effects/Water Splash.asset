@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Water Splash
   m_EditorClassIdentifier: 
   AudioClip: {fileID: 8300000, guid: da9d45489bbe2fb49a63a8aa2f339aa2, type: 3}
-  Volume: 0
+  Volume: 0.15
   Loop: 0
   Pan: 0

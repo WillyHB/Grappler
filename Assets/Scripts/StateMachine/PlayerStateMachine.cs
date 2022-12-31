@@ -170,7 +170,7 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().rooms[4].Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().rooms[9].Checkpoint.position;
     }
 
     public void PlayFootstep()
@@ -181,16 +181,6 @@ public class PlayerStateMachine : StateMachine
             return;
 
         PlayerAudioEventChannel.Play(footsteps[Random.Range(0, footsteps.Length-1)]);
-    }
-
-    public void PlayImpact()
-    {
-        Audio impact = GroundSoundManager.GetCurrentTileSounds().Value.Land;
-
-        if (impact == null)
-            return;
-
-        PlayerAudioEventChannel.Play(impact);
     }
 
     protected void OnDisable()

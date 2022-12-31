@@ -20,6 +20,8 @@ public class ConnectionRope : Rope
         }
     }
 
+    public Rigidbody2D startBody => StartRigidbody;
+
     [Space(15)]
     [SerializeField]private Vector2 StartOffset;
     [HideInInspector]public Vector2 startOffset

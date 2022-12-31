@@ -14,6 +14,7 @@ public class PlayerLandState : PlayerMoveState
         rumbleChannel.PerformRumble(1f, 0.25f, 0.2f);
         Instantiate(LandDust, sm.transform.position, Quaternion.identity);
         sm.Animator.Play(sm.Animations.Land);
+        sm.PlayerAudioEventChannel.Play(sm.GroundSoundManager.GetCurrentTileSounds().Value.Land);
     }
 
     public override void Update()

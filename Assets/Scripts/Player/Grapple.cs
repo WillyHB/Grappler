@@ -131,7 +131,7 @@ public class Grapple : MonoBehaviour
                     ConnectionRope.endOffset = offset;
                     ConnectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
                 }
-
+                /*
                 else
                 {
                     hookInstance = Instantiate(hook);
@@ -142,7 +142,7 @@ public class Grapple : MonoBehaviour
                     ConnectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
                     ConnectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
                 }
-
+                */
                 ConnectionRope.enabled = true;
             }
         }
