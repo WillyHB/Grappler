@@ -172,8 +172,8 @@ TextureImporter:
       name: BridgeMisc_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 80
+        x: 224
+        y: 112
         width: 96
         height: 48
       alignment: 0
@@ -193,8 +193,8 @@ TextureImporter:
       name: BridgeMisc_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 48
+        x: 224
+        y: 80
         width: 96
         height: 32
       alignment: 0
@@ -232,34 +232,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jessica
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 48
-        width: 16
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3211dce50d0b5b7428cc0b8fa44bfa26
-      internalID: 983952223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: BridgeMisc_4
       rect:
         serializedVersion: 2
-        x: 240
-        y: 96
-        width: 32
-        height: 32
+        x: 0
+        y: 16
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +256,10 @@ TextureImporter:
       name: BridgeMisc_5
       rect:
         serializedVersion: 2
-        x: 272
-        y: 96
-        width: 32
-        height: 32
+        x: 80
+        y: 16
+        width: 64
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,29 +267,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9553b2b567e15354cb7fc32cc38e833a
+      spriteID: 236cde91067d81948bd56488501dc43c
       internalID: 23881811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: George
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 48
-        width: 16
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19778184c74d3c44196990e8c1e04d58
-      internalID: 256295184
       vertices: []
       indices: 
       edges: []
