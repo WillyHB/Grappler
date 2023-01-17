@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerGrappleState
   m_EditorClassIdentifier: 
   GrapplePower: 125
-  RotationDistanceLimit: 0.05
+  RotationDistanceLimit: 0.1
