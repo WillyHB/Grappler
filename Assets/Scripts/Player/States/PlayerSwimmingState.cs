@@ -24,11 +24,7 @@ public class PlayerSwimmingState : State
     [Range(0f, 1f)]
     public float SurfaceTension;
 
-    public bool NearSurface => sm.transform.position.y - sm.GetComponent<BoxCollider2D>().bounds.size.y / 2
-            > sm.CurrentWater.transform.position.y
-            + sm.CurrentWater.GetComponent<BoxCollider2D>().bounds.size.y / 2
-            + sm.CurrentWater.GetComponent<BoxCollider2D>().offset.y
-            - MaxSurfaceDistance;
+    public bool NearSurface;
 
     private float oldGravity;
 
@@ -49,9 +45,14 @@ public class PlayerSwimmingState : State
 
     public override void OnExit()
     {
-        sm.InputProvider.Jumped -= Jump;
-        sm.Rigidbody.gravityScale = oldGravity;
         base.OnExit();
+
+        Debug.LogWarning("EXIT SWIM!");
+        sm.InputProvider.Jumped -= Jump;
+        if (sm.Rigidbody != null)
+        {
+            sm.Rigidbody.gravityScale = oldGravity;
+        }
     }
 
     private void Jump()
@@ -178,5 +179,11 @@ public class PlayerSwimmingState : State
             sm.Transition(sm.IdleState);
             return;
         }
+
+        NearSurface = sm.transform.position.y - sm.GetComponent<BoxCollider2D>().bounds.size.y / 2
+            > sm.CurrentWater.transform.position.y
+            + sm.CurrentWater.GetComponent<BoxCollider2D>().bounds.size.y / 2
+            + sm.CurrentWater.GetComponent<BoxCollider2D>().offset.y
+            - MaxSurfaceDistance;
     }
 }

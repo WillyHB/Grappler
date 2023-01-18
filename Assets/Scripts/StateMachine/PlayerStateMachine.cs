@@ -93,6 +93,8 @@ public class PlayerStateMachine : StateMachine
 
     public bool IsFrozen { get; private set; }
 
+    public bool HasDied { get; private set; }
+
     public PlayerEventChannel PlayerEventChannel;
     public AudioEventChannel PlayerAudioEventChannel;
 
@@ -151,7 +153,7 @@ public class PlayerStateMachine : StateMachine
         if (IsFrozen) Rigidbody.velocity = Vector2.zero;
         else Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
 
-        if (CurrentWater != null) Transition(SwimState);
+        if (CurrentWater != null && !HasDied) Transition(SwimState);
 
         Debug.Log(CurrentState.GetType().ToString());
     }
@@ -163,14 +165,18 @@ public class PlayerStateMachine : StateMachine
 
     protected void Awake()
     {
-        PlayerEventChannel.Die += () => Transition(DeathState);
+        PlayerEventChannel.Die += () =>
+        {
+            Transition(DeathState);
+            HasDied = true;
+        };
 
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().rooms[8].Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().rooms[12].Checkpoint.position;
     }
 
     public void PlayFootstep()
@@ -185,7 +191,11 @@ public class PlayerStateMachine : StateMachine
 
     protected void OnDisable()
     {
-        PlayerEventChannel.Die -= () => Transition(DeathState);
+        PlayerEventChannel.Die -= () =>
+        {
+            Transition(DeathState);
+            HasDied = true;
+        };
     }
 
     protected override State GetInitialState() => IdleState;
