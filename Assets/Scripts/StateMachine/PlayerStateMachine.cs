@@ -176,7 +176,9 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().rooms[12].Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().rooms[13].Checkpoint.position;
+
+        Transition(IdleState);
     }
 
     public void PlayFootstep()
