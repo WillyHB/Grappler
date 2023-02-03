@@ -12,18 +12,20 @@ public class BridgeStartCutscene : CutsceneSystem
     public Potrait JessicaPotrait;
     public Sprite GeorgePotrait;
 
+    public GameObject Player;
+
     public override List<CutsceneEvent> GenerateCutscene()
     {
         return new List<CutsceneEvent>()
         {
-            new Cutscene.CustomFunctionEvent(GameObject.Find("Player").GetComponentInChildren<Grapple>().DisableGrapple),
+            new Cutscene.CustomFunctionEvent(Player.GetComponentInChildren<Grapple>().DisableGrapple),
             new Cutscene.DelayEvent(1000),
-            new Cutscene.AnimationEvent(GameObject.Find("Player").gameObject, "Intro1", true),
+            new Cutscene.AnimationEvent(Player.gameObject, "Intro1", true),
             new Cutscene.DelayEvent(1000),
             new Cutscene.CameraMoveEvent(MoveTransform),
             new Cutscene.CameraZoomEvent(4),
             new Cutscene.DelayEvent(5000),
-            new Cutscene.AnimationEvent(GameObject.Find("Player").gameObject, "Intro2", true),
+            new Cutscene.AnimationEvent(Player.gameObject, "Intro2", true),
             new Cutscene.DelayEvent(4000),
             new Cutscene.PlayerMoveEvent(-1, 2500, true),
             new Cutscene.AnimationEvent(gameObject, "Intro", false),
@@ -85,16 +87,16 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.AnimationEvent(gameObject, "HandMap", false),
             new Cutscene.DelayEvent(1050),
             new Cutscene.AnimationEvent(gameObject, "ReturnHand", false),
-            new Cutscene.AnimationEvent(GameObject.Find("Player").gameObject, "GrabMap", true),
+            new Cutscene.AnimationEvent(Player.gameObject, "GrabMap", true),
             new Cutscene.DelayEvent(2000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
                 new Cutscene.DialogueTextEvent("Also, we we're given a grapple hook each, perhaps it can be of use to you, it's it your bag.", JessicaPotrait.Poker),
             }),
 
-            new Cutscene.AnimationEvent(GameObject.Find("Player").gameObject, "UnlockGrapple", true),
+            new Cutscene.AnimationEvent(Player.gameObject, "UnlockGrapple", true),
             new Cutscene.DelayEvent(3000),
-            new Cutscene.CustomFunctionEvent(GameObject.Find("Player").GetComponentInChildren<Grapple>().EnableGrapple),
+            new Cutscene.CustomFunctionEvent(Player.GetComponentInChildren<Grapple>().EnableGrapple),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
                 new Cutscene.DialogueTextEvent("Well, it doesn't make sense to just stand here, so I'll get to going", PlayerPotrait.Poker, true),
@@ -110,7 +112,7 @@ public class BridgeStartCutscene : CutsceneSystem
             }),
             new Cutscene.DelayEvent(1000),
             new Cutscene.PlayerMoveEvent(0.1f, 10, true),
-            new Cutscene.CameraMoveEvent(GameObject.Find("Player").transform),
+            new Cutscene.CameraMoveEvent(Player.transform),
             new Cutscene.CameraZoomEvent(0)
         };
     }
