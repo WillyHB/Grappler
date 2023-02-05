@@ -20,7 +20,7 @@ namespace Cutscene
 
         public override async Task HandleEvent(Dialogue system)
         {
-            await system.DialogueSystem.GetComponent<DialogueSystem>().SetText(text, 80, isPlayer, potrait);
+            await system.DialogueSystem.GetComponent<DialogueSystem>().SetText(text, GameData.Load().dialogueTextSpeed, isPlayer, potrait);
         }
     }
 

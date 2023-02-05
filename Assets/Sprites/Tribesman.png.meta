@@ -526,11 +526,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TribesmanStand7
+      name: TribesmanWalk0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 20
+        x: 0
+        y: 0
         width: 16
         height: 20
       alignment: 0
@@ -540,18 +540,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 301e50e84f407984fb0827f05f568624
-      internalID: 1601809565
+      spriteID: 28acc37e30f978846959d1f793a5e3cd
+      internalID: -628719346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TribesmanStand8
+      name: TribesmanWalk1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 20
+        x: 16
+        y: 0
         width: 16
         height: 20
       alignment: 0
@@ -561,8 +561,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a13445881a0431d418c8661cb931ae1a
-      internalID: -1861549115
+      spriteID: 75bb68eb33e287c41aeb32e0bd536df9
+      internalID: -1952594722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TribesmanWalk2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0690cadc058dfd24285a34186a6881bd
+      internalID: 1408343660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TribesmanWalk3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae21e7f8eb3ef143a23d32669175fbb
+      internalID: 971813156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TribesmanWalk4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167e6c017ac6efc4cb0ff723942b5a48
+      internalID: 1950511535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TribesmanWalk5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af60ebe75db84734c9ea9868564fb211
+      internalID: -1363133666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TribesmanWalk6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169ce34aae55b114e9c183783003a24b
+      internalID: 16232578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TribesmanWalk7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110f02a048ecebf41b896722b908abb8
+      internalID: 1241168959
       vertices: []
       indices: 
       edges: []
@@ -581,14 +707,18 @@ TextureImporter:
       TribesmanRun4: -1256722794
       TribesmanRun0: 668204572
       TribesmanRun2: 541338739
+      TribesmanWalk3: 971813156
       TribesmanStand2: 1833468881
+      TribesmanWalk0: -628719346
       TribesmanFire0: -112112837
       TribesmanStand6: -725980044
+      TribesmanWalk5: -1363133666
       Tribesman_19: 866695839
       TribesmanStand5: -1518203181
       TribesmanStand0: 309496978
       TribesmanIdle0: 1230720463
       TribesmanStand7: 1601809565
+      TribesmanWalk4: 1950511535
       TribesmanRun7: -1125351844
       TribesmanRun3: 1595089767
       TribesmanRun5: 208368230
@@ -598,12 +728,16 @@ TextureImporter:
       TribesmanIdle1: -2126246285
       TribesmanStand4: -2047844137
       TribesmanStand3: 1250929802
+      TribesmanWalk6: 16232578
       TribesmanIdle3: 788264005
       TribesmanStand8: -1861549115
+      TribesmanWalk2: 1408343660
       Tribesman_17: 1220591018
       TribesmanRun1: -264746046
       TribesmanStand1: 32146554
+      TribesmanWalk7: 1241168959
       Tribesman_18: 1254235624
+      TribesmanWalk1: -1952594722
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

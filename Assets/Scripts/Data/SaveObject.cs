@@ -21,5 +21,7 @@ public class SaveObject
 
     public int Checkpoint = 0;
 
+    public int dialogueTextSpeed = 80;
+
 
 }
