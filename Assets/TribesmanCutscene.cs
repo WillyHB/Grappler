@@ -37,7 +37,7 @@ public class TribesmanCutscene : CutsceneSystem
             {
                 new Cutscene.DialogueTextEvent("Wait come back!", PlayerPotrait.Shocked, true),
                 new Cutscene.DialogueTextEvent("There's still people living here?!", PlayerPotrait.Confused, true),
-                new Cutscene.DialogueTextEvent("I should follow him...", PlayerPotrait.Confused, true),
+                new Cutscene.DialogueTextEvent("I should follow him...", PlayerPotrait.Poker, true),
             }),
             new Cutscene.CameraZoomEvent(0),
             new Cutscene.CameraMoveEvent(Player.transform),

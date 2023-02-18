@@ -120,6 +120,8 @@ public class PlayerStateMachine : StateMachine
     {
         base.Update();
 
+        if (HasDied) return;
+
         MoveValue = InputProvider.GetState().MoveDirection;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(
@@ -153,7 +155,7 @@ public class PlayerStateMachine : StateMachine
         if (IsFrozen) Rigidbody.velocity = Vector2.zero;
         else Rigidbody.velocity = new Vector2(Mathf.Clamp(Rigidbody.velocity.x, -20, 20), Rigidbody.velocity.y);
 
-        if (CurrentWater != null && !HasDied) Transition(SwimState);
+        if (CurrentWater != null) Transition(SwimState);
 
         Debug.Log(CurrentState.GetType().ToString());
     }
@@ -176,7 +178,7 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().rooms[17].Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().rooms[0].Checkpoint.position;
 
         Transition(IdleState);
     }

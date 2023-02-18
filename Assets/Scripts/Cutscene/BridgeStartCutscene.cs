@@ -113,7 +113,8 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.DelayEvent(1000),
             new Cutscene.PlayerMoveEvent(0.1f, 10, true),
             new Cutscene.CameraMoveEvent(Player.transform),
-            new Cutscene.CameraZoomEvent(0)
+            new Cutscene.CameraZoomEvent(0),
+            new Cutscene.CustomFunctionEvent(()=>Destroy(GetComponent<BoxCollider2D>())),
         };
     }
 }

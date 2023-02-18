@@ -294,6 +294,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BridgeMisc_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09602f3d5da908044a54a4c745a0477d
+      internalID: -1735621259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -310,6 +331,7 @@ TextureImporter:
       BridgeMisc_2: -262606778
       BridgeMisc_0: 551008624
       BridgeMisc_6: -1321603638
+      BridgeMisc_7: -1735621259
       George: 256295184
       BridgeMisc_4: 1201817183
       BridgeMisc_1: -1264987487
