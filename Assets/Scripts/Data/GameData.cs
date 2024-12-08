@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.IO;
-using Newtonsoft.Json;
-
 
 [System.Serializable]
 public static class GameData
@@ -30,7 +28,7 @@ public static class GameData
             File.Create(dir + FileName).Close();
         }
 
-        string json = JsonConvert.SerializeObject(so, Formatting.Indented);
+        string json = JsonUtility.ToJson(so);
         File.WriteAllText(dir + FileName, json);
 
     }
@@ -54,7 +52,7 @@ public static class GameData
         }
 
         string json = File.ReadAllText(fullPath);
-        so = JsonConvert.DeserializeObject<SaveObject>(json);
+        so = JsonUtility.FromJson<SaveObject>(json);
 
         cachedSO = so;
 

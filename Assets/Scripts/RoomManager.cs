@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public List<Room> rooms;
+    [SerializeField]
+    private List<Room> rooms;
+
+    public Room GetRoom(int i) {
+        if (i < 0 || i > rooms.Count) return null;
+
+        return rooms[i];
+    }
 
     public void Start()
     {

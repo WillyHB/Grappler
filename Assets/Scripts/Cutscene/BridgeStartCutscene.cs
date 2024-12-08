@@ -14,6 +14,9 @@ public class BridgeStartCutscene : CutsceneSystem
 
     public GameObject Player;
 
+    public AudioEventChannel EnvironmentEventChannel;
+    public Audio HeadScratch;
+
     public override List<CutsceneEvent> GenerateCutscene()
     {
         return new List<CutsceneEvent>()
@@ -39,6 +42,7 @@ public class BridgeStartCutscene : CutsceneSystem
                 new Cutscene.DialogueTextEvent("Yeah, I think I'm fine.", JessicaPotrait.Poker),
                 new Cutscene.DialogueTextEvent("Where are we?", JessicaPotrait.Confused),
             }),
+            new Cutscene.AudioEvent(EnvironmentEventChannel, HeadScratch),
             new Cutscene.AnimationEvent(gameObject, "Wonder", false),
             new Cutscene.DelayEvent(2000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()

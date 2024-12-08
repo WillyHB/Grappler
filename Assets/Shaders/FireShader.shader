@@ -128,7 +128,28 @@ Shader "Unlit/FireShader"
                     return 1-2 * (1-base) * (1-top);
                 }
             }
-
+            float eggShape(float2 coord, float radius)
+            {
+                // Define the center of the shape
+                float2 center = float2(0.5, _CenterY);
+            
+                // Calculate the difference
+                float2 diff = abs(coord - center);
+            
+                // Smoothly interpolate the vertical scaling based on position relative to _CenterY
+                float blendFactor = smoothstep(_CenterY - 0.1, _CenterY + 0.1, coord.y);
+                diff.y = lerp(diff.y * 2.0, diff.y / _Height, blendFactor);
+            
+                // Compute the normalized distance
+                float dist = length(diff) / radius;
+            
+                // Generate a smooth radial gradient
+                float value = 1.0 - dist * dist;
+            
+                // Clamp to ensure the gradient remains in range
+                return clamp(value, 0.0, 1.0);
+            }
+            /*
             float eggShape(float2 coord, float radius)
             {
                 float2 center = float2(0.5, _CenterY);
@@ -144,11 +165,11 @@ Shader "Unlit/FireShader"
                 {
                     diff.y *= 2;             
                 }
-
                 float dist = sqrt(diff.x * diff.x + diff.y * diff.y) / radius;
                 float value = sqrt(1 - dist * dist);
                 return clamp(value, 0, 1);
             }
+                */
 
             fixed4 frag (v2f i) : SV_Target
             {
@@ -197,9 +218,6 @@ Shader "Unlit/FireShader"
                 {
                     return _FirstColour;
                 }
-
-                return fixed4(val, val, val, 1);
-
             }
             ENDCG
         }

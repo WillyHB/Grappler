@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 150
   Accelerant: 100
-  JumpForce: 250
+  JumpForce: 100
