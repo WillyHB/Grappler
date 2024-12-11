@@ -9,7 +9,6 @@ public class PlayerDeathState : State
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
-        Debug.LogWarning("DIE!");
         sm = fsm as PlayerStateMachine;
 
         sm.Freeze();
@@ -17,8 +16,5 @@ public class PlayerDeathState : State
         sm.Transition(sm.IdleState);
 
         LevelTransition.Reload();
-
-        //DeathEventChannel.RaiseEvent();
-
     }
 }

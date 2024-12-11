@@ -42,9 +42,10 @@ public class BridgeStartCutscene : CutsceneSystem
                 new Cutscene.DialogueTextEvent("Yeah, I think I'm fine.", JessicaPotrait.Poker),
                 new Cutscene.DialogueTextEvent("Where are we?", JessicaPotrait.Confused),
             }),
-            new Cutscene.AudioEvent(EnvironmentEventChannel, HeadScratch),
             new Cutscene.AnimationEvent(gameObject, "Wonder", false),
-            new Cutscene.DelayEvent(2000),
+            new Cutscene.DelayEvent(500),
+            new Cutscene.AudioEvent(EnvironmentEventChannel, HeadScratch),
+            new Cutscene.DelayEvent(1500),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
                 new Cutscene.DialogueTextEvent("I'm certain we got to the island, I'm just not sure where...", JessicaPotrait.Confused),

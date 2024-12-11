@@ -73,78 +73,78 @@ public class Grapple : MonoBehaviour
     public void DisableGrapple()
     {
         canGrapple = false;
+        ReleaseGrapple();
         Hand.SetActive(false);
     }
 
     private void OnGrapple()
     {
-        if (canGrapple)
+        if (!canGrapple) return;
+
+        if (IsGrappling) return;
+
+        RaycastHit2D[] hits = default;
+
+        if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
         {
-            if (IsGrappling) return;
+            Vector2 mousePos = ResolutionManager.ScreenToWorld(Mouse.current.position.ReadValue());
 
-            RaycastHit2D[] hits = default;
+            hits = Physics2D.LinecastAll(transform.position, mousePos);
+        }
 
-            if (InputDeviceManager.CurrentDeviceType == InputDevices.MnK)
+        else if (InputDeviceManager.CurrentDeviceType == InputDevices.Controller)
+        {
+            hits = Physics2D.RaycastAll(transform.position, Gamepad.current.rightStick.ReadValue(), 1000);
+        }
+
+        bool grappleHit = false;
+        RaycastHit2D hit = new();
+
+        foreach (var h in hits)
+        {
+            if (h.collider.CompareTag(GrappleBlockTag)) break;
+
+            if (h.collider.CompareTag(GrappleTag))
             {
-                Vector2 mousePos = ResolutionManager.ScreenToWorld(Mouse.current.position.ReadValue());
-
-                hits = Physics2D.LinecastAll(transform.position, mousePos);
+                hit = h;
+                grappleHit = true;
+                break;
             }
+        }
 
-            else if (InputDeviceManager.CurrentDeviceType == InputDevices.Controller)
+        if (grappleHit)
+        {
+            grappledThisFrame = true;
+
+            if (hookInstance != null) Destroy(hookInstance);
+
+            if (hit.collider.GetComponent<Rigidbody2D>() != null)
             {
-                hits = Physics2D.RaycastAll(transform.position, Gamepad.current.rightStick.ReadValue(), 1000);
+                ConnectionRope.connectedBody = hit.transform.gameObject.GetComponent<Rigidbody2D>();
+
+                Vector3 offset = (Vector3)hit.point - hit.transform.position;
+
+                offset = new Vector3(
+                    offset.x / ConnectionRope.connectedBody.transform.localScale.x,
+                    offset.y / ConnectionRope.connectedBody.transform.localScale.y,
+                    0);
+
+                ConnectionRope.endOffset = offset;
+                ConnectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
             }
-
-            bool grappleHit = false;
-            RaycastHit2D hit = new();
-
-            foreach (var h in hits)
+            /*
+            else
             {
-                if (h.collider.CompareTag(GrappleBlockTag)) break;
+                hookInstance = Instantiate(hook);
+                hookInstance.name = "Hook";
 
-                if (h.collider.CompareTag(GrappleTag))
-                {
-                    hit = h;
-                    grappleHit = true;
-                    break;
-                }
+                hookInstance.transform.position = hit.point;
+                ConnectionRope.endOffset = Vector2.zero;
+                ConnectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
+                ConnectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
             }
-
-            if (grappleHit)
-            {
-                grappledThisFrame = true;
-
-                if (hookInstance != null) Destroy(hookInstance);
-
-                if (hit.collider.GetComponent<Rigidbody2D>() != null)
-                {
-                    ConnectionRope.connectedBody = hit.transform.gameObject.GetComponent<Rigidbody2D>();
-
-                    Vector3 offset = (Vector3)hit.point - hit.transform.position;
-
-                    offset = new Vector3(
-                        offset.x / ConnectionRope.connectedBody.transform.localScale.x,
-                        offset.y / ConnectionRope.connectedBody.transform.localScale.y,
-                        0);
-
-                    ConnectionRope.endOffset = offset;
-                    ConnectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
-                }
-                /*
-                else
-                {
-                    hookInstance = Instantiate(hook);
-                    hookInstance.name = "Hook";
-
-                    hookInstance.transform.position = hit.point;
-                    ConnectionRope.endOffset = Vector2.zero;
-                    ConnectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
-                    ConnectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
-                }
-                */
-                ConnectionRope.enabled = true;
-            }
+            */
+            ConnectionRope.enabled = true;
         }
     }
 

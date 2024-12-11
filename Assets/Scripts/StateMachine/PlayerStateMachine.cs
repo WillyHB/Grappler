@@ -101,11 +101,13 @@ public class PlayerStateMachine : StateMachine
     private Vector2 frozenVelocity;
     public void Freeze()
     {
+        //GetComponent
         frozenVelocity = Rigidbody.velocity;
         Rigidbody.velocity = Vector2.zero;
         Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         IsFrozen = true;
         Animator.speed = 0;
+        Grapple.DisableGrapple();
     }
 
     public void UnFreeze(bool preserveVelocity = false)
@@ -114,6 +116,7 @@ public class PlayerStateMachine : StateMachine
         Rigidbody.velocity = preserveVelocity ? frozenVelocity : Vector2.zero;
         IsFrozen = false;
         Animator.speed = 1;
+        Grapple.EnableGrapple();
     }
 
     protected override void Update()
@@ -163,20 +166,23 @@ public class PlayerStateMachine : StateMachine
         base.FixedUpdate();
     }
 
+    private void Die() {
+
+        Transition(DeathState);
+        HasDied = true;
+    }
+
     protected void Awake()
     {
-        PlayerEventChannel.Die += () =>
-        {
-            Transition(DeathState);
-            HasDied = true;
-        };
+        PlayerEventChannel.Die += Die;
 
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().GetRoom(0).Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().GetRoom(1).Checkpoint.position;
+
 
         Transition(IdleState);
     }
@@ -193,11 +199,7 @@ public class PlayerStateMachine : StateMachine
 
     protected void OnDisable()
     {
-        PlayerEventChannel.Die -= () =>
-        {
-            Transition(DeathState);
-            HasDied = true;
-        };
+        PlayerEventChannel.Die -= Die;
     }
 
     protected override State GetInitialState() => IdleState;
