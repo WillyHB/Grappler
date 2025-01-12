@@ -38,7 +38,6 @@ public static class LevelTransition
 
     private static void LoadLevel()
     {
-
         _asyncOperation.allowSceneActivation = true;
         _asyncOperation = null;
     }

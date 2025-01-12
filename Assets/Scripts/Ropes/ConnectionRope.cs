@@ -52,7 +52,9 @@ public class ConnectionRope : Rope
 
     public bool IsStretched(float threshold = 0.01f)
     {
-        return Mathf.Abs(GetLength() - GetDistanceBetweenBodies()) < threshold;
+        bool bruh = Mathf.Abs(GetLength() - GetDistanceBetweenBodies()) < threshold;
+        return bruh;
+
     }
 
     private DistanceJoint2D distanceJoint;

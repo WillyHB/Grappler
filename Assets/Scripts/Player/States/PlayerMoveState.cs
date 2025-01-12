@@ -42,6 +42,7 @@ public abstract class PlayerMoveState : GroundedState
             sm.Animator.Play(sm.Animations.Push);
         }
 
+//hmmmmm
         else if (sm.Grapple.IsGrappling && sm.Grapple.ConnectionRope.IsStretched() && sm.CurrentState != sm.LandState)
         {
             sm.Animator.Play(sm.Animations.Pull);
@@ -51,12 +52,12 @@ public abstract class PlayerMoveState : GroundedState
             || sm.Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == sm.Animations.Push)
         {
 
-            OnEnter(sm);
+            sm.Reload();
+            Debug.Log("here??");
+            //OnEnter(sm);
         }
-        
-        
-
     }
+
     // Update is called once per frame
     public override void FixedUpdate()
     {

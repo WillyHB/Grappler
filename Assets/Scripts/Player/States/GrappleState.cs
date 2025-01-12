@@ -60,7 +60,6 @@ public class GrappleState : State
 
         if (sm.IsGrounded)
         {
-            if (isJumping) Debug.Log("Jumping and grounded at the same time!!");
             sm.Transition(sm.LandState);
             return;
         }

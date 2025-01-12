@@ -40,9 +40,7 @@ public class GroundSoundManager : MonoBehaviour
             {
                 return Sounds[0];
             }
-
         }
-
 
         return null;
     }

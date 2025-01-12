@@ -33,6 +33,8 @@ public abstract class StateMachine : MonoBehaviour
         return CurrentState;
     }
 
+    public void Reload() => Transition(CurrentState, true);
+
     // Update is called once per frame
     protected virtual void Update()
     {

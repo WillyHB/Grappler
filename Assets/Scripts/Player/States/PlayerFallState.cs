@@ -101,7 +101,6 @@ public class PlayerFallState : PlayerAirborneState
             }
         }
 
-
         if (jumpTimer > JumpBufferTime)
         {
             jumpBuffered = false;
@@ -121,6 +120,7 @@ public class PlayerFallState : PlayerAirborneState
             return;
         }
 
+// IS IT NOT THIS TRANSITION
         if (sm.Grapple.IsGrappling)
         {
             sm.Transition(sm.GrappleState);

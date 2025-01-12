@@ -41,6 +41,7 @@ public class Grapple : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log("OnDisable");
         InputProvider.GrappleCanceled -= ReleaseGrapple;
         InputProvider.Grappled -= OnGrapple;
     }
@@ -132,18 +133,7 @@ public class Grapple : MonoBehaviour
                 ConnectionRope.endOffset = offset;
                 ConnectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
             }
-            /*
-            else
-            {
-                hookInstance = Instantiate(hook);
-                hookInstance.name = "Hook";
 
-                hookInstance.transform.position = hit.point;
-                ConnectionRope.endOffset = Vector2.zero;
-                ConnectionRope.connectedBody = hookInstance.GetComponent<Rigidbody2D>();
-                ConnectionRope.SetLength((transform.position - hookInstance.transform.position).magnitude);
-            }
-            */
             ConnectionRope.enabled = true;
         }
     }
