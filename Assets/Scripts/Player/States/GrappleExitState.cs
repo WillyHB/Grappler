@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="States/Player/GrappleExit")]
@@ -7,30 +8,41 @@ public class GrappleExitState : PlayerAirborneState
 {
     public float JumpForce = 300;
 
+    private int animation = -1;
+    public void ForceSetNextTrick(int animation) 
+    {
+        this.animation = animation;
+    }
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
 
         float rot = sm.transform.eulerAngles.z % 360;
-
         
         if (sm.GetComponent<SpriteRenderer>().flipX) rot = 360 - rot;
 
-        sm.Animator.Play(rot switch
+        if (animation != -1) 
         {
-            >= 350 => sm.Animations.GrappleSpinExit,
-            >= 320 => sm.Animations.GrappleTuckedSpinExit,
-            >= 240 => sm.Animations.GrappleFrontFlipExit,
-            >= 135 => sm.Animations.GrappleUDBackFlipExit,
-            >= 40 => sm.Animations.GrappleBackFlipExit,
-            >= 30 => sm.Animations.GrappleTuckedSpinExit,
-            >= 15 => sm.Animations.GrappleJumpExit,
-            >= 0 => sm.Animations.GrappleSpinExit,
-            _ => throw new System.Exception($"Angle {rot} does not exist wtf"),
+            sm.Animator.Play(animation);
+            animation = -1;
+        }
+        else 
+        {
+            sm.Animator.Play(rot switch
+            {
+                >= 350 => sm.Animations.GrappleSpinExit,
+                >= 320 => sm.Animations.GrappleTuckedSpinExit,
+                >= 240 => sm.Animations.GrappleFrontFlipExit,
+                >= 135 => sm.Animations.GrappleUDBackFlipExit,
+                >= 40 => sm.Animations.GrappleBackFlipExit,
+                >= 30 => sm.Animations.GrappleTuckedSpinExit,
+                >= 15 => sm.Animations.GrappleJumpExit,
+                >= 0 => sm.Animations.GrappleSpinExit,
+                _ => throw new System.Exception($"Angle {rot} does not exist wtf"),
 
-        });
-
-        sm.transform.rotation = Quaternion.identity;
+            });
+        }
 
         if(sm.Rigidbody.velocity.y < 0)
         {

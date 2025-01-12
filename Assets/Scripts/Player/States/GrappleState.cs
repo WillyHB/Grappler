@@ -60,6 +60,7 @@ public class GrappleState : State
 
         if (sm.IsGrounded)
         {
+            if (isJumping) Debug.Log("Jumping and grounded at the same time!!");
             sm.Transition(sm.LandState);
             return;
         }
@@ -71,12 +72,11 @@ public class GrappleState : State
 
         sm.Grapple.ReleaseGrapple();
 
-        if (!isJumping)
-            sm.transform.rotation = Quaternion.identity;
-
-        isJumping = false;
+        //if (!isJumping)
+        sm.transform.rotation = Quaternion.identity;
 
         sm.InputProvider.Jumped -= Jump;
+        isJumping = false;
     }
 
 }

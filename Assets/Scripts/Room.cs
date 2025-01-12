@@ -31,7 +31,7 @@ public class Room : MonoBehaviour
     private IEnumerator Wait()
     {
         RoomTraversalInputStateHandler.TraversingRoom = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>().Freeze();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>().Freeze(true);
         yield return new WaitForSeconds(Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>().UnFreeze(true);
         RoomTraversalInputStateHandler.TraversingRoom = false;

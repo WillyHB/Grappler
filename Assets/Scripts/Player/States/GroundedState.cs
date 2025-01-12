@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class GroundedState : State
 {
-
     protected PlayerStateMachine sm;
 
     protected float accelerant;
@@ -19,13 +18,15 @@ public class GroundedState : State
 
     private void Jump()
     {
+        Debug.Log("Hello!?");
+        Debug.Log(this.GetType());
         sm.Transition(sm.JumpState);
     }
 
     public override void OnExit()
     {
-        sm.InputProvider.Jumped -= Jump;
         base.OnExit();
+        sm.InputProvider.Jumped -= Jump;
     }
 
     public override void FixedUpdate()

@@ -3,7 +3,7 @@ guid: 4d913beb67f3bc84d87f33953db0e48f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -65,6 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -76,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -88,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -100,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -256,9 +260,9 @@ TextureImporter:
       name: BridgeFlora_7
       rect:
         serializedVersion: 2
-        x: 160
+        x: 176
         y: 0
-        width: 64
+        width: 80
         height: 144
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -277,7 +281,7 @@ TextureImporter:
       name: BridgeFlora_8
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 0
         width: 80
         height: 144
@@ -298,7 +302,7 @@ TextureImporter:
       name: BridgeFlora_9
       rect:
         serializedVersion: 2
-        x: 0
+        x: 16
         y: 0
         width: 80
         height: 144
@@ -487,7 +491,7 @@ TextureImporter:
       name: BridgeFlora_18
       rect:
         serializedVersion: 2
-        x: 336
+        x: 368
         y: 0
         width: 112
         height: 160
@@ -508,7 +512,7 @@ TextureImporter:
       name: BridgeFlora_19
       rect:
         serializedVersion: 2
-        x: 224
+        x: 256
         y: 0
         width: 112
         height: 144
@@ -529,7 +533,7 @@ TextureImporter:
       name: BridgeFlora_20
       rect:
         serializedVersion: 2
-        x: 448
+        x: 480
         y: 0
         width: 160
         height: 192
@@ -718,7 +722,7 @@ TextureImporter:
       name: BridgeFlora_29
       rect:
         serializedVersion: 2
-        x: 608
+        x: 642
         y: 0
         width: 160
         height: 176
@@ -739,7 +743,7 @@ TextureImporter:
       name: BridgeFlora_30
       rect:
         serializedVersion: 2
-        x: 768
+        x: 802
         y: 0
         width: 80
         height: 144
@@ -760,9 +764,9 @@ TextureImporter:
       name: BridgeFlora_31
       rect:
         serializedVersion: 2
-        x: 848
+        x: 882
         y: 0
-        width: 58
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -802,7 +806,7 @@ TextureImporter:
       name: BridgeFlora_33
       rect:
         serializedVersion: 2
-        x: 906
+        x: 914
         y: 0
         width: 144
         height: 234
@@ -823,9 +827,9 @@ TextureImporter:
       name: BridgeFlora_34
       rect:
         serializedVersion: 2
-        x: 1050
+        x: 1058
         y: 0
-        width: 134
+        width: 126
         height: 234
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -844,9 +848,9 @@ TextureImporter:
       name: BridgeFlora_35
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 208
+        x: 1584
+        y: 1
+        width: 256
         height: 270
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -886,12 +890,12 @@ TextureImporter:
       name: BridgeFlora_37
       rect:
         serializedVersion: 2
-        x: 752
-        y: 243
+        x: 400
+        y: 195
         width: 256
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -909,7 +913,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1328
         y: 0
-        width: 208
+        width: 256
         height: 270
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -925,13 +929,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BridgeFlora_39
+      name: BridgeFlora_40
       rect:
         serializedVersion: 2
-        x: 1744
-        y: 0
-        width: 224
-        height: 270
+        x: 656
+        y: 195
+        width: 256
+        height: 144
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -939,8 +943,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f18f6366b3f17e641aaf7df49cbc655d
-      internalID: 1410627292
+      spriteID: 14551cf111fa6118bac9bfeac1f7b467
+      internalID: -895897785
       vertices: []
       indices: 
       edges: []
@@ -956,47 +960,48 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BridgeFlora_9: -738846752
-      BridgeFlora_23: -1236777065
-      BridgeFlora_5: -1875839852
-      BridgeFlora_26: -435562332
-      BridgeFlora_29: 518077099
-      BridgeFlora_31: -30422371
-      BridgeFlora_20: 1628676421
-      BridgeFlora_22: -1231660874
-      BridgeFlora_21: -1711974024
-      BridgeFlora_13: 314560475
-      BridgeFlora_32: -979288853
-      BridgeFlora_34: -1661083564
-      BridgeFlora_37: 1924983306
-      BridgeFlora_12: 1782299455
-      BridgeFlora_28: 234328371
-      BridgeFlora_7: -833751734
-      BridgeFlora_35: -1858435631
-      BridgeFlora_16: 1937305148
-      BridgeFlora_6: -1597825983
-      BridgeFlora_3: -1483624752
-      BridgeFlora_4: -1955782782
-      BridgeFlora_15: 393536718
       BridgeFlora_0: 2071317652
-      BridgeFlora_17: -2007546042
-      BridgeFlora_36: -835506210
-      BridgeFlora_11: -845421782
-      BridgeFlora_2: 390817299
-      BridgeFlora_10: 1156884403
-      BridgeFlora_38: -147413537
-      BridgeFlora_24: 627430199
-      BridgeFlora_19: 1546993275
-      BridgeFlora_25: 1138005697
-      BridgeFlora_33: 456538702
-      BridgeFlora_39: 1410627292
-      BridgeFlora_27: 1641099249
       BridgeFlora_1: -1822099682
+      BridgeFlora_10: 1156884403
+      BridgeFlora_11: -845421782
+      BridgeFlora_12: 1782299455
+      BridgeFlora_13: 314560475
       BridgeFlora_14: 773586212
+      BridgeFlora_15: 393536718
+      BridgeFlora_16: 1937305148
+      BridgeFlora_17: -2007546042
       BridgeFlora_18: 1191434525
+      BridgeFlora_19: 1546993275
+      BridgeFlora_2: 390817299
+      BridgeFlora_20: 1628676421
+      BridgeFlora_21: -1711974024
+      BridgeFlora_22: -1231660874
+      BridgeFlora_23: -1236777065
+      BridgeFlora_24: 627430199
+      BridgeFlora_25: 1138005697
+      BridgeFlora_26: -435562332
+      BridgeFlora_27: 1641099249
+      BridgeFlora_28: 234328371
+      BridgeFlora_29: 518077099
+      BridgeFlora_3: -1483624752
       BridgeFlora_30: 1059697374
+      BridgeFlora_31: -30422371
+      BridgeFlora_32: -979288853
+      BridgeFlora_33: 456538702
+      BridgeFlora_34: -1661083564
+      BridgeFlora_35: -1858435631
+      BridgeFlora_36: -835506210
+      BridgeFlora_37: 1924983306
+      BridgeFlora_38: -147413537
+      BridgeFlora_39: 1410627292
+      BridgeFlora_4: -1955782782
+      BridgeFlora_40: -895897785
+      BridgeFlora_5: -1875839852
+      BridgeFlora_6: -1597825983
+      BridgeFlora_7: -833751734
       BridgeFlora_8: 1027892548
-  spritePackingTag: 
+      BridgeFlora_9: -738846752
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 

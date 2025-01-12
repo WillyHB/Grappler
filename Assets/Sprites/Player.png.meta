@@ -3,7 +3,7 @@ guid: 6f3f97f71a4db8f4c94960847c1195f9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -65,6 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -76,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -88,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -100,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -9030,6 +9034,237 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick14
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e623aef7d738d55a4a70eb77d5e800
+      internalID: -1385270222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab87b97369699f39b6ce3cbc61592ec
+      internalID: 451630729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideSpinTrick16
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 380
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1560b0783f02ff49fe765b5ea61413
+      internalID: 1498909831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a080ec0a5501beab1a765da4e2101976
+      internalID: 1424317804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bdfc7ba9c14455cb79b44bae86c3b5
+      internalID: 303514346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8abd6e292a5a337ef8c392f083e7ae7b
+      internalID: -1240212111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8c5731f81611966a1ee9f2391416bc
+      internalID: 433737804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1721ee67a3811149f8a485c4e47f4fd8
+      internalID: -191935478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b110f8b889803479d8421c91c3ee5a33
+      internalID: -476596574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86b1d0c0c1695f4aa3ceaf5d6216634
+      internalID: 1784504797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death7
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 160
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d699e4e050ead9a8faf9703a8140180d
+      internalID: -885703665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -9041,459 +9276,470 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GrabMap14: 1614910307
-      IntroAnim37: -518017049
-      IdleAnimation2_9: -1337931963
-      Grapple180_1: 1983362834
-      UnlockGrapple22: -416812571
-      FrontFlipTrick10: 1639830093
-      Run1: 714852578
-      RunLand5: 56251326
-      Grapple45_1: 143883605
-      FrontFlipTrick12: -1918401872
-      GrabMap8: 1886152553
-      Phew15: 1452313541
-      Jump3: 947154949
-      UnlockGrapple9: -348830422
-      IntroAnim20: 2126481734
-      SpinMove8: -1767738677
-      IdleAnimation6_12: 389977770
-      Grapple90_14: -291193394
-      Walk8: 228908333
-      Grapple25_5: -23068108
-      IntroAnim7: -902391579
-      CrouchIdle3: 1080385358
-      FrontFlipTrick8: -279781953
-      FrontFlipTrick16: 1141045384
-      TuckedSpinMove9: 1530248399
-      SideSpinTrick2: -2056143185
-      IntroAnim2: 1312583425
-      Jump4: 580864854
-      Walk3: 2058452194
-      IdleAnimation3_5: -1683964253
-      Grapple240_5: 830205345
-      Pull7: -1395205627
-      IdleAnimation3_2: 321241199
-      CrouchMove2: 1313551571
-      TuckedSpinMove2: -1381816108
-      SwimMove8: 1030055182
-      IdleAnimation2_4: -1504739677
-      GrabMap5: 1750813880
-      IdleAnimation3_10: -1848476239
-      Land3: -1852222810
-      UnlockGrapple20: -1093671965
-      IdleAnimation1_3: 1143752939
-      SpinTrick4: 1617065576
-      IdleAnimation5_7: 205717580
-      FallDown1: 1904917662
-      IdleAnimation3_13: -701427122
-      CrouchMove8: 212058146
-      Swim7: 576929782
-      IdleToCrouch1: -1726323450
-      IntroAnim41: 322293176
-      IdleAnimation6_5: 1927807041
-      IdleAnimation4_5: 1867262842
-      RunDust5: 1486444896
-      TuckedSpinMove5: -2012338064
-      Grapple180_10: 1259683043
-      Swim4: -1232148011
-      IntroAnim1: -1099333403
-      IntroAnim36: 917809429
-      IdleAnimation5_11: 271833366
-      IntroAnim23: -1146323484
-      Grapple45_9: -710601245
-      IntroAnim24: 759327990
-      FallUp2: -623329574
-      Swim5: -258264132
-      CrouchToIdle1: 789473743
-      Shoot2: 614054028
-      UnlockGrapple0: -1130616696
-      Phew2: -942149849
-      IntroAnim30: -1164630051
-      IntroAnim35: 110032398
-      UnlockGrapple2: 1603397039
-      GrabMap0: 1825309935
-      Idle2: -2129158148
-      CrouchMove4: -879121644
-      IdleAnimation5_5: -1963581632
-      IdleAnimation1_7: -888520995
-      SideSpinTrick7: 908138525
-      Phew11: -124658920
-      IdleAnimation4_15: 451958213
-      IdleAnimation5_3: 93428952
-      IdleAnimation2_14: -666565507
-      UnlockGrapple7: -263698030
-      IdleToCrouch4: 1487651710
-      RunLand2: -300902084
-      Shoot5: -1902555984
-      Run5: -802913842
-      IntroAnim32: 280691884
-      Jump6: 1514062040
-      IdleAnimation1_1: 1911868729
-      DuckFallUp2: 676980007
-      Shoot3: 1482177342
-      IdleAnimation3_4: -967969996
-      IdleAnimation3_15: -1572300371
-      Hand: 1026481696
-      IdleToCrouch2: -1982604452
-      GrapplePull4: -1294108084
-      IntroAnim13: 1404735367
-      IntroAnim49: 991649889
-      IntroAnim11: -217928968
-      GrabMap3: -140121703
-      Grapple45_3: 512399136
-      SideSpinTrick12: 1738936110
-      IdleAnimation2_12: 1226429865
-      Grapple45_7: 991325206
-      Grapple25_6: 663668167
-      Land5: 1549593719
-      IntroAnim5: -798048778
-      Swim1: 2017012884
-      Pull5: -2053512418
-      IdleAnimation5_6: 801206500
-      CrouchToIdle4: -140621692
-      UnlockGrapple23: -1248820029
-      Grapple45_12: 1598997819
-      DuckFallUp3: -1452327139
-      TuckedSpinMove4: 1928833766
-      JumpDust2: -742184115
-      Phew1: 919258917
-      Swim8: -2106533748
-      Shoot1: 1117871094
-      CrouchIdle4: 1779137581
-      Grapple240_2: 412739037
-      IdleAnimation1_13: 100124353
-      Walk2: 2053448171
-      Pull2: 1909984194
-      Phew10: -1205218615
-      SpinMove6: -1146516442
-      GrabMap7: 824607320
-      IntroAnim29: -1849294828
-      IdleAnimation3_2_2: 1149095073
-      IntroAnim46: -458287884
-      GrabMap10: -2046604118
-      Pull6: 747690645
-      JumpDust1: 1576278609
-      IdleAnimation1_2: -455165870
-      IntroAnim38: -1758793495
-      IdleAnimation5_4: -1150247595
-      SideSpinTrick9: 970132580
-      Grapple180_2: 1862591225
-      GrabMap11: 867028735
-      GrabMap4: -505940527
-      JumpDust3: -760749299
-      Grapple180_7v: 1192723399
-      SpinTrick5: -1878834907
-      UnlockGrapple25: -1829446312
-      Grapple240_11: -1489902095
-      SpinMove7: 484378025
-      IdleAnimation5_12: 1172422447
-      SwimMove3: 141030528
-      IdleAnimation4_3: 141186354
       CrouchIdle1: 114542888
-      GrabMap1: 815538255
-      Grapple25_3: 714515964
-      Shoot6: -617983417
-      IdleAnimation6_9: -1006772707
-      Jump5: -1236504202
-      RunDust1: 1008351478
-      UnlockGrapple14: -380075515
-      Phew9: -1766201443
-      GrapplePull3: 1889993379
-      IdleAnimation2_7: -1980418090
-      SideSpinTrick8: 299795567
-      IdleToCrouch5: -1166947941
-      Push0: -1238954592
-      Push7: -567756082
-      SwimMove5: 1568133265
-      Grapple240_13: -1388031781
-      IntroAnim14: -812459924
-      UnlockGrapple26: -200285680
-      SideSpinTrick6: 2084775756
-      FallDown3: -217655920
-      IdleAnimation6_6: -411499884
-      IdleAnimation4_14: 972096725
-      Grapple90_12: -572736711
-      IntroAnim44: -1169792672
-      IdleAnimation5_15: 537903817
-      CrouchToIdle6: 644297186
-      Grapple240_9: -65749614
-      Grapple45_14: -680871094
-      SideSpinTrick1: -1080965336
-      GrapplePull5: -450265939
-      Push4: 230138371
-      IntroAnim31: -327265082
-      Shoot7: 723450598
-      Walk4: -717370663
-      GrabMap9: -1676943208
-      IntroAnim40: 1352719576
-      Shoot4: 1483945766
-      CrouchMove3: -674195431
-      JumpDust4: -1386526435
-      GrapplePull6: 451181541
-      CrouchMove5: 1614172104
-      IdleAnimation6_16: -1334437742
-      Grapple45_13: -477044822
-      IntroAnim42: -1756846949
-      SideSpinTrick5: 1385239526
-      CrouchToIdle8: -1128936512
-      Grapple90_13: 367468263
-      JumpDust7: 827480225
-      CrouchToIdle3: -1482473290
-      FrontFlipTrick3: -2105281274
-      Phew0: 71164018
-      IdleAnimation3_2_1: 686762662
-      UnlockGrapple4: -2102624223
-      Land2: 169385046
-      Grapple240_3: -1473579635
-      IdleAnimation2_1: 77415944
-      CrouchMove7: -1791173712
-      IdleAnimation4_10: 1216400280
-      IntroAnim6: -959542231
-      Grapple45_4: -1351265971
-      Grapple240_6: -45246963
-      SpinTrick6: 1387871184
-      Land6: 675238711
-      IdleAnimation5_14: -1590202609
-      SpinMove1: -918881017
-      IdleAnimation1_9: 476256835
-      IdleAnimation5_9: 1138030341
-      IdleAnimation6_13: 472166624
-      IntroAnim18: 1143893436
-      Grapple90_15: 1936200411
-      IntroAnim9: 1429876811
-      IdleAnimation1_15: 701219836
-      Walk7: 262825427
-      UnlockGrapple13: 1291714354
-      UnlockGrapple5: 344885856
-      IdleAnimation3_2_4: 1509294314
-      IdleAnimation3_12: 1232399295
-      Grapple240_10: -1435755676
-      Swim6: 736817484
-      IdleAnimation6_2: 525753452
-      Run6: -235617297
-      CrouchToIdle5: 1241014414
-      Jump1: -1930377851
-      SwimMove1: -455479334
-      IntroAnim3: 891269015
-      UnlockGrapple8: -91666798
-      SpinTrick8: 762018095
-      UnlockGrapple10: 989234498
-      GrabMap13: 174490739
-      Land1: -370638125
-      UnlockGrapple21: -1133493280
-      Grapple25_2: -5727486
-      IntroAnim48: 722873985
-      IntroAnim0: 1497098947
-      Grapple180_3: 376200176
-      Grapple180_6: -1190249538
-      Grapple25_4: 2102483572
-      UnlockGrapple17: 1912536193
-      Grapple180_11: 1997691233
-      IdleAnimation4_6: 1809246072
-      SwimMove6: 804450907
-      DuckFallUp1: -1963087674
-      FrontFlipTrick7: 1735440196
-      Phew6: -582376760
-      Grapple90_17: 459033479
-      IntroAnim27: 2055250204
-      IntroAnim26: 1505101221
-      IdleAnimation4_2: 1153047506
-      IdleAnimation6_3: -592407775
-      Grapple180_9: 1558281505
-      IdleAnimation1_10: 2003987032
-      IdleAnimation6_11: 1240544054
-      Player_0: -205308670
-      Land4: -1428735518
-      IdleAnimation3_8: 510144468
-      Pull4: -1654704883
-      CrouchToIdle2: -30985629
-      IdleAnimation4_8: -596760569
-      UnlockGrapple24: -232099615
-      FrontFlipTrick13: 1776812108
-      SideSpinTrick10: -1482948392
-      Grapple180_8: -2114529771
-      UnlockGrapple12: -446327949
-      UnlockGrapple1: -767188783
-      Walk5: -1537998552
-      UnlockGrapple19: -1229164335
-      Jump2: -889395046
-      IdleAnimation2_2: 484992433
-      RunDust3: 902054103
-      Phew5: 1725683144
-      IntroAnim22: -971215564
-      IdleAnimation4_13: 1624606214
-      SpinTrick3: -546468843
-      FrontFlipTrick11: 2050668309
-      IdleAnimation2_3: 455182933
-      IdleAnimation1_12: -515760547
-      IdleAnimation4_9: 1993296839
-      Grapple240_1: -317169499
-      Run2: 661897010
-      IntroAnim28: 1850218831
-      FallUp1: -1639335269
-      IntroAnim19: -847478468
-      RunLand6: 1797858514
-      UnlockGrapple6: -1817175841
-      IdleAnimation1_6: 1554090901
       CrouchIdle2: 2126956299
-      IdleAnimation3_16: -1821077686
-      Run8: 639294488
-      FrontFlipTrick15: -717765109
-      SideSpinTrick4: 1641837106
-      IdleAnimation4_12: -1405390554
-      SwimMove7: 1837206162
-      IntroAnim43: 1448387425
-      Run7: 891213739
-      FrontFlipTrick2: -1956075079
-      IdleAnimation6_8: 1646270115
-      IdleAnimation2_5: -68598466
-      JumpDust6: 462777879
-      IntroAnim17: 493964634
-      IdleAnimation4_1: -1339107401
-      RunDust4: 553165050
-      GrabMap2: -676160287
-      IntroAnim45: -1402839403
-      IntroAnim50: -1708702386
-      IdleAnimation1_16: -761519852
-      SpinTrick1: 1092151281
-      Phew12: -574151689
-      IntroAnim25: 97702147
-      Run3: 479359299
-      Grapple45_6: 742414792
-      Grapple45_11: -1955663139
-      Grapple240_12: 967897272
-      SpinMove4: -1878558320
-      IdleAnimation3_3: -59072642
-      TuckedSpinMove6: -1145793415
-      IntroAnim4: 1716436192
-      Phew8: 531347202
-      Walk1: -1041322399
-      UnlockGrapple16: -550515402
-      Phew4: -1317142623
+      CrouchIdle3: 1080385358
+      CrouchIdle4: 1779137581
+      CrouchMove1: 902103042
+      CrouchMove2: 1313551571
+      CrouchMove3: -674195431
+      CrouchMove4: -879121644
+      CrouchMove5: 1614172104
+      CrouchMove6: 1264050570
+      CrouchMove7: -1791173712
+      CrouchMove8: 212058146
+      CrouchToIdle1: 789473743
+      CrouchToIdle2: -30985629
+      CrouchToIdle3: -1482473290
+      CrouchToIdle4: -140621692
+      CrouchToIdle5: 1241014414
+      CrouchToIdle6: 644297186
+      CrouchToIdle7: 644483532
+      CrouchToIdle8: -1128936512
+      Death0: 1424317804
+      Death1: 303514346
+      Death2: -1240212111
+      Death3: 433737804
+      Death4: -191935478
+      Death5: -476596574
+      Death6: 1784504797
+      Death7: -885703665
+      DuckFallDown1: -503808755
+      DuckFallDown2: 1349593762
+      DuckFallDown3: -1199758741
+      DuckFallUp1: -1963087674
+      DuckFallUp2: 676980007
+      DuckFallUp3: -1452327139
+      FallDown1: 1904917662
+      FallDown2: -357969022
+      FallDown3: -217655920
+      FallUp1: -1639335269
+      FallUp2: -623329574
+      FallUp3: 266447733
       FrontFlipTrick1: 1705055691
-      IdleAnimation5_16: -1429589492
-      IdleAnimation5_8: -458041391
+      FrontFlipTrick10: 1639830093
+      FrontFlipTrick11: 2050668309
+      FrontFlipTrick12: -1918401872
+      FrontFlipTrick13: 1776812108
+      FrontFlipTrick14: -1401312218
+      FrontFlipTrick15: -717765109
+      FrontFlipTrick16: 1141045384
+      FrontFlipTrick17: 1876566736
+      FrontFlipTrick2: -1956075079
+      FrontFlipTrick3: -2105281274
+      FrontFlipTrick4: 185024408
+      FrontFlipTrick5: -1634281182
+      FrontFlipTrick6: 1113733513
+      FrontFlipTrick7: 1735440196
+      FrontFlipTrick8: -279781953
+      FrontFlipTrick9: 317311740
+      GrabMap0: 1825309935
+      GrabMap1: 815538255
+      GrabMap10: -2046604118
+      GrabMap11: 867028735
+      GrabMap12: 1620319764
+      GrabMap13: 174490739
+      GrabMap14: 1614910307
+      GrabMap2: -676160287
+      GrabMap3: -140121703
+      GrabMap4: -505940527
+      GrabMap5: 1750813880
+      GrabMap6: -220037533
+      GrabMap7: 824607320
+      GrabMap8: 1886152553
+      GrabMap9: -1676943208
+      Grapple: 633395182
+      Grapple180_1: 1983362834
+      Grapple180_10: 1259683043
+      Grapple180_11: 1997691233
+      Grapple180_2: 1862591225
+      Grapple180_3: 376200176
       Grapple180_4: 1517064791
-      IdleAnimation4_7: -40234528
-      Grapple240_4: -457800802
-      Push1: -1899172819
       Grapple180_5: -864176640
+      Grapple180_6: -1190249538
+      Grapple180_7v: 1192723399
+      Grapple180_8: -2114529771
+      Grapple180_9: 1558281505
+      Grapple240_1: -317169499
+      Grapple240_10: -1435755676
+      Grapple240_11: -1489902095
+      Grapple240_12: 967897272
+      Grapple240_13: -1388031781
+      Grapple240_2: 412739037
+      Grapple240_3: -1473579635
+      Grapple240_4: -457800802
+      Grapple240_5: 830205345
+      Grapple240_6: -45246963
+      Grapple240_7: 767583624
+      Grapple240_8: 298918360
+      Grapple240_9: -65749614
+      Grapple25_1: 923320106
+      Grapple25_2: -5727486
+      Grapple25_3: 714515964
+      Grapple25_4: 2102483572
+      Grapple25_5: -23068108
+      Grapple25_6: 663668167
+      Grapple45_1: 143883605
+      Grapple45_10: 256462962
+      Grapple45_11: -1955663139
+      Grapple45_12: 1598997819
+      Grapple45_13: -477044822
+      Grapple45_14: -680871094
+      Grapple45_2: -333356188
+      Grapple45_3: 512399136
+      Grapple45_4: -1351265971
+      Grapple45_5: -2021032421
+      Grapple45_6: 742414792
+      Grapple45_7: 991325206
+      Grapple45_8: 697041811
+      Grapple45_9: -710601245
+      Grapple90_10: -405534994
       Grapple90_11: -789003794
+      Grapple90_12: -572736711
+      Grapple90_13: 367468263
+      Grapple90_14: -291193394
+      Grapple90_15: 1936200411
+      Grapple90_16: 730261817
+      Grapple90_17: 459033479
+      GrapplePull3: 1889993379
+      GrapplePull4: -1294108084
+      GrapplePull5: -450265939
+      GrapplePull6: 451181541
+      GrapplePull7: 1517889015
+      Hand: 1026481696
+      Idle1: 912300089
+      Idle2: -2129158148
+      Idle3: -582828682
+      Idle4: -1384108245
+      IdleAnimation1_1: 1911868729
+      IdleAnimation1_10: 2003987032
+      IdleAnimation1_11: -486842872
+      IdleAnimation1_12: -515760547
+      IdleAnimation1_13: 100124353
+      IdleAnimation1_14: -1913911974
+      IdleAnimation1_15: 701219836
+      IdleAnimation1_16: -761519852
+      IdleAnimation1_2: -455165870
+      IdleAnimation1_3: 1143752939
+      IdleAnimation1_4: -1284626785
+      IdleAnimation1_5: 372288239
+      IdleAnimation1_6: 1554090901
+      IdleAnimation1_7: -888520995
+      IdleAnimation1_8: 401381628
+      IdleAnimation1_9: 476256835
+      IdleAnimation2_1: 77415944
+      IdleAnimation2_10: -1098940462
+      IdleAnimation2_11: 624417265
+      IdleAnimation2_12: 1226429865
+      IdleAnimation2_13: -1047535884
+      IdleAnimation2_14: -666565507
+      IdleAnimation2_15: 1186205921
+      IdleAnimation2_16: -952894969
+      IdleAnimation2_2: 484992433
+      IdleAnimation2_3: 455182933
+      IdleAnimation2_4: -1504739677
+      IdleAnimation2_5: -68598466
+      IdleAnimation2_6: -439164633
+      IdleAnimation2_7: -1980418090
+      IdleAnimation2_8: -542813681
+      IdleAnimation2_9: -1337931963
+      IdleAnimation3_1: 1519249165
+      IdleAnimation3_10: -1848476239
+      IdleAnimation3_11: 11387822
+      IdleAnimation3_12: 1232399295
+      IdleAnimation3_13: -701427122
+      IdleAnimation3_14: 991644159
+      IdleAnimation3_15: -1572300371
+      IdleAnimation3_16: -1821077686
+      IdleAnimation3_2: 321241199
+      IdleAnimation3_2_1: 686762662
+      IdleAnimation3_2_2: 1149095073
+      IdleAnimation3_2_3: 2013470214
+      IdleAnimation3_2_4: 1509294314
+      IdleAnimation3_3: -59072642
+      IdleAnimation3_4: -967969996
+      IdleAnimation3_5: -1683964253
+      IdleAnimation3_6: -666985588
+      IdleAnimation3_7: -1822553759
+      IdleAnimation3_8: 510144468
+      IdleAnimation3_9: 1654809289
+      IdleAnimation4_1: -1339107401
+      IdleAnimation4_10: 1216400280
+      IdleAnimation4_11: 1746836410
+      IdleAnimation4_12: -1405390554
+      IdleAnimation4_13: 1624606214
+      IdleAnimation4_14: 972096725
+      IdleAnimation4_15: 451958213
+      IdleAnimation4_16: -735847317
+      IdleAnimation4_2: 1153047506
+      IdleAnimation4_3: 141186354
+      IdleAnimation4_4: 1892453347
+      IdleAnimation4_5: 1867262842
+      IdleAnimation4_6: 1809246072
+      IdleAnimation4_7: -40234528
+      IdleAnimation4_8: -596760569
+      IdleAnimation4_9: 1993296839
+      IdleAnimation5_1: 1330476595
+      IdleAnimation5_10: -280108904
+      IdleAnimation5_11: 271833366
+      IdleAnimation5_12: 1172422447
+      IdleAnimation5_13: -910542130
+      IdleAnimation5_14: -1590202609
+      IdleAnimation5_15: 537903817
+      IdleAnimation5_16: -1429589492
+      IdleAnimation5_2: 1631144890
+      IdleAnimation5_3: 93428952
+      IdleAnimation5_4: -1150247595
+      IdleAnimation5_5: -1963581632
+      IdleAnimation5_6: 801206500
+      IdleAnimation5_7: 205717580
+      IdleAnimation5_8: -458041391
+      IdleAnimation5_9: 1138030341
+      IdleAnimation6_1: 204713442
+      IdleAnimation6_10: -373267078
+      IdleAnimation6_11: 1240544054
+      IdleAnimation6_12: 389977770
+      IdleAnimation6_13: 472166624
       IdleAnimation6_14: 420363046
-      UnlockGrapple11: 1316032823
-      Push5: -138088622
+      IdleAnimation6_15: -1577836067
+      IdleAnimation6_16: -1334437742
+      IdleAnimation6_2: 525753452
+      IdleAnimation6_3: -592407775
       IdleAnimation6_4: 1573799587
+      IdleAnimation6_5: 1927807041
+      IdleAnimation6_6: -411499884
+      IdleAnimation6_7: 821869472
+      IdleAnimation6_8: 1646270115
+      IdleAnimation6_9: -1006772707
+      IdleToCrouch1: -1726323450
+      IdleToCrouch2: -1982604452
+      IdleToCrouch3: -2062956259
+      IdleToCrouch4: 1487651710
+      IdleToCrouch5: -1166947941
+      IntroAnim0: 1497098947
+      IntroAnim1: -1099333403
+      IntroAnim10: 994142240
+      IntroAnim11: -217928968
+      IntroAnim12: 705685096
+      IntroAnim13: 1404735367
+      IntroAnim14: -812459924
+      IntroAnim15: 2117462875
+      IntroAnim16: -409325608
+      IntroAnim17: 493964634
+      IntroAnim18: 1143893436
+      IntroAnim19: -847478468
+      IntroAnim2: 1312583425
+      IntroAnim20: 2126481734
+      IntroAnim21: -677770549
+      IntroAnim22: -971215564
+      IntroAnim23: -1146323484
+      IntroAnim24: 759327990
+      IntroAnim25: 97702147
+      IntroAnim26: 1505101221
+      IntroAnim27: 2055250204
+      IntroAnim28: 1850218831
+      IntroAnim29: -1849294828
+      IntroAnim3: 891269015
+      IntroAnim30: -1164630051
+      IntroAnim31: -327265082
+      IntroAnim32: 280691884
+      IntroAnim33: -329217211
+      IntroAnim34: -115643638
+      IntroAnim35: 110032398
+      IntroAnim36: 917809429
+      IntroAnim37: -518017049
+      IntroAnim38: -1758793495
+      IntroAnim39: -586112397
+      IntroAnim4: 1716436192
+      IntroAnim40: 1352719576
+      IntroAnim41: 322293176
+      IntroAnim42: -1756846949
+      IntroAnim43: 1448387425
+      IntroAnim44: -1169792672
+      IntroAnim45: -1402839403
+      IntroAnim46: -458287884
+      IntroAnim47: 1380060148
+      IntroAnim48: 722873985
+      IntroAnim49: 991649889
+      IntroAnim5: -798048778
+      IntroAnim50: -1708702386
+      IntroAnim51: -13628079
+      IntroAnim6: -959542231
+      IntroAnim7: -902391579
+      IntroAnim8: -713097539
+      IntroAnim9: 1429876811
+      Jump1: -1930377851
+      Jump2: -889395046
+      Jump3: 947154949
+      Jump4: 580864854
+      Jump5: -1236504202
+      Jump6: 1514062040
+      JumpDust1: 1576278609
+      JumpDust2: -742184115
+      JumpDust3: -760749299
+      JumpDust4: -1386526435
+      JumpDust5: 515763601
+      JumpDust6: 462777879
+      JumpDust7: 827480225
+      Land1: -370638125
+      Land2: 169385046
+      Land3: -1852222810
+      Land4: -1428735518
+      Land5: 1549593719
+      Land6: 675238711
+      LyingDown: 240603808
+      Phew0: 71164018
+      Phew1: 919258917
+      Phew10: -1205218615
+      Phew11: -124658920
+      Phew12: -574151689
+      Phew13: -1128642906
+      Phew14: 1826069889
+      Phew15: 1452313541
+      Phew2: -942149849
+      Phew3: 1899920096
+      Phew4: -1317142623
+      Phew5: 1725683144
+      Phew6: -582376760
+      Phew7: -1434400689
+      Phew8: 531347202
+      Phew9: -1766201443
+      Player_0: -205308670
       Pull0: 398363178
-      Walk6: 1787655019
+      Pull1: -1563583218
+      Pull2: 1909984194
+      Pull3: 1761813349
+      Pull4: -1654704883
+      Pull5: -2053512418
+      Pull6: 747690645
+      Pull7: -1395205627
+      Push0: -1238954592
+      Push1: -1899172819
+      Push2: -111940220
+      Push3: 1542094390
+      Push4: 230138371
+      Push5: -138088622
+      Push6: -2036637412
+      Push7: -567756082
+      Run1: 714852578
+      Run2: 661897010
+      Run3: 479359299
+      Run4: -177503077
+      Run5: -802913842
+      Run6: -235617297
+      Run7: 891213739
+      Run8: 639294488
+      RunDust1: 1008351478
+      RunDust2: 1795680736
+      RunDust3: 902054103
+      RunDust4: 553165050
+      RunDust5: 1486444896
+      RunLand1: 1129583229
+      RunLand2: -300902084
+      RunLand3: -1824072872
+      RunLand4: 677299120
+      RunLand5: 56251326
+      RunLand6: 1797858514
+      Shoot1: 1117871094
+      Shoot2: 614054028
+      Shoot3: 1482177342
+      Shoot4: 1483945766
+      Shoot5: -1902555984
+      Shoot6: -617983417
+      Shoot7: 723450598
+      SideSpinTrick1: -1080965336
+      SideSpinTrick10: -1482948392
+      SideSpinTrick11: 607189459
+      SideSpinTrick12: 1738936110
+      SideSpinTrick13: -640291995
+      SideSpinTrick14: -1385270222
+      SideSpinTrick15: 451630729
+      SideSpinTrick16: 1498909831
+      SideSpinTrick2: -2056143185
+      SideSpinTrick3: -837841702
+      SideSpinTrick4: 1641837106
+      SideSpinTrick5: 1385239526
+      SideSpinTrick6: 2084775756
+      SideSpinTrick7: 908138525
+      SideSpinTrick8: 299795567
+      SideSpinTrick9: 970132580
+      SpinMove1: -918881017
+      SpinMove2: 1640947786
+      SpinMove3: 251219581
+      SpinMove4: -1878558320
+      SpinMove5: -488648695
+      SpinMove6: -1146516442
+      SpinMove7: 484378025
+      SpinMove8: -1767738677
+      SpinTrick1: 1092151281
+      SpinTrick2: 539158545
+      SpinTrick3: -546468843
+      SpinTrick4: 1617065576
+      SpinTrick5: -1878834907
+      SpinTrick6: 1387871184
+      SpinTrick7: 327638191
+      SpinTrick8: 762018095
+      Swim1: 2017012884
+      Swim2: -1301192796
+      Swim3: 1681099172
+      Swim4: -1232148011
+      Swim5: -258264132
+      Swim6: 736817484
+      Swim7: 576929782
+      Swim8: -2106533748
+      SwimMove1: -455479334
+      SwimMove2: 1404383816
+      SwimMove3: 141030528
+      SwimMove4: 335667971
+      SwimMove5: 1568133265
+      SwimMove6: 804450907
+      SwimMove7: 1837206162
+      SwimMove8: 1030055182
+      TuckedSpinMove1: 455350862
+      TuckedSpinMove2: -1381816108
+      TuckedSpinMove3: -382355210
+      TuckedSpinMove4: 1928833766
+      TuckedSpinMove5: -2012338064
+      TuckedSpinMove6: -1145793415
       TuckedSpinMove7: 1100227248
       TuckedSpinMove8: -2113553996
-      Phew7: -1434400689
-      IdleAnimation4_16: -735847317
-      IdleAnimation1_14: -1913911974
-      IdleAnimation5_1: 1330476595
-      Pull3: 1761813349
-      SpinMove2: 1640947786
-      Grapple90_16: 730261817
-      IdleAnimation3_7: -1822553759
-      Run4: -177503077
-      IdleAnimation3_9: 1654809289
-      IdleAnimation3_2_3: 2013470214
-      Swim3: 1681099172
-      IdleAnimation5_2: 1631144890
-      IdleAnimation1_8: 401381628
-      LyingDown: 240603808
-      IdleAnimation4_11: 1746836410
-      RunLand3: -1824072872
-      IntroAnim8: -713097539
-      IdleAnimation4_4: 1892453347
-      TuckedSpinMove1: 455350862
-      IntroAnim16: -409325608
-      FrontFlipTrick14: -1401312218
-      Grapple45_8: 697041811
-      FrontFlipTrick4: 185024408
-      SwimMove2: 1404383816
-      IdleAnimation5_13: -910542130
-      IntroAnim47: 1380060148
-      SwimMove4: 335667971
-      IdleAnimation2_15: 1186205921
-      UnlockGrapple3: -926520293
-      IdleAnimation6_7: 821869472
-      Grapple25_1: 923320106
-      IdleAnimation6_10: -373267078
-      Phew14: 1826069889
-      FrontFlipTrick6: 1113733513
+      TuckedSpinMove9: 1530248399
+      UnlockGrapple0: -1130616696
+      UnlockGrapple1: -767188783
+      UnlockGrapple10: 989234498
+      UnlockGrapple11: 1316032823
+      UnlockGrapple12: -446327949
+      UnlockGrapple13: 1291714354
+      UnlockGrapple14: -380075515
       UnlockGrapple15: 1066643807
+      UnlockGrapple16: -550515402
+      UnlockGrapple17: 1912536193
       UnlockGrapple18: -1856678247
-      TuckedSpinMove3: -382355210
-      FrontFlipTrick5: -1634281182
-      IdleToCrouch3: -2062956259
-      Push2: -111940220
-      DuckFallDown1: -503808755
-      IdleAnimation6_15: -1577836067
-      RunLand4: 677299120
-      IntroAnim21: -677770549
-      IntroAnim51: -13628079
-      IdleAnimation3_1: 1519249165
-      DuckFallDown2: 1349593762
-      FallUp3: 266447733
-      Grapple90_10: -405534994
-      Push3: 1542094390
-      IdleAnimation1_5: 372288239
-      RunLand1: 1129583229
-      IdleAnimation2_10: -1098940462
-      CrouchMove1: 902103042
-      Grapple45_5: -2021032421
-      IdleAnimation1_4: -1284626785
-      IntroAnim12: 705685096
-      Grapple45_10: 256462962
-      Phew13: -1128642906
-      IntroAnim34: -115643638
-      SpinMove3: 251219581
-      FallDown2: -357969022
-      Idle4: -1384108245
-      GrabMap6: -220037533
-      IdleAnimation3_11: 11387822
-      SpinTrick2: 539158545
-      SideSpinTrick3: -837841702
-      IdleAnimation1_11: -486842872
-      SpinTrick7: 327638191
-      Grapple240_7: 767583624
-      RunDust2: 1795680736
-      SpinMove5: -488648695
-      GrabMap12: 1620319764
-      IntroAnim15: 2117462875
-      SideSpinTrick11: 607189459
-      IdleAnimation2_11: 624417265
-      Grapple240_8: 298918360
-      IdleAnimation2_16: -952894969
-      IdleAnimation6_1: 204713442
-      IdleAnimation2_8: -542813681
-      FrontFlipTrick17: 1876566736
-      IntroAnim33: -329217211
-      IdleAnimation5_10: -280108904
-      Grapple45_2: -333356188
-      IdleAnimation2_13: -1047535884
-      GrapplePull7: 1517889015
-      SideSpinTrick13: -640291995
-      Phew3: 1899920096
-      Grapple: 633395182
-      IntroAnim39: -586112397
-      Idle3: -582828682
-      CrouchToIdle7: 644483532
-      CrouchMove6: 1264050570
-      IntroAnim10: 994142240
-      Swim2: -1301192796
-      Push6: -2036637412
-      Pull1: -1563583218
-      Idle1: 912300089
-      FrontFlipTrick9: 317311740
-      DuckFallDown3: -1199758741
-      IdleAnimation3_14: 991644159
-      IdleAnimation3_6: -666985588
-      JumpDust5: 515763601
-      IdleAnimation2_6: -439164633
-  spritePackingTag: 
+      UnlockGrapple19: -1229164335
+      UnlockGrapple2: 1603397039
+      UnlockGrapple20: -1093671965
+      UnlockGrapple21: -1133493280
+      UnlockGrapple22: -416812571
+      UnlockGrapple23: -1248820029
+      UnlockGrapple24: -232099615
+      UnlockGrapple25: -1829446312
+      UnlockGrapple26: -200285680
+      UnlockGrapple3: -926520293
+      UnlockGrapple4: -2102624223
+      UnlockGrapple5: 344885856
+      UnlockGrapple6: -1817175841
+      UnlockGrapple7: -263698030
+      UnlockGrapple8: -91666798
+      UnlockGrapple9: -348830422
+      Walk1: -1041322399
+      Walk2: 2053448171
+      Walk3: 2058452194
+      Walk4: -717370663
+      Walk5: -1537998552
+      Walk6: 1787655019
+      Walk7: 262825427
+      Walk8: 228908333
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 

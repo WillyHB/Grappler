@@ -16,6 +16,10 @@ public class TwoPointRope : Rope
     // Update is called once per frame
     void Update()
     {
+        if ((StartPoint.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 50) {
+            return;
+        }
+
         RopeSegment firstSegment = ropeSegments[0];
         firstSegment.posNow = StartPoint.localPosition;
         ropeSegments[0] = firstSegment;
@@ -37,6 +41,10 @@ public class TwoPointRope : Rope
 
     private void FixedUpdate()
     {
+        if ((StartPoint.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 50) {
+            return;
+        }
+
         Simulate();
     }
 

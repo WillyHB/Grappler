@@ -8,13 +8,22 @@ public class PlayerDeathState : State
     PlayerStateMachine sm;
     public override void OnEnter(StateMachine fsm)
     {
+        Debug.Log("here I guess");
         base.OnEnter(fsm);
         sm = fsm as PlayerStateMachine;
 
-        sm.Freeze();
-
-        sm.Transition(sm.IdleState);
-
-        LevelTransition.Reload();
+        sm.Freeze(false);
+        sm.Animator.Play(sm.Animations.Death);
     }
+
+    public override void Update()
+    {
+        base.Update();
+
+        if (sm.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >=1) 
+        {
+            LevelTransition.Reload();
+        }
+    }
+
 }

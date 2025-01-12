@@ -61,8 +61,8 @@ public class ConnectionRope : Rope
     {
         float radians = eulerRotation * Mathf.Deg2Rad;
 
-        float xRotate = point.x * (Mathf.Cos(radians)) - point.y * (Mathf.Sin(radians));
-        float yRotate = point.x * (Mathf.Sin(radians)) + point.y * (Mathf.Cos(radians));
+        float xRotate = point.x * Mathf.Cos(radians) - point.y * Mathf.Sin(radians);
+        float yRotate = point.x * Mathf.Sin(radians) + point.y * Mathf.Cos(radians);
 
         return new Vector2(xRotate, yRotate);
     }
@@ -105,6 +105,11 @@ public class ConnectionRope : Rope
     // Update is called once per frame
     void Update()
     {     
+        
+        if ((StartRigidbody.transform.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 50) {
+            return;
+
+        }
         if (NumberOfSegments != numberOfSegments)
         {
             ModifyLength(GetCalculatedEndPoint());
@@ -119,6 +124,11 @@ public class ConnectionRope : Rope
 
     private void FixedUpdate()
     {
+
+        if ((StartRigidbody.transform.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 50) {
+            return;
+
+        }
 
         Simulate();
 

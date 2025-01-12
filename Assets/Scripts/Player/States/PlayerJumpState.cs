@@ -14,6 +14,14 @@ public class PlayerJumpState : PlayerAirborneState
 
     public GameObject JumpDust;
 
+    private bool trick = false;
+    private int trickID;
+    public void PerformTrickNextJump(int trickID) 
+    {
+        this.trickID = trickID;
+        trick = true;
+    }
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
@@ -25,7 +33,8 @@ public class PlayerJumpState : PlayerAirborneState
         sm.Rigidbody.velocity = new Vector2(sm.Rigidbody.velocity.x, sm.Rigidbody.velocity.y < 0 ? 0 : sm.Rigidbody.velocity.y);
         sm.Rigidbody.AddForce(Vector2.up * JumpForce);
 
-        sm.Animator.Play(sm.Animations.Jump);
+        sm.Animator.Play(trick ? trickID : sm.Animations.Jump);
+        trick = false;
     }
 
     public override void OnExit()

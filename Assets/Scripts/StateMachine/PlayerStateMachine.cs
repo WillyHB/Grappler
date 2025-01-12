@@ -48,6 +48,8 @@ public class PlayerStateMachine : StateMachine
         public int Pull { get; private set; } = Animator.StringToHash("Pull");
         public int Push { get; private set; } = Animator.StringToHash("Push");
 
+        public int Death {get; private set; } = Animator.StringToHash("Death");
+
         #region GrappleExits
         public int GrappleSpinExit { get; private set; } = Animator.StringToHash("GrappleSpinExit");
         public int GrappleTuckedSpinExit { get; private set; } = Animator.StringToHash("GrappleTuckedSpinExit");
@@ -61,7 +63,7 @@ public class PlayerStateMachine : StateMachine
         public int SpinTrick { get; private set; } = Animator.StringToHash("SpinTrick");
         public int TuckedSpinTrick { get; private set; } = Animator.StringToHash("TuckedSpinTrick");
         public int FrontFlipTrick { get; private set; } = Animator.StringToHash("FrontFlipTrick");
-        public int SideSpinTrick { get; private set; } = Animator.StringToHash("SideSpinTrick");
+        public int SideSpinTrick { get; private set; } = Animator.StringToHash("SideFlipTrick");
         #endregion
     }
 
@@ -99,14 +101,14 @@ public class PlayerStateMachine : StateMachine
     public AudioEventChannel PlayerAudioEventChannel;
 
     private Vector2 frozenVelocity;
-    public void Freeze()
+    public void Freeze(bool disableAnimatior)
     {
         //GetComponent
         frozenVelocity = Rigidbody.velocity;
         Rigidbody.velocity = Vector2.zero;
         Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         IsFrozen = true;
-        Animator.speed = 0;
+        Animator.speed = disableAnimatior ? 0 : 1;
         Grapple.DisableGrapple();
     }
 
@@ -181,7 +183,7 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().GetRoom(1).Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().GetRoom(14).Checkpoint.position;
 
 
         Transition(IdleState);

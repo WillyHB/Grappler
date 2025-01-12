@@ -39,6 +39,8 @@ public class PlayerFallState : PlayerAirborneState
     {
         if (coyoteTimeEnabled && coyoteTimer < CoyoteTime)
         {
+            sm.JumpState.PerformTrickNextJump(sm.Animations.SideSpinTrick);
+
             sm.Transition(sm.JumpState);
             return;
         }

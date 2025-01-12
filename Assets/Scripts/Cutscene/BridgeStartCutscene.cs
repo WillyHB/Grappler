@@ -13,6 +13,7 @@ public class BridgeStartCutscene : CutsceneSystem
     public Sprite GeorgePotrait;
 
     public GameObject Player;
+    public GameObject Jessica;
 
     public AudioEventChannel EnvironmentEventChannel;
     public Audio HeadScratch;
@@ -31,18 +32,18 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.AnimationEvent(Player.gameObject, "Intro2", true),
             new Cutscene.DelayEvent(4000),
             new Cutscene.PlayerMoveEvent(-1, 2500, true),
-            new Cutscene.AnimationEvent(gameObject, "Intro", false),
+            new Cutscene.AnimationEvent(Jessica, "Intro", false),
             new Cutscene.DelayEvent(2000),
             new Cutscene.AnimationEvent(gameObject, "Walk", false),
-            new Cutscene.MoveEvent(gameObject, new Vector2(3, 0), 2500),
-            new Cutscene.AnimationEvent(gameObject, "Idle", false),
+            new Cutscene.MoveEvent(Jessica, new Vector2(3, 0), 2500),
+            new Cutscene.AnimationEvent(Jessica, "Idle", false),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
                 new Cutscene.DialogueTextEvent("Hey, you ok?", PlayerPotrait.Shocked, true),
                 new Cutscene.DialogueTextEvent("Yeah, I think I'm fine.", JessicaPotrait.Poker),
                 new Cutscene.DialogueTextEvent("Where are we?", JessicaPotrait.Confused),
             }),
-            new Cutscene.AnimationEvent(gameObject, "Wonder", false),
+            new Cutscene.AnimationEvent(Jessica, "Wonder", false),
             new Cutscene.DelayEvent(500),
             new Cutscene.AudioEvent(EnvironmentEventChannel, HeadScratch),
             new Cutscene.DelayEvent(1500),
@@ -89,10 +90,10 @@ public class BridgeStartCutscene : CutsceneSystem
                 new Cutscene.DialogueTextEvent("It's quite a far journey, here take this map, it should help you", JessicaPotrait.Poker),
             }),
 
-            new Cutscene.AnimationEvent(gameObject, "HandMap", false),
+            new Cutscene.AnimationEvent(Jessica, "HandMap", false),
             new Cutscene.DelayEvent(1050),
             new Cutscene.AnimationEvent(gameObject, "ReturnHand", false),
-            new Cutscene.AnimationEvent(Player.gameObject, "GrabMap", true),
+            new Cutscene.AnimationEvent(Player, "GrabMap", true),
             new Cutscene.DelayEvent(2000),
             new Cutscene.Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
@@ -119,7 +120,7 @@ public class BridgeStartCutscene : CutsceneSystem
             new Cutscene.PlayerMoveEvent(0.1f, 10, true),
             new Cutscene.CameraMoveEvent(Player.transform),
             new Cutscene.CameraZoomEvent(0),
-            new Cutscene.CustomFunctionEvent(()=>Destroy(GetComponent<BoxCollider2D>())),
+            new Cutscene.CustomFunctionEvent(()=>Destroy(this)),
         };
     }
 }

@@ -15,6 +15,10 @@ public class OnePointRope : Rope
     // Update is called once per frame
     void Update()
     {
+        if ((transform.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 50) {
+            return;
+        }
+
         RopeSegment firstSegment = ropeSegments[0];
         firstSegment.posNow = FollowMousePosition ? Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) : Vector2.zero;
         ropeSegments[0] = firstSegment;
@@ -30,6 +34,9 @@ public class OnePointRope : Rope
 
     private void FixedUpdate()
     {
+        if ((transform.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 50) {
+            return;
+        }
         Simulate();
     }
 
