@@ -183,7 +183,7 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().GetRoom(14).Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().GetRoom(0).Checkpoint.position;
 
 
         Transition(IdleState);

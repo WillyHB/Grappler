@@ -35,13 +35,13 @@ namespace Cutscene
             await PoseQuestion;
             int option = PoseQuestion.Result;
 
-            foreach (var e in (option switch
+            foreach (var e in option switch
             {
                 1 => Answer1Events,
                 2 => Answer2Events,
                 3 => Answer3Events,
                 _ => throw new System.Exception("Dialogue Option does not exist?")
-            }))
+            })
             {
                 await e.HandleEvent(system);
             }
