@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Rendering.Universal;
+using UnityEditor;
 
 
 public class Room : MonoBehaviour
@@ -10,6 +12,8 @@ public class Room : MonoBehaviour
     public static Room ActiveRoom { get; private set; }
     public static event Action<Room> RoomEntered;
     public Transform Checkpoint;
+    public float GlobalLighting = 0;
+    private static int blendingSteps = 50;
 
     public RoomTraversalInputStateHandler RoomTraversalInputStateHandler;
 
@@ -36,6 +40,19 @@ public class Room : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>().UnFreeze(true);
         RoomTraversalInputStateHandler.TraversingRoom = false;
     }
+    
+    private IEnumerator BlendLight()
+    {
+
+        Light2D globalLight = GameObject.Find("Global Light").GetComponent<Light2D>();
+        float oldIntensity = globalLight.intensity;
+
+        for (float i = 0; i < blendingSteps; i++) {
+
+            globalLight.intensity = Mathf.Lerp(oldIntensity, GlobalLighting, i/blendingSteps);
+            yield return new WaitForSeconds(Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time/blendingSteps);
+        }
+    }
 
     public void Leave()
     {
@@ -45,6 +62,7 @@ public class Room : MonoBehaviour
     public void Enter()
     {
         StartCoroutine(Wait());
+        StartCoroutine(BlendLight());
         for (int i = 0; i < VirtualCameras.Length; i++) VirtualCameras[i].gameObject.SetActive(true);
     }
 }

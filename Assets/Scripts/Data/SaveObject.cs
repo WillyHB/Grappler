@@ -5,6 +5,7 @@ public class SaveObject
 {
     public string WARNING = "EDITING THIS FILE COULD CAUSE CORRUPTION!!!";
 
+    public bool skipStartCutscene = false;
     public bool isFullscreen = true;
 
     public int resolutionIndex = 14;
