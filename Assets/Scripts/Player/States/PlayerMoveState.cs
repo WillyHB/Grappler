@@ -53,7 +53,6 @@ public abstract class PlayerMoveState : GroundedState
         {
 
             sm.Reload();
-            Debug.Log("here??");
             //OnEnter(sm);
         }
     }

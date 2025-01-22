@@ -30,6 +30,7 @@ public class CutsceneSystemStateHandler : InputStateHandler
     {
         if (IsInCutscene)
         {
+            Debug.Log(moveDirection);
             state.MoveDirection = moveDirection;
             state.SwimDirection = 0;
             state.GrappleLength = 0;

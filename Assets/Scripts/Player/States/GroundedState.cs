@@ -12,7 +12,6 @@ public class GroundedState : State
         sm = (PlayerStateMachine)fsm;
         accelerant = sm.Rigidbody.velocity.x;
         sm.InputProvider.Jumped += Jump;
-        Debug.LogWarning("ENTER======================================");
     }
 
     private void Jump()
@@ -24,7 +23,6 @@ public class GroundedState : State
     {
         base.OnExit();
         sm.InputProvider.Jumped -= Jump;
-        Debug.LogWarning("EXIT----------------------------");
     }
 
     public override void FixedUpdate()
