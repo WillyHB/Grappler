@@ -14,6 +14,8 @@ public static class LevelTransition
         _asyncOperation = SceneManager.LoadSceneAsync(level);
         // Don't let the Scene activate until you allow it to.
         _asyncOperation.allowSceneActivation = false;
+
+        await ScreenTransition.Instance?.OutOfLevel();
         await Task.Yield();
 
         LoadLevel();

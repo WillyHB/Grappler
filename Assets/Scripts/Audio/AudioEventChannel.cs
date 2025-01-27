@@ -10,7 +10,7 @@ public class AudioEventChannel : ScriptableObject
 
     public event PlayDelegate Played;
 
-    public event Action<Audio?> Stopped;
+    public event Action<Audio> Stopped;
     public event Action<AudioMaster.PlayingClip> StoppedSpecific;
 
 

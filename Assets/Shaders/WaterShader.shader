@@ -5,6 +5,7 @@ Shader "Unlit/WaterShader"
         _MainTex ("Texture", 2D) = "white" {}
         _WaterColour("Water Colour", Color) = (0.5, 0.5, 0.8, 0.45)
         _CrestColour("Water Crest Colour", Color) = (0.7, 0.7, 0.8, 0.8)
+        _Crest("Water Crest Multiplier", Range(0,1)) = 0.07
     }
     SubShader
     {
@@ -47,6 +48,7 @@ Shader "Unlit/WaterShader"
 
             float4 _WaterColour;
             float4 _CrestColour;
+            float _Crest;
 
             v2f vert (appdata v)
             {
@@ -77,7 +79,8 @@ Shader "Unlit/WaterShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                if (i.uv.y > 0.5 - (0.07 / (size.y))){
+                float test = _Crest / size.y;
+                if (i.uv.y > 0.5 - test){
                      return _CrestColour; 
                     }
                 

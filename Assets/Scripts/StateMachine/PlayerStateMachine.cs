@@ -170,6 +170,7 @@ public class PlayerStateMachine : StateMachine
 
     private void Die() {
 
+        Debug.Log("hello?");
         Transition(DeathState);
         HasDied = true;
     }
@@ -183,7 +184,7 @@ public class PlayerStateMachine : StateMachine
         Animator = GetComponent<Animator>();
 
         //transform.position = FindObjectOfType<RoomManager>().rooms[GameData.Load().Checkpoint].Checkpoint.position;
-        transform.position = FindObjectOfType<RoomManager>().GetRoom(13).Checkpoint.position;
+        transform.position = FindObjectOfType<RoomManager>().GetRoom(14).Checkpoint.position;
 
 
         Transition(IdleState);

@@ -62,7 +62,7 @@ public class AudioMaster : MonoBehaviour
         }
     }
 
-    public void Stop(Audio? clip = null)
+    public void Stop(Audio clip = null)
     {
         foreach (var pClip in PlayingClips)
         {

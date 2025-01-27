@@ -1,5 +1,3 @@
-using System.Diagnostics.Tracing;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class PlayAudio : MonoBehaviour

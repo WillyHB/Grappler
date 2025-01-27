@@ -125,8 +125,11 @@ public class Water : MonoBehaviour
 
     public void Update()
     {
-        if ((transform.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 100) {
-            return;
+        if (GameObject.FindWithTag("Player") != null) 
+        {
+            if ((transform.position - GameObject.FindWithTag("Player").transform.position).magnitude >= 100) {
+                return;
+            }
         }
 
         float size = (ColliderSurfaceHeight + meshRenderer.bounds.size.y) / meshRenderer.bounds.size.y;
