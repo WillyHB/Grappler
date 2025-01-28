@@ -7,18 +7,44 @@ using UnityEngine.UIElements;
 public class MainMenu : MonoBehaviour
 {
     public Scene MainScene;
-    // Start is called before the first frame update
+
+    public GameObject Main_Menu;
+    public GameObject Settings_Menu;
+
     void Start()
     {
+        Main_Menu.SetActive(true);
+        Settings_Menu.SetActive(false);
+    }
+
+    public void NewGame() 
+    {
+        SaveObject so = new();
+        GameData.Save(so);
+        ContinueGame();
 
     }
 
-    public void NewGame() {
-
+    public void Settings() 
+    {
+        Settings_Menu.SetActive(true);
+        Main_Menu.SetActive(false);
     }
 
-    public void ContinueGame() {
-        
+    public void Settings_Back() 
+    {
+        Settings_Menu.SetActive(false);
+        Main_Menu.SetActive(true);
+
+    }
+    
+    public void Quit() 
+    {
+        Application.Quit();
+    }
+
+    public void ContinueGame() 
+    {
         LevelTransition.Load(1);
     }
 

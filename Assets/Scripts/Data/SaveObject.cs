@@ -3,10 +3,10 @@ using UnityEngine;
 [System.Serializable]
 public class SaveObject
 {
-    public string WARNING = "EDITING THIS FILE COULD CAUSE CORRUPTION!!!";
+    public string WARNING = "EDITING THIS FILE COULD CAUSE CORRUPTION!!! maybe";
 
     public bool skipStartCutscene = false;
-    public bool isFullscreen = true;
+    public bool isFullscreen = false;
 
     public int resolutionIndex = 14;
 
@@ -23,6 +23,7 @@ public class SaveObject
     public int Checkpoint = 0;
 
     public int dialogueTextSpeed = 80;
+    public bool skipAllCutscenes = false;
 
 
 }
