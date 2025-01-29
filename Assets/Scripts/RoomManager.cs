@@ -18,7 +18,7 @@ public class RoomManager : MonoBehaviour
         Room.RoomEntered += (room) =>
         {
             SaveObject so = GameData.Load();
-            so.Checkpoint = rooms.IndexOf(room);
+            so.checkpoint = rooms.IndexOf(room);
             GameData.Save(so);
         };
     }
@@ -28,7 +28,7 @@ public class RoomManager : MonoBehaviour
         Room.RoomEntered -= (room) =>
         {
             SaveObject so = GameData.Load();
-            so.Checkpoint = rooms.IndexOf(room);
+            so.checkpoint = rooms.IndexOf(room);
             GameData.Save(so);
         };
     }

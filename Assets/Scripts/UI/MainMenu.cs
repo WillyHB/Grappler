@@ -19,10 +19,11 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame() 
     {
-        SaveObject so = new();
+        SaveObject so = GameData.Load();
+        so.checkpoint = 0;
+        so.skipStartCutscene = false;
         GameData.Save(so);
         ContinueGame();
-
     }
 
     public void Settings() 

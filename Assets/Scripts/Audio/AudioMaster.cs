@@ -106,4 +106,30 @@ public class AudioMaster : MonoBehaviour
 
         return PlayingClips[^1];
     }
+
+    public void SetLevel(string group, float value) {
+        SaveObject so = GameData.Load();
+
+        switch (group) {
+
+            case "Master":
+            so.volume = value;
+            break;
+
+            case "Environment":
+            so.environmentVolume = value;
+            break;
+
+            case "Music":
+            so.musicVolume = value;
+            break;
+
+            case "Player":
+            so.playerVolume = value;
+            break;
+
+        }
+
+        AudioMixer.SetFloat(group, value);
+    }
 }
