@@ -7,11 +7,12 @@ public class ScreenTransition : MonoBehaviour
     public Image Sprite;
     public float TransitionSpeed;
     public static ScreenTransition Instance {get; private set; }
+    public bool StartTransition;
 
     public void Start() {
 
         Instance = this;
-        IntoLevel();
+        if (StartTransition) IntoLevel();
     }
 
     public async Task IntoLevel() {

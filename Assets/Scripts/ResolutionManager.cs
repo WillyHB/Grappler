@@ -87,10 +87,14 @@ public class ResolutionManager : MonoBehaviour
             Cameras[i].RenderSurface.transform.localScale = new Vector3((orthoSize * 2) * _AspectRatio + 0.2f, (orthoSize * 2) + 0.2f, 1);
         }
 
-        for (int i = 0; i < Room.ActiveRoom.VirtualCameras.Length; i++)
-        {
-            Room.ActiveRoom.VirtualCameras[i].m_Lens.OrthographicSize = GenerateRenderOrthoSize();
+/*
+        if (Room.ActiveRoom != null) {
+            for (int i = 0; i < Room.ActiveRoom.VirtualCameras.Length; i++)
+            {
+                Room.ActiveRoom.VirtualCameras[i].m_Lens.OrthographicSize = GenerateRenderOrthoSize();
+            } 
         }
+        */
 
         RenderCamera.orthographicSize = orthoSize;
 
@@ -132,9 +136,12 @@ public class ResolutionManager : MonoBehaviour
             Start();
         }
 
-        for (int i = 0; i < Room.ActiveRoom.VirtualCameras.Length; i++)
+        if (Room.ActiveRoom != null)
         {
-            Room.ActiveRoom.VirtualCameras[i].m_Lens.OrthographicSize = GenerateRenderOrthoSize();
+            for (int i = 0; i < Room.ActiveRoom.VirtualCameras.Length; i++)
+            {
+                Room.ActiveRoom.VirtualCameras[i].m_Lens.OrthographicSize = GenerateRenderOrthoSize();
+            }
         }
 
     }
