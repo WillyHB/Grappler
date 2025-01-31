@@ -9,7 +9,7 @@
                     "name": "Move",
                     "type": "Button",
                     "id": "3e859577-06c3-436d-b66b-1a3a9e60f0bd",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "AxisDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
@@ -63,7 +63,7 @@
                     "name": "CancelGrapple",
                     "type": "Button",
                     "id": "170504ea-8d4d-4199-a9ad-01e3f563aa2f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -72,7 +72,16 @@
                     "name": "Walk",
                     "type": "Button",
                     "id": "3db75018-05dc-47da-9acf-0e1b689fc50c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleMenu",
+                    "type": "Button",
+                    "id": "9a1b38e5-3778-44e7-989a-f037b5f38b25",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -375,6 +384,28 @@
                     "action": "VerticalMove",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4f2aab97-5a35-40ec-80ad-c89af084b1db",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ToggleMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33748629-89a1-41be-a9f4-902834a58b94",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "ToggleMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -395,7 +426,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "1c4fc9dc-1af2-49ca-9a6a-7e2f47d62404",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -404,7 +435,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "739abb0e-eb30-42a3-8be2-37103fb976d2",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

@@ -21,5 +21,6 @@ MonoBehaviour:
   FootSurfaceDistance: 0.5
   MaxSurfaceDistance: 0
   SurfaceTension: 0.6
-  UnderwaterAmbience: {fileID: 11400000, guid: 01dcff5d85e9e5545ae55ed233d455a8, type: 2}
-  AudioEventChannel: {fileID: 11400000, guid: 32b60b8763fef814aa91277cd9838f69, type: 2}
+  NearSurface: 0
+  UnderwaterSoundEffects: {fileID: 11400000, guid: 01dcff5d85e9e5545ae55ed233d455a8, type: 2}
+  EmergeSoundEffect: {fileID: 11400000, guid: 53f8e03a51121ea358d37aea96c49c7f, type: 2}

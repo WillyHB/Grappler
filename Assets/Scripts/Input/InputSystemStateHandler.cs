@@ -14,6 +14,7 @@ public class InputSystemStateHandler : InputStateHandler
         Actions.FindActionMap("Player").FindAction("Shoot").performed += (cc) => PerformShoot();
         Actions.FindActionMap("Player").FindAction("Grapple").performed += (cc) => PerformGrapple();
         Actions.FindActionMap("Player").FindAction("CancelGrapple").performed += (cc) => CancelGrapple();
+        Actions.FindActionMap("Player").FindAction("ToggleMenu").performed += (cc) => ToggleMenu();
     }
 
     public void OnDisable()
@@ -22,6 +23,7 @@ public class InputSystemStateHandler : InputStateHandler
         Actions.FindActionMap("Player").FindAction("Shoot").performed -= (cc) => PerformShoot();
         Actions.FindActionMap("Player").FindAction("Grapple").performed -= (cc) => PerformGrapple();
         Actions.FindActionMap("Player").FindAction("CancelGrapple").performed -= (cc) => CancelGrapple();
+        Actions.FindActionMap("Player").FindAction("ToggleMenu").performed -= (cc) => ToggleMenu();
     }
 
     public override InputState HandleInputState(InputState state)

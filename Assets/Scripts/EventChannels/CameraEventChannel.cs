@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 
 [CreateAssetMenu(menuName = "Event Channels/Camera")]
@@ -28,5 +29,8 @@ public class CameraEventChannel : ScriptableObject
     public void SetFollow(Transform follow) => ResetFollow?.Invoke(follow);
 
     public void PerformZoom(float zoom) => Zoom?.Invoke(zoom);
-    public void PerformShake(float freq, float amp, float time) => Shake?.Invoke(freq, amp, time);
+    public void PerformShake(float freq, float amp, float time) 
+    {
+        if (GameData.Load().camShake) Shake?.Invoke(freq, amp, time);
+    }
 }

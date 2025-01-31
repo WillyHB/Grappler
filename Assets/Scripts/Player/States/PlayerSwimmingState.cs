@@ -28,10 +28,16 @@ public class PlayerSwimmingState : State
 
     private float oldGravity;
 
+    public Audio UnderwaterSoundEffects;
+    public Audio EmergeSoundEffect;
+    private bool playingUnderwaterSound;
+
+
     public override void OnEnter(StateMachine fsm)
     {
         base.OnEnter(fsm);
 
+        playingUnderwaterSound = false;
         sm = (PlayerStateMachine)fsm;
         accelerant = sm.Rigidbody.velocity;
         oldGravity = sm.Rigidbody.gravityScale;
@@ -40,19 +46,20 @@ public class PlayerSwimmingState : State
         sm.Animator.Play(sm.Animations.Swim);
         sm.InputProvider.Jumped += Jump;
 
-        accelerant.y += (-accelerant.y * SurfaceTension);
+        accelerant.y += -accelerant.y * SurfaceTension;
     }
 
     public override void OnExit()
     {
         base.OnExit();
 
-        Debug.LogWarning("EXIT SWIM!");
         sm.InputProvider.Jumped -= Jump;
         if (sm.Rigidbody != null)
         {
             sm.Rigidbody.gravityScale = oldGravity;
         }
+
+        AudioMaster.Instance.Stop(UnderwaterSoundEffects);
     }
 
     private void Jump()
@@ -72,7 +79,6 @@ public class PlayerSwimmingState : State
         float speedy = sm.InputProvider.GetState().SwimDirection * (VerticalSpeed * Time.deltaTime);
 
         if (speedy > 0 && NearSurface)
-
         {
             speedy = 0;
         }
@@ -185,5 +191,19 @@ public class PlayerSwimmingState : State
             + sm.CurrentWater.GetComponent<BoxCollider2D>().bounds.size.y / 2
             + sm.CurrentWater.GetComponent<BoxCollider2D>().offset.y
             - MaxSurfaceDistance;
+
+        if (!NearSurface && !playingUnderwaterSound) 
+        {
+            playingUnderwaterSound = true;
+            AudioMaster.Instance.Play(UnderwaterSoundEffects, MixerGroup.Environment);
+        }
+
+        else if (NearSurface && playingUnderwaterSound) 
+        {
+            playingUnderwaterSound = false;
+            AudioMaster.Instance.Stop(UnderwaterSoundEffects);
+            AudioMaster.Instance.Play(EmergeSoundEffect, MixerGroup.Environment);
+
+        }
     }
 }

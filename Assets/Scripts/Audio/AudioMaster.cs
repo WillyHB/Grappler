@@ -10,6 +10,8 @@ public class AudioMaster : MonoBehaviour
 
     private readonly List<PlayingClip> PlayingClips = new();
 
+    public static AudioMaster Instance {get; private set; }
+
     public AudioMixerGroup PlayerMixerGroup;
     public AudioMixerGroup MasterMixerGroup;
     public AudioMixerGroup MusicMixerGroup;
@@ -30,6 +32,7 @@ public class AudioMaster : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
         eventChannels.ForEach(ch => ch.Played += Play);
         eventChannels.ForEach(ch => ch.Stopped += Stop);
         eventChannels.ForEach(ch => ch.StoppedSpecific += Stop);
@@ -64,11 +67,11 @@ public class AudioMaster : MonoBehaviour
 
     public void Stop(Audio clip = null)
     {
-        foreach (var pClip in PlayingClips)
-        {
-            if (pClip.Clip == clip || clip == null)
+        for (int i = 0; i < PlayingClips.Count; i++) {
+
+            if (PlayingClips[i].Clip == clip || clip == null)
             {
-                Stop(pClip);
+                Stop(PlayingClips[i]);
             }
         }
     }

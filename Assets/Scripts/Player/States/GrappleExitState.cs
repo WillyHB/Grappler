@@ -19,6 +19,8 @@ public class GrappleExitState : PlayerAirborneState
         base.OnEnter(fsm);
 
         float rot = sm.transform.eulerAngles.z % 360;
+
+        sm.transform.rotation = Quaternion.identity;
         
         if (sm.GetComponent<SpriteRenderer>().flipX) rot = 360 - rot;
 
@@ -29,6 +31,7 @@ public class GrappleExitState : PlayerAirborneState
         }
         else 
         {
+            Debug.Log(rot);
             sm.Animator.Play(rot switch
             {
                 >= 350 => sm.Animations.GrappleSpinExit,

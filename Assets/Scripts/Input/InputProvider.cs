@@ -17,6 +17,7 @@ public class InputProvider : ScriptableObject
             handler.Shot += PerformShoot;
             handler.Grappled += PerformGrapple;
             handler.GrappleCanceled += CancelGrapple;
+            handler.MenuToggled += ToggleMenu;
         }
     }
 
@@ -27,6 +28,7 @@ public class InputProvider : ScriptableObject
             handler.Jumped -= PerformJump;
             handler.Shot -= PerformShoot;
             handler.Grappled -= PerformGrapple;
+            handler.MenuToggled -= ToggleMenu;
         }
     }
 
@@ -34,6 +36,7 @@ public class InputProvider : ScriptableObject
     public event Action Shot;
     public event Action Grappled;
     public event Action GrappleCanceled;
+    public event Action MenuToggled;
 
     public void PerformJump()
     {
@@ -53,6 +56,11 @@ public class InputProvider : ScriptableObject
     public void CancelGrapple()
     {
         GrappleCanceled?.Invoke();
+    }
+
+    public void ToggleMenu() 
+    {
+        MenuToggled?.Invoke();
     }
 
     public InputState GetState()

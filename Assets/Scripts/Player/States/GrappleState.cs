@@ -10,6 +10,7 @@ public class GrappleState : State
 
     public float RotationDistanceLimit = 0.05f;
 
+    private bool isJumping;
     protected PlayerStateMachine sm;
 
     public override void OnEnter(StateMachine fsm)
@@ -20,10 +21,12 @@ public class GrappleState : State
         sm.InputProvider.Jumped += Jump;
 
         sm.Animator.Play(sm.Animations.Grapple);
+        isJumping = false;
     }
 
     private void Jump()
     {
+        isJumping = true;
         sm.Transition(sm.GrappleExitState);
     }
 
@@ -68,7 +71,7 @@ public class GrappleState : State
 
         sm.Grapple.ReleaseGrapple();
 
-        //if (!isJumping)
+        if (!isJumping)
         sm.transform.rotation = Quaternion.identity;
 
         sm.InputProvider.Jumped -= Jump;

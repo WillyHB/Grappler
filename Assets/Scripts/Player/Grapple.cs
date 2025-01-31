@@ -20,6 +20,7 @@ public class Grapple : MonoBehaviour
     public Transform GrapplePos;
 
     public GameObject Hand;
+    public Audio GrappleSound;
 
     public bool IsGrappling => ConnectionRope.enabled;
 
@@ -115,6 +116,7 @@ public class Grapple : MonoBehaviour
 
         if (grappleHit)
         {
+            AudioMaster.Instance.Play(GrappleSound, MixerGroup.Player);
             grappledThisFrame = true;
 
             if (hookInstance != null) Destroy(hookInstance);
