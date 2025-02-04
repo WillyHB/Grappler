@@ -78,6 +78,8 @@ public class AudioMaster : MonoBehaviour
 
     public void Stop(PlayingClip clip)
     {
+        if (!PlayingClips.Contains(clip)) return;
+
         PlayingClips.Remove(clip);
 
         clip.Source.Stop();

@@ -6,6 +6,7 @@ public class SaveObject
     public string WARNING = "EDITING THIS FILE COULD CAUSE CORRUPTION!!! maybe";
 
     public bool skipStartCutscene = false;
+    public bool skipTribesmanCutscene = false;
     public int checkpoint = 0;
 
     //SETTINGS
@@ -15,7 +16,6 @@ public class SaveObject
     public float environmentVolume;
     public float enemiesVolume;
     public bool isFullscreen = false;
-    public int resolutionIndex = 14;
     public int fps = 60;
     public bool camShake = true;
     public bool vsync = true;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TribesmanCutscene : CutsceneSystem
@@ -9,6 +10,14 @@ public class TribesmanCutscene : CutsceneSystem
     public GameObject Player;
     public GameObject DialogueSystemPrefab;
     public Potrait PlayerPotrait;
+
+    public new void Start() 
+    {
+        Debug.Log("Hello? World?");
+        base.Start();
+        if (GameData.Load().skipTribesmanCutscene) Destroy(gameObject);
+
+    }
 
     public override List<CutsceneEvent> GenerateCutscene()
     {
@@ -41,6 +50,13 @@ public class TribesmanCutscene : CutsceneSystem
             }),
             new Cutscene.CameraZoomEvent(0),
             new Cutscene.CameraMoveEvent(Player.transform),
+
+            new Cutscene.CustomFunctionEvent(()=>
+            {
+                SaveObject so = GameData.Load();
+                so.skipTribesmanCutscene = true;
+                GameData.Save(so);
+            }),
 
         };
     }

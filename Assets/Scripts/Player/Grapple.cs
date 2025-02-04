@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,11 +23,20 @@ public class Grapple : MonoBehaviour
 
     public GameObject Hand;
     public Audio GrappleSound;
+    public Audio GrappleRetractSound;
 
     public bool IsGrappling => ConnectionRope.enabled;
 
-    private bool grappledThisFrame;
+    private float timeGrappled;
+    private float timeReleased;
     private bool canGrapple = true;
+
+    private Vector2 grapplePointOffset;
+    public float GrappleTime = 1;
+    public float GrappleDelay = 0.5f;
+    public float GrappleStopDistance = 1;
+
+    private AudioMaster.PlayingClip? playingRetract = null;
 
     void Start()
     {
@@ -42,7 +53,6 @@ public class Grapple : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("OnDisable");
         InputProvider.GrappleCanceled -= ReleaseGrapple;
         InputProvider.Grappled -= OnGrapple;
     }
@@ -52,14 +62,39 @@ public class Grapple : MonoBehaviour
         if (IsGrappling)
         {
             ConnectionRope.startOffset = GrapplePos.position - transform.position;
-            grappledThisFrame = false;
+            ConnectionRope.endOffset = Vector2.Lerp(ConnectionRope.connectedBody.position + (Vector2)GrapplePos.position, grapplePointOffset, (Time.time - timeGrappled) / GrappleTime);
 
             float grappleVal = InputProvider.GetState().GrappleLength;
 
-            if (grappleVal != 0)
+            if (grappleVal == 0)
             {
+                if (playingRetract.HasValue)
+                AudioMaster.Instance.Stop(playingRetract.Value);
+                playingRetract = null;
+            }
+            
+            else 
+            {
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, ConnectionRope.GetCalculatedEndPoint() - (Vector2)transform.position, 1);
+                bool hit = false;
+    
+                foreach (var h in hits)
+                {
+                    if (h.collider.CompareTag(GrappleBlockTag)) break;
+
+                    if (h.collider.CompareTag(GrappleTag))
+                    {
+                        hit = true;
+                        break;
+                    }
+                }
+
+                if (hit) grappleVal = Mathf.Clamp(grappleVal, -1, 0);   
+                else playingRetract ??= AudioMaster.Instance.Play(GrappleRetractSound, MixerGroup.Player);
+            
                 ConnectionRope.SetLength(ConnectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
             }
+
 
             Hand.GetComponent<Hand>().followPosition = (Vector2)ConnectionRope.connectedBody.transform.position + ConnectionRope.endOffset;
         }
@@ -81,9 +116,7 @@ public class Grapple : MonoBehaviour
 
     private void OnGrapple()
     {
-        if (!canGrapple) return;
-
-        if (IsGrappling) return;
+        if (Time.time - timeReleased < GrappleDelay || !canGrapple || IsGrappling) return;
 
         RaycastHit2D[] hits = default;
 
@@ -96,7 +129,7 @@ public class Grapple : MonoBehaviour
 
         else if (InputDeviceManager.CurrentDeviceType == InputDevices.Controller)
         {
-            hits = Physics2D.RaycastAll(transform.position, Gamepad.current.rightStick.ReadValue(), 1000);
+            hits = Physics2D.RaycastAll(transform.position, Gamepad.current.rightStick.ReadValue(), 50);
         }
 
         bool grappleHit = false;
@@ -117,7 +150,7 @@ public class Grapple : MonoBehaviour
         if (grappleHit)
         {
             AudioMaster.Instance.Play(GrappleSound, MixerGroup.Player);
-            grappledThisFrame = true;
+            timeGrappled = Time.time;
 
             if (hookInstance != null) Destroy(hookInstance);
 
@@ -132,7 +165,9 @@ public class Grapple : MonoBehaviour
                     offset.y / ConnectionRope.connectedBody.transform.localScale.y,
                     0);
 
-                ConnectionRope.endOffset = offset;
+                grapplePointOffset = offset;
+
+                ConnectionRope.endOffset = (GrapplePos.position - transform.position) - ConnectionRope.connectedBody.transform.position;
                 ConnectionRope.SetLength(((GrapplePos.position) - (hit.transform.position + offset)).magnitude);
             }
 
@@ -142,12 +177,17 @@ public class Grapple : MonoBehaviour
 
     public void ReleaseGrapple()
     {
-        if (!grappledThisFrame)
+        if (timeGrappled != Time.time && IsGrappling)
         {
+            timeReleased = Time.time;
             Destroy(hookInstance);
             ConnectionRope.enabled = false;
 
             Hand.GetComponent<Hand>().followPosition = null;
+
+            if (playingRetract.HasValue)
+            AudioMaster.Instance.Stop(playingRetract.Value);
+            playingRetract = null;
         }
     }
 }
