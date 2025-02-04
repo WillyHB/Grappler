@@ -99,10 +99,14 @@ public class Settings : MonoBehaviour
     void Awake() 
     {
         SaveObject so = GameData.Load();
-        MasterVolume.value = Mathf.Pow(10, so.volume); //BUT IF
-        MusicVolume.value = Mathf.Pow(10, so.musicVolume);
-        EnvironmentVolume.value = Mathf.Pow(10, so.environmentVolume);
-        PlayerVolume.value = Mathf.Pow(10,so.playerVolume);
+        MasterVolume.value = Mathf.Pow(10, so.volume/20); //BUT IF
+        MasterVolume.onValueChanged.Invoke(0);
+        MusicVolume.value = Mathf.Pow(10, so.musicVolume/20);
+        MusicVolume.onValueChanged.Invoke(0);
+        EnvironmentVolume.value = Mathf.Pow(10, so.environmentVolume/20);
+        EnvironmentVolume.onValueChanged.Invoke(0);
+        PlayerVolume.value = Mathf.Pow(10,so.playerVolume/20);
+        PlayerVolume.onValueChanged.Invoke(0);
         TargetFPS.value = so.fps / 10;
         ToggleVsync(so.vsync);
         ToggleCamShake(so.camShake);

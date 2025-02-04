@@ -184,7 +184,6 @@ public class Grapple : MonoBehaviour
             ConnectionRope.enabled = false;
 
             Hand.GetComponent<Hand>().followPosition = null;
-
             if (playingRetract.HasValue)
             AudioMaster.Instance.Stop(playingRetract.Value);
             playingRetract = null;
