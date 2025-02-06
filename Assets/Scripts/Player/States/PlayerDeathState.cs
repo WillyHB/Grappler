@@ -14,7 +14,8 @@ public class PlayerDeathState : State
         completelyDead = false;
         sm = fsm as PlayerStateMachine;
 
-        AudioMaster.Instance.Play(DeathSound, MixerGroup.Player);
+        sm.PlayerAudioEventChannel.Play(DeathSound);
+        //AudioMaster.Instance.Play(DeathSound, MixerGroup.Player);
 
         sm.Freeze(false);
         sm.Animator.Play(sm.Animations.Death);

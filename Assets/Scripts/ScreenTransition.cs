@@ -9,19 +9,32 @@ public class ScreenTransition : MonoBehaviour
     public static ScreenTransition Instance {get; private set; }
     public bool StartTransition;
 
-    public void Start() {
+    public void OnEnable() 
+    {
 
         Instance = this;
+    }
+
+    public void Start() 
+    {
         if (StartTransition) IntoLevel();
     }
 
-    public async Task IntoLevel() {
+    public void OnDisable() 
+    {
+        Instance = null;
+
+    }
+
+    public async Task IntoLevel() 
+    {
         Sprite.rectTransform.localPosition = new Vector2(0, 0);
         LeanTween.moveLocalX(Sprite.gameObject, Sprite.rectTransform.rect.width, TransitionSpeed).setEaseInOutQuad();
         await Task.Delay((int)(TransitionSpeed * 1000));
     }
 
-    public async Task OutOfLevel() {
+    public async Task OutOfLevel() 
+    {
         Sprite.rectTransform.localPosition = new Vector2(-Sprite.rectTransform.rect.width, 0);
         
         LeanTween.moveLocalX(Sprite.gameObject, 0, TransitionSpeed).setEaseInOutQuad();

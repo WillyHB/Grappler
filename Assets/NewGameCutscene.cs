@@ -11,10 +11,17 @@ public class NewGameCutscene : CutsceneSystem
     public TextMeshProUGUI GameTitle;
     public TextMeshProUGUI ByLine;
 
+    public void Start() 
+    {
+        base.Start();
+        if (GameData.Load().skipAllCutscenes) LevelTransition.Load(2);
+
+    }
     public override List<CutsceneEvent> GenerateCutscene()
     {
         return new List<CutsceneEvent>()
         {
+            new CustomFunctionEvent(()=>Debug.Log("Henlo")),
             new DelayEvent(1000),
             new AudioEvent(MasterChannel, PlaneFlying),
             new DelayEvent(2000),

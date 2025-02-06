@@ -379,10 +379,10 @@ MonoBehaviour:
       - m_Target: {fileID: 4588820906610164298}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SetAudio
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 32b60b8763fef814aa91277cd9838f69, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioEventChannel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Environment
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Click: {fileID: 11400000, guid: ac301ac2541fd99fc93cefa65c90348d, type: 2}
-  MixerGroup: 1
+  AudioEventChannel: {fileID: 11400000, guid: 32b60b8763fef814aa91277cd9838f69, type: 2}
 --- !u!1 &1451620443652677945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,13 +3859,13 @@ MonoBehaviour:
       - m_Target: {fileID: 4588820906610164298}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SetAudio
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 36ffac4c3de69af41bd4fc31560db680, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioEventChannel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Master
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &6898132241199611513
@@ -3881,7 +3881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Click: {fileID: 11400000, guid: ac301ac2541fd99fc93cefa65c90348d, type: 2}
-  MixerGroup: 0
+  AudioEventChannel: {fileID: 11400000, guid: 36ffac4c3de69af41bd4fc31560db680, type: 2}
 --- !u!1 &5631546212774711429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4234,10 +4234,10 @@ MonoBehaviour:
       - m_Target: {fileID: 4588820906610164298}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SetAudio
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 9d6d5ffcd204a1745a70cb0ea564ad8f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioEventChannel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Player
@@ -4256,7 +4256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Click: {fileID: 11400000, guid: ac301ac2541fd99fc93cefa65c90348d, type: 2}
-  MixerGroup: 3
+  AudioEventChannel: {fileID: 11400000, guid: 9d6d5ffcd204a1745a70cb0ea564ad8f, type: 2}
 --- !u!1 &5864462769255171008
 GameObject:
   m_ObjectHideFlags: 0
@@ -6093,10 +6093,10 @@ MonoBehaviour:
       - m_Target: {fileID: 4588820906610164298}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SetAudio
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: e024ef5df3ca929449aa0593b2f03758, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioEventChannel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Music
@@ -6115,7 +6115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Click: {fileID: 11400000, guid: ac301ac2541fd99fc93cefa65c90348d, type: 2}
-  MixerGroup: 2
+  AudioEventChannel: {fileID: 11400000, guid: e024ef5df3ca929449aa0593b2f03758, type: 2}
 --- !u!1 &9079521262851823384
 GameObject:
   m_ObjectHideFlags: 0

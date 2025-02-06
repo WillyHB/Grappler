@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cutscene;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -20,6 +21,19 @@ public class Settings : MonoBehaviour
     public Toggle CameraShake;
     public Toggle SkipAllCutscenes;
 
+    public void SetAudio(AudioEventChannel group)
+    {
+        group.SetLevel(Mathf.Log10(group.MixerGroup switch 
+        {
+            MixerGroup.Master => MasterVolume.value,
+            MixerGroup.Music => MusicVolume.value,
+            MixerGroup.Environment => EnvironmentVolume.value,
+            MixerGroup.Player => PlayerVolume.value,
+            _ => throw new System.Exception("Unidentified mixer group used"),
+        }) * 20);
+    }
+
+    /*
     public void SetAudio(string mixerGroup) 
     {
         float value = Mathf.Log10(mixerGroup switch 
@@ -31,12 +45,15 @@ public class Settings : MonoBehaviour
             _ => throw new System.Exception("Unidentified mixer group used"),
         }) * 20;
 
-        AudioMaster.Instance.SetLevel(mixerGroup, value);
+
+
+        //AudioMaster.Instance.SetLevel(mixerGroup, value);
 
         SaveObject so = GameData.Load();
         so.volume = value;
         GameData.Save(so);
     }
+    */
 
     public void ToggleVsync(bool tog) 
     {
@@ -96,7 +113,7 @@ public class Settings : MonoBehaviour
         TargetFPS.GetComponentInChildren<TextMeshProUGUI>().text = value == -1 ? "INF" : value.ToString();
     }
    
-    void Awake() 
+    void Start() 
     {
         SaveObject so = GameData.Load();
         MasterVolume.value = Mathf.Pow(10, so.volume/20); //BUT IF

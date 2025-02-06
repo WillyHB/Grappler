@@ -99,6 +99,7 @@ public class PlayerStateMachine : StateMachine
 
     public PlayerEventChannel PlayerEventChannel;
     public AudioEventChannel PlayerAudioEventChannel;
+    public AudioEventChannel EnvironmentAudioEventChannel;
 
     private Vector2 frozenVelocity;
     public void Freeze(bool disableAnimatior)
@@ -176,8 +177,6 @@ public class PlayerStateMachine : StateMachine
 
     protected void Awake()
     {
-        PlayerEventChannel.Die += Die;
-
         Grapple = FindObjectOfType<Grapple>();  
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
@@ -197,9 +196,18 @@ public class PlayerStateMachine : StateMachine
         PlayerAudioEventChannel.Play(footsteps[Random.Range(0, footsteps.Length-1)]);
     }
 
+    protected void OnEnable() 
+    {
+        PlayerEventChannel.Die += Die;
+        PlayerEventChannel.Frozen += Freeze;
+        PlayerEventChannel.UnFrozen += UnFreeze;
+    }
+
     protected void OnDisable()
     {
         PlayerEventChannel.Die -= Die;
+        PlayerEventChannel.Frozen -= Freeze;
+        PlayerEventChannel.UnFrozen -= UnFreeze;
     }
 
     protected override State GetInitialState() => IdleState;

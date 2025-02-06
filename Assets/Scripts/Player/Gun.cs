@@ -17,6 +17,7 @@ public class Gun : MonoBehaviour
 
     public RumbleEventChannel RumbleEventChannel;
     public CameraEventChannel CamEventChannel;
+    public AudioEventChannel PlayerAudioEventChannel;
 
     public void OnEnable() 
     {
@@ -30,7 +31,8 @@ public class Gun : MonoBehaviour
 
     private void OnShoot()
     {
-        AudioMaster.Instance.Play(GunShot, MixerGroup.Player);
+        PlayerAudioEventChannel.Play(GunShot);
+        //AudioMaster.Instance.Play(GunShot, MixerGroup.Player);
         RumbleEventChannel.PerformRumble(1, 0, 0.25f);
 
         GameObject bullet = Instantiate(Bullet, GunEdge.position, Quaternion.identity);

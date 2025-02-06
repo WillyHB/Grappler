@@ -1,3 +1,4 @@
+using Cutscene;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,7 +33,10 @@ public class Grapple : MonoBehaviour
     public float GrappleDelay = 0.5f;
     public float GrappleStopDistance = 1;
 
-    private AudioMaster.PlayingClip? playingRetract = null;
+    private bool retractingGrapple = false;
+
+    public AudioEventChannel PlayerAudioEventChannel;
+    //private AudioMaster.PlayingClip? playingRetract = null;
 
     void Start()
     {
@@ -64,9 +68,11 @@ public class Grapple : MonoBehaviour
 
             if (grappleVal == 0)
             {
-                if (playingRetract.HasValue)
-                AudioMaster.Instance.Stop(playingRetract.Value);
-                playingRetract = null;
+                PlayerAudioEventChannel.Stop(GrappleRetractSound);
+                retractingGrapple = false;
+                //if (playingRetract.HasValue)
+                //AudioMaster.Instance.Stop(playingRetract.Value);
+                //playingRetract = null;
             }
             
             else 
@@ -86,7 +92,15 @@ public class Grapple : MonoBehaviour
                 }
 
                 if (hit) grappleVal = Mathf.Clamp(grappleVal, -1, 0);   
-                else playingRetract ??= AudioMaster.Instance.Play(GrappleRetractSound, MixerGroup.Player);
+
+                
+                if (!retractingGrapple)
+                {
+                    retractingGrapple = true;
+                     PlayerAudioEventChannel.Play(GrappleRetractSound);
+                }
+                
+                //else playingRetract ??= AudioMaster.Instance.Play(GrappleRetractSound, MixerGroup.Player);
             
                 ConnectionRope.SetLength(ConnectionRope.GetLength() - grappleVal * GrappleExtensionSpeed * Time.deltaTime);
             }
@@ -145,7 +159,8 @@ public class Grapple : MonoBehaviour
 
         if (grappleHit)
         {
-            AudioMaster.Instance.Play(GrappleSound, MixerGroup.Player);
+            PlayerAudioEventChannel.Play(GrappleSound);
+            //AudioMaster.Instance.Play(GrappleSound, MixerGroup.Player);
             timeGrappled = Time.time;
 
             if (hookInstance != null) Destroy(hookInstance);
@@ -180,9 +195,10 @@ public class Grapple : MonoBehaviour
             ConnectionRope.enabled = false;
 
             Hand.GetComponent<Hand>().followPosition = null;
-            if (playingRetract.HasValue)
-            AudioMaster.Instance.Stop(playingRetract.Value);
-            playingRetract = null;
+            //if (playingRetract.HasValue)
+            PlayerAudioEventChannel.Stop(GrappleRetractSound);
+            //AudioMaster.Instance.Stop(playingRetract.Value);
+            ///playingRetract = null;
         }
     }
 }

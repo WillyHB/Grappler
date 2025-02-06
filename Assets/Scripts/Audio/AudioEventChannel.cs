@@ -2,15 +2,18 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Event Channels/Audio")]
+[Serializable]
 public class AudioEventChannel : ScriptableObject
 {
     public MixerGroup MixerGroup;
 
     public delegate AudioMaster.PlayingClip PlayDelegate(Audio clip, MixerGroup mixerGroup);
+    public delegate void LevelDelegate(float level, MixerGroup mixerGroup);
 
     public event PlayDelegate Played;
 
     public event Action<Audio> Stopped;
+    public event LevelDelegate LevelSet;
     public event Action<AudioMaster.PlayingClip> StoppedSpecific;
 
 
@@ -21,10 +24,8 @@ public class AudioEventChannel : ScriptableObject
     /// <returns></returns>
     public AudioMaster.PlayingClip? Play(Audio clip) => Played?.Invoke(clip, MixerGroup);
 
-    public void SetReverb(float reverb)
-    {
+    public void SetLevel(float level) => LevelSet?.Invoke(level, MixerGroup);
 
-    }
 
     public void Stop(AudioMaster.PlayingClip playingClip) => StoppedSpecific?.Invoke(playingClip);
 

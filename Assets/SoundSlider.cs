@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cutscene;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,14 +8,14 @@ public class SoundSlider : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
 
     public Audio Click;
-    public MixerGroup MixerGroup;
+    public AudioEventChannel AudioEventChannel;
     public void OnPointerDown(PointerEventData eventData)
     {
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        AudioMaster.Instance.Play(Click, MixerGroup);
+        AudioEventChannel.Play(Click);
     }
 
     // Start is called before the first frame update

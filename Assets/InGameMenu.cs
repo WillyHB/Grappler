@@ -8,6 +8,7 @@ public class InGameMenu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Menu;
     public InputProvider inputProvider;
+    public PlayerEventChannel PlayerEventChannel;
     void Start()
     {
         
@@ -27,8 +28,8 @@ public class InGameMenu : MonoBehaviour
     {
         Menu.SetActive(!Menu.activeSelf);
 
-        if (Menu.activeSelf) GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().Freeze(true);
-        else GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().UnFreeze(true);
+        if (Menu.activeSelf) PlayerEventChannel.Freeze(true);
+        else PlayerEventChannel.UnFreeze(true);
 
     }
 }

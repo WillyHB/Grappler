@@ -59,7 +59,8 @@ public class PlayerSwimmingState : State
             sm.Rigidbody.gravityScale = oldGravity;
         }
 
-        AudioMaster.Instance.Stop(UnderwaterSoundEffects);
+        sm.EnvironmentAudioEventChannel.Stop(UnderwaterSoundEffects);
+        //AudioMaster.Instance.Stop(UnderwaterSoundEffects);
     }
 
     private void Jump()
@@ -195,14 +196,17 @@ public class PlayerSwimmingState : State
         if (!NearSurface && !playingUnderwaterSound) 
         {
             playingUnderwaterSound = true;
-            AudioMaster.Instance.Play(UnderwaterSoundEffects, MixerGroup.Environment);
+            sm.EnvironmentAudioEventChannel.Play(UnderwaterSoundEffects);
+            //AudioMaster.Instance.Play(UnderwaterSoundEffects, MixerGroup.Environment);
         }
 
         else if (NearSurface && playingUnderwaterSound) 
         {
             playingUnderwaterSound = false;
-            AudioMaster.Instance.Stop(UnderwaterSoundEffects);
-            AudioMaster.Instance.Play(EmergeSoundEffect, MixerGroup.Environment);
+            sm.EnvironmentAudioEventChannel.Stop(UnderwaterSoundEffects);
+            //AudioMaster.Instance.Stop(UnderwaterSoundEffects);
+            sm.EnvironmentAudioEventChannel.Play(EmergeSoundEffect);
+            //AudioMaster.Instance.Play(EmergeSoundEffect, MixerGroup.Environment);
 
         }
     }

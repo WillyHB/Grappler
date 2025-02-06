@@ -10,6 +10,8 @@ public class RoomManager : MonoBehaviour
 
     public static RoomManager Instance {get; private set;}
 
+    public PlayerEventChannel PlayerEventChannel;
+
     public Room GetRoom(int i) 
     {
         if (i < 0 || i > rooms.Count) return null;
@@ -23,10 +25,13 @@ public class RoomManager : MonoBehaviour
         return rooms.IndexOf(room);
     }
 
-    public void Start()
+    public void Awake() 
     {
         Instance = this;
+    }
 
+    public void Start()
+    {
         Room.RoomEntered += (room) =>
         {
             SaveObject so = GameData.Load();

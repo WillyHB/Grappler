@@ -10,8 +10,6 @@ public class AudioMaster : MonoBehaviour
 
     private readonly List<PlayingClip> PlayingClips = new();
 
-    public static AudioMaster Instance {get; private set; }
-
     public AudioMixerGroup PlayerMixerGroup;
     public AudioMixerGroup MasterMixerGroup;
     public AudioMixerGroup MusicMixerGroup;
@@ -30,12 +28,12 @@ public class AudioMaster : MonoBehaviour
         public AudioSource Source;
     }
 
-    private void Start()
+    private void OnEnable() 
     {
-        Instance = this;
         eventChannels.ForEach(ch => ch.Played += Play);
         eventChannels.ForEach(ch => ch.Stopped += Stop);
         eventChannels.ForEach(ch => ch.StoppedSpecific += Stop);
+        eventChannels.ForEach(ch => ch.LevelSet += SetLevel);
     }
 
     private void OnDisable()
@@ -43,6 +41,7 @@ public class AudioMaster : MonoBehaviour
         eventChannels.ForEach(ch => ch.Played -= Play);
         eventChannels.ForEach(ch => ch.Stopped -= Stop);
         eventChannels.ForEach(ch => ch.StoppedSpecific -= Stop);
+        eventChannels.ForEach(ch => ch.LevelSet -= SetLevel);
     }
 
     private void Update()
@@ -112,29 +111,29 @@ public class AudioMaster : MonoBehaviour
         return PlayingClips[^1];
     }
 
-    public void SetLevel(string group, float value) {
+    public void SetLevel(float level, MixerGroup group) {
         SaveObject so = GameData.Load();
 
         switch (group) {
 
-            case "Master":
-            so.volume = value;
+            case MixerGroup.Master:
+            so.volume = level;
             break;
 
-            case "Environment":
-            so.environmentVolume = value;
+            case MixerGroup.Environment:
+            so.environmentVolume = level;
             break;
 
-            case "Music":
-            so.musicVolume = value;
+            case MixerGroup.Music:
+            so.musicVolume = level;
             break;
 
-            case "Player":
-            so.playerVolume = value;
+            case MixerGroup.Player:
+            so.playerVolume = level;
             break;
 
         }
 
-        AudioMixer.SetFloat(group, value);
+        AudioMixer.SetFloat(Audio.MixerGroupToString(group), level);
     }
 }
