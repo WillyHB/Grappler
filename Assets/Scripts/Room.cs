@@ -26,18 +26,20 @@ public class Room : MonoBehaviour
             if (ActiveRoom != null) ActiveRoom.Leave();
             ActiveRoom = this;
 
-            ActiveRoom.Enter();
+            ActiveRoom.Enter(RoomManager.Instance.GetCheckpoint(this) == GameData.Load().checkpoint ? false : true);
             RoomEntered?.Invoke(ActiveRoom);
         }
     }
     
 
-    private IEnumerator Wait()
+    private IEnumerator Wait(bool freezePlayer)
     {
+        PlayerStateMachine player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
         RoomTraversalInputStateHandler.TraversingRoom = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>().Freeze(true);
+        if (freezePlayer) player.Freeze(true);
         yield return new WaitForSeconds(Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>().UnFreeze(true);
+        if (freezePlayer) player.UnFreeze(true);
+        // THIS Grrr
         RoomTraversalInputStateHandler.TraversingRoom = false;
     }
     
@@ -59,9 +61,9 @@ public class Room : MonoBehaviour
         for (int i = 0; i < VirtualCameras.Length; i++) VirtualCameras[i].gameObject.SetActive(false);
     }
 
-    public void Enter()
+    public void Enter(bool freezePlayer = true)
     {
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(freezePlayer));
         StartCoroutine(BlendLight());
         for (int i = 0; i < VirtualCameras.Length; i++) VirtualCameras[i].gameObject.SetActive(true);
     }

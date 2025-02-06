@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDeathState : State
 {
     public VoidEventChannel DeathEventChannel;
+    public Audio DeathSound;
     PlayerStateMachine sm;
     private bool completelyDead;
     public override void OnEnter(StateMachine fsm)
@@ -12,6 +13,8 @@ public class PlayerDeathState : State
         base.OnEnter(fsm);
         completelyDead = false;
         sm = fsm as PlayerStateMachine;
+
+        AudioMaster.Instance.Play(DeathSound, MixerGroup.Player);
 
         sm.Freeze(false);
         sm.Animator.Play(sm.Animations.Death);

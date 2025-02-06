@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerDeathState
   m_EditorClassIdentifier: 
   DeathEventChannel: {fileID: 11400000, guid: 197102c502e3be948abbb6eadcf3c4c2, type: 2}
+  DeathSound: {fileID: 11400000, guid: abe8280cdfb9e00d5855d18fb4f62ed0, type: 2}

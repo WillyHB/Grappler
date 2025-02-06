@@ -13,9 +13,8 @@ public class TribesmanCutscene : CutsceneSystem
 
     public new void Start() 
     {
-        Debug.Log("Hello? World?");
         base.Start();
-        if (GameData.Load().skipTribesmanCutscene) Destroy(gameObject);
+        if (GameData.Load().skipTribesmanCutscene || GameData.Load().skipAllCutscenes) Destroy(gameObject);
 
     }
 

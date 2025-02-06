@@ -39,6 +39,8 @@ public abstract class CutsceneSystem : MonoBehaviour
 
     public async void Play()
     {
+        if (GameData.Load().skipAllCutscenes) return;
+
         stateHandler.IsInCutscene = true;
         playing = true;
 

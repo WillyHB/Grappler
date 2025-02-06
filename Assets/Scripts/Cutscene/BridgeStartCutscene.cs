@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cutscene;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BridgeStartCutscene : CutsceneSystem
 {
@@ -18,6 +19,7 @@ public class BridgeStartCutscene : CutsceneSystem
 
     public AudioEventChannel EnvironmentEventChannel;
     public Audio HeadScratch;
+    
 
     public override List<CutsceneEvent> GenerateCutscene()
     {
@@ -29,7 +31,6 @@ public class BridgeStartCutscene : CutsceneSystem
 
         return new List<CutsceneEvent>()
         {
-            new CustomFunctionEvent(()=>Destroy(GetComponent<BoxCollider2D>())),
             new CustomFunctionEvent(Player.GetComponentInChildren<Grapple>().DisableGrapple),
             new DelayEvent(1000),
             new Cutscene.AnimationEvent(Player, "Intro1", true),
@@ -65,8 +66,8 @@ public class BridgeStartCutscene : CutsceneSystem
             new DelayEvent(1000),
             new Dialogue(DialogueSystemPrefab,new List<DialogueEvent>()
             {
-                new DialogueTextEvent("We're northwest of the main island, I saw when we were going down", GeorgePotrait),
-                new DialogueTextEvent("There's a bridge of some sort just south of here?", GeorgePotrait),
+                new DialogueTextEvent("We're on one of the outer islands, I saw it when we were going down", GeorgePotrait),
+                new DialogueTextEvent("I saw it was connected by a bridge as far as I could tell", GeorgePotrait),
             }),
 
             new DelayEvent(1000),
@@ -77,10 +78,10 @@ public class BridgeStartCutscene : CutsceneSystem
                 new DialogueTextEvent("A bridge?!", JessicaPotrait.Shocked),
                 new DialogueTextEvent("That wasn't in any of the research documents... Must have been hidden by the foliage?", JessicaPotrait.Confused),
                 new DialogueTextEvent("Well, if this is true, then we're quite far from site A...", JessicaPotrait.Shocked),
-                new DialogueTextEvent("On the very island we came to study for danger...", PlayerPotrait.Fear, true),
+                new DialogueTextEvent("With no one coming for us...", PlayerPotrait.Fear, true),
                 new DialogueTextEvent("In George's condition he isn't going anywhere, but we can't just leave him...", JessicaPotrait.Poker),
-                new DialogueTextEvent("I guess no ones coming to save us here, so it seems one of us has to go", PlayerPotrait.Poker, true),
-                new DialogueQuestionEvent("I have to tend to George's wounds, no way I'm leaving him", JessicaPotrait.Sad, "Yeah!", "I guess I have to", "If I have to...")
+                new DialogueTextEvent("It seems one of us has to go get rescue from Site A...", PlayerPotrait.Poker, true),
+                new DialogueQuestionEvent("I have to tend to George's wounds, no way I'm leaving him in this state. What do you think about going?", JessicaPotrait.Sad, "Yeah!", "I guess I have to", "If I have to...")
                 {
                     Answer1Events = new List<Cutscene.DialogueEvent>()
                     {
@@ -97,7 +98,7 @@ public class BridgeStartCutscene : CutsceneSystem
                         new DialogueTextEvent("I know it's a tough journey, but it seems like our only choice right now. Would you rather just stay here? You said it yourself, no ones coming for us", JessicaPotrait.Angry)
                     }
                 },
-                new DialogueTextEvent("It's quite a far journey, here take this map, it should help you.", JessicaPotrait.Poker),
+                new DialogueTextEvent("It's quite a far journey, a few days as far as I can tell, here take this map, it should help you.", JessicaPotrait.Poker),
             }),
 
             new Cutscene.AnimationEvent(Jessica, "HandMap", false),
@@ -107,7 +108,6 @@ public class BridgeStartCutscene : CutsceneSystem
             new DelayEvent(2000),
             new Dialogue(DialogueSystemPrefab,new List<Cutscene.DialogueEvent>()
             {
-                new DialogueTextEvent("I'm worried about who or what is on this island. We came here to research them but it seems they're far more advanced than we thought they were...", JessicaPotrait.Fear),
                 new DialogueTextEvent("We got the grappling hooks from HQ, it's in your bag, you might find it useful", JessicaPotrait.Poker),
             }),
 

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -110,8 +106,8 @@ public class Grapple : MonoBehaviour
     public void DisableGrapple()
     {
         canGrapple = false;
-        ReleaseGrapple();
         Hand.SetActive(false);
+        ReleaseGrapple();
     }
 
     private void OnGrapple()
