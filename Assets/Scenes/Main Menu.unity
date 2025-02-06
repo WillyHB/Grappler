@@ -685,7 +685,6 @@ GameObject:
   m_Component:
   - component: {fileID: 359438020}
   - component: {fileID: 359438019}
-  - component: {fileID: 359438018}
   - component: {fileID: 359438017}
   m_Layer: 0
   m_Name: Camera
@@ -738,14 +737,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &359438018
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359438016}
-  m_Enabled: 1
 --- !u!20 &359438019
 Camera:
   m_ObjectHideFlags: 0
@@ -6492,13 +6483,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 622891218387408415, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
+      propertyPath: Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 622891218387408415, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
+      propertyPath: StartTransition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 754519474131728840, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5670
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 754519474131728840, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -959
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4539239459298564800, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
       propertyPath: m_Name
@@ -6591,7 +6590,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4539239459298564800, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2136526945}
   m_SourcePrefab: {fileID: 100100000, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
 --- !u!1 &1658092185
 GameObject:
@@ -14123,6 +14125,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2136526941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4539239459298564800, guid: 572c2540d9b95e75fb538d689ce07d2a, type: 3}
+  m_PrefabInstance: {fileID: 1568966396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &2136526945
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136526941}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1754471850573991462
 PrefabInstance:
   m_ObjectHideFlags: 0

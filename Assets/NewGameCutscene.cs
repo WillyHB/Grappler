@@ -8,8 +8,8 @@ public class NewGameCutscene : CutsceneSystem
 {
     public Audio PlaneFlying, Crash;
     public AudioEventChannel MasterChannel;
-    public TextMeshProUGUI GameTitle;
-    public TextMeshProUGUI ByLine;
+    public CanvasGroup GameTitle;
+    public CanvasGroup ByLine;
 
     public void Start() 
     {
@@ -25,9 +25,9 @@ public class NewGameCutscene : CutsceneSystem
             new DelayEvent(1000),
             new AudioEvent(MasterChannel, PlaneFlying),
             new DelayEvent(2000),
-            new CustomFunctionEvent(()=>LeanTween.alphaText(ByLine.rectTransform, 1, 3)),
+            new CustomFunctionEvent(()=>LeanTween.alphaCanvas(ByLine, 1, 5).setEaseLinear()),
             new DelayEvent(11000),
-            new CustomFunctionEvent(()=>LeanTween.alphaText(GameTitle.rectTransform, 1, 2)),
+            new CustomFunctionEvent(()=>LeanTween.alphaCanvas(GameTitle, 1, 5).setEaseLinear()),
             new DelayEvent(2000),
             new AudioEvent(MasterChannel, Crash),
             new DelayEvent(4000),
