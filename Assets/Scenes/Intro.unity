@@ -304,7 +304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grappler
+  m_text: GrappleHeart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b9d52882df20e34abdfccb0cc391862, type: 2}
   m_sharedMaterial: {fileID: 6190449805206042496, guid: 6b9d52882df20e34abdfccb0cc391862, type: 2}

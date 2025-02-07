@@ -23,9 +23,9 @@ public class NewGameCutscene : CutsceneSystem
             new CustomFunctionEvent(()=>LevelTransition.StageLoad(2)),
             new AudioEvent(MasterChannel, PlaneFlying),
             new DelayEvent(3000),
-            new CustomFunctionEvent(()=>LeanTween.alphaCanvas(ByLine, 1, 4).setEaseInExpo()),
+            new CustomFunctionEvent(()=>LeanTween.alphaCanvas(GameTitle, 1, 4).setEaseInExpo()),
             new DelayEvent(5000),
-            new CustomFunctionEvent(()=>LeanTween.alphaCanvas(GameTitle, 1, 2).setEaseInExpo()),
+            new CustomFunctionEvent(()=>LeanTween.alphaCanvas(ByLine, 1, 2).setEaseInExpo()),
             new AudioEvent(MasterChannel, Crash),
             new DelayEvent(6000),
             new CustomFunctionEvent(()=> {
