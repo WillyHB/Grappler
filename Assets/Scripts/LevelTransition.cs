@@ -8,7 +8,7 @@ public static class LevelTransition
 {
     private static AsyncOperation _asyncOperation;
 
-    private static async void LoadSceneAsyncProcess(int level)
+    private static async void LoadSceneAsyncProcess(int level, bool loadOneGo = false)
     {
         // Begin to load the Scene you have specified.
         _asyncOperation = SceneManager.LoadSceneAsync(level);
@@ -18,29 +18,31 @@ public static class LevelTransition
         await ScreenTransition.Instance?.OutOfLevel();
         await Task.Yield();
 
-        LoadLevel();
+        if (loadOneGo) ActivateLoad();
     }
 
-    public static void Load(int level)
+    public static void StageLoad(int level) 
     {
         if (_asyncOperation == null)
         {
             LoadSceneAsyncProcess(level);
         }
     }
-
-    public static void Reload()
-    {
-        if (_asyncOperation == null)
+    
+    public static void LoadSync(int level) {
+        if (_asyncOperation == null) 
         {
-            LoadSceneAsyncProcess(SceneManager.GetActiveScene().buildIndex);
+            LoadSceneAsyncProcess(level, true);
         }
     }
-
-
-    private static void LoadLevel()
+    public static void ActivateLoad() 
     {
         _asyncOperation.allowSceneActivation = true;
         _asyncOperation = null;
+    }
+
+    public static void Reload()
+    {
+        LoadSync(SceneManager.GetActiveScene().buildIndex);
     }
 }

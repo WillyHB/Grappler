@@ -60,7 +60,7 @@ public class InputProvider : ScriptableObject
 
     public void ToggleMenu() 
     {
-        MenuToggled?.Invoke();
+        if (GetState().CanToggleMenu) MenuToggled?.Invoke();
     }
 
     public InputState GetState()
@@ -87,5 +87,6 @@ public struct InputState
     public bool CanJump { get; set; }
     public bool CanShoot { get; set; }
     public bool CanGrapple { get; set; }
+    public bool CanToggleMenu {get; set;}
 
 }

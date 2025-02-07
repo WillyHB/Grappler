@@ -715,7 +715,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcca7c9ad77df74daed7a319a2ed85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventChannels: []
+  eventChannels:
+  - {fileID: 11400000, guid: 36ffac4c3de69af41bd4fc31560db680, type: 2}
+  - {fileID: 11400000, guid: 32b60b8763fef814aa91277cd9838f69, type: 2}
+  - {fileID: 11400000, guid: 9d6d5ffcd204a1745a70cb0ea564ad8f, type: 2}
+  - {fileID: 11400000, guid: e024ef5df3ca929449aa0593b2f03758, type: 2}
   AudioMixer: {fileID: 24100000, guid: d9d62f00cb58d164a8a8181cdd674d0c, type: 2}
   PlayerMixerGroup: {fileID: 1449047306420111049, guid: d9d62f00cb58d164a8a8181cdd674d0c, type: 2}
   MasterMixerGroup: {fileID: 24300002, guid: d9d62f00cb58d164a8a8181cdd674d0c, type: 2}

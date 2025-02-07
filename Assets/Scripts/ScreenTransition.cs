@@ -35,8 +35,11 @@ public class ScreenTransition : MonoBehaviour
     public async Task IntoLevel() 
     {
         Sprite.rectTransform.localPosition = new Vector2(0, 0);
+        Sprite.GetComponentInParent<CanvasGroup>().alpha = 1;
 
-        if (Transition == TransitionType.ScreenWipe)
+        if (GameData.Load().checkpoint == 0) 
+            LeanTween.alphaCanvas(Sprite.GetComponentInParent<CanvasGroup>(), 0, 5).setEaseLinear();
+        else if (Transition == TransitionType.ScreenWipe)
             LeanTween.moveLocalX(Sprite.gameObject, Sprite.rectTransform.rect.width, TransitionSpeed).setEaseInOutQuad();
         else
             LeanTween.alphaCanvas(Sprite.GetComponentInParent<CanvasGroup>(), 0, TransitionSpeed).setEaseLinear();
@@ -48,14 +51,16 @@ public class ScreenTransition : MonoBehaviour
         
         if (Transition == TransitionType.ScreenWipe)
         {
+            Sprite.GetComponentInParent<CanvasGroup>().alpha = 1;
             Sprite.rectTransform.localPosition = new Vector2(-Sprite.rectTransform.rect.width, 0);
             LeanTween.moveLocalX(Sprite.gameObject, 0, TransitionSpeed).setEaseInOutQuad();
         }
 
         else 
         {
-            LeanTween.alphaCanvas(Sprite.GetComponentInParent<CanvasGroup>(), 1, TransitionSpeed).setEaseLinear();
+            Sprite.GetComponentInParent<CanvasGroup>().alpha = 0;
             Sprite.rectTransform.localPosition = new Vector2(0, 0);
+            LeanTween.alphaCanvas(Sprite.GetComponentInParent<CanvasGroup>(), 1, TransitionSpeed).setEaseLinear();
         }
         await Task.Delay((int)(TransitionSpeed * 1000));
     }

@@ -33,28 +33,6 @@ public class Settings : MonoBehaviour
         }) * 20);
     }
 
-    /*
-    public void SetAudio(string mixerGroup) 
-    {
-        float value = Mathf.Log10(mixerGroup switch 
-        {
-            "Master" => MasterVolume.value,
-            "Music" => MusicVolume.value,
-            "Environment" => EnvironmentVolume.value,
-            "Player" => PlayerVolume.value,
-            _ => throw new System.Exception("Unidentified mixer group used"),
-        }) * 20;
-
-
-
-        //AudioMaster.Instance.SetLevel(mixerGroup, value);
-
-        SaveObject so = GameData.Load();
-        so.volume = value;
-        GameData.Save(so);
-    }
-    */
-
     public void ToggleVsync(bool tog) 
     {
         Vsync.isOn = tog;
@@ -113,7 +91,7 @@ public class Settings : MonoBehaviour
         TargetFPS.GetComponentInChildren<TextMeshProUGUI>().text = value == -1 ? "INF" : value.ToString();
     }
    
-    void Start() 
+    public void Start() 
     {
         SaveObject so = GameData.Load();
         MasterVolume.value = Mathf.Pow(10, so.volume/20); //BUT IF

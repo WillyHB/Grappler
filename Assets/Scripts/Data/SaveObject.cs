@@ -14,7 +14,6 @@ public class SaveObject
     public float musicVolume;
     public float playerVolume;
     public float environmentVolume;
-    public float enemiesVolume;
     public bool isFullscreen = false;
     public int fps = 60;
     public bool camShake = true;

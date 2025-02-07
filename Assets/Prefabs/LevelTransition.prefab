@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5345689566823807851}
   - component: {fileID: 6074812608641133298}
   - component: {fileID: 622891218387408415}
+  - component: {fileID: 410273323513790470}
   m_Layer: 0
   m_Name: LevelTransition
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MonoBehaviour:
   TransitionSpeed: 1
   StartTransition: 0
   Transition: 0
+--- !u!225 &410273323513790470
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539239459298564800}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7625939222533335395
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,7 +33,6 @@ public abstract class CutsceneSystem : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("Bruh what");
         events = GenerateCutscene();
         if (RunOnStart) Play();
     }

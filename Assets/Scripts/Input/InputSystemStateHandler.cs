@@ -35,6 +35,7 @@ public class InputSystemStateHandler : InputStateHandler
         state.CanJump = true;
         state.CanGrapple = true;
         state.CanShoot = true;
+        state.CanToggleMenu = true;
 
         state.IsJumping = Actions.FindActionMap("Player").FindAction("Jump").IsPressed();
         state.IsCrouching = Actions.FindActionMap("Player").FindAction("VerticalMove").ReadValue<float>() < 0;

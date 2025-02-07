@@ -37,6 +37,7 @@ public class CutsceneSystemStateHandler : InputStateHandler
             state.CanJump = false;
             state.CanGrapple = false;
             state.CanShoot = false;
+            state.CanToggleMenu = false;
 
             state.IsJumping = false;
             state.IsCrouching = false;

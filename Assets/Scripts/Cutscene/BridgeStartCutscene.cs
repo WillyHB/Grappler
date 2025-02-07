@@ -32,7 +32,7 @@ public class BridgeStartCutscene : CutsceneSystem
         return new List<CutsceneEvent>()
         {
             new CustomFunctionEvent(Player.GetComponentInChildren<Grapple>().DisableGrapple),
-            new DelayEvent(1000),
+            new DelayEvent(500),
             new Cutscene.AnimationEvent(Player, "Intro1", true),
             new DelayEvent(1000),
             new CameraMoveEvent(MoveTransform),

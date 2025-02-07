@@ -15,7 +15,6 @@ public class PlayAudio : MonoBehaviour
     {
         if (Clip == null || EventChannel == null) 
         {
-
             Debug.LogError("Clip or EventChannel is not assigned");
             return;
         }

@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Main_Menu.SetActive(true);
+        Settings_Menu.GetComponent<Settings>().Start();
         Settings_Menu.SetActive(false);
     }
 
@@ -22,8 +23,10 @@ public class MainMenu : MonoBehaviour
         SaveObject so = GameData.Load();
         so.checkpoint = 0;
         so.skipStartCutscene = false;
+        so.skipTribesmanCutscene = false;
+        so.skipStartCutscene = false;
         GameData.Save(so);
-        ContinueGame();
+        LevelTransition.LoadSync(1);
     }
 
     public void Settings() 
@@ -46,7 +49,7 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame() 
     {
-        LevelTransition.Load(1);
+        LevelTransition.LoadSync(2);
     }
 
 }

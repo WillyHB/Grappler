@@ -6,8 +6,8 @@ namespace Cutscene {
 
     public class AudioEvent : CutsceneEvent {
 
-        private AudioEventChannel audioEventChannel;
-        private Audio audio;
+        private readonly AudioEventChannel audioEventChannel;
+        private readonly Audio audio;
 
         public AudioEvent(AudioEventChannel eventChannel, Audio clip) {
 
@@ -17,6 +17,7 @@ namespace Cutscene {
 
         public override async Task HandleEvent(CutsceneSystem system)
         {
+            Debug.Log("yeah");
             audioEventChannel.Play(audio);
         }
     }
